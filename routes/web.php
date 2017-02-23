@@ -40,4 +40,6 @@ Route::get('/saluda', function (Request $request) {
     return "Hi";
 });
 
+Route::get('/consulta/{code}', 'ApplicationController@ListIndicadoresByCode');
+
 Route::get('/leer', 'ApplicationController@leerExcel');

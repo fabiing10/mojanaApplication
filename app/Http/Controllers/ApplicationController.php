@@ -18,6 +18,8 @@ class ApplicationController extends Controller
      private $i;
      private $id;
      private $nombre;
+     private $clasificacion;
+     private $dimension;
 
      public function leerExceld(){
 
@@ -95,5 +97,46 @@ class ApplicationController extends Controller
         });
 
      });
+     }
+
+     public function ListIndicadoresByCode($code){
+       $code = explode("-", $code);
+       $dimension = $code[0];
+       $clasificacion = $code[1];
+  
+
+       if($clasificacion == 1){
+         $this->clasificacion = "Suelo";
+       }else if($clasificacion == 2){
+         $this->clasificacion = "Estructura Ecologica Principal";
+       }else if($clasificacion == 3){
+         $this->clasificacion = "Transporte y Movilidad";
+       }else if($clasificacion == 4){
+         $this->clasificacion = "Servicios publicos";
+       }else if($clasificacion == 5){
+         $this->clasificacion = "Espacio Publico";
+       }else if($clasificacion == 6){
+         $this->clasificacion = "Edificaciones";
+       }else{
+         $this->clasificacion = "";
+       }
+
+       if($dimension == "A"){
+         $this->dimension = "Ambiental";
+       }else if($dimension == "S"){
+         $this->dimension = "Social";
+       }else{
+         $this->dimension = "Economico";
+       }
+
+       $query = \DB::table('variables as variable')
+           ->join('indicadores as indicador', 'variable.indicador_id', '=', 'indicador.id')
+           ->select('*')
+           ->where('variable.dimension', '=', $this->dimension)
+           ->where('variable.clasificacion', '=', $this->clasificacion)
+           ->get();
+
+
+       return $query;
      }
 }
