@@ -41,5 +41,6 @@ Route::get('/saluda', function (Request $request) {
 });
 
 Route::get('/consulta/{code}', 'ApplicationController@ListIndicadoresByCode');
+Route::get('/consulta/indicadores/graficos/{code}', 'ApplicationController@GraficosIndicadoresId');
 
 Route::get('/leer', 'ApplicationController@leerExcel');

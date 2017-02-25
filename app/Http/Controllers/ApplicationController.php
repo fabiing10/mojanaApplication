@@ -103,7 +103,7 @@ class ApplicationController extends Controller
        $code = explode("-", $code);
        $dimension = $code[0];
        $clasificacion = $code[1];
-  
+
 
        if($clasificacion == 1){
          $this->clasificacion = "Suelo";
@@ -131,12 +131,21 @@ class ApplicationController extends Controller
 
        $query = \DB::table('variables as variable')
            ->join('indicadores as indicador', 'variable.indicador_id', '=', 'indicador.id')
-           ->select('*')
+           ->select('variable.id','indicador.nombre','indicador.mapa','variable.categoria','variable.sub_categoria','variable.dimension','variable.clasificacion','variable.nechi','variable.achi','variable.magangue','variable.san_jacinto','variable.ayapel','variable.caimito','variable.guaranda','variable.majagual','variable.san_benito_abad','variable.san_marcos','variable.sucre','variable.regional')
            ->where('variable.dimension', '=', $this->dimension)
            ->where('variable.clasificacion', '=', $this->clasificacion)
            ->get();
 
 
+       return $query;
+     }
+
+     public function GraficosIndicadoresId($id){
+       $query = \DB::table('variables as variable')
+           ->join('indicadores as indicador', 'variable.indicador_id', '=', 'indicador.id')
+           ->select('variable.nechi','variable.achi','variable.magangue','variable.san_jacinto','variable.ayapel','variable.caimito','variable.guaranda','variable.majagual','variable.san_benito_abad','variable.san_marcos','variable.sucre','variable.regional')
+           ->where('variable.id', '=', $id)
+           ->get();
        return $query;
      }
 }
