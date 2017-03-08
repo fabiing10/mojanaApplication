@@ -1,0 +1,135 @@
+.title-internal {
+    background-color: #8ff3fe !important;
+}
+
+.btn-redes {
+    width: 14.4%;
+    float: left;
+    background-color: #062f3f !important;
+    padding: 8.5px 0px;
+    margin-right: 4px;
+}
+
+.btn-home {
+    height: 55px;
+    background-color: #062f3f;
+    width: 51px;
+}
+
+.col-md-9 {
+    position: relative;
+    top: 15px;
+    text-align: center;
+}
+
+.h2, h2 {
+    font-size: 23px !important;
+    line-height: 25px !important;
+    font-weight: 300 !important;
+    letter-spacing: 0px !important;
+}
+h4 {
+    background: #48d8ff;
+    color: #001923;
+    padding: 10px;
+    line-height: initial;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.h4, h4 {
+    font-size: 24px;
+}
+
+span.menu-text {
+    color: #48d8ff;
+    font-size: 20px;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: "mfn-icons";
+    font-style: normal;
+    font-weight: 400;
+    speak: none;
+    display: inline-block;
+    text-decoration: none!important;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    margin-left: .2em;
+}
+.px-100{
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.fz-20{
+  font-size: 20px;
+}
+.pt-10{
+  padding-top: 10px;
+}
+.contenido{
+    margin-top: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    background: white;
+}
+form {
+    padding: 25px;
+}
+select.form-control {
+    background-color: #dadada;
+}
+h3 {
+    background: #001923;
+    color: #48d8ff;
+    padding: 10px;
+    line-height: initial;
+}
+.grey-left{
+    background: #dadada;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.grey-right{
+    background: #dadada;
+    margin-bottom: 10px;
+}
+
+.grey-full{
+    background: #dadada;
+}
+.mleft-5{
+    margin-left: 5px;
+}
+.mleft-10{
+    margin-left: 10px;
+}
+.mbottom-5{
+    margin-bottom: 5px;
+}
+.p-3{
+    padding: 3px;
+}
+.p-5{
+    padding: 5px;
+}
+.pleft-10 {
+    padding-left: 10px;
+}
+textarea#comment {
+    background-color: #dadada;
+    margin-bottom: 10px;
+}
+button.btn.btn-default {
+    width: 100%;
+    background-color: #001923;
+    color: white;
+    font-size: 25px;
+}
+.container {
+    border-bottom: 5px solid;
+}
