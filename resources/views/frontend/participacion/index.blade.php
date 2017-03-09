@@ -77,102 +77,109 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
   <div class="col-xs-6">
     <input type="text" class="form-control mbottom-5" name="nombres_apellidos" id="nombres_apellidos" placeholder="NOMBRES Y APELLIDOS">
   </div>
+  <!-- TIPO DE IDENTIFICACION -->
   <div class="col-xs-6">
-    <select class="form-control mleft-10" name="tipo_documento">
+    <select class="form-control mleft-10" name="tipo_identificacion">
       <option>TIPO DE DOCUMENTO DE IDENTIFICACION</option>
-      <option value="1">Cédula de Ciudadanía</option>
-      <option value="2">Cédula de Extranjería</option>
-      <option value="3">Tarjeta de identidad</option>
-      <option value="4">NIT</option>
+      <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
+      <option value="Cédula de Extranjería">Cédula de Extranjería</option>
+      <option value="Tarjeta de identidad">Tarjeta de identidad</option>
+      <option value="NIT">NIT</option>
     </select>
   </div>
 </div>
-
 <div class="row mbottom-5">
   <div class="col-xs-6">
+      <!-- EDAD -->
     <select class="form-control" name="edad">
       <option>Seleccione su Edad</option>
       @for ($i = 18; $i < 57; $i++)
-        <option value="{{$i}}">{{$i}} Años</option>
+        <option value="{{$i}}">{{$i}}</option>
       @endfor
     </select>
   </div>
   <div class="col-xs-6">
-    <input type="text" class="form-control mleft-10" id="identificacion" placeholder="NUMERO DE DOCUMENTO DE IDENTIFICAION">
+    <!-- IDENTIFICACION -->
+    <input type="text" class="form-control mleft-10" name="identificacion" id="identificacion" placeholder="NUMERO DE DOCUMENTO DE IDENTIFICAION">
   </div>
 </div>
-
 <div class="row">
   <div class="col-xs-3 grey-left" style=" padding-bottom: 20px; ">
     <div class="col-xs-3">
+      <!-- GENERO -->
     <label class="pt-10">GENERO</label>
     </div>
     <div class="col-xs-6">
       <div class="checkbox">
-        <label><input type="radio" value="" name="genero">MASCULINO</label>
+        <label><input type="radio" value="1" name="genero">MASCULINO</label>
       </div>
       <div class="checkbox">
-        <label><input type="radio" value="" name="genero">FEMENINO</label>
+        <label><input type="radio" value="2" name="genero">FEMENINO</label>
       </div>
       <div class="checkbox">
-        <label><input type="radio" value="" name="genero">OTRO</label>
+        <label><input type="radio" value="3" name="genero">OTRO</label>
       </div>
     </div>
   </div>
   <div class="col-xs-3 grey-left" style=" width: 23.5%; padding-bottom: 10px;">
+    <!-- REGIMEN DE SALUD -->
         <label class="pt-10">RÉGIMEN DE SALUD</label>
           <div class="checkbox">
           <label>
-            <input type="radio" value="" name="salud">
+            <input type="radio" value="SUBSIDIADO" name="regimen_salud">
             SUBSIDIADO
           </label>
           </div>
           <div class="checkbox">
           <label>
-            <input type="radio" value="" name="salud">
+            <input type="radio" value="CONTRIBUTIVO" name="regimen_salud">
             CONTRIBUTIVO
           </label>
           </div>
         </div>
 <div class="col-xs-6">
-  <select class="form-control mleft-5 mbottom-5">
+  <!-- OCUPACION -->
+  <select class="form-control mleft-5 mbottom-5" name="ocupacion">
     <option>OCUPACION</option>
-    <option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option>
-    <option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option><option>32</option><option>33</option>
-    <option>34</option><option>35</option><option>36</option><option>37</option><option>38</option><option>39</option><option>40</option><option>41</option>
-    <option>42</option><option>43</option><option>44</option><option>45</option><option>46</option><option>47</option><option>48</option><option>49</option>
-    <option>49</option><option>50</option><option>51</option><option>52</option><option>53</option><option>54</option><option>55</option><option>56</option>
+    <option value="ARQUITECTO">arquitecto</option>
+    <option value="GANADERO">ganadero</option>
+    <option value="CONSTRUCTOR">constructor</option>
   </select>
-  <input type="text" class="form-control mleft-5 mbottom-5" id="grupo-etnico" placeholder="GRUPO ETNICO">
+  <!-- GRUPO ETNICO -->
+  <input type="text" class="form-control mleft-5 mbottom-5" name="grupo_etnico" id="grupo-etnico" placeholder="GRUPO ETNICO">
   <div class="row mleft-5 grey-full p-3">
+    <!-- DISCAPACIDAD -->
   <label>DISCAPACIDAD</label>
   <label class="checkbox-inline">
-      <input type="radio" name="DISCAPACIDAD" id="checkboxdiscapacidad" value="opcion_1"> SI
+      <input type="radio" name="discapacidad" id="checkboxdiscapacidad" value="1"> SI
     </label>
     <label class="checkbox-inline">
-      <input type="radio" name="DISCAPACIDAD" id="checkboxdiscapacidad" value="opcion_2"> NO
+      <input type="radio" name="discapacidad" id="checkboxdiscapacidad" value="0"> NO
     </label>
     </div>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-6">
-        <input type="text" class="form-control grey-right" id="estrato-socioeconomico" placeholder="ESTRATO SOCIOECONÓMICO">
+        <!-- ESTRATO SOCIOECONÓMICO -->
+        <input type="text" class="form-control grey-right" name="estrato" id="estrato-socioeconomico" placeholder="ESTRATO SOCIOECONÓMICO">
       </div>
       <div class="col-xs-6">
-        <input type="text" class="form-control grey-right mleft-10" id="nivel-educativo" placeholder="NIVEL EDUCATIVO">
+        <!-- NIVEL EDUCATIVO -->
+        <input type="text" class="form-control grey-right mleft-10" name="nivel_educativo" id="nivel-educativo" placeholder="NIVEL EDUCATIVO">
       </div>
     </div>
     <div class="row grey-full">
       <div class="col-xs-8">
+        <!-- DESPLAZAMIENTO -->
         <label>HA ESTADO EN SITUACIÓN DE DESPLAZAMIENTO O <br> HA SIDO VÍCTIMA DEL CONFLICTO ARMADO </label>
       </div>
       <div class="col-xs-4">
         <label class="checkbox-inline">
-            <input type="radio" name="CONFLICTO" id="checkbox-conflicto" value="opcion_1"> SI
+            <input type="radio" name="situacion_desplazamiento_conflicto" id="checkbox-conflicto" value="1"> SI
           </label>
           <label class="checkbox-inline">
-            <input type="radio" name="CONFLICTO" id="checkbox-conflicto" value="opcion_2"> NO
+            <input type="radio" name="situacion_desplazamiento_conflicto" id="checkbox-conflicto" value="0"> NO
           </label>
       </div>
     </div>
@@ -184,58 +191,73 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
 </div>
 <div class="row mbottom-5">
 <div class="col-xs-6">
-  <select class="form-control">
+  <!-- MUNICIPIO DE RESIDENCIA -->
+  <select class="form-control" name="municipio_residencia">
     <option>MUNICIPIO DE RESIDENCIA</option>
-    <option>Nechí</option><option>Achí</option><option>Magangué</option><option>San Jacinto del Cauca</option><option>Ayapel</option><option>Caimito</option><option>Guaranda</option><option>Majagual</option>
-    <option>San Benito Abad</option><option>San Marcos</option><option>Sucre</option>
+    <option value="nechi">Nechí</option>
+    <option value="achi">Achí</option>
+    <option value="magangue">Magangué</option>
+    <option value="san_jacinto_cauca">San Jacinto del Cauca</option>
+    <option value="ayapel">Ayapel</option>
+    <option value="caimito">Caimito</option>
+    <option value="guaranda">Guaranda</option>
+    <option value="majagual">Majagual</option>
+    <option value="san_benito_abad">San Benito Abad</option>
+    <option value="san_marcos">San Marcos</option>
+    <option value="sucre">Sucre</option>
   </select>
 </div>
 <div class="col-xs-6">
-  <input type="text" class="form-control mleft-10" id="TIPO-VIVIENDA" placeholder="COMUNA/BARRIO/VEREDA">
+  <!-- comuna_barrio_vereda -->
+  <input type="text" class="form-control mleft-10" name="comuna_barrio_vereda" id="comuna_barrio_vereda" placeholder="COMUNA/BARRIO/VEREDA">
 </div>
 </div>
 <div class="row">
 <div class="col-xs-6 grey-left p-5">
 <div class="col-xs-4">
+  <!-- sector -->
   <label>SECTOR</label>
 </div>
 <div class="col-xs-8">
   <label class="checkbox-inline">
-      <input type="radio" name="SECTOR" id="checkbox-sector" value="opcion_1"> RURAL
+      <input type="radio" name="sector" value="1" id="checkbox-sector"> RURAL
     </label>
     <label class="checkbox-inline">
-      <input type="radio" name="SECTOR" id="checkbox-sector" value="opcion_2"> URBANO
+      <input type="radio" name="sector" value="2" id="checkbox-sector"> URBANO
     </label>
 </div>
 </div>
 <div class="col-xs-6">
-<input type="text" class="form-control grey-full" id="tiempo-residencia" placeholder="TIEMPO DE RESIDENCIA">
+  <!-- TIEMPO DE RESIDENCIA -->
+<input type="text" class="form-control grey-full" name="tiempo_residencia" id="tiempo-residencia" placeholder="TIEMPO DE RESIDENCIA">
 </div>
 </div>
 <div class="row">
 <div class="col-xs-6 grey-left p-5">
 <div class="col-xs-7">
+  <!-- SALIDO DE SU DEPARTAMENTO -->
 <label>HA SALIDO DE SU DEPARTAMENTO</label>
 </div>
 <div class="col-xs-5">
 <label class="checkbox-inline">
-    <input type="radio" name="salir" id="checkbox-salir" value="opcion_1"> SI
+    <input type="radio" name="ha_salido_departamento" id="checkbox-salir" value="1"> SI
   </label>
   <label class="checkbox-inline">
-    <input type="radio" name="salir" id="checkbox-salir" value="opcion_2"> NO
+    <input type="radio" name="ha_salido_departamento" id="checkbox-salir" value="0"> NO
   </label>
 </div>
 </div>
 <div class="col-xs-6 grey-right p-5">
 <div class="col-xs-7">
+  <!-- SALIDO DE SU MUNICIPIO -->
 <label>HA SALIDO DE SU MUNICIPIO</label>
 </div>
 <div class="col-xs-5">
 <label class="checkbox-inline">
-    <input type="radio" name="salir-m" id="checkbox-salir-m" value="opcion_1"> SI
+    <input type="radio" name="ha_salido_municipio" id="checkbox-salir-m" value="1"> SI
   </label>
   <label class="checkbox-inline">
-    <input type="radio" name="salir-m" id="checkbox-salir-m" value="opcion_2"> NO
+    <input type="radio" name="ha_salido_municipio" id="checkbox-salir-m" value="0"> NO
   </label>
 </div>
 </div>
@@ -250,24 +272,25 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
 <div class="row">
 <div class="col-xs-6 grey-left">
       <div class="col-xs-4">
+        <!-- condiciones_fisicas -->
       <label class="pt-10">LAS CONDICIONES FÍSICAS DE SU VIVIENDA SON</label>
       </div>
       <div class="col-xs-6">
         <div class="checkbox">
         <label>
-          <input type="radio" value="" name="condiciones">
+          <input type="radio" value="MATERIAL" name="condiciones_fisicas">
           MATERIAL
         </label>
         </div>
         <div class="checkbox">
         <label>
-          <input type="radio" value="" name="condiciones">
+          <input type="radio" value="BAREQUE" name="condiciones_fisicas">
           BAREQUE
         </label>
         </div>
         <div class="checkbox">
         <label>
-          <input type="radio" value="" name="condiciones">
+          <input type="radio" value="PALAFITICA" name="condiciones_fisicas">
           PALAFITICA
         </label>
         </div>
@@ -275,109 +298,116 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
     </div>
     <div class="col-xs-6 grey-right">
       <div class="col-xs-4">
+        <!-- VIVIENDA ES -->
         <label class="pt-10">SU VIVIENDA ES</label>
           </div>
           <div class="col-xs-6">
             <div class="checkbox">
             <label>
-              <input type="radio" value="" name="vivienda">
+              <input type="radio" value="PROPIA" name="vivienda_es">
               PROPIA
             </label>
             </div>
             <div class="checkbox">
             <label>
-              <input type="radio" value="" name="vivienda">
+              <input type="radio" value="ARRENDADA" name="vivienda_es">
               ARRENDADA
             </label>
             </div>
             <div class="checkbox">
             <label>
-              <input type="radio" value="" name="vivienda">
+              <input type="radio" value="FAMILIAR" name="vivienda_es">
               FAMILIAR
             </label>
             </div>
           </div>
         </div>
       </div>
-
     <!--fila 2-->
       <div class="row">
         <div class="col-xs-6 grey-left">
+          <!-- VIVIENDA CUENTA CON -->
               <label class="pt-10">SU VIVIENDA CUENTA CON</label>
                   <br>
+                  <!-- AGUA POTABLE -->
                   <div class="col-xs-7 text-right" >
                     <label >AGUA POTABLE</label>
                   </div>
                   <div class="col-xs-5 pleft-10">
                     <label class="checkbox-inline">
-                        <input type="radio" name="agua-potable" id="agua-potable" value="opcion_1"> SI
+                        <input type="radio" name="vivienda_cuenta_agua_potable" id="agua-potable" value="si"> SI
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="agua-potable" id="agua-potable" value="opcion_2"> NO
+                        <input type="radio" name="vivienda_cuenta_agua_potable" id="agua-potable" value="no"> NO
                       </label>
                   </div>
                   <br>
+                  <!-- ALCANTARILLADO -->
                   <div class="col-xs-7 text-right" >
                     <label >ALCANTARILLADO</label>
                   </div>
                   <div class="col-xs-5 pleft-10">
                     <label class="checkbox-inline">
-                        <input type="radio" name="ALCANTARILLADO" id="ALCANTARILLADO" value="opcion_1"> SI
+                        <input type="radio" name="vivienda_cuenta_alcantarillado" id="ALCANTARILLADO" value="si"> SI
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="ALCANTARILLADO" id="ALCANTARILLADO" value="opcion_2"> NO
+                        <input type="radio" name="vivienda_cuenta_alcantarillado" id="ALCANTARILLADO" value="no"> NO
                       </label>
                   </div>
                   <br>
+                  <!-- ENERGIA -->
                   <div class="col-xs-7 text-right" >
                     <label >ENERGIA</label>
                   </div>
                   <div class="col-xs-5 pleft-10">
                     <label class="checkbox-inline">
-                        <input type="radio" name="ENERGIA" id="ENERGIA" value="opcion_1"> SI
+                        <input type="radio" name="vivienda_cuenta_energia" id="ENERGIA" value="si"> SI
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="ENERGIA" id="ENERGIA" value="opcion_2"> NO
+                        <input type="radio" name="vivienda_cuenta_energia" id="ENERGIA" value="no"> NO
                       </label>
                   </div>
                   <br>
+                  <!-- GAS -->
                   <div class="col-xs-7 text-right" >
                     <label >GAS</label>
                   </div>
                   <div class="col-xs-5 pleft-10">
                     <label class="checkbox-inline">
-                        <input type="radio" name="GAS" id="GAS" value="opcion_1"> SI
+                        <input type="radio" name="vivienda_cuenta_gas" id="GAS" value="si"> SI
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="GAS" id="GAS" value="opcion_2"> NO
+                        <input type="radio" name="vivienda_cuenta_gas" id="GAS" value="no"> NO
                       </label>
                   </div>
                   <br>
+                  <!-- RECOLECCIÓN DE BASURAS -->
                   <div class="col-xs-7 text-right" >
                     <label >RECOLECCIÓN DE BASURAS</label>
                   </div>
                   <div class="col-xs-5 pleft-10">
                     <label class="checkbox-inline">
-                        <input type="radio" name="RECOLECCIÓN" id="RECOLECCIÓN" value="opcion_1"> SI
+                        <input type="radio" name="vivienda_cuenta_recoleccion_basura" id="RECOLECCIÓN" value="si"> SI
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="RECOLECCIÓN" id="RECOLECCIÓN" value="opcion_2"> NO
+                        <input type="radio" name="vivienda_cuenta_recoleccion_basura" id="RECOLECCIÓN" value="no"> NO
                       </label>
                   </div>
             </div>
-        <div class="col-xs-6 grey-right">
+              <div class="col-xs-6 grey-right">
+                <!-- MAS SUELDO -->
               <label class="pt-10">LE GUSTARÍA QUE PERMITIERAN <br>MÁS SUELO PARA</label>
                   <br>
                   <div class="col-xs-3">
                   </div>
                   <div class="col-xs-4" >
                     <label class="checkbox-inline">
-                        <input type="radio" name="vivienda" id="vivienda" value="opcion_1"> VIVIENDA
+                        <input type="radio" name="mas_suelo_para" id="vivienda" value="VIVIENDA"> VIVIENDA
                     </label>
                   </div>
                   <div class="col-xs-5">
                     <label class="checkbox-inline">
-                        <input type="radio" name="ganaderia" id="ganaderia" value="opcion_1"> GANADERÍA
+                        <input type="radio" name="mas_suelo_para" id="ganaderia" value="GANADERÍA"> GANADERÍA
                      </label>
                   </div>
                   <br>
@@ -385,12 +415,12 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
                   </div>
                   <div class="col-xs-4" >
                     <label class="checkbox-inline">
-                        <input type="radio" name="comercio" id="comercio" value="opcion_1"> COMERCIO
+                        <input type="radio" name="mas_suelo_para" id="comercio" value="COMERCIO"> COMERCIO
                     </label>
                   </div>
                   <div class="col-xs-5">
                     <label class="checkbox-inline">
-                        <input type="radio" name="mineria" id="mineria" value="opcion_1"> MINERÍA
+                        <input type="radio" name="mas_suelo_para" id="mineria" value="MINERÍA"> MINERÍA
                      </label>
                   </div>
                   <br>
@@ -398,12 +428,12 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
                   </div>
                   <div class="col-xs-4" >
                     <label class="checkbox-inline">
-                        <input type="radio" name="conservacion" id="conservacion" value="opcion_1"> CONSERVACIÓN
+                        <input type="radio" name="mas_suelo_para" id="conservacion" value="CONSERVACIÓN"> CONSERVACIÓN
                     </label>
                   </div>
                   <div class="col-xs-5">
                     <label class="checkbox-inline">
-                        <input type="radio" name="industria" id="industria" value="opcion_1"> INDUSTRIA
+                        <input type="radio" name="mas_suelo_para" id="industria" value="INDUSTRIA"> INDUSTRIA
                      </label>
                   </div>
                   <br>
@@ -411,12 +441,12 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
                   </div>
                   <div class="col-xs-4" >
                     <label class="checkbox-inline">
-                        <input type="radio" name="proteccion" id="proteccion" value="opcion_1"> PROTECCIÓN
+                        <input type="radio" name="mas_suelo_para" id="proteccion" value="PROTECCIÓN"> PROTECCIÓN
                     </label>
                   </div>
                   <div class="col-xs-5">
                     <label class="checkbox-inline">
-                        <input type="radio" name="vias" id="vias" value="opcion_1"> VÍAS
+                        <input type="radio" name="mas_suelo_para" id="vias" value="VÍAS"> VÍAS
                      </label>
                   </div>
                   <br>
@@ -424,13 +454,14 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
                   </div>
                   <div class="col-xs-4" >
                     <label class="checkbox-inline">
-                        <input type="radio" name="agricultura" id="agricultura" value="opcion_1"> AGRICULTURA
+                        <input type="radio" name="mas_suelo_para" id="agricultura" value="AGRICULTURA"> AGRICULTURA
                     </label>
                   </div>
                   <div class="col-xs-5">
                   </div>
             </div>
           </div>
+          <!-- PREGUNTAS -->
           <div class="row grey-full">
               <label class="pt-10">ESTADO DEL EQUIPAMIENTO DE SU ZONA</label>
                   <br>
@@ -439,16 +470,16 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
                   </div>
                   <div class="col-xs-5">
                     <label class="checkbox-inline">
-                        <input type="radio" name="encuesta" id="encuesta" value="opcion_1"> EXCELENTE
+                        <input type="radio" name="Q_01" id="encuesta" value="EXCELENTE"> EXCELENTE
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta" id="encuesta" value="opcion_2"> BUENO
+                        <input type="radio" name="Q_01" id="encuesta" value="BUENO"> BUENO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta" id="encuesta" value="opcion_3"> MALO
+                        <input type="radio" name="Q_01" id="encuesta" value="MALO"> MALO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta" id="encuesta" value="opcion_4"> NO EXISTE
+                        <input type="radio" name="Q_01" id="encuesta" value="NO EXISTE"> NO EXISTE
                       </label>
                   </div>
                   <br>
@@ -457,16 +488,16 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
                   </div>
                   <div class="col-xs-5">
                      <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-2" id="encuesta" value="opcion_1"> EXCELENTE
+                        <input type="radio" name="Q_02" id="encuesta" value="EXCELENTE"> EXCELENTE
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-2" id="encuesta" value="opcion_2"> BUENO
+                        <input type="radio" name="Q_02" id="encuesta" value="BUENO"> BUENO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-2" id="encuesta" value="opcion_3"> MALO
+                        <input type="radio" name="Q_02" id="encuesta" value="MALO"> MALO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-2" id="encuesta" value="opcion_4"> NO EXISTE
+                        <input type="radio" name="Q_02" id="encuesta" value="NO EXISTE"> NO EXISTE
                       </label>
                   </div>
                   <br>
@@ -475,16 +506,16 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
                   </div>
                   <div class="col-xs-5">
                      <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-3" id="encuesta" value="opcion_1"> EXCELENTE
+                        <input type="radio" name="Q_03" id="encuesta" value="EXCELENTE"> EXCELENTE
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-3" id="encuesta" value="opcion_2"> BUENO
+                        <input type="radio" name="Q_03" id="encuesta" value="BUENO"> BUENO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-3" id="encuesta" value="opcion_3"> MALO
+                        <input type="radio" name="Q_03" id="encuesta" value="MALO"> MALO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-3" id="encuesta" value="opcion_4"> NO EXISTE
+                        <input type="radio" name="Q_03" id="encuesta" value="NO EXISTE"> NO EXISTE
                       </label>
                   </div>
                   <br>
@@ -493,16 +524,16 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
                   </div>
                   <div class="col-xs-5">
                      <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-4" id="encuesta" value="opcion_1"> EXCELENTE
+                        <input type="radio" name="Q_04" id="encuesta" value="EXCELENTE"> EXCELENTE
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-4" id="encuesta" value="opcion_2"> BUENO
+                        <input type="radio" name="Q_04" id="encuesta" value="BUENO"> BUENO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-4" id="encuesta" value="opcion_3"> MALO
+                        <input type="radio" name="Q_04" id="encuesta" value="MALO"> MALO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-4" id="encuesta" value="opcion_4"> NO EXISTE
+                        <input type="radio" name="Q_04" id="encuesta" value="NO EXISTE"> NO EXISTE
                       </label>
                   </div>
                   <br>
@@ -511,16 +542,16 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
                   </div>
                   <div class="col-xs-5">
                      <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-5" id="encuesta" value="opcion_1"> EXCELENTE
+                        <input type="radio" name="Q_05" id="encuesta" value="EXCELENTE"> EXCELENTE
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-5" id="encuesta" value="opcion_2"> BUENO
+                        <input type="radio" name="Q_05" id="encuesta" value="BUENO"> BUENO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-5" id="encuesta" value="opcion_3"> MALO
+                        <input type="radio" name="Q_05" id="encuesta" value="MALO"> MALO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-5" id="encuesta" value="opcion_4"> NO EXISTE
+                        <input type="radio" name="Q_05" id="encuesta" value="NO EXISTE"> NO EXISTE
                       </label>
                   </div>
                   <br>
@@ -529,16 +560,16 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
                   </div>
                   <div class="col-xs-5">
                      <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-6" id="encuesta" value="opcion_1"> EXCELENTE
+                        <input type="radio" name="Q_06" id="encuesta" value="EXCELENTE"> EXCELENTE
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-6" id="encuesta" value="opcion_2"> BUENO
+                        <input type="radio" name="Q_06" id="encuesta" value="BUENO"> BUENO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-6" id="encuesta" value="opcion_3"> MALO
+                        <input type="radio" name="Q_06" id="encuesta" value="MALO"> MALO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-6" id="encuesta" value="opcion_4"> NO EXISTE
+                        <input type="radio" name="Q_06" id="encuesta" value="NO EXISTE"> NO EXISTE
                       </label>
                   </div>
                   <br>
@@ -547,16 +578,16 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
                   </div>
                   <div class="col-xs-5">
                      <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-7" id="encuesta" value="opcion_1"> EXCELENTE
+                        <input type="radio" name="Q_07" id="encuesta" value="EXCELENTE"> EXCELENTE
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-7" id="encuesta" value="opcion_2"> BUENO
+                        <input type="radio" name="Q_07" id="encuesta" value="BUENO"> BUENO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-7" id="encuesta" value="opcion_3"> MALO
+                        <input type="radio" name="Q_07" id="encuesta" value="MALO"> MALO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-7" id="encuesta" value="opcion_4"> NO EXISTE
+                        <input type="radio" name="Q_07" id="encuesta" value="NO EXISTE"> NO EXISTE
                       </label>
                   </div>
                   <br>
@@ -565,16 +596,16 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
                   </div>
                   <div class="col-xs-5">
                      <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-8" id="encuesta" value="opcion_1"> EXCELENTE
+                        <input type="radio" name="Q_08" id="encuesta" value="EXCELENTE"> EXCELENTE
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-8" id="encuesta" value="opcion_2"> BUENO
+                        <input type="radio" name="Q_08" id="encuesta" value="BUENO"> BUENO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-8" id="encuesta" value="opcion_3"> MALO
+                        <input type="radio" name="Q_08" id="encuesta" value="MALO"> MALO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-8" id="encuesta" value="opcion_4"> NO EXISTE
+                        <input type="radio" name="Q_08" id="encuesta" value="NO EXISTE"> NO EXISTE
                       </label>
                   </div>
                   <br>
@@ -583,16 +614,16 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
                   </div>
                   <div class="col-xs-5">
                      <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-9" id="encuesta" value="opcion_1"> EXCELENTE
+                        <input type="radio" name="Q_09" id="encuesta" value="EXCELENTE"> EXCELENTE
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-9" id="encuesta" value="opcion_2"> BUENO
+                        <input type="radio" name="Q_09" id="encuesta" value="BUENO"> BUENO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-9" id="encuesta" value="opcion_3"> MALO
+                        <input type="radio" name="Q_09" id="encuesta" value="MALO"> MALO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-9" id="encuesta" value="opcion_4"> NO EXISTE
+                        <input type="radio" name="Q_09" id="encuesta" value="NO EXISTE"> NO EXISTE
                       </label>
                   </div>
                   <br>
@@ -601,16 +632,16 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
                   </div>
                   <div class="col-xs-5">
                      <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-10" id="encuesta" value="opcion_1"> EXCELENTE
+                        <input type="radio" name="Q_10" id="encuesta" value="EXCELENTE"> EXCELENTE
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-10" id="encuesta" value="opcion_2"> BUENO
+                        <input type="radio" name="Q_10" id="encuesta" value="BUENO"> BUENO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-10" id="encuesta" value="opcion_3"> MALO
+                        <input type="radio" name="Q_10" id="encuesta" value="MALO"> MALO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-10" id="encuesta" value="opcion_4"> NO EXISTE
+                        <input type="radio" name="Q_10" id="encuesta" value="NO EXISTE"> NO EXISTE
                       </label>
                   </div>
                   <br>
@@ -619,16 +650,16 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
                   </div>
                   <div class="col-xs-5">
                      <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-11" id="encuesta" value="opcion_1"> EXCELENTE
+                        <input type="radio" name="Q_11" id="encuesta" value="EXCELENTE"> EXCELENTE
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-11" id="encuesta" value="opcion_2"> BUENO
+                        <input type="radio" name="Q_11" id="encuesta" value="BUENO"> BUENO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-11" id="encuesta" value="opcion_3"> MALO
+                        <input type="radio" name="Q_11" id="encuesta" value="MALO"> MALO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-11" id="encuesta" value="opcion_4"> NO EXISTE
+                        <input type="radio" name="Q_11" id="encuesta" value="NO EXISTE"> NO EXISTE
                       </label>
                   </div>
                   <br>
@@ -637,16 +668,16 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
                   </div>
                   <div class="col-xs-5">
                      <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-12" id="encuesta" value="opcion_1"> EXCELENTE
+                        <input type="radio" name="Q_12" id="encuesta" value="EXCELENTE"> EXCELENTE
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-12" id="encuesta" value="opcion_2"> BUENO
+                        <input type="radio" name="Q_12" id="encuesta" value="BUENO"> BUENO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-12" id="encuesta" value="opcion_3"> MALO
+                        <input type="radio" name="Q_12" id="encuesta" value="MALO"> MALO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-12" id="encuesta" value="opcion_4"> NO EXISTE
+                        <input type="radio" name="Q_12" id="encuesta" value="NO EXISTE"> NO EXISTE
                       </label>
                   </div>
                   <br>
@@ -655,16 +686,16 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
                   </div>
                   <div class="col-xs-5">
                      <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-13" id="encuesta" value="opcion_1"> EXCELENTE
+                        <input type="radio" name="Q_13" id="encuesta" value="EXCELENTE"> EXCELENTE
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-13" id="encuesta" value="opcion_2"> BUENO
+                        <input type="radio" name="Q_13" id="encuesta" value="BUENO"> BUENO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-13" id="encuesta" value="opcion_3"> MALO
+                        <input type="radio" name="Q_13" id="encuesta" value="MALO"> MALO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-13" id="encuesta" value="opcion_4"> NO EXISTE
+                        <input type="radio" name="Q_13" id="encuesta" value="NO EXISTE"> NO EXISTE
                       </label>
                   </div>
                   <br>
@@ -673,16 +704,16 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
                   </div>
                   <div class="col-xs-5">
                      <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-14" id="encuesta" value="opcion_1"> EXCELENTE
+                        <input type="radio" name="Q_14" id="encuesta" value="EXCELENTE"> EXCELENTE
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-14" id="encuesta" value="opcion_2"> BUENO
+                        <input type="radio" name="Q_14" id="encuesta" value="BUENO"> BUENO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-14" id="encuesta" value="opcion_3"> MALO
+                        <input type="radio" name="Q_14" id="encuesta" value="MALO"> MALO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-14" id="encuesta" value="opcion_4"> NO EXISTE
+                        <input type="radio" name="Q_14" id="encuesta" value="NO EXISTE"> NO EXISTE
                       </label>
                   </div>
                   <br>
@@ -691,16 +722,16 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
                   </div>
                   <div class="col-xs-5">
                      <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-15" id="encuesta" value="opcion_1"> EXCELENTE
+                        <input type="radio" name="Q_15" id="encuesta" value="EXCELENTE"> EXCELENTE
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-15" id="encuesta" value="opcion_2"> BUENO
+                        <input type="radio" name="Q_15" id="encuesta" value="BUENO"> BUENO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-15" id="encuesta" value="opcion_3"> MALO
+                        <input type="radio" name="Q_15" id="encuesta" value="MALO"> MALO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-15" id="encuesta" value="opcion_4"> NO EXISTE
+                        <input type="radio" name="Q_15" id="encuesta" value="NO EXISTE"> NO EXISTE
                       </label>
                   </div>
                   <br>
@@ -709,16 +740,16 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
                   </div>
                   <div class="col-xs-5">
                      <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-16" id="encuesta" value="opcion_1"> EXCELENTE
+                        <input type="radio" name="Q_16" id="encuesta" value="EXCELENTE"> EXCELENTE
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-16" id="encuesta" value="opcion_2"> BUENO
+                        <input type="radio" name="Q_16" id="encuesta" value="BUENO"> BUENO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-16" id="encuesta" value="opcion_3"> MALO
+                        <input type="radio" name="Q_16" id="encuesta" value="MALO"> MALO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-16" id="encuesta" value="opcion_4"> NO EXISTE
+                        <input type="radio" name="Q_16" id="encuesta" value="NO EXISTE"> NO EXISTE
                       </label>
                   </div>
                   <br>
@@ -727,16 +758,16 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
                   </div>
                   <div class="col-xs-5">
                      <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-17" id="encuesta" value="opcion_1"> EXCELENTE
+                        <input type="radio" name="Q_17" id="encuesta" value="EXCELENTE"> EXCELENTE
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-17" id="encuesta" value="opcion_2"> BUENO
+                        <input type="radio" name="Q_17" id="encuesta" value="BUENO"> BUENO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-17" id="encuesta" value="opcion_3"> MALO
+                        <input type="radio" name="Q_17" id="encuesta" value="MALO"> MALO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-17" id="encuesta" value="opcion_4"> NO EXISTE
+                        <input type="radio" name="Q_17" id="encuesta" value="NO EXISTE"> NO EXISTE
                       </label>
                   </div>
                   <br>
@@ -745,16 +776,16 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
                   </div>
                   <div class="col-xs-5">
                      <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-18" id="encuesta" value="opcion_1"> EXCELENTE
+                        <input type="radio" name="Q_18" id="encuesta" value="EXCELENTE"> EXCELENTE
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-18" id="encuesta" value="opcion_2"> BUENO
+                        <input type="radio" name="Q_18" id="encuesta" value="BUENO"> BUENO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-18" id="encuesta" value="opcion_3"> MALO
+                        <input type="radio" name="Q_18" id="encuesta" value="MALO"> MALO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-18" id="encuesta" value="opcion_4"> NO EXISTE
+                        <input type="radio" name="Q_18" id="encuesta" value="NO EXISTE"> NO EXISTE
                       </label>
                   </div>
                   <br>
@@ -763,16 +794,16 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
                   </div>
                   <div class="col-xs-5">
                      <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-19" id="encuesta" value="opcion_1"> EXCELENTE
+                        <input type="radio" name="Q_19" id="encuesta" value="EXCELENTE"> EXCELENTE
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-19" id="encuesta" value="opcion_2"> BUENO
+                        <input type="radio" name="Q_19" id="encuesta" value="BUENO"> BUENO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-19" id="encuesta" value="opcion_3"> MALO
+                        <input type="radio" name="Q_19" id="encuesta" value="MALO"> MALO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-19" id="encuesta" value="opcion_4"> NO EXISTE
+                        <input type="radio" name="Q_19" id="encuesta" value="NO EXISTE"> NO EXISTE
                       </label>
                   </div>
                   <br>
@@ -781,16 +812,16 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
                   </div>
                   <div class="col-xs-5">
                      <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-20" id="encuesta" value="opcion_1"> EXCELENTE
+                        <input type="radio" name="Q_20" id="encuesta" value="EXCELENTE"> EXCELENTE
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-20" id="encuesta" value="opcion_2"> BUENO
+                        <input type="radio" name="Q_20" id="encuesta" value="BUENO"> BUENO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-20" id="encuesta" value="opcion_3"> MALO
+                        <input type="radio" name="Q_20" id="encuesta" value="MALO"> MALO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-20" id="encuesta" value="opcion_4"> NO EXISTE
+                        <input type="radio" name="Q_20" id="encuesta" value="NO EXISTE"> NO EXISTE
                       </label>
                   </div>
                   <br>
@@ -799,16 +830,16 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
                   </div>
                   <div class="col-xs-5">
                      <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-21" id="encuesta" value="opcion_1"> EXCELENTE
+                        <input type="radio" name="Q_21" id="encuesta" value="EXCELENTE"> EXCELENTE
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-21" id="encuesta" value="opcion_2"> BUENO
+                        <input type="radio" name="Q_21" id="encuesta" value="BUENO"> BUENO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-21" id="encuesta" value="opcion_3"> MALO
+                        <input type="radio" name="Q_21" id="encuesta" value="MALO"> MALO
                       </label>
                       <label class="checkbox-inline">
-                        <input type="radio" name="encuesta-21" id="encuesta" value="opcion_4"> NO EXISTE
+                        <input type="radio" name="Q_21" id="encuesta" value="NO EXISTE"> NO EXISTE
                       </label>
                   </div>
             </div>
@@ -818,7 +849,7 @@ relevantes y la visión de la región. Llene los siguientes campos:</p>
    <div class="col-xs-11">
    <h3>PROBLEMA Y SOLUCIÓN</h3>
 </div>
-<textarea class="form-control" rows="5" id="comment" placeholder="¿CUAL ES EL MAYOR PROBLEMA DE LA REGIÓN?"></textarea>
+<textarea class="form-control" name="mayor_problema" rows="5" id="comment" placeholder="¿CUAL ES EL MAYOR PROBLEMA DE LA REGIÓN?"></textarea>
 <div class="row">
 <div class="col-xs-6">
 

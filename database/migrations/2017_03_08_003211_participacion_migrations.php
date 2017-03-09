@@ -17,8 +17,8 @@ class ParticipacionMigrations extends Migration
 
             $table->increments('id')->unsigned();
             /* 1 Identificacion */
-            $table->integer('tipo_identificacion')->nullable();
-            $table->string('identificacion')->nullable();
+            $table->string('tipo_identificacion')->nullable();
+            $table->integer('identificacion')->nullable();
             $table->string('nombres_apellidos')->nullable();
             $table->integer('edad')->nullable();
             $table->integer('genero');
@@ -31,19 +31,19 @@ class ParticipacionMigrations extends Migration
             $table->boolean('situacion_desplazamiento_conflicto')->nullable();
             /* 2. Lugar */
             $table->string('municipio_residencia')->nullable();
-            $table->integer('sector')->nullable();
-            $table->boolean('ha_salido_departamento')->nullable();
             $table->string('comuna_barrio_vereda')->nullable();
+            $table->integer('sector')->nullable();
             $table->string('tiempo_residencia')->nullable();
+            $table->boolean('ha_salido_departamento')->nullable();
             $table->boolean('ha_salido_municipio')->nullable();
             /* 3. Vivienda & Servicios */
             $table->string('condiciones_fisicas')->nullable();
+            $table->string('vivienda_es')->nullable();
             $table->string('vivienda_cuenta_agua_potable')->nullable();
             $table->string('vivienda_cuenta_alcantarillado')->nullable();
             $table->string('vivienda_cuenta_energia')->nullable();
             $table->string('vivienda_cuenta_gas')->nullable();
             $table->string('vivienda_cuenta_recoleccion_basura')->nullable();
-            $table->string('vivienda_es')->nullable();
             $table->string('mas_suelo_para')->nullable();
             /* 3.1 Estado Del Equipamiento */
             $table->string('Q_01')->nullable();
