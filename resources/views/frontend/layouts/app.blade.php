@@ -23,6 +23,16 @@
             {!! Html::style(elixir('css/rtl.css')) !!}
         @endif
 
+        <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        {{ Html::style('css/jquery.fancybox.min.css') }}
+
         @yield('after-styles')
 
         <!-- Scripts -->
@@ -46,8 +56,11 @@
         <!-- Scripts -->
         @yield('before-scripts')
         {!! Html::script(elixir('js/frontend.js')) !!}
-        @yield('after-scripts')
 
+        @yield('after-scripts')
+        <script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+        {!! Html::script('js/jquery.fancybox.min.js') !!}
+        {!! Html::script('js/main.js') !!}
         @include('includes.partials.ga')
     </body>
 </html>
