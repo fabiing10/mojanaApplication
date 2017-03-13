@@ -12,122 +12,97 @@
 
                     <div class="row">
 
-                        <div class="col-md-4 col-md-push-8">
-
-                            <ul class="media-list">
-                                <li class="media">
-                                    <div class="media-left">
-                                        <img class="media-object" src="{{ $logged_in_user->picture }}" alt="Profile picture">
-                                    </div><!--media-left-->
-
-                                    <div class="media-body">
-                                        <h4 class="media-heading">
-                                            {{ $logged_in_user->name }}<br/>
-                                            <small>
-                                                {{ $logged_in_user->email }}<br/>
-                                                Joined {{ $logged_in_user->created_at->format('F jS, Y') }}
-                                            </small>
-                                        </h4>
-
-                                        {{ link_to_route('frontend.user.account', trans('navs.frontend.user.account'), [], ['class' => 'btn btn-info btn-xs']) }}
-
-                                        @permission('view-backend')
-                                            {{ link_to_route('admin.dashboard', trans('navs.frontend.user.administration'), [], ['class' => 'btn btn-danger btn-xs']) }}
-                                        @endauth
-                                    </div><!--media-body-->
-                                </li><!--media-->
-                            </ul><!--media-list-->
-
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4>Sidebar Item</h4>
-                                </div><!--panel-heading-->
-
-                                <div class="panel-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.
-                                </div><!--panel-body-->
-                            </div><!--panel-->
-
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4>Sidebar Item</h4>
-                                </div><!--panel-heading-->
-
-                                <div class="panel-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.
-                                </div><!--panel-body-->
-                            </div><!--panel-->
-                        </div><!--col-md-4-->
-
-                        <div class="col-md-8 col-md-pull-4">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4>Item</h4>
-                                        </div><!--panel-heading-->
-
-                                        <div class="panel-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.</p>
-                                        </div><!--panel-body-->
-                                    </div><!--panel-->
-                                </div><!--col-xs-12-->
-                            </div><!--row-->
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4>Item</h4>
-                                        </div><!--panel-heading-->
-
-                                        <div class="panel-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.</p>
-                                        </div><!--panel-body-->
-                                    </div><!--panel-->
-                                </div><!--col-md-6-->
-
-                                <div class="col-md-6">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4>Item</h4>
-                                        </div><!--panel-heading-->
-
-                                        <div class="panel-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.</p>
-                                        </div><!--panel-body-->
-                                    </div><!--panel-->
-                                </div><!--col-md-6-->
-
-                                <div class="col-md-6">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4>Item</h4>
-                                        </div><!--panel-heading-->
-
-                                        <div class="panel-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.</p>
-                                        </div><!--panel-body-->
-                                    </div><!--panel-->
-                                </div><!--col-md-6-->
-
-                                <div class="col-md-6">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4>Item</h4>
-                                        </div><!--panel-heading-->
-
-                                        <div class="panel-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.</p>
-                                        </div><!--panel-body-->
-                                    </div><!--panel-->
-                                </div><!--col-md-6-->
-
-                            </div><!--row-->
-
-                        </div><!--col-md-8-->
+                    <table id="dataTable" class="table table-striped table-hover">
+                      <thead>
+                        <tr>
+                          <td>Id</td>
+                          <td>Nombe Indicador</td>
+                          <td>Categoria</td>
+                          <td>Clasificacion</td>
+                          <td>dimension</td>
+                          <td>Mapa</td>
+                          <td>Documento</td>
+                          <td>Opciones</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @foreach($query as $q)
+                          <tr>
+                            <td>{{$q->id}}</td>
+                            <td>{{$q->nombre}}</td>
+                            <td>{{$q->categoria}}</td>
+                            <td>{{$q->clasificacion}}</td>
+                            <td>{{$q->dimension}}</td>
+                            <td>
+                              @if(!empty($q->mapa_url))
+                                <a href="#" class="btn btn-primary " data-fancybox data-src="#mapa-view" href="javascript:;" onclick="loadValue('mapa','{{$q->mapa_url}}')"> Ver mapa</a>
+                              @else
+                                Sin Asignar
+                              @endif
+                            </td>
+                            <td>
+                              @if(!empty($q->documento_url))
+                                <a href="#" class="btn btn-primary " data-fancybox data-src="#documento-view" href="javascript:;"> Ver mapa</a>
+                              @else
+                                Sin Asignar
+                              @endif
+                            </td>
+                            <td>
+                              <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                Opciones
+                                <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                <li><a href="#" data-fancybox data-src="#mapa-content" href="javascript:;" onclick="loadOption('mapa','{{$q->id}}')">Subir Mapa</a></li>
+                                <li><a href="#" data-fancybox data-src="#documentos-content" href="javascript:;" onclick="loadOption('documento','{{$q->id}}')">Subir Documento</a></li>
+                                </ul>
+                              </div>
+                            </td>
+                          </tr>
+                        @endforeach
+                      </tbody>
+                    </table>
 
                     </div><!--row-->
+
+                    <div style="display: none;" id="mapa-view">
+                      <h1>Mapa</h2>
+                      <img src="" id="mapa-img" width="600"/>
+                    </div>
+
+                    <div style="display: none;" id="mapa-content">
+                      <form role="form" action="upload-image" enctype="multipart/form-data" method="POST">
+                        {!! csrf_field() !!}
+                        <input type="hidden" id="indicador-mapa" name="indicador_value" value="" />
+                        <h2>Subir Mapa Indicador</h2>
+                        <h4 class="name-indicador"></h4>
+                        <div class="row">
+                  				<div class="col-md-12">
+                  					<input type="file" name="mapa" />
+                  				</div>
+                  				<div class="col-md-12">
+                  					<button type="submit" class="btn btn-success">Subir</button>
+                  				</div>
+                  			</div>
+                      </form>
+                    </div>
+
+                    <div style="display: none;" id="documentos-content">
+                      <form role="form" action="upload-document" enctype="multipart/form-data" method="POST">
+                        {!! csrf_field() !!}
+                        <input type="hidden" id="indicador-documento" name="indicador_value" value="" />
+                      	<h2>Subir Documento Indicador</h2>
+                        <h4 class="name-indicador"></h4>
+                        <div class="row">
+                  				<div class="col-md-12">
+                  					<input type="file" name="documento" />
+                  				</div>
+                  				<div class="col-md-12">
+                  					<button type="submit" class="btn btn-success">Subir</button>
+                  				</div>
+                  			</div>
+                      </form>
+                    </div>
 
                 </div><!--panel body-->
 

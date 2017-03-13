@@ -39,6 +39,8 @@ class MojanaMigrations extends Migration
           $table->string('san_marcos')->nullable();
           $table->string('sucre')->nullable();
           $table->string('regional')->nullable();
+          $table->string('mapa_url')->nullable();
+          $table->string('documento_url')->nullable();
           $table->timestamps();
 
           $table->foreign('indicador_id')
