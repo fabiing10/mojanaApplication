@@ -37,7 +37,8 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'as' => 'admin.', '
 
 
 
-
+Route::get('/consulta/indicadores/mapa/{code}', 'ApplicationController@MapaIndicadoresByCode');
+Route::get('/consulta/indicadores/documento/{code}', 'ApplicationController@DocumentoIndicadoresByCode');
 Route::get('/consulta/{code}', 'ApplicationController@ListIndicadoresByCode');
 Route::get('/consulta/indicadores/graficos/{code}', 'ApplicationController@GraficosIndicadoresId');
 Route::get('/leer', 'ApplicationController@leerExcel');

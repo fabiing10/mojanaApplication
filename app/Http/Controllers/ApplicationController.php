@@ -148,4 +148,22 @@ class ApplicationController extends Controller
            ->get();
        return $query;
      }
+
+     public function DocumentoIndicadoresByCode($id){
+       $query = \DB::table('variables as variable')
+           ->join('indicadores as indicador', 'variable.indicador_id', '=', 'indicador.id')
+           ->select('variable.documento_url')
+           ->where('variable.id', '=', $id)
+           ->get();
+       return $query;
+     }
+
+     public function MapaIndicadoresByCode($id){
+       $query = \DB::table('variables as variable')
+           ->join('indicadores as indicador', 'variable.indicador_id', '=', 'indicador.id')
+           ->select('variable.mapa_url')
+           ->where('variable.id', '=', $id)
+           ->get();
+       return $query;
+     }
 }
