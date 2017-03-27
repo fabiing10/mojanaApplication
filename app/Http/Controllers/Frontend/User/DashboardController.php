@@ -32,8 +32,13 @@ class DashboardController extends Controller
       $imageName = time().'.'.$request->mapa->getClientOriginalExtension();
       $request->mapa->move(public_path('img/uploads'), $imageName);
       $variable = Variable::find($indicador);
+      $indicador_id = $variable->indicador_id;
       $variable->mapa_url = $imageName;
       $variable->save();
+
+      $indicador = Indicador::find($indicador_id);
+      $indicador->mapa = true;
+      $indicador->save();
      	return back()->with('success','Image Uploaded successfully.');
 
     }
