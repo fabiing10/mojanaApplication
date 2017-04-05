@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::patch('profile/update', 'ProfileController@update')->name('profile.update');
 
         Route::post('upload-image', 'DashboardController@uploadMapa')->name('uploadMapa');
+        Route::post('upload-document', 'DashboardController@uploadDocument')->name('uploadMapa');
 
     });
 });

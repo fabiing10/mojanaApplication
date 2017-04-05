@@ -42,4 +42,18 @@ class DashboardController extends Controller
      	return back()->with('success','Image Uploaded successfully.');
 
     }
+    public function uploadDocument(FrontendRequest $request){
+      $indicador = $request->indicador_value;
+      $documentName = time().'.'.$request->documento->getClientOriginalExtension();
+      $request->documento->move(public_path('img/documents'), $documentName);
+      $variable = Variable::find($indicador);
+      $indicador_id = $variable->indicador_id;
+      $variable->documento_url = $documentName;
+      $variable->save();
+
+      $indicador = Indicador::find($indicador_id);
+      $indicador->documento = true;
+      $indicador->save();
+     	return back()->with('success','Image Uploaded successfully.');
+    }
 }
