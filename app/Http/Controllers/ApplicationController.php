@@ -131,7 +131,7 @@ class ApplicationController extends Controller
 
        $query = \DB::table('variables as variable')
            ->join('indicadores as indicador', 'variable.indicador_id', '=', 'indicador.id')
-           ->select('variable.id','indicador.nombre','indicador.mapa','variable.categoria','variable.sub_categoria','variable.dimension','variable.clasificacion','variable.nechi','variable.achi','variable.magangue','variable.san_jacinto','variable.ayapel','variable.caimito','variable.guaranda','variable.majagual','variable.san_benito_abad','variable.san_marcos','variable.sucre','variable.regional')
+           ->select('variable.id','indicador.nombre','indicador.documento','indicador.mapa','variable.categoria','variable.sub_categoria','variable.dimension','variable.clasificacion','variable.nechi','variable.achi','variable.magangue','variable.san_jacinto','variable.ayapel','variable.caimito','variable.guaranda','variable.majagual','variable.san_benito_abad','variable.san_marcos','variable.sucre','variable.regional')
            ->where('variable.dimension', '=', $this->dimension)
            ->where('variable.clasificacion', '=', $this->clasificacion)
            ->get();
