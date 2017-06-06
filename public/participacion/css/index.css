@@ -1,18 +1,40 @@
 .title-internal {
     background-color: #8ff3fe !important;
 }
-
+.background-dark{
+  background-color: #001923 !important;
+  color: white !important;
+}
+.background-dark a{
+  color: white !important;
+}
+.label-questions{
+  font-size: 20px;
+  font-weight: 300;
+  padding-left: 10px;
+}
 .btn-redes {
     width: 14.4%;
     float: left;
-    background-color: #062f3f !important;
+    background-color: #001923 !important;
     padding: 8.5px 0px;
     margin-right: 4px;
 }
-
+.ambiental{
+  background: #009640;
+  padding: 10px;
+}
+.social{
+  background: #575756;
+  padding: 10px;
+}
+.economico{
+  background: #009FE3;
+  padding: 10px;
+}
 .btn-home {
     height: 55px;
-    background-color: #062f3f;
+    background-color: #001923;
     width: 51px;
 }
 
@@ -28,19 +50,9 @@
     font-weight: 300 !important;
     letter-spacing: 0px !important;
 }
-h4 {
-    background: #48d8ff;
-    color: #001923;
-    padding: 10px;
-    line-height: initial;
-    margin-top: 20px;
-    text-align: center;
+h4{
+  color: white;
 }
-
-.h4, h4 {
-    font-size: 24px;
-}
-
 span.menu-text {
     color: #48d8ff;
     font-size: 20px;
@@ -72,20 +84,29 @@ span.menu-text {
   padding-top: 10px;
 }
 .contenido{
-    margin-top: 10px;
-    padding-left: 100px;
-    padding-right: 100px;
-    background: white;
+      padding-left: 90px;
+      padding-right: 45px;
+      background: white;
 }
 form {
     padding: 25px;
+    padding-top: 0px !important;
 }
 select.form-control {
     background-color: #dadada;
 }
+
+.numbers h3 {
+  background: #48d8ff;
+  color: #001923;
+  padding: 10px;
+  line-height: initial;
+  text-align: center;
+}
+
 h3 {
     background: #001923;
-    color: #48d8ff;
+    color: white;
     padding: 10px;
     line-height: initial;
 }
@@ -108,9 +129,33 @@ h3 {
 .mleft-10{
     margin-left: 10px;
 }
+.mleft-20{
+    margin-left: 20px;
+}
+.mleft-50{
+    margin-left: 50px;
+}
 .mbottom-5{
     margin-bottom: 5px;
 }
+.mbottom-10{
+    margin-bottom: 10px;
+}
+.mtop-5{
+    margin-top: 5px;
+}
+.mtop-10{
+    margin-top: 10px !important;
+}
+.mtop-25{
+  margin-top: 25px !important;
+}
+
+.my-10{
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
 .p-3{
     padding: 3px;
 }
@@ -119,6 +164,12 @@ h3 {
 }
 .pleft-10 {
     padding-left: 10px;
+}
+.text-center{
+  text-align: center;
+}
+.white{
+  color: white;
 }
 textarea#comment {
     background-color: #dadada;
@@ -130,6 +181,25 @@ button.btn.btn-default {
     color: white;
     font-size: 25px;
 }
+html{
+  font-weight: 300;
+}
+label{
+  font-weight: 500;
+}
+table{
+  width: 90%;
+}
+td{
+  text-align: right;
+  padding: 3px;
+}
+.icono{
+  width: 4%;
+}
+
+/*
 .container {
     border-bottom: 5px solid;
 }
+*/

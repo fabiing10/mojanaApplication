@@ -25,7 +25,7 @@ class ParticipacionController extends Controller
      private $nombre;
      private $clasificacion;
      private $dimension;
-
+ 
 
      public function index(){
        return view('frontend.participacion.index');

@@ -29,6 +29,7 @@ class ParticipacionMigrations extends Migration
             $table->integer('estrato')->nullable();
             $table->string('nivel_educativo')->nullable();
             $table->boolean('situacion_desplazamiento_conflicto')->nullable();
+            $table->string('sector_pertenece')->nullable();
             /* 2. Lugar */
             $table->string('municipio_residencia')->nullable();
             $table->string('comuna_barrio_vereda')->nullable();
@@ -36,15 +37,6 @@ class ParticipacionMigrations extends Migration
             $table->string('tiempo_residencia')->nullable();
             $table->boolean('ha_salido_departamento')->nullable();
             $table->boolean('ha_salido_municipio')->nullable();
-            /* 3. Vivienda & Servicios */
-            $table->string('condiciones_fisicas')->nullable();
-            $table->string('vivienda_es')->nullable();
-            $table->string('vivienda_cuenta_agua_potable')->nullable();
-            $table->string('vivienda_cuenta_alcantarillado')->nullable();
-            $table->string('vivienda_cuenta_energia')->nullable();
-            $table->string('vivienda_cuenta_gas')->nullable();
-            $table->string('vivienda_cuenta_recoleccion_basura')->nullable();
-            $table->string('mas_suelo_para')->nullable();
             /* 3.1 Estado Del Equipamiento */
             $table->string('Q_01')->nullable();
             $table->string('Q_02')->nullable();
@@ -67,12 +59,34 @@ class ParticipacionMigrations extends Migration
             $table->string('Q_19')->nullable();
             $table->string('Q_20')->nullable();
             $table->string('Q_21')->nullable();
+            /* 3. Vivienda & Servicios */
+            $table->string('condiciones_fisicas')->nullable();
+            $table->string('vivienda_es')->nullable();
+            $table->string('vivienda_cuenta_agua_potable')->nullable();
+            $table->string('vivienda_cuenta_alcantarillado')->nullable();
+            $table->string('vivienda_cuenta_energia')->nullable();
+            $table->string('vivienda_cuenta_gas')->nullable();
+            $table->string('vivienda_cuenta_recoleccion_basura')->nullable();
+            $table->string('mas_suelo_para')->nullable();
             /* 4. Problemas & Solucion*/
             $table->longText('mayor_problema')->nullable();
-            $table->string('sector_problema')->nullable();
-            $table->string('tipo_solucion')->nullable();
-            $table->string('ubicacion_latitud')->nullable();
-            $table->string('ubicacion_longitud')->nullable();
+            $table->string('ubicacion_latitud_ambiental')->nullable();
+            $table->string('ubicacion_longitud_ambiental')->nullable();
+            $table->string('tema_problematica_ambiental')->nullable();
+            $table->string('problematica_ambiental')->nullable();
+            $table->string('solucion_ambiental')->nullable();
+
+            $table->string('ubicacion_latitud_social')->nullable();
+            $table->string('ubicacion_longitud_social')->nullable();
+            $table->string('tema_problematica_social')->nullable();
+            $table->string('problematica_social')->nullable();
+            $table->string('solucion_social')->nullable();
+
+            $table->string('ubicacion_latitud_economico')->nullable();
+            $table->string('ubicacion_longitud_economico')->nullable();
+            $table->string('tema_problematica_economico')->nullable();
+            $table->string('problematica_economico')->nullable();
+            $table->string('solucion_economico')->nullable();
             $table->timestamps();
         });
     }
