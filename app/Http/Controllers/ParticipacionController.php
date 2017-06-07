@@ -25,14 +25,14 @@ class ParticipacionController extends Controller
      private $nombre;
      private $clasificacion;
      private $dimension;
- 
+
 
      public function index(){
        return view('frontend.participacion.index');
      }
 
      public function save(FrontendRequest $request){
-
+       /*
        $validator = Validator::make($request->all(), [
             'nombres_apellidos' => 'required|max:255',
             'tipo_identificacion' => 'required|max:255',
@@ -43,7 +43,6 @@ class ParticipacionController extends Controller
             'ocupacion' => 'required|max:255',
             'grupo_etnico' => 'required|max:255',
             'discapacidad' => 'required|max:255',
-            'estrato' => 'required|max:255',
             'nivel_educativo' => 'required|max:255',
             'situacion_desplazamiento_conflicto' => 'required|max:255',
             'municipio_residencia' => 'required|max:255',
@@ -91,7 +90,7 @@ class ParticipacionController extends Controller
                         ->withErrors($validator)
                         ->withInput();
         }
-
+        */
         $participacion = new Participacion;
         $participacion->nombres_apellidos =  $request->nombres_apellidos;
         $participacion->tipo_identificacion = $request->tipo_identificacion;
@@ -102,23 +101,40 @@ class ParticipacionController extends Controller
         $participacion->ocupacion = $request->ocupacion;
         $participacion->grupo_etnico = $request->grupo_etnico;
         $participacion->discapacidad = $request->discapacidad;
-        $participacion->estrato = $request->estrato;
         $participacion->nivel_educativo = $request->nivel_educativo;
-        $participacion->situacion_desplazamiento_conflicto = $request->situacion_desplazamiento_conflicto;
+        $participacion->situacion_dezplazamiento_conflicto = $request->situacion_dezplazamiento_conflicto;
+        $participacion->sector_pertenece = $request->sector_pertenece;
+
+        $participacion->rutas_movilidad = $request->rutas_movilidad;
+        $participacion->como_movilizan_personas = $request->como_movilizan_personas;
+        $participacion->requerimientos_movilidad = $request->requerimientos_movilidad;
+        $participacion->como_movilizan_mercancias = $request->como_movilizan_mercancias;
+        $participacion->principal_problematica = $request->principal_problematica;
+        $participacion->posibles_soluciones = $request->posibles_soluciones;
+        $participacion->infraestructura_con_cuenta = $request->infraestructura_con_cuenta;
+        $participacion->infraestructura_necesaria = $request->infraestructura_necesaria;
+        $participacion->recursos = $request->recursos;
+        $participacion->limitantes = $request->limitantes;
+        $participacion->gremio_pertenece = $request->gremio_pertenece;
+        $participacion->vienen_sus_insumos = $request->vienen_sus_insumos;
+        $participacion->procesos_realiza = $request->procesos_realiza;
+        $participacion->comercializa_productos = $request->comercializa_productos;
+        $participacion->requerimientos_infraestructura = $request->requerimientos_infraestructura;
+        $participacion->requerimientos_tecnologia = $request->requerimientos_tecnologia;
+        $participacion->bienes_servicios_municipio = $request->bienes_servicios_municipio;
+        $participacion->aprovechan_bienes_servicios_municipio = $request->aprovechan_bienes_servicios_municipio;
+        $participacion->alternativas_aprovechamiento_naturaleza = $request->alternativas_aprovechamiento_naturaleza;
+        $participacion->problematicas_aprovechamiento_naturaleza = $request->problematicas_aprovechamiento_naturaleza;
+        $participacion->armonia_naturaleza = $request->armonia_naturaleza;
+        $participacion->recuperacion_complejos_cenagosos = $request->recuperacion_complejos_cenagosos;
+
         $participacion->municipio_residencia = $request->municipio_residencia;
         $participacion->comuna_barrio_vereda = $request->comuna_barrio_vereda;
         $participacion->sector = $request->sector;
         $participacion->tiempo_residencia = $request->tiempo_residencia;
         $participacion->ha_salido_departamento = $request->ha_salido_departamento;
         $participacion->ha_salido_municipio = $request->ha_salido_municipio;
-        $participacion->condiciones_fisicas = $request->condiciones_fisicas;
-        $participacion->vivienda_es = $request->vivienda_es;
-        $participacion->vivienda_cuenta_agua_potable = $request->vivienda_cuenta_agua_potable;
-        $participacion->vivienda_cuenta_alcantarillado = $request->vivienda_cuenta_alcantarillado;
-        $participacion->vivienda_cuenta_energia = $request->vivienda_cuenta_energia;
-        $participacion->vivienda_cuenta_gas = $request->vivienda_cuenta_gas;
-        $participacion->vivienda_cuenta_recoleccion_basura = $request->vivienda_cuenta_recoleccion_basura;
-        $participacion->mas_suelo_para = $request->mas_suelo_para;
+
         $participacion->Q_01 = $request->Q_01;
         $participacion->Q_02 = $request->Q_02;
         $participacion->Q_03 = $request->Q_03;
@@ -140,7 +156,27 @@ class ParticipacionController extends Controller
         $participacion->Q_19 = $request->Q_19;
         $participacion->Q_20 = $request->Q_20;
         $participacion->Q_21 = $request->Q_21;
-        $participacion->mayor_problema = $request->mayor_problema;
+
+        $participacion->condiciones_fisicas = $request->condiciones_fisicas;
+        $participacion->vivienda_es = $request->vivienda_es;
+        $participacion->vivienda_cuenta_agua_potable = $request->vivienda_cuenta_agua_potable;
+        $participacion->vivienda_cuenta_alcantarillado = $request->vivienda_cuenta_alcantarillado;
+        $participacion->vivienda_cuenta_energia = $request->vivienda_cuenta_energia;
+        $participacion->vivienda_cuenta_gas = $request->vivienda_cuenta_gas;
+        $participacion->vivienda_cuenta_recoleccion_basura = $request->vivienda_cuenta_recoleccion_basura;
+        $participacion->mas_suelo_para = $request->mas_suelo_para;
+        $participacion->ubicacion_solucion_ambiental = $request->ubicacion_solucion_ambiental;
+        $participacion->tema_problematica_ambiental = $request->tema_problematica_ambiental;
+        $participacion->problematica_ambiental = $request->problematica_ambiental;
+        $participacion->solucion_ambiental = $request->solucion_ambiental;
+        $participacion->ubicacion_solucion_social = $request->ubicacion_solucion_social;
+        $participacion->tema_problematica_social = $request->tema_problematica_social;
+        $participacion->problematica_social = $request->problematica_social;
+        $participacion->solucion_social = $request->solucion_social;
+        $participacion->ubicacion_solucion_economico = $request->ubicacion_solucion_economico;
+        $participacion->tema_problematica_economico = $request->tema_problematica_economico;
+        $participacion->problematica_economico = $request->problematica_economico;
+        $participacion->solucion_economico = $request->solucion_economico;
 
         $participacion->save();
 
