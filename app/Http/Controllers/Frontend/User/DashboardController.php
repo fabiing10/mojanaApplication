@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use \App\Http\Requests\Frontend\FrontendRequest;
 use \App\Indicador;
 use \App\Variable;
+use \App\TemaProblematica;
+use \App\Solucion;
+use \App\Problematica;
 /**
  * Class DashboardController.
  */
@@ -55,5 +58,27 @@ class DashboardController extends Controller
       $indicador->documento = true;
       $indicador->save();
      	return back()->with('success','Image Uploaded successfully.');
+    }
+    public function homeProblematicas(){
+      $tematicas = TemaProblematica::all();
+      return view('backend.problematicas.create')->with('tematicas',$tematicas);
+
+
+    }
+    public function saveTemas(FrontendRequest $request){
+      $tematicas = new TemaProblematica();
+      $tematicas->nombre = $request->nombre_tematica;
+      $tematicas->save();
+
+      return redirect('problematicas');
+
+    }
+    public function saveProblematica(FrontendRequest $request){
+
+
+    }
+    public function saveSolucion(FrontendRequest $request){
+
+
     }
 }

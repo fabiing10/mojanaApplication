@@ -31,5 +31,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('upload-image', 'DashboardController@uploadMapa')->name('uploadMapa');
         Route::post('upload-document', 'DashboardController@uploadDocument')->name('uploadMapa');
 
+        Route::get('/problematicas', 'DashboardController@homeProblematicas');
+        Route::post('/problematicas/tematica', 'DashboardController@saveTemas');
+
     });
 });
