@@ -60,10 +60,32 @@ class DashboardController extends Controller
      	return back()->with('success','Image Uploaded successfully.');
     }
     public function homeProblematicas(){
+
       $tematicas = TemaProblematica::all();
-      return view('backend.problematicas.create')->with('tematicas',$tematicas);
+      $problematicas = \DB::table('temas_problematicas as tp')
+          ->join('problematicas as p', 'tp.id', '=', 'p.tema_problematica_id')
+          ->select('p.id','p.nombre as problematica','tp.nombre as TemaProblematica')
+          ->get();
+      $soluciones = \DB::table('temas_problematicas as tp')
+          ->join('problematicas as p', 'tp.id', '=', 'p.tema_problematica_id')
+          ->join('soluciones as s', 'p.id', '=', 's.problematica_id')
+          ->select('p.id','p.nombre as Problematica','tp.nombre as TemaProblematica','s.nombre as Solucion')
+          ->get();
 
+      return view('backend.problematicas.create')
+              ->with('tematicas',$tematicas)
+              ->with('problematicas',$problematicas)
+              ->with('soluciones',$soluciones);
 
+    }
+
+    public function problematicaByTema($id){
+      $problematicas = Problematica::where('tema_problematica_id','=',$id)->get();
+      return $problematicas;
+    }
+    public function SolucionByTema($id){
+      $soluciones = Solucion::where('problematica_id','=',$id)->get();
+      return $soluciones;
     }
     public function saveTemas(FrontendRequest $request){
       $tematicas = new TemaProblematica();
@@ -74,11 +96,18 @@ class DashboardController extends Controller
 
     }
     public function saveProblematica(FrontendRequest $request){
-
+      $problema = new Problematica();
+      $problema->tema_problematica_id = $request->tema_id;
+      $problema->nombre = $request->nombre_problema;
+      $problema->save();
+      return redirect('problematicas');
 
     }
     public function saveSolucion(FrontendRequest $request){
-
-
+      $solucion = new Solucion();
+      $solucion->problematica_id = $request->problematica_id;
+      $solucion->nombre = $request->nombre_solucion;
+      $solucion->save();
+      return redirect('problematicas');
     }
 }
