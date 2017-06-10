@@ -38,6 +38,11 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'as' => 'admin.', '
 });
 
 
+Route::get('/participacion/tematicas/{id}', 'ApplicationController@problematicaByTema');
+Route::get('/participacion/problemas/{id}', 'ApplicationController@solucionByProblema');
+Route::get('/participacion/tematicas/clasificacion/{option}', 'ApplicationController@loadTemasByClasificacion');
+
+
 
 Route::get('/consulta/indicadores/mapa/{code}', 'ApplicationController@MapaIndicadoresByCode');
 Route::get('/consulta/indicadores/documento/{code}', 'ApplicationController@DocumentoIndicadoresByCode');

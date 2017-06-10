@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 use Maatwebsite\Excel\Facades\Excel;
 use \App\Indicador;
 use \App\Variable;
+use \App\TemaProblematica;
+use \App\Solucion;
+use \App\Problematica;
 
 /**
  * Class LanguageController.
@@ -165,5 +168,20 @@ class ApplicationController extends Controller
            ->where('variable.id', '=', $id)
            ->get();
        return $query;
+     }
+     public function solucionByProblema($id){
+       $soluciones = Solucion::where('problematica_id','=',$id)->get();
+       return $soluciones;
+     }
+     public function loadTemasByClasificacion($option){
+       $temas = \DB::table('temas_problematicas as tp')
+           ->select('tp.*')
+           ->where('tp.clasificacion','=',$option)
+           ->get();
+       return $temas;
+     }
+     public function problematicaByTema($id){
+       $problematicas = Problematica::where('tema_problematica_id','=',$id)->get();
+       return $problematicas;
      }
 }

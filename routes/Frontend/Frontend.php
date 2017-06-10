@@ -7,9 +7,6 @@
 Route::get('/', 'FrontendController@index')->name('index');
 Route::get('macros', 'FrontendController@macros')->name('macros');
 //query
-Route::get('/participacion/tematicas/{id}', 'DashboardController@problematicaByTema');
-Route::get('/participacion/problemas/{id}', 'DashboardController@solucionByProblema');
-Route::get('/participacion/tematicas/clasificacion/{option}', 'DashboardController@loadTemasByClasificacion');
 /*
  * These frontend controllers require the user to be logged in
  * All route names are prefixed with 'frontend.'
