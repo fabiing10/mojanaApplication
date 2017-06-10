@@ -1,5 +1,5 @@
-#map {
-  width: 500px;
+#map_ambiental,#map_social,#map_economico {
+  width: 100%;
   height: 250px;
   position: relative;
 }

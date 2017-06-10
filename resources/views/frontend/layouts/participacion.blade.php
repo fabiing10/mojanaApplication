@@ -31,32 +31,103 @@
                 }
           */
 
-         var marker;
+         var marker_ambiental;
+         var marker_social;
+         var marker_economico;
          var image = 'images/hospital.png';
 
           function initMap() {
-            var map = new google.maps.Map(document.getElementById('map'), {
+
+            var map_ambiental = new google.maps.Map(document.getElementById('map_ambiental'), {
               zoom: 8,
               center: {lat: 9.3178265, lng: -74.6897524}
             });
 
-            marker = new google.maps.Marker({
-              map: map,
+            marker_ambiental = new google.maps.Marker({
+              map: map_ambiental,
               draggable: true,
               animation: google.maps.Animation.DROP,
               position: {lat: 9.2409393, lng: -74.7543637 },
               icon: image
             });
-            marker.addListener('click', toggleBounce);
+
+
+            var map_social = new google.maps.Map(document.getElementById('map_social'), {
+              zoom: 8,
+              center: {lat: 9.3178265, lng: -74.6897524}
+            });
+
+            marker_social = new google.maps.Marker({
+              map: map_social,
+              draggable: true,
+              animation: google.maps.Animation.DROP,
+              position: {lat: 9.2409393, lng: -74.7543637 },
+              icon: image
+            });
+
+
+            var map_economico = new google.maps.Map(document.getElementById('map_economico'), {
+              zoom: 8,
+              center: {lat: 9.3178265, lng: -74.6897524}
+            });
+
+            marker_economico = new google.maps.Marker({
+              map: map_economico,
+              draggable: true,
+              animation: google.maps.Animation.DROP,
+              position: {lat: 9.2409393, lng: -74.7543637 },
+              icon: image
+            });
+
+
+            //Marker Ambiental
+            marker_ambiental.addListener('click',toggleAmbiental);
+            marker_ambiental.addListener('dragend', function (event){
+             document.getElementById("ubicacion_longitud_ambiental").value = this.getPosition().lng();
+             document.getElementById("ubicacion_latitud_ambiental").value = this.getPosition().lat();
+            });
+
+            //Marker Social
+            marker_social.addListener('click', toggleSocial);
+            marker_social.addListener('dragend', function (event){
+             document.getElementById("ubicacion_longitud_social").value = this.getPosition().lng();
+             document.getElementById("ubicacion_latitud_social").value = this.getPosition().lat();
+            });
+
+            //Marker Economico
+            marker_economico.addListener('click', toggleEconomico);
+            marker_economico.addListener('dragend', function (event){
+             document.getElementById("ubicacion_longitud_economico").value = this.getPosition().lng();
+             document.getElementById("ubicacion_latitud_economico").value = this.getPosition().lat();
+            });
           }
 
-          function toggleBounce() {
-            if (marker.getAnimation() !== null) {
-              marker.setAnimation(null);
+          function toggleAmbiental() {
+            if (marker_ambiental.getAnimation() !== null) {
+              marker_ambiental.setAnimation(null);
             } else {
-              marker.setAnimation(google.maps.Animation.BOUNCE);
+              marker_ambientalR.setAnimation(google.maps.Animation.BOUNCE);
             }
           }
+
+          function toggleSocial() {
+            if (marker_social.getAnimation() !== null) {
+              marker_social.setAnimation(null);
+            } else {
+              marker_social.setAnimation(google.maps.Animation.BOUNCE);
+            }
+          }
+
+          function toggleEconomico() {
+            if (marker_economico.getAnimation() !== null) {
+              marker_economico.setAnimation(null);
+            } else {
+              marker_economico.setAnimation(google.maps.Animation.BOUNCE);
+            }
+          }
+
+
+
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfQ1Qs0OflLOakyKFKIW9f4-URkcUDTYk&callback=initMap"
     async defer></script>
@@ -68,4 +139,7 @@
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  @yield('script')
+
 </html>

@@ -15,6 +15,14 @@
          <div class="modal-body">
            <form action="problematicas/tematica" method="post">
              {!! csrf_field() !!}
+             <div class="form-group">
+               <label for="clasificacion">Clasificacion:</label><br>
+               <select name="clasificacion">
+                 <option value="ambiental">Ambiental</option>
+                 <option value="social">Social</option>
+                 <option value="economico">Economico</option>
+               </select>
+             </div>
               <div class="form-group">
                 <label for="email">Nombre Tematica:</label>
                 <input type="text" class="form-control" id="nombre_tematica" name="nombre_tematica">
@@ -130,12 +138,14 @@
             <tr>
                 <th>Id</th>
                 <th>Nombre Tematica</th>
+                <th>Clasificacion</th>
             </tr>
         </thead>
         <tfoot>
             <tr>
                 <th>Id</th>
                 <th>Nombre Tematica</th>
+                <th>Clasificacion</th>
             </tr>
         </tfoot>
         <tbody>
@@ -143,7 +153,7 @@
             <tr>
                 <td>{{$tematica->id}}</td>
                 <td>{{$tematica->nombre}}</td>
-
+                <td>{{$tematica->clasificacion}}</td>
             </tr>
           @endforeach
         </tbody>

@@ -32,11 +32,14 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('upload-document', 'DashboardController@uploadDocument')->name('uploadMapa');
 
         Route::get('/problematicas', 'DashboardController@homeProblematicas');
-        Route::get('/participacion/tematicas/{id}', 'DashboardController@problematicaByTema');
+
         Route::post('/problematicas/tematica', 'DashboardController@saveTemas');
         Route::post('/problematicas/problema', 'DashboardController@saveProblematica');
         Route::post('/problematicas/solucion', 'DashboardController@saveSolucion');
 
-
+        //query
+        Route::get('/participacion/tematicas/{id}', 'DashboardController@problematicaByTema');
+        Route::get('/participacion/problemas/{id}', 'DashboardController@solucionByProblema');
+        Route::get('/participacion/tematicas/clasificacion/{option}', 'DashboardController@loadTemasByClasificacion');
     });
 });

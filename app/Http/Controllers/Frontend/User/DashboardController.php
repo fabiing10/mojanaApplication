@@ -59,6 +59,7 @@ class DashboardController extends Controller
       $indicador->save();
      	return back()->with('success','Image Uploaded successfully.');
     }
+
     public function homeProblematicas(){
 
       $tematicas = TemaProblematica::all();
@@ -76,7 +77,6 @@ class DashboardController extends Controller
               ->with('tematicas',$tematicas)
               ->with('problematicas',$problematicas)
               ->with('soluciones',$soluciones);
-
     }
 
     public function problematicaByTema($id){
@@ -88,10 +88,11 @@ class DashboardController extends Controller
       return $soluciones;
     }
     public function saveTemas(FrontendRequest $request){
+
       $tematicas = new TemaProblematica();
       $tematicas->nombre = $request->nombre_tematica;
+      $tematicas->clasificacion = $request->clasificacion;
       $tematicas->save();
-
       return redirect('problematicas');
 
     }
@@ -109,5 +110,17 @@ class DashboardController extends Controller
       $solucion->nombre = $request->nombre_solucion;
       $solucion->save();
       return redirect('problematicas');
+    }
+
+    public function solucionByProblema($id){
+      $soluciones = Solucion::where('problematica_id','=',$id)->get();
+      return $soluciones;
+    }
+    public function loadTemasByClasificacion($option){
+      $temas = \DB::table('temas_problematicas as tp')
+          ->select('tp.*')
+          ->where('tp.clasificacion','=',$option)
+          ->get();
+      return $temas;
     }
 }

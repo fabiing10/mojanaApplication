@@ -17,6 +17,7 @@ class CreateProblematicasProblem extends Migration
           $table->increments('id')->unsigned();
           /* 1 Identificacion */
           $table->string('nombre')->nullable();
+          $table->string('clasificacion')->nullable();
           $table->timestamps();
       });
       Schema::create('problematicas', function (Blueprint $table) {

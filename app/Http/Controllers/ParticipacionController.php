@@ -178,6 +178,20 @@ class ParticipacionController extends Controller
         $participacion->problematica_economico = $request->problematica_economico;
         $participacion->solucion_economico = $request->solucion_economico;
 
+
+
+        //Ubicaciones Ambiental
+        $participacion->ubicacion_latitud_ambiental = $request->ubicacion_latitud_ambiental;
+        $participacion->ubicacion_longitud_ambiental = $request->ubicacion_longitud_ambiental;
+
+        //Ubicaciones Social
+        $participacion->ubicacion_latitud_social = $request->ubicacion_latitud_social;
+        $participacion->ubicacion_longitud_social = $request->ubicacion_longitud_social;
+
+        //Ubicaciones economico
+        $participacion->ubicacion_latitud_economico = $request->ubicacion_latitud_economico;
+        $participacion->ubicacion_longitud_economico = $request->ubicacion_longitud_economico;
+
         $participacion->save();
 
 

@@ -930,18 +930,9 @@
   <div class="row ambiental">
   <div class="col-xs-6">
     <h4>Ambiental</h4>
-    <select class="form-control my-10 mtop-25" name="tema_problematica_ambiental">
-      <option value="">TEMA DE LA PROBLEMATICA</option>
-      <option value="tema_problematica_ambiental">tema problematica ambiental</option>
-    </select>
-    <select class="form-control my-10" name="problematica_ambiental">
-      <option value="">PROBLEMATICA</option>
-      <option value="problematica ambiental">problematica ambiental</option>
-    </select>
-    <select class="form-control my-10" name="solucion_ambiental">
-      <option value="">SOLUCION</option>
-      <option value="solucion_ambiental">solucion ambiental</option>
-    </select>
+    <select class="form-control my-10 mtop-25" name="tema_problematica_ambiental" id="tema_problematica_ambiental" onchange="loadProblematica(this,'ambiental')"></select>
+    <select class="form-control my-10" name="problematica_ambiental" id="problematica_ambiental" onchange="loadSolucion(this,'ambiental')"></select>
+    <select class="form-control my-10" name="solucion_ambiental" id="solucion_ambiental"></select>
   </div>
   <div class="col-xs-5 mleft-50">
     <select class="form-control my-10" name="ubicacion_solucion_ambiental">
@@ -950,7 +941,10 @@
       <option value="Ayapel">Ayapel</option><option value="Caimito">Caimito</option><option value="Guaranda">Guaranda</option><option value="Majagual">Majagual</option>
       <option value="San Benito Abad">San Benito Abad</option><option value="San Marcos">San Marcos</option><option value="Sucre ">Sucre</option>
     </select>
-      <div id="map"></div>
+      <div id="map_ambiental"></div>
+      <input type="hidden" name="ubicacion_latitud_ambiental" id="ubicacion_latitud_ambiental" />
+      <input type="hidden" name="ubicacion_longitud_ambiental" id="ubicacion_longitud_ambiental" />
+
   </div>
   </div>
   <!-- social -->
@@ -958,18 +952,9 @@
   <div class="row social mtop-10">
   <div class="col-xs-6">
     <h4>SOCIAL</h4>
-    <select class="form-control my-10 mtop-25" name="tema_problematica_social">
-      <option value="">TEMA DE LA PROBLEMATICA</option>
-      <option value="TEMA DE LA PROBLEMATICA">TEMA DE LA PROBLEMATICA</option>
-    </select>
-    <select class="form-control my-10" name="problematica_social">
-      <option value="">PROBLEMATICA</option>
-      <option value="PROBLEMATICA">PROBLEMATICA</option>
-    </select>
-    <select class="form-control my-10" name="solucion_social">
-      <option value="">SOLUCION</option>
-      <option value="Nechí">Nechí</option>
-    </select>
+    <select class="form-control my-10 mtop-25" name="tema_problematica_social" id="tema_problematica_social" onchange="loadProblematica(this,'social')"></select>
+    <select class="form-control my-10" name="problematica_social" id="problematica_social" onchange="loadSolucion(this,'social')"></select>
+    <select class="form-control my-10" name="solucion_social" id="solucion_social"></select>
   </div>
   <div class="col-xs-5 mleft-50">
     <select class="form-control my-10" name="ubicacion_solucion_social">
@@ -978,7 +963,9 @@
       <option value="Ayapel">Ayapel</option><option value="Caimito">Caimito</option><option value="Guaranda">Guaranda</option><option value="Majagual">Majagual</option>
       <option value="San Benito Abad">San Benito Abad</option><option value="San Marcos">San Marcos</option><option value="Sucre ">Sucre</option>
     </select>
-      <div id="map2"></div>
+      <div id="map_social"></div>
+      <input type="hidden" name="ubicacion_latitud_social" id="ubicacion_latitud_social" />
+      <input type="hidden" name="ubicacion_longitud_social" id="ubicacion_longitud_social" />
   </div>
   </div>
   <!-- economico -->
@@ -986,18 +973,9 @@
   <div class="row economico mtop-10 mbottom-10">
   <div class="col-xs-6">
     <h4>ECONÓMICO</h4>
-    <select class="form-control my-10 mtop-25" name="tema_problematica_economico">
-      <option value="">TEMA DE LA PROBLEMATICA</option>
-      <option value="TEMA DE LA PROBLEMATICA ECONOMICO">TEMA DE LA PROBLEMATICA ECONOMICO</option>
-    </select>
-    <select class="form-control my-10" name="problematica_economico">
-      <option value="">PROBLEMATICA</option>
-      <option value="problematica">problematica</option>
-    </select>
-    <select class="form-control my-10" name="solucion_economico">
-      <option>SOLUCION</option>
-      <option>solucion economico</option>
-    </select>
+    <select class="form-control my-10 mtop-25" name="tema_problematica_economico" id="tema_problematica_economico" onchange="loadProblematica(this,'economico')"></select>
+    <select class="form-control my-10" name="problematica_economico" id="problematica_economico" onchange="loadSolucion(this,'economico')"></select>
+    <select class="form-control my-10" name="solucion_economico" id="solucion_economico"></select>
   </div>
   <div class="col-xs-5 mleft-50">
     <select class="form-control my-10" name="ubicacion_solucion_economico">
@@ -1006,10 +984,115 @@
       <option value="Ayapel">Ayapel</option><option value="Caimito">Caimito</option><option value="Guaranda">Guaranda</option><option value="Majagual">Majagual</option>
       <option value="San Benito Abad">San Benito Abad</option><option value="San Marcos">San Marcos</option><option value="Sucre ">Sucre</option>
     </select>
-      <div id="map3"></div>
+      <div id="map_economico"></div>
+      <input type="hidden" name="ubicacion_latitud_economico" id="ubicacion_latitud_economico" />
+      <input type="hidden" name="ubicacion_longitud_economico" id="ubicacion_longitud_economico" />
   </div>
   </div>
   <button type="submit" class="btn btn-default"><img src="icon.png" alt="#" class="icono"></img>Enviar</button>
 {!! Form::close() !!}
 </div>
 @stop
+
+
+@section('script')
+<script>
+
+$(document).ready(function() {
+    loadTematica('ambiental')
+    loadTematica('social')
+    loadTematica('economico')
+});
+
+
+function loadTematica(clasificacion){
+  var jqxhr = $.ajax( "/participacion/tematicas/clasificacion/"+clasificacion )
+  .done(function(data) {
+    var option = "<option>Seleccione una opcion</option>";
+    $.each(data,function(index, value){
+      console.log('My array has at position ' + index + ', this value: ' + value.nombre);
+      option += "<option value="+value.id+">"+value.nombre+"</option>";
+    });
+    if(clasificacion == "ambiental"){
+        $('#tema_problematica_ambiental').html("");
+        $('#tema_problematica_ambiental').append(option);
+    }else if(clasificacion == "social"){
+      $('#tema_problematica_social').html("");
+      $('#tema_problematica_social').append(option);
+    }else{
+      $('#tema_problematica_economico').html("");
+      $('#tema_problematica_economico').append(option);
+    }
+
+
+  })
+  .fail(function() {
+    alert( "error" );
+  })
+  .always(function() {
+
+  });
+}
+
+function loadProblematica(select,clasificacion){
+  var id = select.value;
+  var jqxhr = $.ajax( "/participacion/tematicas/"+id )
+  .done(function(data) {
+    var option = "<option>Seleccione una opcion</option>";
+    $.each(data,function(index, value){
+      console.log('My array has at position ' + index + ', this value: ' + value.nombre);
+      option += "<option value="+value.id+">"+value.nombre+"</option>";
+    });
+    if(clasificacion == "ambiental"){
+        $('#problematica_ambiental').html("");
+        $('#problematica_ambiental').append(option);
+    }else if(clasificacion == "social"){
+      $('#problematica_social').html("");
+      $('#problematica_social').append(option);
+    }else{
+      $('#problematica_economico').html("");
+      $('#problematica_economico').append(option);
+    }
+
+
+  })
+  .fail(function() {
+    alert( "error" );
+  })
+  .always(function() {
+
+  });
+}
+
+function loadSolucion(select,clasificacion){
+  var id = select.value;
+  var jqxhr = $.ajax( "/participacion/problemas/"+id )
+  .done(function(data) {
+    var option = "<option>Seleccione una opcion</option>";
+    $.each(data,function(index, value){
+      console.log('My array has at position ' + index + ', this value: ' + value.nombre);
+      option += "<option value="+value.id+">"+value.nombre+"</option>";
+    });
+
+    if(clasificacion == "ambiental"){
+        $('#solucion_ambiental').html("");
+        $('#solucion_ambiental').append(option);
+    }else if(clasificacion == "social"){
+      $('#solucion_social').html("");
+      $('#solucion_social').append(option);
+    }else{
+      $('#solucion_economico').html("");
+      $('#solucion_economico').append(option);
+    }
+
+  })
+  .fail(function() {
+    alert( "error" );
+  })
+  .always(function() {
+
+  });
+}
+
+</script>
+@endsection
