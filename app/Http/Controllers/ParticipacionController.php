@@ -30,6 +30,9 @@ class ParticipacionController extends Controller
      public function index(){
        return view('frontend.participacion.index');
      }
+     public function answers(){
+       return view('frontend.resultados.index');
+     }
 
      public function save(FrontendRequest $request){
        /*

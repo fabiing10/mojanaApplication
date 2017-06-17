@@ -50,6 +50,6 @@ Route::get('/consulta/{code}', 'ApplicationController@ListIndicadoresByCode');
 Route::get('/consulta/indicadores/graficos/{code}', 'ApplicationController@GraficosIndicadoresId');
 Route::get('/leer', 'ApplicationController@leerExcel');
 
-
+Route::get('/resultados', 'ParticipacionController@answers');
 Route::get('/participacion/nuevo', 'ParticipacionController@index');
 Route::post('/participacion/nuevo', 'ParticipacionController@save');
