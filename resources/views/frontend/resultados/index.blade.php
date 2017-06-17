@@ -425,6 +425,61 @@
   </div>
 </div>
 <br>
+<div class="row" style="padding-bottom:20px;">
+  <div class="col-md-12">
+    <h2>Problemas dimension vs tema</h2>
+    <div class="row">
+      <table id="mojana" style="width:80%; margin:0 auto; text-align:center;">
+        <tr>
+          <th colspan="3"></th>
+          <th colspan="5">Infraestructura(Urbana y Rural)</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th colspan="2">E-natural</th>
+          <th colspan="3">Publica</th>
+          <th>Privada</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th class="title">Suelo</th>
+          <th class="title">Estructura<br/>Ecologica</th>
+          <th class="title">Transporte<br/>y Movilidad</th>
+          <th class="title">Servicios<br/>Publicos</th>
+          <th class="title">Espacio<br>Publico</th>
+          <th class="title">Edificaciones</th>
+        </tr>
+        <tr class="tr-ambiental">
+          <th class="ambiental" style="text-align:center;">Ambiental</th>
+          <th class="ver" style="background:#9d9d9c;"></th>
+          <th class="ver" style="background:#706f6f;"></th>
+          <th class="ver" style="background:#1d1d1b;"></th>
+          <th class="ver" style="background:#3c3c3b;"></th>
+          <th class="ver" style="background:#575756;"></th>
+          <th class="ver" style="background:#878787;"></th>
+        </tr>
+        <tr class="tr-social">
+          <th class="social" style="text-align:center;">Social</th>
+          <th class="ver" style="background:#ededed;"></th>
+          <th class="ver" style="background:#ededed;"></th>
+          <th class="ver" style="background:#878787;"></th>
+          <th class="ver" style="background:#878787;"></th>
+          <th class="ver" style="background:#575756;"></th>
+          <th class="ver" style="background:#ededed;"></th>
+        </tr>
+        <tr class="tr-economico">
+          <th class="economico" style="text-align:center;">Economico</th>
+          <th class="ver" style="background:#b2b2b2;"></th>
+          <th class="ver" style="background:#dadada;"></th>
+          <th class="ver" style="background:#575756;"></th>
+          <th class="ver" style="background:#878787;"></th>
+          <th class="ver" style="background:#b2b2b2;"></th>
+          <th class="ver" style="background:#ededed;"></th>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
 <div class="row" style="background:#f5f5f5;">
   <div class="col-xs-4" style="padding-left: 35px;">
     <div class="row">

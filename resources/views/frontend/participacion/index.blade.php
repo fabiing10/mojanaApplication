@@ -957,7 +957,7 @@
     <select class="form-control my-10" name="solucion_social" id="solucion_social"></select>
   </div>
   <div class="col-xs-5 mleft-50">
-    <select class="form-control my-10" name="ubicacion_solucion_social">
+    <select onchange="hola()" class="form-control my-10" name="ubicacion_solucion_social">
       <option>UBICACION DE LA SOLUCION</option>
       <option value="Nechí">Nechí</option><option value="Achí">Achí</option><option value="Magangué">Magangué</option><option value="San Jacinto del Cauca">San Jacinto del Cauca</option>
       <option value="Ayapel">Ayapel</option><option value="Caimito">Caimito</option><option value="Guaranda">Guaranda</option><option value="Majagual">Majagual</option>
@@ -997,6 +997,10 @@
 
 @section('script')
 <script>
+function hola(){
+  var locations = ["8.0884616,-74.7938797","8.5676956,-74.5603219","9.2398158,-74.7766691","8.2508194,-74.7242101","8.3093061,-75.1583524","8.7696259,-75.254793","8.4683211,-74.5414131","8.5412716,-74.6368757","8.7849314,-75.2813005","8.5653242,-75.3041466","8.7849314,-75.2813005","8.5653242,-75.3041466","9.2126761,-76.3291093"]
+  console.log (locations);
+}
 
 $(document).ready(function() {
     loadTematica('ambiental')
