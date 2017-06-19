@@ -206,7 +206,7 @@
         </div>
       </div>
       <div class="col-xs-12">
-        <select class="form-control mtop-5" name="sector_pertenece">
+        <select class="form-control mtop-5" name="sector_pertenece" onchange="changeOptions(this)">
           <option>A QUE SECTOR PERTENECE</option>
                 <option value="Ninguno">Ninguno</option>
                 <option value="Transporte y vías">Transporte y vías</option>
@@ -215,7 +215,8 @@
                 <option value="Medio ambiente y desarrollo">Medio ambiente y desarrollo</option>
         </select>
       </div>
-      <div style="display:none;">
+
+      <div style="display:none;" id="Transporte">
           <div class="form-group">
             <div class="col-md-1 numbers">
               <h3 style="padding-bottom:38px;"></h3>
@@ -274,7 +275,7 @@
             </select>
           </div>
         </div>
-      <div style="display:none;">
+      <div style="display:none;" id="Infraestructura">
           <div class="form-group">
             <div class="col-md-1 numbers">
               <h3 style="padding-bottom:38px;"></h3>
@@ -347,7 +348,7 @@
             </select>
           </div>
       </div>
-      <div style="display:none;">
+      <div style="display:none;" id="Gremios">
           <div class="form-group">
             <div class="col-md-1 numbers">
               <h3 style="padding-bottom:38px;"></h3>
@@ -409,7 +410,7 @@
             </select>
           </div>
       </div>
-      <div style="display:none;">
+      <div style="display:none;" id="Ambiente-desarrollo">
           <div class="form-group">
             <div class="col-md-1 numbers">
               <h3 style="padding-bottom:38px;"></h3>
@@ -502,7 +503,8 @@
             </select>
           </div>
       </div>
-      <div class="col-md-1 numbers">
+
+<div class="col-md-1 numbers">
         <h3>2</h3>
       </div>
       <div class="col-md-11">
@@ -1022,6 +1024,37 @@
 
 @section('script')
 <script>
+
+function changeOptions(data){
+  var option = data.value;
+  if (option == 'Ninguno') {
+    $('#Transporte').fadeOut()
+    $('#Infraestructura').fadeOut();
+    $('#Gremios').fadeOut();
+    $('#Ambiente-desarrollo').fadeOut();
+  }else if(option == 'Transporte y vías'){
+    $('#Transporte').fadeIn()
+    $('#Infraestructura').fadeOut();
+    $('#Gremios').fadeOut();
+    $('#Ambiente-desarrollo').fadeOut();
+  }else if(option == 'Infraestructura y servicios públicos'){
+    $('#Infraestructura').fadeIn();
+    $('#Transporte').fadeOut()
+    $('#Gremios').fadeOut();
+    $('#Ambiente-desarrollo').fadeOut();
+  }else if(option == 'Gremios'){
+    $('#Infraestructura').fadeOut();
+    $('#Transporte').fadeOut()
+    $('#Gremios').fadeIn();
+    $('#Ambiente-desarrollo').fadeOut();
+  }else if(option == 'Medio ambiente y desarrollo'){
+    $('#Infraestructura').fadeOut();
+    $('#Transporte').fadeOut()
+    $('#Gremios').fadeOut();
+    $('#Ambiente-desarrollo').fadeIn();
+  }
+
+}
 
 $(document).ready(function() {
 

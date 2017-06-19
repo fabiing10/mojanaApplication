@@ -401,6 +401,7 @@ class ComposerStaticInit0e05a0ee3f94c07bfe1e7a054d726710
     public static $classMap = array (
         'AccessTableSeeder' => __DIR__ . '/../..' . '/database/seeds/AccessTableSeeder.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Consulta' => __DIR__ . '/../..' . '/app/Consulta.php',
         'App\\Events\\Backend\\Access\\Role\\RoleCreated' => __DIR__ . '/../..' . '/app/Events/Backend/Access/Role/RoleCreated.php',
         'App\\Events\\Backend\\Access\\Role\\RoleDeleted' => __DIR__ . '/../..' . '/app/Events/Backend/Access/Role/RoleDeleted.php',
         'App\\Events\\Backend\\Access\\Role\\RoleUpdated' => __DIR__ . '/../..' . '/app/Events/Backend/Access/Role/RoleUpdated.php',

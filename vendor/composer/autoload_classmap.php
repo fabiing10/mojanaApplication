@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'AccessTableSeeder' => $baseDir . '/database/seeds/AccessTableSeeder.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
+    'App\\Consulta' => $baseDir . '/app/Consulta.php',
     'App\\Events\\Backend\\Access\\Role\\RoleCreated' => $baseDir . '/app/Events/Backend/Access/Role/RoleCreated.php',
     'App\\Events\\Backend\\Access\\Role\\RoleDeleted' => $baseDir . '/app/Events/Backend/Access/Role/RoleDeleted.php',
     'App\\Events\\Backend\\Access\\Role\\RoleUpdated' => $baseDir . '/app/Events/Backend/Access/Role/RoleUpdated.php',
