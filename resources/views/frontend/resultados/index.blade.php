@@ -151,7 +151,7 @@
     <div class="col-xs-12" style="padding-left: 35px;">
       <div class="row">
         <h2>Actores</h2>
-        <img src="http://team6.co.kr/wp-content/uploads/2014/11/default-placeholder-1024x1024-960x500.png" style="width:100%; height: 150px;"></img>
+        <canvas id="chartActores" width="400" height="50"></canvas>
       </div>
     </div>
   </div>
@@ -169,22 +169,27 @@
       <div class="col-xs-12"style="padding-left: 35px; background-color:#eaeaea;">
       <div class="row">
         <h2 style="text-align:center;">Participacion por municipio</h2>
-        <img src="http://team6.co.kr/wp-content/uploads/2014/11/default-placeholder-1024x1024-960x500.png" style="width:90%;"></img>
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-9">
+          <canvas id="chartMunicipios" width="400" height="200"></canvas>
+        </div>
       </div>
     </div>
     <div class="col-xs-6" style="padding-left: 35px;">
       <h2>Quienes han salido<br> de su departamento</h2>
-      <img src="http://team6.co.kr/wp-content/uploads/2014/11/default-placeholder-1024x1024-960x500.png" style="width:90%;"></img>
+      <canvas id="chartHanSalido" width="400" height="200"></canvas>
     </div>
     <div class="col-xs-6" style="padding-left: 35px;">
       <h2>Quienes han salido<br> de su Municipio</h2>
-      <img src="http://team6.co.kr/wp-content/uploads/2014/11/default-placeholder-1024x1024-960x500.png" style="width:90%;"></img>
+      <canvas id="chartHanSalidoM" width="400" height="200"></canvas>
     </div>
   </div>
   <div class="col-xs-4" style="padding-left: 35px;">
     <div class="row">
       <h2>Sector</h2>
-      <img src="http://team6.co.kr/wp-content/uploads/2014/11/default-placeholder-1024x1024-960x500.png" style="width:90%;"></img>
+      @include('frontend.resultados.blocks.sector')
     </div>
     <div class="row">
       <h2>Tiempo de Residencia</h2>
@@ -379,13 +384,13 @@
   <div class="col-xs-6" style="padding-left: 35px;">
     <div class="row">
       <h2>Condiciones fisicas de las viviendas</h2>
-      <img src="http://team6.co.kr/wp-content/uploads/2014/11/default-placeholder-1024x1024-960x500.png" style="width:90%;"></img>
+      <canvas id="chartCondiciones" width="400" height="200"></canvas>
     </div>
   </div>
   <div class="col-xs-6" style="padding-left: 35px;">
     <div class="row">
       <h2>La vivienda es</h2>
-      <img src="http://team6.co.kr/wp-content/uploads/2014/11/default-placeholder-1024x1024-960x500.png" style="width:90%;"></img>
+      <canvas id="chartViviendaEs" width="400" height="200"></canvas>
     </div>
   </div>
 </div>
@@ -394,37 +399,30 @@
   <div class="col-xs-6" style="padding-left: 35px;">
     <div class="row">
       <h2>La vivienda cuenta con</h2>
-      <img src="http://team6.co.kr/wp-content/uploads/2014/11/default-placeholder-1024x1024-960x500.png" style="width:90%;"></img>
+      @include('frontend.resultados.blocks.vivienda-cuenta')
     </div>
   </div>
   <div class="col-xs-6" style="padding-left: 35px;">
     <div class="row">
-      <div class="col-xs-6">
+      <div class="col-xs-5">
         <h2>Le gustaria que<br>permitieran<br>mas suelo para</h2>
       </div>
-      <div class="col-xs-6">
-        <img src="http://team6.co.kr/wp-content/uploads/2014/11/default-placeholder-1024x1024-960x500.png" style="width:90%;"></img>
+      <div class="col-xs-7">
+        @include('frontend.resultados.blocks.suelo')
       </div>
     </div>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-xs-3" style="padding-left: 35px;">
-    <div class="row">
-    </div>
-  </div>
-  <div class="col-xs-6" style="padding-left: 35px;">
+  <div class="col-xs-10" style="padding-left: 35px;">
     <div class="row">
       <h2>Problemas por temas</h2>
-      <img src="http://team6.co.kr/wp-content/uploads/2014/11/default-placeholder-1024x1024-960x500.png" style="width:90%;"></img>
+      <div class="row">
+        @include('frontend.resultados.blocks.problemas-tema')
+      </div>
     </div>
   </div>
-  <div class="col-xs-3" style="padding-left: 35px;">
-    <div class="row">
-    </div>
-  </div>
-</div>
 <br>
 <div class="row" style="padding-bottom:20px;">
   <div class="col-md-12">
@@ -481,20 +479,6 @@
     </div>
   </div>
 </div>
-<div class="row" style="background:#f5f5f5;">
-  <div class="col-xs-4" style="padding-left: 35px;">
-    <div class="row">
-      <img src="http://team6.co.kr/wp-content/uploads/2014/11/default-placeholder-1024x1024-960x500.png" style="width:90%;"></img>
-    </div>
-  </div>
-  <div class="col-xs-8" style="padding-left: 35px;">
-    <div class="row">
-      <h2>Dimensiones principales por municipio</h2>
-      <img src="http://team6.co.kr/wp-content/uploads/2014/11/default-placeholder-1024x1024-960x500.png" style="width:90%;"></img>
-    </div>
-  </div>
-</div>
-<br>
 <div class="row" style="background:#018b38;">
   <div class="col-xs-12" style="padding-left: 35px; padding-left:35px;">
     <div class="row">

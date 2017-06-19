@@ -1,6 +1,10 @@
 .bar {
     height: 35px;
 }
+.bar {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
 .t-right {
     text-align: right;
     padding-right: 10px;
@@ -15,8 +19,14 @@
     font-size: 20px;
     font-weight: bold;
 }
+.chart-15{
+  height: 15px;
+}
 .left{
   float: right;
+}
+.l-left{
+  float: left;
 }
 .right{
   float: right;
@@ -26,13 +36,44 @@
 .bg-348EA9{
   background-color: #348EA9;
 }
+.bg-a5f6ff{
+  background-color: #a5f6ff;
+}
+.bg-73e3f6{
+  background-color: #73e3f6;
+}
+.bg-59d3df{
+  background-color: #59d3df;
+}
+.bg-001923{
+  background-color: #001923;
+}
 .bg-53BB9B{
   background-color: #53BB9B;
 }
-
-
+.bg-006633{
+  background-color: #006633;
+}
+.bg-2fac66{
+  background-color: #2fac66;
+}
+.bg-1d1d1b{
+  background-color: #1d1d1b;
+}
+.bg-b2b2b2{
+  background-color: #b2b2b2;
+}
+.bg-e30613{
+  background-color: #e30613;
+}
 .bg-B17F4A{
   background-color: #B17F4A;
+}
+.bg-dadada{
+  background-color: #dadada;
+}
+.bg-ededed{
+  background-color: #ededed;
 }
 .bg-7D4E24{
   background-color: #7D4E24;

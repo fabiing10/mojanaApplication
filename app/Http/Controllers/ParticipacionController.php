@@ -39,13 +39,18 @@ class ParticipacionController extends Controller
        $datos_ocupacion = $consulta->obtenerOcupacion();
        $datos_discapacidad = $consulta->obtenerDiscapacidad();
        $datos_nivel_educativo = $consulta->obtenerNivelEducativo();
-
+       $datos_sector = $consulta->obtenerSector();
+       $datos_servicios = $consulta->obtenerServicios();
+       $datos_suelo = $consulta->obtenerSuelo();
 
        return view('frontend.resultados.index')
               ->with('datos_genero',$datos_genero)
               ->with('datos_ocupacion',$datos_ocupacion)
               ->with('datos_discapacidad',$datos_discapacidad)
-              ->with('datos_nivel_educativo',$datos_nivel_educativo);
+              ->with('datos_nivel_educativo',$datos_nivel_educativo)
+              ->with('datos_sector',$datos_sector)
+              ->with('datos_servicios',$datos_servicios)
+              ->with('datos_suelo',$datos_suelo);
 
      }
 
@@ -225,6 +230,18 @@ class ParticipacionController extends Controller
        $consulta = new Consulta();
        if($option == "regimen-salud"){
          $data = $consulta->obtenerRegimenSalud();
+       }else if($option == "han-salido"){
+         $data = $consulta->obtenerSalidoDepartamento();
+       }else if($option == "han-salido-m"){
+         $data = $consulta->obtenerSalidoMunicipio();
+       }else if($option == "actores"){
+         $data = $consulta->obtenerActores();
+       }else if($option == "condiciones-fisicas"){
+         $data = $consulta->obtenerCondicionesFisicas();
+       }else if($option == "vivienda-es"){
+         $data = $consulta->obtenerViviendaEs();
+       }else if($option == "municipios"){
+         $data = $consulta->obtenerMunicipios();
        }else{
          $data = "none";
        }
