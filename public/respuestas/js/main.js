@@ -1,13 +1,16 @@
 $( document ).ready(function() {
     console.log( "ready!" );
     cargarRegimenSalud();
-    cargarSituacionDesplazamiento();
+
     cargarHanSalido();
     cargarHanSalidoM();
     cargarActores();
     cargarCondiciones();
     cargarViviendas();
     cargarMunicipios();
+    mapaAmbiental();
+    mapaSocial();
+    mapaEconomico();
 });
 
 
@@ -327,6 +330,133 @@ function cargarMunicipios(){
     });
 }
 
+function mapaAmbiental(){
+  $.get( "/resultados/q/mapa-ambiental", function() {
+
+  }).done(function(markers) {
+
+    var locations = [
+     ['Magangue', 9.2398158, -74.77666909999999, 4],
+     ['Guaranda', 8.4683211, -74.5414131, 5],
+     ['San Benito', 8.7849314, -75.28130049999999, 3],
+     ['Caimito', 8.7696259, -75.254793, 2],
+     ['Majagual', 8.5412716, -74.63687570000002, 1]
+   ];
+
+   var map = new google.maps.Map(document.getElementById('map_ambiental'), {
+     zoom: 8,
+     center: new google.maps.LatLng(9.2398158, -74.77666909999999),
+     mapTypeId: google.maps.MapTypeId.ROADMAP
+   });
+
+   var infowindow = new google.maps.InfoWindow();
+
+   var marker, i;
+
+   for (i = 0; i < locations.length; i++) {
+     marker = new google.maps.Marker({
+       position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+       map: map
+     });
+
+     google.maps.event.addListener(marker, 'click', (function(marker, i) {
+       return function() {
+         infowindow.setContent(locations[i][0]);
+         infowindow.open(map, marker);
+       }
+     })(marker, i));
+   }
+
+
+
+  }).fail(function() {
+      console.log( "error" );
+    });
+}
+function mapaEconomico(){
+  $.get( "/resultados/q/mapa-economico", function() {
+
+  }).done(function(data) {
+
+    var locations = [
+     ['Magangue', 9.2398158, -74.77666909999999, 4],
+     ['Guaranda', 8.4683211, -74.5414131, 5],
+     ['San Benito', 8.7849314, -75.28130049999999, 3],
+     ['Caimito', 8.7696259, -75.254793, 2],
+     ['Majagual', 8.5412716, -74.63687570000002, 1]
+   ];
+
+   var map = new google.maps.Map(document.getElementById('map_economico'), {
+     zoom: 8,
+     center: new google.maps.LatLng(9.2398158, -74.77666909999999),
+     mapTypeId: google.maps.MapTypeId.ROADMAP
+   });
+
+   var infowindow = new google.maps.InfoWindow();
+
+   var marker, i;
+
+   for (i = 0; i < locations.length; i++) {
+     marker = new google.maps.Marker({
+       position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+       map: map
+     });
+
+     google.maps.event.addListener(marker, 'click', (function(marker, i) {
+       return function() {
+         infowindow.setContent(locations[i][0]);
+         infowindow.open(map, marker);
+       }
+     })(marker, i));
+   }
+
+  }).fail(function() {
+      console.log( "error" );
+    });
+}
+function mapaSocial(){
+  $.get( "/resultados/q/mapa-social", function() {
+
+  }).done(function(data) {
+
+    var locations = [
+     ['Magangue', 9.2398158, -74.77666909999999, 4],
+     ['Guaranda', 8.4683211, -74.5414131, 5],
+     ['San Benito', 8.7849314, -75.28130049999999, 3],
+     ['Caimito', 8.7696259, -75.254793, 2],
+     ['Majagual', 8.5412716, -74.63687570000002, 1]
+   ];
+
+   var map = new google.maps.Map(document.getElementById('map_social'), {
+     zoom: 8,
+     center: new google.maps.LatLng(9.2398158, -74.77666909999999),
+     mapTypeId: google.maps.MapTypeId.ROADMAP
+   });
+
+   var infowindow = new google.maps.InfoWindow();
+
+   var marker, i;
+
+   for (i = 0; i < locations.length; i++) {
+     marker = new google.maps.Marker({
+       position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+       map: map
+     });
+
+     google.maps.event.addListener(marker, 'click', (function(marker, i) {
+       return function() {
+         infowindow.setContent(locations[i][0]);
+         infowindow.open(map, marker);
+       }
+     })(marker, i));
+   }
+
+  }).fail(function() {
+      console.log( "error" );
+    });
+}
+
+/*
 function cargarSituacionDesplazamiento(){
   $.get( "/resultados/q/regimen-salud", function() {
 
@@ -363,3 +493,4 @@ function drawChart() {
 
         chart.draw(data, options);
       }
+*/

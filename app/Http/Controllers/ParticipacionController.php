@@ -43,6 +43,17 @@ class ParticipacionController extends Controller
        $datos_servicios = $consulta->obtenerServicios();
        $datos_suelo = $consulta->obtenerSuelo();
 
+
+       $d_v_ambientales = $consulta->obtenerVariablesAmbientales();
+      $d_v_sociales = $consulta->obtenerVariablesSocial();
+      $d_v_economicas = $consulta->obtenerVariablesEconomicas();
+
+
+      /*Mapas*/
+      $m_ambientales = $consulta->obtenerCountMunicipiosAmbientales();
+      $m_sociales = $consulta->obtenerCountMunicipiosSociales();
+      $m_economicas = $consulta->obtenerCountMunicipiosEconomicos();
+
        return view('frontend.resultados.index')
               ->with('datos_genero',$datos_genero)
               ->with('datos_ocupacion',$datos_ocupacion)
@@ -50,7 +61,13 @@ class ParticipacionController extends Controller
               ->with('datos_nivel_educativo',$datos_nivel_educativo)
               ->with('datos_sector',$datos_sector)
               ->with('datos_servicios',$datos_servicios)
-              ->with('datos_suelo',$datos_suelo);
+              ->with('datos_suelo',$datos_suelo)
+              ->with('d_v_ambientales',$d_v_ambientales)
+              ->with('d_v_sociales',$d_v_sociales)
+              ->with('d_v_economicas',$d_v_economicas)
+              ->with('m_ambientales',$m_ambientales)
+              ->with('m_sociales',$m_sociales)
+              ->with('m_economicas',$m_economicas);
 
      }
 

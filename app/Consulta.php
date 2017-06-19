@@ -272,4 +272,267 @@ class Consulta extends Model
 
       return $datos_municipios;
     }
+
+    public function obtenerVariablesAmbientales(){
+
+    $c_count01  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_ambiental')->where('participacion.tema_problematica_ambiental',1)->count();
+    $c_count02  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_ambiental')->where('participacion.tema_problematica_ambiental',2)->count();
+    $c_count03  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_ambiental')->where('participacion.tema_problematica_ambiental',3)->count();
+    $c_count04  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_ambiental')->where('participacion.tema_problematica_ambiental',4)->count();
+    $c_count05  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_ambiental')->where('participacion.tema_problematica_ambiental',5)->count();
+    $c_count06  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_ambiental')->where('participacion.tema_problematica_ambiental',6)->count();
+    $c_count07  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_ambiental')->where('participacion.tema_problematica_ambiental',7)->count();
+    $c_count08  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_ambiental')->where('participacion.tema_problematica_ambiental',8)->count();
+    $c_count09  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_ambiental')->where('participacion.tema_problematica_ambiental',9)->count();
+    $c_count10  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_ambiental')->where('participacion.tema_problematica_ambiental',10)->count();
+    $c_count11  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_ambiental')->where('participacion.tema_problematica_ambiental',11)->count();
+    $c_count12  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_ambiental')->where('participacion.tema_problematica_ambiental',12)->count();
+
+    $variables_ambiental_total = $c_count01 + $c_count02 + $c_count03 + $c_count04 + $c_count05 + $c_count06 + $c_count06 + $c_count07 + $c_count08 + $c_count09 + $c_count10 + $c_count11 + $c_count12;
+
+    $v_01 = $c_count01 * 100 / $variables_ambiental_total;
+    $v_02 = $c_count02 * 100 / $variables_ambiental_total;
+    $v_03 = $c_count03 * 100 / $variables_ambiental_total;
+    $v_04 = $c_count04 * 100 / $variables_ambiental_total;
+    $v_05 = $c_count05 * 100 / $variables_ambiental_total;
+    $v_06 = $c_count06 * 100 / $variables_ambiental_total;
+    $v_07 = $c_count07 * 100 / $variables_ambiental_total;
+    $v_08 = $c_count08 * 100 / $variables_ambiental_total;
+    $v_09 = $c_count09 * 100 / $variables_ambiental_total;
+    $v_10 = $c_count10 * 100 / $variables_ambiental_total;
+    $v_11 = $c_count11 * 100 / $variables_ambiental_total;
+    $v_12 = $c_count12 * 100 / $variables_ambiental_total;
+
+    $data = array('01'=> $v_01, '02' => $v_02, '03' => $v_03, '04' => $v_04, '05' => $v_05, '06' => $v_06, '07' => $v_07, '08' => $v_08, '09' => $v_09, '10' => $v_10
+                , '11' => $v_11, '12' => $v_12);
+
+    return $data;
+
+  }
+
+  public function obtenerVariablesSocial(){
+
+    $c_count13  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_social')->where('participacion.tema_problematica_social',13)->count();
+    $c_count14  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_social')->where('participacion.tema_problematica_social',14)->count();
+    $c_count15  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_social')->where('participacion.tema_problematica_social',15)->count();
+    $c_count16  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_social')->where('participacion.tema_problematica_social',16)->count();
+    $c_count17  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_social')->where('participacion.tema_problematica_social',17)->count();
+    $c_count18  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_social')->where('participacion.tema_problematica_social',18)->count();
+    $c_count19  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_social')->where('participacion.tema_problematica_social',19)->count();
+    $c_count20  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_social')->where('participacion.tema_problematica_social',20)->count();
+    $c_count21  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_social')->where('participacion.tema_problematica_social',21)->count();
+    $c_count22  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_social')->where('participacion.tema_problematica_social',22)->count();
+    $c_count23  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_social')->where('participacion.tema_problematica_social',23)->count();
+    $c_count24  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_social')->where('participacion.tema_problematica_social',24)->count();
+    $c_count25  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_social')->where('participacion.tema_problematica_social',25)->count();
+    $c_count26  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_social')->where('participacion.tema_problematica_social',26)->count();
+    $c_count27  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_social')->where('participacion.tema_problematica_social',27)->count();
+    $c_count28  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_social')->where('participacion.tema_problematica_social',28)->count();
+    $c_count29  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_social')->where('participacion.tema_problematica_social',29)->count();
+    $c_count30  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_social')->where('participacion.tema_problematica_social',30)->count();
+    $c_count31  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_social')->where('participacion.tema_problematica_social',31)->count();
+    $c_count32  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_social')->where('participacion.tema_problematica_social',32)->count();
+    $c_count33  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_social')->where('participacion.tema_problematica_social',33)->count();
+    $c_count34  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_social')->where('participacion.tema_problematica_social',34)->count();
+
+
+    $variables_social_total = $c_count13 + $c_count14 + $c_count15 + $c_count16 + $c_count17 + $c_count18 + $c_count19 + $c_count20
+                               + $c_count21 + $c_count22 + $c_count23 + $c_count24 + $c_count25 + $c_count26 + $c_count27 + $c_count28
+                               + $c_count29 + $c_count30 + $c_count31 + $c_count32 + $c_count33 + $c_count34 ;
+
+    $v_13 = $c_count13 * 100 / $variables_social_total;
+    $v_14 = $c_count14 * 100 / $variables_social_total;
+    $v_15 = $c_count15 * 100 / $variables_social_total;
+    $v_16 = $c_count16 * 100 / $variables_social_total;
+    $v_17 = $c_count17 * 100 / $variables_social_total;
+    $v_18 = $c_count18 * 100 / $variables_social_total;
+    $v_19 = $c_count19 * 100 / $variables_social_total;
+    $v_20 = $c_count20 * 100 / $variables_social_total;
+    $v_21 = $c_count21 * 100 / $variables_social_total;
+    $v_22 = $c_count22 * 100 / $variables_social_total;
+    $v_23 = $c_count23 * 100 / $variables_social_total;
+    $v_24 = $c_count24 * 100 / $variables_social_total;
+    $v_25 = $c_count25 * 100 / $variables_social_total;
+    $v_26 = $c_count26 * 100 / $variables_social_total;
+    $v_27 = $c_count27 * 100 / $variables_social_total;
+    $v_28 = $c_count28 * 100 / $variables_social_total;
+    $v_29 = $c_count29 * 100 / $variables_social_total;
+    $v_30 = $c_count30 * 100 / $variables_social_total;
+    $v_31 = $c_count31 * 100 / $variables_social_total;
+    $v_32 = $c_count32 * 100 / $variables_social_total;
+    $v_33 = $c_count33 * 100 / $variables_social_total;
+    $v_34 = $c_count34 * 100 / $variables_social_total;
+
+    $data = array('13'=> $v_13,'14'=> $v_14, '15' => $v_15, '16' => $v_16, '17' => $v_17, '18' => $v_18,
+                  '19'=> $v_19, '20' => $v_20, '21' => $v_21, '22' => $v_22, '23' => $v_23,
+                  '24' => $v_24, '25' => $v_25, '26' => $v_26, '27' => $v_27,'28' => $v_28,
+                  '29' => $v_29, '30' => $v_30, '31' => $v_31, '32' => $v_32,'33'=> $v_33, '34' => $v_34);
+
+    return $data;
+
+
+  }
+
+  public function obtenerVariablesEconomicas(){
+
+    $c_count35  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_economico')->where('participacion.tema_problematica_economico',35)->count();
+    $c_count36  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_economico')->where('participacion.tema_problematica_economico',36)->count();
+    $c_count37  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_economico')->where('participacion.tema_problematica_economico',37)->count();
+    $c_count38  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_economico')->where('participacion.tema_problematica_economico',38)->count();
+    $c_count39  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_economico')->where('participacion.tema_problematica_economico',39)->count();
+    $c_count40  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_economico')->where('participacion.tema_problematica_economico',40)->count();
+    $c_count41  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_economico')->where('participacion.tema_problematica_economico',41)->count();
+    $c_count42  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_economico')->where('participacion.tema_problematica_economico',42)->count();
+    $c_count43  = \DB::table('participaciones as participacion')->select('participacion.tema_problematica_economico')->where('participacion.tema_problematica_economico',43)->count();
+
+
+    $variables_economico_total = $c_count35 + $c_count36 + $c_count37 + $c_count38 + $c_count39 + $c_count40 + $c_count41 + $c_count42 + $c_count43;
+
+    $v_35 = $c_count35 * 100 / $variables_economico_total;
+    $v_36 = $c_count36 * 100 / $variables_economico_total;
+    $v_37 = $c_count37 * 100 / $variables_economico_total;
+    $v_38 = $c_count38 * 100 / $variables_economico_total;
+    $v_39 = $c_count39 * 100 / $variables_economico_total;
+    $v_40 = $c_count40 * 100 / $variables_economico_total;
+    $v_41 = $c_count41 * 100 / $variables_economico_total;
+    $v_42 = $c_count42 * 100 / $variables_economico_total;
+    $v_43 = $c_count43 * 100 / $variables_economico_total;
+
+
+    $data = array('35'=> $v_35, '36' => $v_36, '37' => $v_37, '38' => $v_38, '39' => $v_39, '40' => $v_40, '41' => $v_41, '42' => $v_42, '43' => $v_43);
+
+    return $data;
+
+  }
+
+  public function obtenerCountMunicipiosAmbientales(){
+
+    $c_achi  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_ambiental','achi')->count();
+    $c_ayapel  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_ambiental','ayapel')->count();
+    $c_caimito  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_ambiental','caimito')->count();
+    $c_guaranda  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_ambiental','guaranda')->count();
+    $c_magangue  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_ambiental','magangue')->count();
+    $c_majagual  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_ambiental','majagual')->count();
+    $c_nechi  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_ambiental','nechi')->count();
+    $c_san_benito_abad  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_ambiental','san-benito-abad')->count();
+    $c_san_jacinto_cauca  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_ambiental','san-jacinto-cauca')->count();
+    $c_san_marcos  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_ambiental','san-marcos')->count();
+    $c_sucre  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_ambiental','sucre')->count();
+
+
+    $total_count_municipios = $c_achi + $c_ayapel + $c_caimito + $c_guaranda + $c_magangue + $c_majagual + $c_nechi + $c_san_benito_abad + $c_san_jacinto_cauca + $c_san_marcos + $c_sucre;
+
+    $achi = $c_achi * 100 / $total_count_municipios;
+    $ayapel = $c_ayapel * 100 / $total_count_municipios;
+    $caimito = $c_caimito * 100 / $total_count_municipios;
+    $guaranda = $c_guaranda * 100 / $total_count_municipios;
+    $magangue = $c_magangue * 100 / $total_count_municipios;
+    $majagual = $c_majagual * 100 / $total_count_municipios;
+    $nechi = $c_nechi * 100 / $total_count_municipios;
+    $san_benito_abad = $c_san_benito_abad * 100 / $total_count_municipios;
+    $san_jacinto_cauca = $c_san_jacinto_cauca * 100 / $total_count_municipios;
+    $san_marcos = $c_san_marcos * 100 / $total_count_municipios;
+    $sucre = $c_sucre * 100 / $total_count_municipios;
+
+
+    $data = array('achi'=> $achi, 'ayapel' => $ayapel, 'caimito' => $caimito, 'guaranda' => $guaranda, 'magangue' => $magangue, 'majagual' => $majagual, 'nechi' => $nechi,
+    'san_benito_abad' => $san_benito_abad,'san_jacinto_cauca' => $san_jacinto_cauca,'san_marcos' => $san_marcos,'sucre' => $sucre);
+
+    return $data;
+
+
+  }
+
+  public function obtenerCountMunicipiosSociales(){
+
+    $c_achi  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_social','achi')->count();
+    $c_ayapel  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_social','ayapel')->count();
+    $c_caimito  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_social','caimito')->count();
+    $c_guaranda  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_social','guaranda')->count();
+    $c_magangue  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_social','magangue')->count();
+    $c_majagual  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_social','majagual')->count();
+    $c_nechi  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_social','nechi')->count();
+    $c_san_benito_abad  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_social','san-benito-abad')->count();
+    $c_san_jacinto_cauca  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_social','san-jacinto-cauca')->count();
+    $c_san_marcos  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_social','san-marcos')->count();
+    $c_sucre  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_social','sucre')->count();
+
+
+    $total_count_municipios = $c_achi + $c_ayapel + $c_caimito + $c_guaranda + $c_magangue + $c_majagual + $c_nechi + $c_san_benito_abad + $c_san_jacinto_cauca + $c_san_marcos + $c_sucre;
+
+    $achi = $c_achi * 100 / $total_count_municipios;
+    $ayapel = $c_ayapel * 100 / $total_count_municipios;
+    $caimito = $c_caimito * 100 / $total_count_municipios;
+    $guaranda = $c_guaranda * 100 / $total_count_municipios;
+    $magangue = $c_magangue * 100 / $total_count_municipios;
+    $majagual = $c_majagual * 100 / $total_count_municipios;
+    $nechi = $c_nechi * 100 / $total_count_municipios;
+    $san_benito_abad = $c_san_benito_abad * 100 / $total_count_municipios;
+    $san_jacinto_cauca = $c_san_jacinto_cauca * 100 / $total_count_municipios;
+    $san_marcos = $c_san_marcos * 100 / $total_count_municipios;
+    $sucre = $c_sucre * 100 / $total_count_municipios;
+
+
+    $data = array('achi'=> $achi, 'ayapel' => $ayapel, 'caimito' => $caimito, 'guaranda' => $guaranda, 'magangue' => $magangue, 'majagual' => $majagual, 'nechi' => $nechi,
+    'san_benito_abad' => $san_benito_abad,'san_jacinto_cauca' => $san_jacinto_cauca,'san_marcos' => $san_marcos,'sucre' => $sucre);
+
+    return $data;
+
+  }
+
+
+  public function obtenerCountMunicipiosEconomicos(){
+
+    $c_achi  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_economico','achi')->count();
+    $c_ayapel  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_economico','ayapel')->count();
+    $c_caimito  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_economico','caimito')->count();
+    $c_guaranda  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_economico','guaranda')->count();
+    $c_magangue  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_economico','magangue')->count();
+    $c_majagual  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_economico','majagual')->count();
+    $c_nechi  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_economico','nechi')->count();
+    $c_san_benito_abad  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_economico','san-benito-abad')->count();
+    $c_san_jacinto_cauca  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_economico','san-jacinto-cauca')->count();
+    $c_san_marcos  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_economico','san-marcos')->count();
+    $c_sucre  = \DB::table('participaciones as participacion')->select('participacion.ubicacion_solucion_ambiental')->where('participacion.ubicacion_solucion_economico','sucre')->count();
+
+
+    $total_count_municipios = $c_achi + $c_ayapel + $c_caimito + $c_guaranda + $c_magangue + $c_majagual + $c_nechi + $c_san_benito_abad + $c_san_jacinto_cauca + $c_san_marcos + $c_sucre;
+
+    $achi = $c_achi * 100 / $total_count_municipios;
+    $ayapel = $c_ayapel * 100 / $total_count_municipios;
+    $caimito = $c_caimito * 100 / $total_count_municipios;
+    $guaranda = $c_guaranda * 100 / $total_count_municipios;
+    $magangue = $c_magangue * 100 / $total_count_municipios;
+    $majagual = $c_majagual * 100 / $total_count_municipios;
+    $nechi = $c_nechi * 100 / $total_count_municipios;
+    $san_benito_abad = $c_san_benito_abad * 100 / $total_count_municipios;
+    $san_jacinto_cauca = $c_san_jacinto_cauca * 100 / $total_count_municipios;
+    $san_marcos = $c_san_marcos * 100 / $total_count_municipios;
+    $sucre = $c_sucre * 100 / $total_count_municipios;
+
+
+    $data = array('achi'=> $achi, 'ayapel' => $ayapel, 'caimito' => $caimito, 'guaranda' => $guaranda, 'magangue' => $magangue, 'majagual' => $majagual, 'nechi' => $nechi,
+    'san_benito_abad' => $san_benito_abad,'san_jacinto_cauca' => $san_jacinto_cauca,'san_marcos' => $san_marcos,'sucre' => $sucre);
+
+    return $data;
+  }
+
+  public function obtenerMapaAmbiental(){
+    $data  = \DB::table('participaciones as participacion')
+              ->select('participacion.ubicacion_latitud_ambiental as laltitud','participacion.ubicacion_latitud_ambiental as longitud')
+              ->get();
+    return $data;
+  }
+  public function obtenerMapaEconomico(){
+    $data  = \DB::table('participaciones as participacion')
+              ->select('participacion.ubicacion_latitud_economico as laltitud','participacion.ubicacion_latitud_economico as longitud')
+              ->get();
+    return $data;
+  }
+  public function obtenerMapaSocial(){
+    $data  = \DB::table('participaciones as participacion')
+              ->select('participacion.ubicacion_latitud_social as laltitud','participacion.ubicacion_latitud_social as longitud')
+              ->get();
+    return $data;
+  }
 }

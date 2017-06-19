@@ -479,90 +479,14 @@
     </div>
   </div>
 </div>
+
 <div class="row" style="background:#018b38;">
   <div class="col-xs-12" style="padding-left: 35px; padding-left:35px;">
     <div class="row">
       <div class="col-xs-4"><h1 style="color:white;">AMBIENTAL</h1></div><div class="col-xs-8"><h2 style="color:white;">variables</h2></div>
     </div>
-    <div class="col-xs-6" style="padding-left: 35px;">
-      <div class="row">
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
 
-      </div>
-    </div>
-    <div class="col-xs-6" style="padding-left: 35px;">
-      <div class="row">
-        <h4> Contaminacion por mineria </h4>
-      </div>
-      <div class="row">
-        <h4> Contaminacion de fuentes hidricas y ecosistemas </h4>
-      </div>
-      <div class="row">
-        <h4> Residuos solidos </h4>
-      </div>
-      <div class="row">
-        <h4> Contaminacion ambiental </h4>
-      </div>
-      <div class="row">
-        <h4> Deforestacion</h4>
-      </div>
-      <div class="row">
-        <h4> Inundaciones </h4>
-      </div>
-      <div class="row">
-        <h4> Sequias </h4>
-      </div>
-      <div class="row">
-        <h4> Especies foraneas </h4>
-      </div>
-      <div class="row">
-        <h4> Ecosistemas nativos </h4>
-      </div>
-      <div class="row">
-        <h4> Contaminacion Ambiental </h4>
-      </div>
-      <div class="row">
-        <h4> Sedimentacion </h4>
-      </div>
-      <div class="row">
-        <h4> Erosion </h4>
-      </div>
-    </div>
+    @include('frontend.resultados.blocks.variables_ambientales')
   </div>
 </div>
 
@@ -570,85 +494,13 @@
     <div class="col-xs-6" style="padding-left: 35px;">
       <div class="row">
         <h2>Temas ambientales por municipio</h2>
-        <div class="col-xs-6">
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-        </div>
-        <div class="col-xs-6" style="padding-left:15px;">
-          <div class="row">
-            <h4 style="color:black;"> Achi </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> Ayapel </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> Caimito </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> Guaranda </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> Magangue </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> Majagual </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> Nechi </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> San Benito Abad </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> San Jacinto del Cauca </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> San Marcos </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> Sucre </h4>
-          </div>
-        </div>
+            @include('frontend.resultados.blocks.temas_ambientales')
       </div>
     </div>
     <div class="col-xs-6" style="padding-left: 35px;">
       <div class="row">
         <h2>Ubicacion</h2>
-
+        <div id="map_ambiental" style="height:400px;"></div>
       </div>
     </div>
 </div>
@@ -658,85 +510,7 @@
     <div class="row">
       <div class="col-xs-4"><h1 style="color:white;">SOCIAL</h1></div><div class="col-xs-8"><h2 style="color:white;">variables</h2></div>
     </div>
-    <div class="col-xs-6" style="padding-left: 35px;">
-      <div class="row">
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-
-      </div>
-    </div>
-    <div class="col-xs-6" style="padding-left: 35px;">
-      <div class="row">
-        <h4> Contaminacion por mineria </h4>
-      </div>
-      <div class="row">
-        <h4> Contaminacion de fuentes hidricas y ecosistemas </h4>
-      </div>
-      <div class="row">
-        <h4> Residuos solidos </h4>
-      </div>
-      <div class="row">
-        <h4> Contaminacion ambiental </h4>
-      </div>
-      <div class="row">
-        <h4> Deforestacion</h4>
-      </div>
-      <div class="row">
-        <h4> Inundaciones </h4>
-      </div>
-      <div class="row">
-        <h4> Sequias </h4>
-      </div>
-      <div class="row">
-        <h4> Especies foraneas </h4>
-      </div>
-      <div class="row">
-        <h4> Ecosistemas nativos </h4>
-      </div>
-      <div class="row">
-        <h4> Contaminacion Ambiental </h4>
-      </div>
-      <div class="row">
-        <h4> Sedimentacion </h4>
-      </div>
-      <div class="row">
-        <h4> Erosion </h4>
-      </div>
-    </div>
+    @include('frontend.resultados.blocks.variables_sociales')
   </div>
 </div>
 
@@ -744,85 +518,13 @@
     <div class="col-xs-6" style="padding-left: 35px;">
       <div class="row">
         <h2>Temas ambientales por municipio</h2>
-        <div class="col-xs-6">
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-        </div>
-        <div class="col-xs-6" style="padding-left:15px;">
-          <div class="row">
-            <h4 style="color:black;"> Achi </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> Ayapel </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> Caimito </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> Guaranda </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> Magangue </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> Majagual </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> Nechi </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> San Benito Abad </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> San Jacinto del Cauca </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> San Marcos </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> Sucre </h4>
-          </div>
-        </div>
+        @include('frontend.resultados.blocks.temas_sociales')
       </div>
     </div>
     <div class="col-xs-6" style="padding-left: 35px;">
       <div class="row">
         <h2>Ubicacion</h2>
-
+        <div id="map_social" style="height:400px;"></div>
       </div>
     </div>
 </div>
@@ -832,85 +534,7 @@
     <div class="row">
       <div class="col-xs-4"><h1 style="color:white;">ECONOMICO</h1></div><div class="col-xs-8"><h2 style="color:white;">variables</h2></div>
     </div>
-    <div class="col-xs-6" style="padding-left: 35px;">
-      <div class="row">
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-        <div class="row">
-          <h4 style="text-align:right;"> Contaminacion por mineria </h4>
-        </div>
-
-      </div>
-    </div>
-    <div class="col-xs-6" style="padding-left: 35px;">
-      <div class="row">
-        <h4> Contaminacion por mineria </h4>
-      </div>
-      <div class="row">
-        <h4> Contaminacion de fuentes hidricas y ecosistemas </h4>
-      </div>
-      <div class="row">
-        <h4> Residuos solidos </h4>
-      </div>
-      <div class="row">
-        <h4> Contaminacion ambiental </h4>
-      </div>
-      <div class="row">
-        <h4> Deforestacion</h4>
-      </div>
-      <div class="row">
-        <h4> Inundaciones </h4>
-      </div>
-      <div class="row">
-        <h4> Sequias </h4>
-      </div>
-      <div class="row">
-        <h4> Especies foraneas </h4>
-      </div>
-      <div class="row">
-        <h4> Ecosistemas nativos </h4>
-      </div>
-      <div class="row">
-        <h4> Contaminacion Ambiental </h4>
-      </div>
-      <div class="row">
-        <h4> Sedimentacion </h4>
-      </div>
-      <div class="row">
-        <h4> Erosion </h4>
-      </div>
-    </div>
+      @include('frontend.resultados.blocks.variables_economicas')
   </div>
 </div>
 
@@ -918,85 +542,13 @@
     <div class="col-xs-6" style="padding-left: 35px;">
       <div class="row">
         <h2>Temas ambientales por municipio</h2>
-        <div class="col-xs-6">
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black; text-align:right;"> Contaminacion </h4>
-          </div>
-        </div>
-        <div class="col-xs-6" style="padding-left:15px;">
-          <div class="row">
-            <h4 style="color:black;"> Achi </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> Ayapel </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> Caimito </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> Guaranda </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> Magangue </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> Majagual </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> Nechi </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> San Benito Abad </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> San Jacinto del Cauca </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> San Marcos </h4>
-          </div>
-          <div class="row">
-            <h4 style="color:black;"> Sucre </h4>
-          </div>
-        </div>
+        @include('frontend.resultados.blocks.temas_economicos')
       </div>
     </div>
     <div class="col-xs-6" style="padding-left: 35px;">
       <div class="row">
         <h2>Ubicacion</h2>
-
+        <div id="map_economico" style="height:400px;"></div>
       </div>
     </div>
 </div>
