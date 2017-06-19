@@ -8,6 +8,8 @@ use Validator;
 use \App\Http\Requests\Frontend\FrontendRequest;
 use Maatwebsite\Excel\Facades\Excel;
 use \App\Participacion;
+use \App\Consulta;
+use DB;
 
 
 /**
@@ -31,7 +33,20 @@ class ParticipacionController extends Controller
        return view('frontend.participacion.index');
      }
      public function answers(){
-       return view('frontend.resultados.index');
+
+       $consulta = new Consulta();
+       $datos_genero = $consulta->obtenerGenero();
+       $datos_ocupacion = $consulta->obtenerOcupacion();
+       $datos_discapacidad = $consulta->obtenerDiscapacidad();
+       $datos_nivel_educativo = $consulta->obtenerNivelEducativo();
+
+
+       return view('frontend.resultados.index')
+              ->with('datos_genero',$datos_genero)
+              ->with('datos_ocupacion',$datos_ocupacion)
+              ->with('datos_discapacidad',$datos_discapacidad)
+              ->with('datos_nivel_educativo',$datos_nivel_educativo);
+
      }
 
      public function save(FrontendRequest $request){
@@ -204,6 +219,18 @@ class ParticipacionController extends Controller
      }
 
 
+
+     /*Request Ajax Respuestas */
+     public function dataResponse($option){
+       $consulta = new Consulta();
+       if($option == "regimen-salud"){
+         $data = $consulta->obtenerRegimenSalud();
+       }else{
+         $data = "none";
+       }
+
+       return $data;
+     }
 
 
 }

@@ -1,4 +1,4 @@
-@extends('frontend.layouts.participacion')
+@extends('frontend.layouts.respuestas')
 
 @section('container')
 <div class="container">
@@ -93,8 +93,11 @@
     <div class="col-xs-4" style="padding-left: 35px;">
         <div class="row">
           <h2>Genero</h2>
-          <img src="http://team6.co.kr/wp-content/uploads/2014/11/default-placeholder-1024x1024-960x500.png" style="width:90%;"></img>
+          @include('frontend.resultados.blocks.genero')
+
+
         </div>
+
         <div class="row">
           <h2>Edad</h2>
           <img src="http://team6.co.kr/wp-content/uploads/2014/11/default-placeholder-1024x1024-960x500.png" style="width:90%;"></img>
@@ -103,8 +106,8 @@
     <div class="col-xs-4" style="background-color:#f5f5f5; padding-left: 35px;">
       <div class="row">
         <h2>Regimen de salud</h2>
-        <img src="http://team6.co.kr/wp-content/uploads/2014/11/default-placeholder-1024x1024-960x500.png" style="width:90%;"></img>
-      </div>
+          <canvas id="chartRegimenSalud" width="400" height="200"></canvas>
+        </div>
       <div class="row">
         <h2>Estrato Socioeconomico</h2>
         <img src="http://team6.co.kr/wp-content/uploads/2014/11/default-placeholder-1024x1024-960x500.png" style="width:90%;"></img>
@@ -113,35 +116,33 @@
     <div class="col-xs-4" style="padding-left: 35px;">
       <div class="row">
         <h2>Ocupacion</h2>
-        <img src="http://team6.co.kr/wp-content/uploads/2014/11/default-placeholder-1024x1024-960x500.png" style="width:90%;"></img>
-      </div>
+            @include('frontend.resultados.blocks.ocupacion')
+        </div>
       <div class="row">
         <h2>Discapacidad</h2>
-        <img src="http://team6.co.kr/wp-content/uploads/2014/11/default-placeholder-1024x1024-960x500.png" style="width:90%;"></img>
-      </div>
+          @include('frontend.resultados.blocks.discapacidad')
+        </div>
     </div>
   </div>
   <div class="row">
       <div class="col-xs-5" style="padding-left: 35px;">
         <div class="row">
           <h2>Nivel Educativo</h2>
-          <img src="http://team6.co.kr/wp-content/uploads/2014/11/default-placeholder-1024x1024-960x500.png" style="width:90%;"></img>
-        </div>
+            @include('frontend.resultados.blocks.nivel_educativo')
+          </div>
     </div>
     <div class="col-xs-7">
       <div class="row" style="padding-top: 55px;">
-        <div class="col-xs-2">
-
-        </div>
-        <div class="col-xs-4">
+        <div class="col-xs-6">
           <div class="row" style="padding-right:20px;">
         <h2 style="text-align: right; line-height: 35px !important;">Ha estado en<br>situacion de<br>desplazamiento o<br>ha sido victima del<br>conflicto armado</h2>
         </div>
       </div>
       <div class="col-xs-6">
         <div class="row">
-        <img src="http://team6.co.kr/wp-content/uploads/2014/11/default-placeholder-1024x1024-960x500.png" style="width:90%;"></img>
-      </div>
+
+          <div id="chartSituacionDesplazamiento" style="width: 300px; height: 300px;"></div>
+        </div>
       </div>
       </div>
     </div>

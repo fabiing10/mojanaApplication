@@ -1,3 +1,77 @@
+.bar {
+    height: 35px;
+}
+.t-right {
+    text-align: right;
+    padding-right: 10px;
+    line-height: 35px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.t-left {
+    text-align: left;
+    padding-right: 10px;
+    line-height: 35px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.left{
+  float: right;
+}
+.right{
+  float: right;
+}
+
+/* Colors */
+.bg-348EA9{
+  background-color: #348EA9;
+}
+.bg-53BB9B{
+  background-color: #53BB9B;
+}
+
+
+.bg-B17F4A{
+  background-color: #B17F4A;
+}
+.bg-7D4E24{
+  background-color: #7D4E24;
+}
+.bg-CA9E67{
+  background-color: #CA9E67;
+}
+.bg-3C3C3B{
+  background-color: #3C3C3B;
+}
+.bg-7B6A58{
+  background-color: #7B6A58;
+}
+
+
+.bg-575756{
+  background-color: #575756;
+}
+.bg-878787{
+  background-color: #878787;
+}
+
+
+.bg-3764B5{
+  background-color: #3764B5;
+}
+.bg-5A6CBA{
+  background-color: #5A6CBA;
+}
+.bg-394F7A{
+  background-color: #394F7A;
+}
+.bg-72C4F2{
+  background-color: #72C4F2;
+}
+.bg-CFDAFF{
+  background-color: #CFDAFF;
+}
+
 .title-internal {
     background-color: #8ff3fe !important;
 }

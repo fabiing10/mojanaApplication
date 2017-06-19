@@ -162,6 +162,7 @@
       <option value="estudiante">estudiante</option>
       <option value="empleado">empleado</option>
       <option value="independiente">independiente</option>
+      <option value="desempleado">Desempleado</option>
       <option value="hogar">hogar</option>
       <option value="pensionado">pensionado</option>
     </select>
@@ -929,17 +930,25 @@
             <br>
   <div class="row ambiental">
   <div class="col-xs-6">
-    <h4>Ambiental</h4>
+    <h4>AMBIENTAL</h4>
     <select class="form-control my-10 mtop-25" name="tema_problematica_ambiental" id="tema_problematica_ambiental" onchange="loadProblematica(this,'ambiental')"></select>
     <select class="form-control my-10" name="problematica_ambiental" id="problematica_ambiental" onchange="loadSolucion(this,'ambiental')"></select>
     <select class="form-control my-10" name="solucion_ambiental" id="solucion_ambiental"></select>
   </div>
   <div class="col-xs-5 mleft-50">
-    <select class="form-control my-10" name="ubicacion_solucion_ambiental">
-      <option value="">UBICACION DE LA SOLUCION</option>
-      <option value="Nechí">Nechí</option><option value="Achí">Achí</option><option value="Magangué">Magangué</option><option value="San Jacinto del Cauca">San Jacinto del Cauca</option>
-      <option value="Ayapel">Ayapel</option><option value="Caimito">Caimito</option><option value="Guaranda">Guaranda</option><option value="Majagual">Majagual</option>
-      <option value="San Benito Abad">San Benito Abad</option><option value="San Marcos">San Marcos</option><option value="Sucre ">Sucre</option>
+    <select class="form-control my-10" name="ubicacion_solucion_ambiental" onchange="loadPositionAmbiental(this)">
+      <option value="otro">UBICACION DE LA SOLUCION</option>
+      <option value="nechi">Nechí</option>
+      <option value="achi">Achí</option>
+      <option value="magangue">Magangué</option>
+      <option value="san-jacinto-cauca">San Jacinto del Cauca</option>
+      <option value="ayapel">Ayapel</option>
+      <option value="caimito">Caimito</option>
+      <option value="guaranda">Guaranda</option>
+      <option value="majagual">Majagual</option>
+      <option value="san-benito-abad">San Benito Abad</option>
+      <option value="san-marcos">San Marcos</option>
+      <option value="sucre ">Sucre</option>
     </select>
       <div id="map_ambiental"></div>
       <input type="hidden" name="ubicacion_latitud_ambiental" id="ubicacion_latitud_ambiental" />
@@ -957,11 +966,19 @@
     <select class="form-control my-10" name="solucion_social" id="solucion_social"></select>
   </div>
   <div class="col-xs-5 mleft-50">
-    <select onchange="hola()" class="form-control my-10" name="ubicacion_solucion_social">
-      <option>UBICACION DE LA SOLUCION</option>
-      <option value="Nechí">Nechí</option><option value="Achí">Achí</option><option value="Magangué">Magangué</option><option value="San Jacinto del Cauca">San Jacinto del Cauca</option>
-      <option value="Ayapel">Ayapel</option><option value="Caimito">Caimito</option><option value="Guaranda">Guaranda</option><option value="Majagual">Majagual</option>
-      <option value="San Benito Abad">San Benito Abad</option><option value="San Marcos">San Marcos</option><option value="Sucre ">Sucre</option>
+    <select class="form-control my-10" name="ubicacion_solucion_social" onchange="loadPositionSocial(this)">
+      <option value="otro">UBICACION DE LA SOLUCION</option>
+      <option value="nechi">Nechí</option>
+      <option value="achi">Achí</option>
+      <option value="magangue">Magangué</option>
+      <option value="san-jacinto-cauca">San Jacinto del Cauca</option>
+      <option value="ayapel">Ayapel</option>
+      <option value="caimito">Caimito</option>
+      <option value="guaranda">Guaranda</option>
+      <option value="majagual">Majagual</option>
+      <option value="san-benito-abad">San Benito Abad</option>
+      <option value="san-marcos">San Marcos</option>
+      <option value="sucre ">Sucre</option>
     </select>
       <div id="map_social"></div>
       <input type="hidden" name="ubicacion_latitud_social" id="ubicacion_latitud_social" />
@@ -978,11 +995,19 @@
     <select class="form-control my-10" name="solucion_economico" id="solucion_economico"></select>
   </div>
   <div class="col-xs-5 mleft-50">
-    <select class="form-control my-10" name="ubicacion_solucion_economico">
-      <option>UBICACION DE LA SOLUCION</option>
-      <option value="Nechí">Nechí</option><option value="Achí">Achí</option><option value="Magangué">Magangué</option><option value="San Jacinto del Cauca">San Jacinto del Cauca</option>
-      <option value="Ayapel">Ayapel</option><option value="Caimito">Caimito</option><option value="Guaranda">Guaranda</option><option value="Majagual">Majagual</option>
-      <option value="San Benito Abad">San Benito Abad</option><option value="San Marcos">San Marcos</option><option value="Sucre ">Sucre</option>
+    <select class="form-control my-10" name="ubicacion_solucion_economico" onchange="loadPositionEconomico(this)">
+      <option value="otro">UBICACION DE LA SOLUCION</option>
+      <option value="nechi">Nechí</option>
+      <option value="achi">Achí</option>
+      <option value="magangue">Magangué</option>
+      <option value="san-jacinto-cauca">San Jacinto del Cauca</option>
+      <option value="ayapel">Ayapel</option>
+      <option value="caimito">Caimito</option>
+      <option value="guaranda">Guaranda</option>
+      <option value="majagual">Majagual</option>
+      <option value="san-benito-abad">San Benito Abad</option>
+      <option value="san-marcos">San Marcos</option>
+      <option value="sucre ">Sucre</option>
     </select>
       <div id="map_economico"></div>
       <input type="hidden" name="ubicacion_latitud_economico" id="ubicacion_latitud_economico" />
@@ -997,19 +1022,18 @@
 
 @section('script')
 <script>
-function hola(){
-  var locations = ["8.0884616,-74.7938797","8.5676956,-74.5603219","9.2398158,-74.7766691","8.2508194,-74.7242101","8.3093061,-75.1583524","8.7696259,-75.254793","8.4683211,-74.5414131","8.5412716,-74.6368757","8.7849314,-75.2813005","8.5653242,-75.3041466","8.7849314,-75.2813005","8.5653242,-75.3041466","9.2126761,-76.3291093"]
-  console.log (locations);
-}
 
 $(document).ready(function() {
-    loadTematica('ambiental')
-    loadTematica('social')
-    loadTematica('economico')
+
+    loadTematica('ambiental');
+    loadTematica('social');
+    loadTematica('economico');
+
 });
 
 
 function loadTematica(clasificacion){
+
   var jqxhr = $.ajax( "/participacion/tematicas/clasificacion/"+clasificacion )
   .done(function(data) {
     var option = "<option>Seleccione una opcion</option>";
@@ -1036,6 +1060,7 @@ function loadTematica(clasificacion){
   .always(function() {
 
   });
+
 }
 
 function loadProblematica(select,clasificacion){
@@ -1098,5 +1123,170 @@ function loadSolucion(select,clasificacion){
   });
 }
 
+
+function loadPositionAmbiental(select){
+
+  var ambiental = 'images/marker-ambiental.png';
+
+  if(select.value == "nechi"){
+    var myLatlng = new google.maps.LatLng(8.0884616,-74.7938797);
+  }else if(select.value == "achi"){
+    var myLatlng = new google.maps.LatLng(8.5676956,-74.5603219);
+  }else if(select.value == "magangue"){
+    var myLatlng = new google.maps.LatLng(9.2398158,-74.7766691);
+  }else if(select.value == "san-jacinto-cauca"){
+    var myLatlng = new google.maps.LatLng(8.2508194,-74.7242101);
+  }else if(select.value == "ayapel"){
+    var myLatlng = new google.maps.LatLng(8.3093061,-75.1583524);
+  }else if(select.value == "caimito"){
+    var myLatlng = new google.maps.LatLng(8.7696259,-75.254793);
+  }else if(select.value == "guaranda"){
+    var myLatlng = new google.maps.LatLng(8.4683211,-74.5414131);
+  }else if(select.value == "majagual"){
+    var myLatlng = new google.maps.LatLng(8.5412716,-74.6368757);
+  }else if(select.value == "san-benito-abad"){
+    var myLatlng = new google.maps.LatLng(8.7849314,-75.2813005);
+  }else if(select.value == "san-marcos"){
+    var myLatlng = new google.maps.LatLng(8.5653242,-75.3041466);
+  }else if(select.value == "sucre"){
+    var myLatlng = new google.maps.LatLng(9.2126761,-76.3291093);
+  }else{
+    var myLatlng = new google.maps.LatLng(8.0884616,-74.7938797);
+  }
+
+  var mapOptions = { zoom: 7, center: myLatlng }
+  var map = new google.maps.Map(document.getElementById("map_ambiental"), mapOptions);
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      draggable: true,
+      animation: google.maps.Animation.DROP,
+      icon: ambiental
+  });
+  //Marker Ambiental
+  marker.addListener('click',toggleAmbiental);
+  marker.addListener('dragend', function (event){
+   document.getElementById("ubicacion_longitud_ambiental").value = this.getPosition().lng();
+   document.getElementById("ubicacion_latitud_ambiental").value = this.getPosition().lat();
+  });
+
+  // To add the marker to the map, call setMap();
+  marker.setMap(map);
+
+  var longitude = map.getCenter().lng();
+  var latitude = map.getCenter().lat();
+  document.getElementById("ubicacion_longitud_ambiental").value = longitude;
+  document.getElementById("ubicacion_latitud_ambiental").value = latitude;
+}
+
+function loadPositionSocial(select){
+
+  var ambiental = 'images/marker-social.png';
+
+  if(select.value == "nechi"){
+    var myLatlng = new google.maps.LatLng(8.0884616,-74.7938797);
+  }else if(select.value == "achi"){
+    var myLatlng = new google.maps.LatLng(8.5676956,-74.5603219);
+  }else if(select.value == "magangue"){
+    var myLatlng = new google.maps.LatLng(9.2398158,-74.7766691);
+  }else if(select.value == "san-jacinto-cauca"){
+    var myLatlng = new google.maps.LatLng(8.2508194,-74.7242101);
+  }else if(select.value == "ayapel"){
+    var myLatlng = new google.maps.LatLng(8.3093061,-75.1583524);
+  }else if(select.value == "caimito"){
+    var myLatlng = new google.maps.LatLng(8.7696259,-75.254793);
+  }else if(select.value == "guaranda"){
+    var myLatlng = new google.maps.LatLng(8.4683211,-74.5414131);
+  }else if(select.value == "majagual"){
+    var myLatlng = new google.maps.LatLng(8.5412716,-74.6368757);
+  }else if(select.value == "san-benito-abad"){
+    var myLatlng = new google.maps.LatLng(8.7849314,-75.2813005);
+  }else if(select.value == "san-marcos"){
+    var myLatlng = new google.maps.LatLng(8.5653242,-75.3041466);
+  }else if(select.value == "sucre"){
+    var myLatlng = new google.maps.LatLng(9.2126761,-76.3291093);
+  }else{
+    var myLatlng = new google.maps.LatLng(8.0884616,-74.7938797);
+  }
+
+  var mapOptions = { zoom: 7, center: myLatlng }
+  var map = new google.maps.Map(document.getElementById("map_social"), mapOptions);
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      draggable: true,
+      animation: google.maps.Animation.DROP,
+      icon: ambiental
+  });
+  //Marker Ambiental
+  marker.addListener('click',toggleAmbiental);
+  marker.addListener('dragend', function (event){
+   document.getElementById("ubicacion_longitud_social").value = this.getPosition().lng();
+   document.getElementById("ubicacion_latitud_social").value = this.getPosition().lat();
+  });
+
+  // To add the marker to the map, call setMap();
+  marker.setMap(map);
+
+  var longitude = map.getCenter().lng();
+  var latitude = map.getCenter().lat();
+  document.getElementById("ubicacion_longitud_social").value = longitude;
+  document.getElementById("ubicacion_latitud_social").value = latitude;
+}
+
+function loadPositionEconomico(select){
+
+  var ambiental = 'images/marker-economico.png';
+
+  if(select.value == "nechi"){
+    var myLatlng = new google.maps.LatLng(8.0884616,-74.7938797);
+  }else if(select.value == "achi"){
+    var myLatlng = new google.maps.LatLng(8.5676956,-74.5603219);
+  }else if(select.value == "magangue"){
+    var myLatlng = new google.maps.LatLng(9.2398158,-74.7766691);
+  }else if(select.value == "san-jacinto-cauca"){
+    var myLatlng = new google.maps.LatLng(8.2508194,-74.7242101);
+  }else if(select.value == "ayapel"){
+    var myLatlng = new google.maps.LatLng(8.3093061,-75.1583524);
+  }else if(select.value == "caimito"){
+    var myLatlng = new google.maps.LatLng(8.7696259,-75.254793);
+  }else if(select.value == "guaranda"){
+    var myLatlng = new google.maps.LatLng(8.4683211,-74.5414131);
+  }else if(select.value == "majagual"){
+    var myLatlng = new google.maps.LatLng(8.5412716,-74.6368757);
+  }else if(select.value == "san-benito-abad"){
+    var myLatlng = new google.maps.LatLng(8.7849314,-75.2813005);
+  }else if(select.value == "san-marcos"){
+    var myLatlng = new google.maps.LatLng(8.5653242,-75.3041466);
+  }else if(select.value == "sucre"){
+    var myLatlng = new google.maps.LatLng(9.2126761,-76.3291093);
+  }else{
+    var myLatlng = new google.maps.LatLng(8.0884616,-74.7938797);
+  }
+
+  var mapOptions = { zoom: 7, center: myLatlng }
+  var map = new google.maps.Map(document.getElementById("map_economico"), mapOptions);
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      draggable: true,
+      animation: google.maps.Animation.DROP,
+      icon: ambiental
+  });
+  //Marker Ambiental
+  marker.addListener('click',toggleAmbiental);
+  marker.addListener('dragend', function (event){
+   document.getElementById("ubicacion_longitud_economico").value = this.getPosition().lng();
+   document.getElementById("ubicacion_latitud_economico").value = this.getPosition().lat();
+  });
+
+  // To add the marker to the map, call setMap();
+  marker.setMap(map);
+
+  var longitude = map.getCenter().lng();
+  var latitude = map.getCenter().lat();
+  document.getElementById("ubicacion_longitud_economico").value = longitude;
+  document.getElementById("ubicacion_latitud_economico").value = latitude;
+}
 </script>
 @endsection

@@ -34,7 +34,9 @@
          var marker_ambiental;
          var marker_social;
          var marker_economico;
-         var image = 'images/hospital.png';
+         var ambiental = 'images/marker-ambiental.png';
+         var social = 'images/marker-social.png';
+         var economico = 'images/marker-economico.png';
 
           function initMap() {
 
@@ -48,7 +50,7 @@
               draggable: true,
               animation: google.maps.Animation.DROP,
               position: {lat: 9.2409393, lng: -74.7543637 },
-              icon: image
+              icon: ambiental
             });
 
 
@@ -62,7 +64,7 @@
               draggable: true,
               animation: google.maps.Animation.DROP,
               position: {lat: 9.2409393, lng: -74.7543637 },
-              icon: image
+              icon: social
             });
 
 
@@ -76,7 +78,7 @@
               draggable: true,
               animation: google.maps.Animation.DROP,
               position: {lat: 9.2409393, lng: -74.7543637 },
-              icon: image
+              icon: economico
             });
 
 
