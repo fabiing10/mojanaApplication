@@ -409,7 +409,7 @@
 <div class="row" style="padding-left:35px;">
     <div class="col-xs-6" style="padding-left: 35px;">
       <div class="row">
-        <h2>Temas ambientales por municipio</h2>
+        <h2>Temas Ambientales por municipio</h2>
             @include('frontend.resultados.blocks.temas_ambientales')
       </div>
     </div>
@@ -433,7 +433,7 @@
 <div class="row" style="padding-left:35px;">
     <div class="col-xs-6" style="padding-left: 35px;">
       <div class="row">
-        <h2>Temas ambientales por municipio</h2>
+        <h2>Temas Sociales por municipio</h2>
         @include('frontend.resultados.blocks.temas_sociales')
       </div>
     </div>
@@ -457,7 +457,7 @@
 <div class="row" style="padding-left:35px;">
     <div class="col-xs-6" style="padding-left: 35px;">
       <div class="row">
-        <h2>Temas ambientales por municipio</h2>
+        <h2>Temas Economicos por municipio</h2>
         @include('frontend.resultados.blocks.temas_economicos')
       </div>
     </div>

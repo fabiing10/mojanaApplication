@@ -793,9 +793,9 @@ class Consulta extends Model
 
     public function obtenerMapaAmbiental(){
       $data  = \DB::table('participaciones as participacion')
-                ->select('participacion.ubicacion_latitud_ambiental as laltitud','participacion.ubicacion_latitud_ambiental as longitud')
+                ->select('participacion.ubicacion_latitud_ambiental as latitud','participacion.ubicacion_longitud_ambiental as longitud','participacion.ubicacion_solucion_ambiental as municipio')
                 ->get();
-      return $data;
+      return response()->json($data);
     }
 
     public function obtenerMapaEconomico(){

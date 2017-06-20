@@ -270,6 +270,16 @@ class ParticipacionController extends Controller
        }else if($option == "tiempo-residencia"){
          $data = $consulta->obtenerTiempoResidencia();
        }
+       //Mapas
+       else if($option == "mapa-ambiental"){
+         $data = $consulta->obtenerMapaAmbiental();
+       }
+       else if($option == "mapa-economico"){
+         $data = $consulta->obtenerMapaEconomico();
+       }
+       else if($option == "mapa-social"){
+         $data = $consulta->obtenerMapaSocial();
+       }
 
 
 
