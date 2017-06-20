@@ -279,12 +279,12 @@
 <div class="row">
   <div class="col-xs-6">
     <div class="row">
-      <h2>Estado de la infraestructura, equipamiento y elemento<br>ambientales de su zona.</h2>
+      <h2>Estado de la infraestructura, equipamiento y elemento ambientales de su zona.</h2>
       </div>
   </div>
   <div class="col-xs-6">
     <div class="row">
-      <h2>Estado de la infraestructura,<br> Equipamiento y elementos ambientales<br>DE SU ZONA POR DIMENSIONES</h2>
+      <h2>Estado de la infraestructura, Equipamiento y elementos ambientales de su zona por Dimensiones</h2>
     </div>
   </div>
 </div>
