@@ -159,12 +159,12 @@
   <div class="col-xs-6">
     <select class="form-control mbottom-5" name="ocupacion">
       <option>OCUPACIÓN</option>
-      <option value="estudiante">estudiante</option>
-      <option value="empleado">empleado</option>
-      <option value="independiente">independiente</option>
+      <option value="estudiante">Estudiante</option>
+      <option value="empleado">Empleado</option>
+      <option value="independiente">Independiente</option>
       <option value="desempleado">Desempleado</option>
-      <option value="hogar">hogar</option>
-      <option value="pensionado">pensionado</option>
+      <option value="hogar">Hogar</option>
+      <option value="pensionado">Pensionado</option>
     </select>
     <input type="text" class="form-control mbottom-5" name="grupo_etnico" placeholder="GRUPO ÉTNICO">
     <div class="row grey-full p-3">
@@ -185,8 +185,8 @@
           <select class="form-control mbottom-5" name="nivel_educativo">
             <option>NIVEL EDUCATIVO</option>
             <option value="Primaria">Primaria</option>
-            <option value="secundaria">secundaria</option>
-            <option value="técnica">técnica</option>
+            <option value="secundaria">Secundaria</option>
+            <option value="técnica">Técnica</option>
             <option value="Universitaria">Universitaria</option>
             <option value="Ninguno">Ninguno</option>
           </select>
@@ -569,10 +569,19 @@
 </div>
 </div>
 <div class="row grey-full">
-<label class="pt-10 label-questions">ESTADO DE LA INFRAESRUCTURA, EQUIPAMIENTO Y <br/> ELEMENTOS AMBIENTALES DE SU ZONA POR TEMAS</label>
+<h2>ESTADO DE LA INFRAESRUCTURA, EQUIPAMIENTO Y <br/> ELEMENTOS AMBIENTALES DE SU ZONA POR TEMAS</h2>
     <br>
     <div class="col-md-12">
     <table class="mleft-20 mbottom-10">
+      <tr>
+
+        <td></td>
+        <td></td>
+        <td><label class="checkbox-inline">E</td>
+        <td><label class="checkbox-inline">B</td>
+        <td><label class="checkbox-inline">M</td>
+        <td><label class="checkbox-inline">NE</td>
+      </tr>
     <tr>
       <th rowspan="2" class="ambiental text-center white">AMBIENTAL</th>
       <td>Ríos, quebradas y ciénagas del municipio</td>
