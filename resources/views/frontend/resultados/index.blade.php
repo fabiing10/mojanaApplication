@@ -98,9 +98,9 @@
 
         </div>
 
-        <div class="row">
+        <div class="row" style="    margin-top: 55px;">
           <h2>Edad</h2>
-          <img src="http://team6.co.kr/wp-content/uploads/2014/11/default-placeholder-1024x1024-960x500.png" style="width:90%;"></img>
+          <canvas id="chartEdades" width="400" height="300"></canvas>
         </div>
       </div>
     <div class="col-xs-4" style="background-color:#f5f5f5; padding-left: 35px;">
@@ -109,9 +109,9 @@
           <canvas id="chartRegimenSalud" width="400" height="200"></canvas>
         </div>
       <div class="row">
-        <h2>Estrato Socioeconomico</h2>
-        <img src="http://team6.co.kr/wp-content/uploads/2014/11/default-placeholder-1024x1024-960x500.png" style="width:90%;"></img>
-      </div>
+        <h2>Sector</h2>
+          <canvas id="chartSector" width="400" height="300"></canvas>
+        </div>
     </div>
     <div class="col-xs-4" style="padding-left: 35px;">
       <div class="row">
@@ -140,8 +140,7 @@
       </div>
       <div class="col-xs-6">
         <div class="row">
-
-          <div id="chartSituacionDesplazamiento" style="width: 300px; height: 300px;"></div>
+          <canvas id="chartSituacionDesplazamiento" width="300" height="200"></canvas>
         </div>
       </div>
       </div>
@@ -193,8 +192,8 @@
     </div>
     <div class="row">
       <h2>Tiempo de Residencia</h2>
-      <img src="http://team6.co.kr/wp-content/uploads/2014/11/default-placeholder-1024x1024-960x500.png" style="width:90%;"></img>
-    </div>
+        <canvas id="chartTiempoResidencia" width="300" height="200"></canvas>
+      </div>
   </div>
 </div>
 <br>
@@ -205,153 +204,72 @@
       <table class="mleft-20 mbottom-10">
       <tr>
         <th rowspan="2" class="ambiental text-center white">AMBIENTAL</th>
-        <td>Ríos, quebradas y ciénagas del municipio</td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
+        <td class="inner_table1">Ríos, quebradas y ciénagas del municipio</td>
+
       </tr>
       <tr>
-        <td>Diques, jarillones, terraplanes</td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
+        <td class="inner_table2">Diques, jarillones, terraplanes</td>
+
       </tr>
       <tr>
         <th rowspan="16" class="social text-center white">SOCIAL</th>
-        <td>Espacios públicos del municipio en general</td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
+        <td class="inner_table3">Espacios públicos del municipio en general</td>
+
       </tr>
       <tr>
-        <td>Parques del barrio o vereda</td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
+        <td class="inner_table4">Parques del barrio o vereda</td>
       </tr>
       <tr>
-        <td>Los puestos de salud del municipio</td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
+        <td class="inner_table5">Los puestos de salud del municipio</td>
       </tr>
       <tr>
-        <td>Los puestos de salud del barrio o vereda</td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
+        <td class="inner_table6">Los puestos de salud del barrio o vereda</td>
       </tr>
       <tr>
-        <td>Centros culturales y artísticos en el municipio</td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
+        <td class="inner_table7">Centros culturales y artísticos en el municipio</td>
       </tr>
       <tr>
-        <td>Centros culturales y artísticos del barrio o vereda</td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
+        <td class="inner_table8">Centros culturales y artísticos del barrio o vereda</td>
       </tr>
       <tr>
-        <td>Centros educativos del municipio</td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
+        <td class="inner_table9">Centros educativos del municipio</td>
       </tr>
       <tr>
-        <td>Centros educativos del barrio o vereda</td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
+        <td class="inner_table10">Centros educativos del barrio o vereda</td>
       </tr>
       <tr>
-        <td>Centros deportivos y de recreación del municipio</td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
+        <td class="inner_table11">Centros deportivos y de recreación del municipio</td>
       </tr>
       <tr>
-        <td>Centros deportivos y de recreación del barrio o vereda</td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
+        <td class="inner_table12">Centros deportivos y de recreación del barrio o vereda</td>
       </tr>
       <tr>
-        <td>Bibliotecas públicas del municipio</td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
+        <td class="inner_table13">Bibliotecas públicas del municipio</td>
       </tr>
       <tr>
-        <td>Bibliotecas públicas del barrio o vereda</td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
+        <td class="inner_table14">Bibliotecas públicas del barrio o vereda</td>
       </tr>
       <tr>
-        <td>Ciclo vías o cliclorutas del municipio</td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
+        <td class="inner_table15">Ciclo vías o cliclorutas del municipio</td>
       </tr>
       <tr>
-        <td>Ciclo vías o ciclorutas del barrio o vereda</td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
+        <td class="inner_table16">Ciclo vías o ciclorutas del barrio o vereda</td>
       </tr>
       <tr>
-        <td>Las obras patrimoniales de su municipio</td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
+        <td class="inner_table17">Las obras patrimoniales de su municipio</td>
       </tr>
       <tr>
-        <td>Las obras patrimoniales de su comunidad</td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
+        <td class="inner_table18">Las obras patrimoniales de su comunidad</td>
       </tr>
       <tr>
         <th rowspan="3" class="economico text-center white">ECONÓMICO</th>
-        <td>Las vías principales del departamento</td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
+        <td class="inner_table19">Las vías principales del departamento</td>
       </tr>
       <tr>
-        <td>Las vías principales del municipio</td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
+        <td class="inner_table20">Las vías principales del municipio</td>
       </tr>
       <tr>
-        <td>Las vías del barrio o vereda</td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
-        <td><div class="">0%</div></td>
+        <td class="inner_table21">Las vías del barrio o vereda</td>
       </tr>
       <tr>
     </table>
@@ -362,13 +280,11 @@
   <div class="col-xs-6">
     <div class="row">
       <h2>ESTADO DE LA INFRAESTRUCTURA,<br>EQUIPAMIENTO Y ELEMENTOS<br>AMBIENTALES DE SU ZONA</h2>
-      <img src="http://team6.co.kr/wp-content/uploads/2014/11/default-placeholder-1024x1024-960x500.png" style="width:90%;"></img>
-    </div>
+      </div>
   </div>
   <div class="col-xs-6">
     <div class="row">
       <h2>ESTADO DE LA INFRAESTRUCTURA,<br>EQUIPAMIENTO Y ELEMENTOS AMBIENTALES<br>DE SU ZONA POR DIMENSIONES</h2>
-      <img src="http://team6.co.kr/wp-content/uploads/2014/11/default-placeholder-1024x1024-960x500.png" style="width:90%;"></img>
     </div>
   </div>
 </div>

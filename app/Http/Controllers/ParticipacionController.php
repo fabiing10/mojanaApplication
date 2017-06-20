@@ -259,7 +259,21 @@ class ParticipacionController extends Controller
          $data = $consulta->obtenerViviendaEs();
        }else if($option == "municipios"){
          $data = $consulta->obtenerMunicipios();
-       }else{
+       }else if($option == "estado-general"){
+         $data = $consulta->obtenerQuestions();
+       }else if($option == "sector-pertenece"){
+         $data = $consulta->obtenerSectorPertenece();
+       }else if($option == "edades"){
+         $data = $consulta->obtenerEdades();
+       }else if($option == "situacion-desplazamiento"){
+         $data = $consulta->obtenerSituacionDesplazamiento();
+       }else if($option == "tiempo-residencia"){
+         $data = $consulta->obtenerTiempoResidencia();
+       }
+
+
+
+       else{
          $data = "none";
        }
 

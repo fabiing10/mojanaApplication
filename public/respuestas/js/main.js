@@ -11,9 +11,103 @@ $( document ).ready(function() {
     mapaAmbiental();
     mapaSocial();
     mapaEconomico();
+    //add Juanpita
+    cargarQuestions();
+    cargarEdades();
+    cargarSector();
+    cargarDesplazamiento();
+    cargarTiempoResidencia();
 });
 
+//add Juanpita
+function cargarQuestions(){
 
+  $.get( "/resultados/q/estado-general", function() {
+
+  }).done(function(data) {
+    var i = 1;
+    $.each(data,function(index, value){
+          if(value.e < 25){
+            background = "#5ecdfd";
+          }else if(value.e >= 25 && value.e < 50){
+            background = "#24a4dc";
+          }else if(value.e >= 50 && value.e <= 75){
+            background = "#0472a2";
+          }else if(value.e > 75 && value.e <= 100 ){
+            background = "#01415d";
+          }
+
+          if(value.b < 25){
+            background_b = "#5ecdfd";
+          }else if(value.b >= 25 && value.b < 50){
+            background_b = "#24a4dc";
+          }else if(value.b >= 50 && value.b <= 75){
+            background_b = "#0472a2";
+          }else if(value.b > 75 && value.b <= 100 ){
+            background_b = "#01415d";
+          }
+
+          if(value.m < 25){
+            background_m = "#5ecdfd";
+          }else if(value.m >= 25 && value.m < 50){
+            background_m = "#24a4dc";
+          }else if(value.m >= 50 && value.m <= 75){
+            background_m = "#0472a2";
+          }else if(value.m > 75 && value.m <= 100 ){
+            background_m = "#01415d";
+          }
+
+          if(value.ne < 25){
+            background_ne = "#5ecdfd";
+          }else if(value.ne >= 25 && value.ne < 50){
+            background_ne = "#24a4dc";
+          }else if(value.ne >= 50 && value.ne <= 75){
+            background_ne = "#0472a2";
+          }else if(value.ne > 75 && value.ne <= 100 ){
+            background_ne = "#01415d";
+          }
+          table = "<td><div class='q__e' style='background-color:"+background+";'>"+value.e+"%</div></td><td><div class='q__e' style='background-color:"+background_b+";'>"+value.b+"%</div></td><td><div class='q__e' style='background-color:"+background_m+";'>"+value.m+"%</div></td><td><div class='q__e' style='background-color:"+background_ne+";'>"+value.ne+"%</div></td>";
+          console.log(table);
+          $(table).insertAfter(".inner_table"+i);
+
+        i++;
+    });
+
+  }).fail(function() {
+      console.log( "error" );
+    });
+}
+
+function cargarSector(){
+  $.get( "/resultados/q/sector-pertenece", function() {
+
+  }).done(function(value) {
+
+      var data = {
+        labels: ["Ninguno", "Transporte y vias", "Gremios", "Medio ambiente y desarrollo","Infraestructura y servicios públicos"],
+        datasets: [
+          {
+            data: [value.ninguno, value.transporte_vias,value.gremios,value.medio_ambiente,value.infraestructura],
+            backgroundColor: [ "#3764B5", "#5A6CBA", "#394F7A", "#72C4F2","#1eaeff"],
+            hoverBackgroundColor: [ "#3764B5", "#5A6CBA", "#394F7A","#72C4F2","#1eaeff"]
+          }]
+      };
+
+      var promisedDeliveryChart = new Chart(document.getElementById('chartSector'), {
+        type: 'doughnut',
+        data: data,
+        options: {
+        	responsive: true,
+          legend: {
+            display: false
+          }
+        }
+       });
+
+  }).fail(function() {
+      console.log( "error" );
+    });
+}
 
 function cargarRegimenSalud(){
   $.get( "/resultados/q/regimen-salud", function() {
@@ -373,6 +467,7 @@ function mapaAmbiental(){
       console.log( "error" );
     });
 }
+
 function mapaEconomico(){
   $.get( "/resultados/q/mapa-economico", function() {
 
@@ -414,6 +509,7 @@ function mapaEconomico(){
       console.log( "error" );
     });
 }
+
 function mapaSocial(){
   $.get( "/resultados/q/mapa-social", function() {
 
@@ -456,41 +552,98 @@ function mapaSocial(){
     });
 }
 
-/*
-function cargarSituacionDesplazamiento(){
-  $.get( "/resultados/q/regimen-salud", function() {
+function cargarEdades(){
+
+  $.get( "/resultados/q/edades", function() {
 
   }).done(function(value) {
 
-    google.charts.load('current', {'packages':['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
+      var data = {
+        labels: ["18 - 25 Años", "25 - 35 Años", "35 - 45 Años", "45 - 55 Años","55 - 68 Años","68 - 80 Años"],
+        datasets: [
+          {
+            data: [value.opt01, value.opt02,value.opt03,value.opt04,value.opt05,value.opt06],
+            backgroundColor: [ "#006633", "#2fac66", "#00a19a", "#00e0cf","#2bca6d","#1eaeff"],
+            hoverBackgroundColor: [ "#006633", "#2fac66", "#00a19a","#00e0cf","#2bca6d","#1eaeff"]
+          }]
+      };
 
-    var dataTable = new google.visualization.DataTable(json);
+      var promisedDeliveryChart = new Chart(document.getElementById('chartEdades'), {
+        type: 'pie',
+        data: data,
+        options: {
+        	responsive: true,
+          legend: {
+            display: false
+          }
+        }
+       });
 
   }).fail(function() {
       console.log( "error" );
     });
 }
 
+function cargarTiempoResidencia(){
 
-function drawChart() {
+  $.get( "/resultados/q/tiempo-residencia", function() {
 
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
-        ]);
+  }).done(function(value) {
 
-        var options = {
-          title: 'My Daily Activities',
-           legend: 'none',
-        };
+      var data = {
+        labels: ["1 - 10 Años", "11 - 20 Años", "21 - 30 Años", "30 o mas Años"],
+        datasets: [
+          {
+            data: [value.opt01, value.opt02,value.opt03,value.opt04],
+            backgroundColor: [ "#006633", "#2fac66", "#00a19a", "#00e0cf"],
+            hoverBackgroundColor: [ "#006633", "#2fac66", "#00a19a","#00e0cf"]
+          }]
+      };
 
-        var chart = new google.visualization.PieChart(document.getElementById('chartSituacionDesplazamiento'));
+      var promisedDeliveryChart = new Chart(document.getElementById('chartTiempoResidencia'), {
+        type: 'pie',
+        data: data,
+        options: {
+        	responsive: true,
+          legend: {
+            display: false
+          }
+        }
+       });
 
-        chart.draw(data, options);
-      }
-*/
+  }).fail(function() {
+      console.log( "error" );
+    });
+}
+
+function cargarDesplazamiento(){
+
+  $.get( "/resultados/q/situacion-desplazamiento", function() {
+
+  }).done(function(value) {
+
+      var data = {
+        labels: ["Desplazado", "No Desplazado"],
+        datasets: [
+          {
+            data: [value.desplazado, value.no_desplazado],
+            backgroundColor: [ "#484847", "#878787"],
+            hoverBackgroundColor: [ "#484847", "#878787"]
+          }]
+      };
+
+      var promisedDeliveryChart = new Chart(document.getElementById('chartSituacionDesplazamiento'), {
+        type: 'pie',
+        data: data,
+        options: {
+        	responsive: true,
+          legend: {
+            display: false
+          }
+        }
+       });
+
+  }).fail(function() {
+      console.log( "error" );
+    });
+}
