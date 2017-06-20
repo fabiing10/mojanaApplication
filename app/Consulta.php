@@ -800,14 +800,14 @@ class Consulta extends Model
 
     public function obtenerMapaEconomico(){
       $data  = \DB::table('participaciones as participacion')
-                ->select('participacion.ubicacion_latitud_economico as latitud','participacion.ubicacion_latitud_economico as longitud')
+                ->select('participacion.ubicacion_latitud_economico as latitud','participacion.ubicacion_longitud_economico as longitud')
                 ->get();
       return $data;
     }
 
     public function obtenerMapaSocial(){
       $data  = \DB::table('participaciones as participacion')
-                ->select('participacion.ubicacion_latitud_social as latitud','participacion.ubicacion_latitud_social as longitud')
+                ->select('participacion.ubicacion_latitud_social as latitud','participacion.ubicacion_longitud_social as longitud')
                 ->get();
       return $data;
     }
@@ -815,7 +815,7 @@ class Consulta extends Model
     public function obtenerMapaGeneral(){
 
       $data  = \DB::table('participaciones as participacion')
-                ->select('participacion.ubicacion_latitud_social as latitud','participacion.ubicacion_latitud_social as longitud')
+                ->select('participacion.ubicacion_latitud_social as latitud','participacion.ubicacion_longitud_social as longitud')
                 ->get();
 
       /*$dataEconomico  = \DB::table('participaciones as participacion')
