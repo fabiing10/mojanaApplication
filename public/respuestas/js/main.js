@@ -248,7 +248,7 @@ function cargarActores(){
       var myPieChart = new Chart(Ac,{
         type: 'bar',
         data: {
-             labels: ["Ninguno", "Transporte", "Infraestructura","Gremios","Ambiente"],
+             labels: ["Personas", "Transporte", "Infraestructura","Gremios","Ambiente"],
              datasets: [{
                  data: [data.ninguno, data.transporte,data.infraestructura,data.gremios,data.ambiente],
                  backgroundColor: [
@@ -448,7 +448,8 @@ function mapaAmbiental(){
    for (i = 0; i < locations.length; i++) {
      marker = new google.maps.Marker({
        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-       map: map
+       map: map,
+       icon: '/participacion/images/marker-ambiental-icon.png'
      });
 
      google.maps.event.addListener(marker, 'click', (function(marker, i) {
@@ -489,7 +490,8 @@ function mapaEconomico(){
    for (i = 0; i < locations.length; i++) {
      marker = new google.maps.Marker({
        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-       map: map
+       map: map,
+       icon: '/participacion/images/marker-economico-icon.png'
      });
 
      google.maps.event.addListener(marker, 'click', (function(marker, i) {
@@ -528,7 +530,8 @@ function mapaSocial(){
    for (i = 0; i < locations.length; i++) {
      marker = new google.maps.Marker({
        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-       map: map
+       map: map,
+       icon: '/participacion/images/marker-social-icon.png'
      });
 
      google.maps.event.addListener(marker, 'click', (function(marker, i) {

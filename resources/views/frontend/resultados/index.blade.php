@@ -105,17 +105,17 @@
       </div>
     <div class="col-xs-4" style="background-color:#f5f5f5; padding-left: 35px;">
       <div class="row">
-        <h2>Regimen de salud</h2>
+        <h2>Régimen de salud</h2>
           <canvas id="chartRegimenSalud" width="400" height="200"></canvas>
         </div>
       <div class="row">
-        <h2>Sector</h2>
+        <h2>Estrato Socio Económico</h2>
           <canvas id="chartSector" width="400" height="300"></canvas>
         </div>
     </div>
     <div class="col-xs-4" style="padding-left: 35px;">
       <div class="row">
-        <h2>Ocupacion</h2>
+        <h2>Ocupación</h2>
             @include('frontend.resultados.blocks.ocupacion')
         </div>
       <div class="row">
@@ -160,14 +160,14 @@
     <h3>2</h3>
   </div>
   <div class="col-md-11">
-    <h3>UBICACION</h3>
+    <h3>UBICACIÓN</h3>
   </div>
 </div>
 <div class="row">
     <div class="col-xs-8" >
       <div class="col-xs-12"style="padding-left: 35px; background-color:#eaeaea;">
       <div class="row">
-        <h2 style="text-align:center;">Participacion por municipio</h2>
+        <h2 style="text-align:center;">Participación por municipio</h2>
         <div class="col-md-3">
 
         </div>
@@ -177,11 +177,11 @@
       </div>
     </div>
     <div class="col-xs-6" style="padding-left: 35px;">
-      <h2>Quienes han salido<br> de su departamento</h2>
+      <h2>Quiénes han salido<br> de su departamento</h2>
       <canvas id="chartHanSalido" width="400" height="200"></canvas>
     </div>
     <div class="col-xs-6" style="padding-left: 35px;">
-      <h2>Quienes han salido<br> de su Municipio</h2>
+      <h2>Quiénes han salido<br> de su Municipio</h2>
       <canvas id="chartHanSalidoM" width="400" height="200"></canvas>
     </div>
   </div>
@@ -191,14 +191,14 @@
       @include('frontend.resultados.blocks.sector')
     </div>
     <div class="row">
-      <h2>Tiempo de Residencia</h2>
+      <h2 class="header-padding">Tiempo de Residencia</h2>
         <canvas id="chartTiempoResidencia" width="300" height="200"></canvas>
       </div>
   </div>
 </div>
 <br>
 <div class="row" style="background:#f5f5f5; padding-left:35px;">
-    <label class="pt-10 label-questions">ESTADO DE LA INFRAESRUCTURA, EQUIPAMIENTO Y <br/> ELEMENTOS AMBIENTALES DE SU ZONA POR TEMAS</label>
+    <h2>ESTADO DE LA INFRAESRUCTURA, EQUIPAMIENTO Y <br/> ELEMENTOS AMBIENTALES DE SU ZONA POR TEMAS</h2>
       <br>
       <div class="col-md-12">
       <table class="mleft-20 mbottom-10">
@@ -299,7 +299,7 @@
 <div class="row">
   <div class="col-xs-6" style="padding-left: 35px;">
     <div class="row">
-      <h2>Condiciones fisicas de las viviendas</h2>
+      <h2>Condiciones físicas de las viviendas</h2>
       <canvas id="chartCondiciones" width="400" height="200"></canvas>
     </div>
   </div>
@@ -323,7 +323,7 @@
       <div class="col-xs-5">
         <h2>Le gustaria que<br>permitieran<br>mas suelo para</h2>
       </div>
-      <div class="col-xs-7">
+      <div class="col-xs-7" style="margin-top: 40px;">
         @include('frontend.resultados.blocks.suelo')
       </div>
     </div>
@@ -345,15 +345,12 @@
     <h2>Problemas dimension vs tema</h2>
     <div class="row">
       <table id="mojana" style="width:80%; margin:0 auto; text-align:center;">
-        <tr>
-          <th colspan="3"></th>
-          <th colspan="5">Infraestructura(Urbana y Rural)</th>
-        </tr>
+
         <tr>
           <th></th>
-          <th colspan="2">E-natural</th>
-          <th colspan="3">Publica</th>
-          <th>Privada</th>
+          <th colspan="2"><img src="/participacion/images/img_entorno.png" style="width:90%;" /></th>
+          <th colspan="4"><img src="/participacion/images/img_infraestructura.png" style="width:90%;" /></th>
+
         </tr>
         <tr>
           <th></th>
@@ -396,7 +393,7 @@
   </div>
 </div>
 
-<div class="row" style="background:#018b38;">
+<div class="row row_panel" style="background:#018b38;">
   <div class="col-xs-12" style="padding-left: 35px; padding-left:35px;">
     <div class="row">
       <div class="col-xs-4"><h1 style="color:white;">AMBIENTAL</h1></div><div class="col-xs-8"><h2 style="color:white;">variables</h2></div>
@@ -406,7 +403,7 @@
   </div>
 </div>
 
-<div class="row" style="padding-left:35px;">
+<div class="row row_panel" style="padding-left:35px;">
     <div class="col-xs-6" style="padding-left: 35px;">
       <div class="row">
         <h2>Temas Ambientales por municipio</h2>
@@ -415,13 +412,13 @@
     </div>
     <div class="col-xs-6" style="padding-left: 35px;">
       <div class="row">
-        <h2>Ubicacion</h2>
+        <h2>Ubicación</h2>
         <div id="map_ambiental" style="height:400px;"></div>
       </div>
     </div>
 </div>
 
-<div class="row" style="background:#4d4d4c;">
+<div class="row row_panel" style="background:#4d4d4c;">
   <div class="col-xs-12" style="padding-left: 35px; padding-left:35px;">
     <div class="row">
       <div class="col-xs-4"><h1 style="color:white;">SOCIAL</h1></div><div class="col-xs-8"><h2 style="color:white;">variables</h2></div>
@@ -430,7 +427,7 @@
   </div>
 </div>
 
-<div class="row" style="padding-left:35px;">
+<div class="row row_panel" style="padding-left:35px;">
     <div class="col-xs-6" style="padding-left: 35px;">
       <div class="row">
         <h2>Temas Sociales por municipio</h2>
@@ -439,13 +436,13 @@
     </div>
     <div class="col-xs-6" style="padding-left: 35px;">
       <div class="row">
-        <h2>Ubicacion</h2>
+        <h2>Ubicación</h2>
         <div id="map_social" style="height:400px;"></div>
       </div>
     </div>
 </div>
 
-<div class="row" style="background:#0095df;">
+<div class="row row_panel" style="background:#0095df;">
   <div class="col-xs-12" style="padding-left: 35px; padding-left:35px;">
     <div class="row">
       <div class="col-xs-4"><h1 style="color:white;">ECONOMICO</h1></div><div class="col-xs-8"><h2 style="color:white;">variables</h2></div>
@@ -454,7 +451,7 @@
   </div>
 </div>
 
-<div class="row" style="padding-left:35px;">
+<div class="row row_panel" style="padding-left:35px;">
     <div class="col-xs-6" style="padding-left: 35px;">
       <div class="row">
         <h2>Temas Economicos por municipio</h2>
@@ -463,7 +460,7 @@
     </div>
     <div class="col-xs-6" style="padding-left: 35px;">
       <div class="row">
-        <h2>Ubicacion</h2>
+        <h2>Ubicación</h2>
         <div id="map_economico" style="height:400px;"></div>
       </div>
     </div>

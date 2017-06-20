@@ -1,6 +1,31 @@
 .bar {
     height: 35px;
 }
+.row_panel{
+  padding: 40px 0px;
+}
+.header-padding{
+  margin-bottom: 25px;
+}
+.row h2 {
+    font-family: "Exo2-light", Arial, Tahoma, sans-serif !important;
+    font-weight: bold !important;
+    margin: 20px 0px!important;
+    display: block;
+    min-height: 25px;
+
+  }
+.h-20{
+  height: 20px !important;
+}
+.bar-20{
+  line-height: 20px !important;
+    font-size: 17px !important;
+}
+.bar-30{
+  line-height: 30px !important;
+    font-size: 17px !important;
+}
 .q__e {
     text-align: center;
     color: white;
@@ -240,8 +265,8 @@ span.menu-text {
   padding-top: 10px;
 }
 .contenido{
-      padding-left: 90px;
-      padding-right: 45px;
+      padding-left: 30px;
+      padding-right: 30px;
       background: white;
 }
 form {

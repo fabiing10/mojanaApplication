@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-xs-6">
-    <div class="row t-right">
+    <div class="row t-right bar-30">
       Vivienda
     </div>
   </div>
@@ -11,8 +11,8 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-6">
-    <div class="row t-right">
+  <div class="col-xs-6 ">
+    <div class="row t-right bar-30">
       Comercio
     </div>
   </div>
@@ -23,8 +23,8 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-6">
-    <div class="row t-right">
+  <div class="col-xs-6 ">
+    <div class="row t-right bar-30">
       Conservación
     </div>
   </div>
@@ -36,7 +36,7 @@
 </div>
 <div class="row">
   <div class="col-xs-6">
-    <div class="row t-right">
+    <div class="row t-right bar-30">
       Protección
     </div>
   </div>
@@ -48,7 +48,7 @@
 </div>
 <div class="row">
   <div class="col-xs-6">
-    <div class="row t-right">
+    <div class="row t-right bar-30">
       Agricultura
     </div>
   </div>
@@ -60,7 +60,7 @@
 </div>
 <div class="row">
   <div class="col-xs-6">
-    <div class="row t-right">
+    <div class="row t-right bar-30">
       Ganaderia
     </div>
   </div>
@@ -72,7 +72,7 @@
 </div>
 <div class="row">
   <div class="col-xs-6">
-    <div class="row t-right">
+    <div class="row t-right bar-30">
       Mineria
     </div>
   </div>
@@ -84,7 +84,7 @@
 </div>
 <div class="row">
   <div class="col-xs-6">
-    <div class="row t-right">
+    <div class="row t-right bar-30">
       Industria
     </div>
   </div>
@@ -96,7 +96,7 @@
 </div>
 <div class="row">
   <div class="col-xs-6">
-    <div class="row t-right">
+    <div class="row t-right bar-30">
       Vias
     </div>
   </div>
