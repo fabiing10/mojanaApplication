@@ -800,16 +800,37 @@ class Consulta extends Model
 
     public function obtenerMapaEconomico(){
       $data  = \DB::table('participaciones as participacion')
-                ->select('participacion.ubicacion_latitud_economico as laltitud','participacion.ubicacion_latitud_economico as longitud')
+                ->select('participacion.ubicacion_latitud_economico as latitud','participacion.ubicacion_latitud_economico as longitud')
                 ->get();
       return $data;
     }
 
     public function obtenerMapaSocial(){
       $data  = \DB::table('participaciones as participacion')
-                ->select('participacion.ubicacion_latitud_social as laltitud','participacion.ubicacion_latitud_social as longitud')
+                ->select('participacion.ubicacion_latitud_social as latitud','participacion.ubicacion_latitud_social as longitud')
                 ->get();
       return $data;
+    }
+
+    public function obtenerMapaGeneral(){
+
+      $data  = \DB::table('participaciones as participacion')
+                ->select('participacion.ubicacion_latitud_social as latitud','participacion.ubicacion_latitud_social as longitud')
+                ->get();
+
+      /*$dataEconomico  = \DB::table('participaciones as participacion')
+                ->select('participacion.ubicacion_latitud_economico as latitud','participacion.ubicacion_latitud_economico as longitud')
+                ->get();
+
+      array_push($data, $dataEconomico);
+
+      $dataAmbiental  = \DB::table('participaciones as participacion')
+                ->select('participacion.ubicacion_latitud_ambiental as latitud','participacion.ubicacion_longitud_ambiental as longitud','participacion.ubicacion_solucion_ambiental as municipio')
+                ->get();
+      array_push($data, $dataAmbiental);*/
+
+      return $data;
+
     }
 
     public function obtenerSectorPertenece(){

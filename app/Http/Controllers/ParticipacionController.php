@@ -280,6 +280,9 @@ class ParticipacionController extends Controller
        else if($option == "mapa-social"){
          $data = $consulta->obtenerMapaSocial();
        }
+       else if($option == "mapa-general"){
+         $data = $consulta->obtenerMapaGeneral();
+       }
 
 
 

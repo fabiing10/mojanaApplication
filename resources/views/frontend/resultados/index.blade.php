@@ -468,6 +468,14 @@
       </div>
     </div>
 </div>
+
+<div class="row" style="background:gray;">
+  <div class="col-xs-12" style="">
+    <div class="row">
+        <div id="map_general" style="width:100%;height:400px;"></div>
+    </div>
+  </div>
+</div>
 <!--<table id="indicadores" style="width: 100%; border: none;" class="indicadores">
   <tbody>
     <tr>
