@@ -67,7 +67,6 @@ function cargarQuestions(){
             background_ne = "#01415d";
           }
           table = "<td><div class='q__e' style='background-color:"+background+";'>"+value.e+"%</div></td><td><div class='q__e' style='background-color:"+background_b+";'>"+value.b+"%</div></td><td><div class='q__e' style='background-color:"+background_m+";'>"+value.m+"%</div></td><td><div class='q__e' style='background-color:"+background_ne+";'>"+value.ne+"%</div></td>";
-          console.log(table);
           $(table).insertAfter(".inner_table"+i);
 
         i++;
