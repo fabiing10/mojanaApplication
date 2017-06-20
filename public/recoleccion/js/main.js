@@ -7,7 +7,7 @@ $( document ).ready(function() {
     //cargarActores();
     cargarCondiciones();
     //cargarViviendas();
-    //cargarMunicipios();
+    cargarMunicipios();
 
     //add Juanpita
     cargarQuestions();
@@ -371,9 +371,7 @@ function cargarViviendas(){
 }
 
 function cargarMunicipios(){
-  $.get( "/datos/q/municipios", function() {
 
-  }).done(function(data) {
 
       var Ac = $("#chartMunicipios");
       var myPieChart = new Chart(Ac,{
@@ -381,7 +379,7 @@ function cargarMunicipios(){
         data: {
              labels: ["Nechi", "Achi", "Magangue","S.J.Cauca","Ayapel","Caimito","Guaranda","Majagual","S.B.Abad","San Marcos","Sucre"],
              datasets: [{
-                 data: [data.nechi, data.achi, data.magangue, data.san_jacinto_cauca, data.ayapel, data.caimito, data.guaranda, data.majagual, data.san_benito_abad, data.san_marcos, data.sucre],
+                 data: [15, 15, 15, 13, 0, 14, 15,0,0,15,0],
                  backgroundColor: [
                      '#417cb7',
                      '#5fd9ff',
@@ -417,9 +415,7 @@ function cargarMunicipios(){
         }
       });
 
-  }).fail(function() {
-      console.log( "error" );
-    });
+
 }
 
 function mapaAmbiental(){

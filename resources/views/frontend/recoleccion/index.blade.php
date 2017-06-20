@@ -108,6 +108,10 @@
         <h2>Régimen de salud</h2>
           <canvas id="chartRegimenSalud" width="400" height="200"></canvas>
         </div>
+        <div class="row">
+          <h2>Nivel Educativo</h2>
+            @include('frontend.resultados.blocks.nivel_educativo')
+          </div>
     </div>
     <div class="col-xs-4" style="padding-left: 35px;">
       <div class="row">
@@ -121,20 +125,15 @@
     </div>
   </div>
   <div class="row">
-      <div class="col-xs-5" style="padding-left: 35px;">
-        <div class="row">
-          <h2>Nivel Educativo</h2>
-            @include('frontend.resultados.blocks.nivel_educativo')
-          </div>
-    </div>
-    <div class="col-xs-7">
+
+    <div class="col-xs-12">
       <div class="row" style="padding-top: 55px;">
-        <div class="col-xs-6">
+        <div class="col-xs-9">
           <div class="row" style="padding-right:20px;">
-        <h2 style="text-align: right; line-height: 35px !important;">Ha estado en<br>situacion de<br>desplazamiento o<br>ha sido victima del<br>conflicto armado</h2>
+        <h2 style="text-align: right; line-height: 35px !important;">Ha estado en situacion de desplazamiento o<br>ha sido victima del conflicto armado</h2>
         </div>
       </div>
-      <div class="col-xs-6">
+      <div class="col-xs-3">
         <div class="row">
           <canvas id="chartSituacionDesplazamiento" width="300" height="200"></canvas>
         </div>

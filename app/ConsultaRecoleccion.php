@@ -7,7 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class ConsultaRecoleccion extends Model
 {
     //
-
+    public function gRV($value){
+      $data = round($value);
+      return $data;
+    }
     public function obtenerGenero(){
       //Query Genero
       $h_query  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.genero')->where('participacion.genero',1)->count();
@@ -19,7 +22,7 @@ class ConsultaRecoleccion extends Model
       $mujeres = $m_query * 100 / $genero_total;
       $otros = $o_query * 100 / $genero_total;
 
-      $datos_genero = array('hombres'=> $hombres, 'mujeres' => $mujeres,'otros' => $otros);
+      $datos_genero = array('hombres'=>  $this->gRV($hombres), 'mujeres' => $this->gRV($mujeres),'otros' => $this->gRV($otros));
 
       return $datos_genero;
 
@@ -528,7 +531,7 @@ class ConsultaRecoleccion extends Model
       $b01 = $count_Q_01_B * 100 / $total_questions1;
       $m01 = $count_Q_01_M * 100 / $total_questions1;
       $ne01 = $count_Q_01_NE * 100 / $total_questions1;
-      $q_01 = array('e'=> $e01, 'b' => $b01, 'm' => $m01, 'ne' => $ne01);
+      $q_01 = array('e'=> $this->gRV($e01), 'b' => $this->gRV($b01), 'm' =>$this->gRV($m01), 'ne' => $this->gRV($ne01));
 
       $count_Q_02_E  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_02')->where('participacion.Q_02','E')->count();
       $count_Q_02_B  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_02')->where('participacion.Q_02','B')->count();
@@ -540,7 +543,7 @@ class ConsultaRecoleccion extends Model
       $b02 = $count_Q_02_B * 100 / $total_questions2;
       $m02 = $count_Q_02_M * 100 / $total_questions2;
       $ne02 = $count_Q_02_NE * 100 / $total_questions2;
-      $q_02 = array('e'=> $e02, 'b' => $b02, 'm' => $m02, 'ne' => $ne02);
+      $q_02 = array('e'=> $this->gRV($e02), 'b' => $this->gRV($b02), 'm' => $this->gRV($m02), 'ne' => $this->gRV($ne02));
 
       $count_Q_03_E  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_03')->where('participacion.Q_03','E')->count();
       $count_Q_03_B  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_03')->where('participacion.Q_03','B')->count();
@@ -552,7 +555,7 @@ class ConsultaRecoleccion extends Model
       $b03 = $count_Q_03_B * 100 / $total_questions3;
       $m03 = $count_Q_03_M * 100 / $total_questions3;
       $ne03 = $count_Q_03_NE * 100 / $total_questions3;
-      $q_03 = array('e'=> $e03, 'b' => $b03, 'm' => $m03, 'ne' => $ne03);
+      $q_03 = array('e'=> $this->gRV($e03), 'b' => $this->gRV($b03), 'm' => $this->gRV($m03), 'ne' => $this->gRV($ne03));
 
       $count_Q_04_E  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_04')->where('participacion.Q_04','E')->count();
       $count_Q_04_B  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_04')->where('participacion.Q_04','B')->count();
@@ -564,7 +567,7 @@ class ConsultaRecoleccion extends Model
       $b04 = $count_Q_04_B * 100 / $total_questions4;
       $m04 = $count_Q_04_M * 100 / $total_questions4;
       $ne04 = $count_Q_04_NE * 100 / $total_questions4;
-      $q_04 = array('e'=> $e04, 'b' => $b04, 'm' => $m04, 'ne' => $ne04);
+      $q_04 = array('e'=> $this->gRV($e04), 'b' => $this->gRV($b04), 'm' => $this->gRV($m04), 'ne' => $this->gRV($ne04));
 
       $count_Q_05_E  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_05')->where('participacion.Q_05','E')->count();
       $count_Q_05_B  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_05')->where('participacion.Q_05','B')->count();
@@ -576,7 +579,7 @@ class ConsultaRecoleccion extends Model
       $b05 = $count_Q_05_B * 100 / $total_questions5;
       $m05 = $count_Q_05_M * 100 / $total_questions5;
       $ne05 = $count_Q_05_NE * 100 / $total_questions5;
-      $q_05 = array('e'=> $e05, 'b' => $b05, 'm' => $m05, 'ne' => $ne05);
+      $q_05 = array('e'=> $this->gRV($e05), 'b' => $this->gRV($b05), 'm' => $this->gRV($m05), 'ne' => $this->gRV($ne05));
 
       $count_Q_06_E  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_06')->where('participacion.Q_06','E')->count();
       $count_Q_06_B  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_06')->where('participacion.Q_06','B')->count();
@@ -588,7 +591,7 @@ class ConsultaRecoleccion extends Model
       $b06 = $count_Q_06_B * 100 / $total_questions6;
       $m06 = $count_Q_06_M * 100 / $total_questions6;
       $ne06 = $count_Q_06_NE * 100 / $total_questions6;
-      $q_06 = array('e'=> $e06, 'b' => $b06, 'm' => $m06, 'ne' => $ne06);
+      $q_06 = array('e'=> $this->gRV($e06), 'b' => $this->gRV($b06), 'm' => $this->gRV($m06), 'ne' => $this->gRV($ne06));
 
       $count_Q_07_E  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_07')->where('participacion.Q_07','E')->count();
       $count_Q_07_B  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_07')->where('participacion.Q_07','B')->count();
@@ -600,7 +603,7 @@ class ConsultaRecoleccion extends Model
       $b07 = $count_Q_07_B * 100 / $total_questions7;
       $m07 = $count_Q_07_M * 100 / $total_questions7;
       $ne07 = $count_Q_07_NE * 100 / $total_questions7;
-      $q_07 = array('e'=> $e07, 'b' => $b07, 'm' => $m07, 'ne' => $ne07);
+      $q_07 = array('e'=> $this->gRV($e07), 'b' => $this->gRV($b07), 'm' => $this->gRV($m07), 'ne' => $this->gRV($ne07));
 
       $count_Q_08_E  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_08')->where('participacion.Q_08','E')->count();
       $count_Q_08_B  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_08')->where('participacion.Q_08','B')->count();
@@ -612,19 +615,8 @@ class ConsultaRecoleccion extends Model
       $b08 = $count_Q_08_B * 100 / $total_questions8;
       $m08 = $count_Q_08_M * 100 / $total_questions8;
       $ne08 = $count_Q_08_NE * 100 / $total_questions8;
-      $q_08 = array('e'=> $e08, 'b' => $b08, 'm' => $m08, 'ne' => $ne08);
+      $q_08 = array('e'=> $this->gRV($e08), 'b' => $this->gRV($b08), 'm' => $this->gRV($m08), 'ne' => $this->gRV($ne08));
 
-      $count_Q_08_E  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_08')->where('participacion.Q_08','E')->count();
-      $count_Q_08_B  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_08')->where('participacion.Q_08','B')->count();
-      $count_Q_08_M  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_08')->where('participacion.Q_08','M')->count();
-      $count_Q_08_NE  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_08')->where('participacion.Q_08','NE')->count();
-
-      $total_questions8 = $count_Q_08_E + $count_Q_08_B + $count_Q_08_M + $count_Q_08_NE;
-      $e08 = $count_Q_08_E * 100 / $total_questions8;
-      $b08 = $count_Q_08_B * 100 / $total_questions8;
-      $m08 = $count_Q_08_M * 100 / $total_questions8;
-      $ne08 = $count_Q_08_NE * 100 / $total_questions8;
-      $q_08 = array('e'=> $e08, 'b' => $b08, 'm' => $m08, 'ne' => $ne08);
 
       $count_Q_09_E  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_09')->where('participacion.Q_09','E')->count();
       $count_Q_09_B  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_09')->where('participacion.Q_09','B')->count();
@@ -636,7 +628,7 @@ class ConsultaRecoleccion extends Model
       $b09 = $count_Q_09_B * 100 / $total_questions9;
       $m09 = $count_Q_09_M * 100 / $total_questions9;
       $ne09 = $count_Q_09_NE * 100 / $total_questions9;
-      $q_09 = array('e'=> $e09, 'b' => $b09, 'm' => $m09, 'ne' => $ne09);
+      $q_09 = array('e'=> $this->gRV($e09), 'b' => $this->gRV($b09), 'm' => $this->gRV($m09), 'ne' => $this->gRV($ne09));
 
       $count_Q_10_E  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_10')->where('participacion.Q_10','E')->count();
       $count_Q_10_B  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_10')->where('participacion.Q_10','B')->count();
@@ -648,7 +640,7 @@ class ConsultaRecoleccion extends Model
       $b10 = $count_Q_10_B * 100 / $total_questions10;
       $m10 = $count_Q_10_M * 100 / $total_questions10;
       $ne10 = $count_Q_10_NE * 100 / $total_questions10;
-      $q_10 = array('e'=> $e10, 'b' => $b10, 'm' => $m10, 'ne' => $ne10);
+      $q_10 = array('e'=> $this->gRV($e10), 'b' => $this->gRV($b10), 'm' => $this->gRV($m10), 'ne' => $this->gRV($ne10));
 
       $count_Q_11_E  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_11')->where('participacion.Q_11','E')->count();
       $count_Q_11_B  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_11')->where('participacion.Q_11','B')->count();
@@ -660,7 +652,7 @@ class ConsultaRecoleccion extends Model
       $b11 = $count_Q_11_B * 100 / $total_questions11;
       $m11 = $count_Q_11_M * 100 / $total_questions11;
       $ne11 = $count_Q_11_NE * 100 / $total_questions11;
-      $q_11 = array('e'=> $e11, 'b' => $b11, 'm' => $m11, 'ne' => $ne11);
+      $q_11 = array('e'=> $this->gRV($e11), 'b' => $this->gRV($b11), 'm' => $this->gRV($m11), 'ne' => $this->gRV($ne11));
 
       $count_Q_12_E  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_12')->where('participacion.Q_12','E')->count();
       $count_Q_12_B  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_12')->where('participacion.Q_12','B')->count();
@@ -672,7 +664,7 @@ class ConsultaRecoleccion extends Model
       $b12 = $count_Q_12_B * 100 / $total_questions12;
       $m12 = $count_Q_12_M * 100 / $total_questions12;
       $ne12 = $count_Q_12_NE * 100 / $total_questions12;
-      $q_12 = array('e'=> $e12, 'b' => $b12, 'm' => $m12, 'ne' => $ne12);
+      $q_12 = array('e'=> $this->gRV($e12), 'b' => $this->gRV($b12), 'm' => $this->gRV($m12), 'ne' => $this->gRV($ne12));
 
       $count_Q_13_E  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_13')->where('participacion.Q_13','E')->count();
       $count_Q_13_B  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_13')->where('participacion.Q_13','B')->count();
@@ -684,7 +676,7 @@ class ConsultaRecoleccion extends Model
       $b13 = $count_Q_13_B * 100 / $total_questions13;
       $m13 = $count_Q_13_M * 100 / $total_questions13;
       $ne13 = $count_Q_13_NE * 100 / $total_questions13;
-      $q_13 = array('e'=> $e13, 'b' => $b13, 'm' => $m13, 'ne' => $ne13);
+      $q_13 = array('e'=> $this->gRV($e13), 'b' => $this->gRV($b13), 'm' => $this->gRV($m13), 'ne' => $this->gRV($ne13));
 
       $count_Q_14_E  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_14')->where('participacion.Q_14','E')->count();
       $count_Q_14_B  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_14')->where('participacion.Q_14','B')->count();
@@ -696,7 +688,7 @@ class ConsultaRecoleccion extends Model
       $b14 = $count_Q_14_B * 100 / $total_questions14;
       $m14 = $count_Q_14_M * 100 / $total_questions14;
       $ne14 = $count_Q_14_NE * 100 / $total_questions14;
-      $q_14 = array('e'=> $e14, 'b' => $b14, 'm' => $m14, 'ne' => $ne14);
+      $q_14 = array('e'=> $this->gRV($e14), 'b' => $this->gRV($b14), 'm' => $this->gRV($m14), 'ne' => $this->gRV($ne14));
 
       $count_Q_15_E  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_15')->where('participacion.Q_15','E')->count();
       $count_Q_15_B  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_15')->where('participacion.Q_15','B')->count();
@@ -708,7 +700,7 @@ class ConsultaRecoleccion extends Model
       $b15 = $count_Q_15_B * 100 / $total_questions15;
       $m15 = $count_Q_15_M * 100 / $total_questions15;
       $ne15 = $count_Q_15_NE * 100 / $total_questions15;
-      $q_15 = array('e'=> $e15, 'b' => $b15, 'm' => $m15, 'ne' => $ne15);
+      $q_15 = array('e'=> $this->gRV($e15), 'b' => $this->gRV($b15), 'm' => $this->gRV($m15), 'ne' => $this->gRV($ne15));
 
       $count_Q_16_E  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_16')->where('participacion.Q_16','E')->count();
       $count_Q_16_B  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_16')->where('participacion.Q_16','B')->count();
@@ -720,7 +712,7 @@ class ConsultaRecoleccion extends Model
       $b16 = $count_Q_16_B * 100 / $total_questions16;
       $m16 = $count_Q_16_M * 100 / $total_questions16;
       $ne16 = $count_Q_16_NE * 100 / $total_questions16;
-      $q_16 = array('e'=> $e16, 'b' => $b16, 'm' => $m16, 'ne' => $ne16);
+      $q_16 = array('e'=> $this->gRV($e16), 'b' => $this->gRV($b16), 'm' => $this->gRV($m16), 'ne' => $this->gRV($ne16));
 
       $count_Q_17_E  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_17')->where('participacion.Q_17','E')->count();
       $count_Q_17_B  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_17')->where('participacion.Q_17','B')->count();
@@ -732,7 +724,7 @@ class ConsultaRecoleccion extends Model
       $b17 = $count_Q_17_B * 100 / $total_questions17;
       $m17 = $count_Q_17_M * 100 / $total_questions17;
       $ne17 = $count_Q_17_NE * 100 / $total_questions17;
-      $q_17 = array('e'=> $e17, 'b' => $b17, 'm' => $m17, 'ne' => $ne17);
+      $q_17 = array('e'=> $this->gRV($e17), 'b' => $this->gRV($b17), 'm' => $this->gRV($m17), 'ne' => $this->gRV($ne17));
 
       $count_Q_18_E  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_18')->where('participacion.Q_18','E')->count();
       $count_Q_18_B  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_18')->where('participacion.Q_18','B')->count();
@@ -744,7 +736,7 @@ class ConsultaRecoleccion extends Model
       $b18 = $count_Q_18_B * 100 / $total_questions18;
       $m18 = $count_Q_18_M * 100 / $total_questions18;
       $ne18 = $count_Q_18_NE * 100 / $total_questions18;
-      $q_18 = array('e'=> $e18, 'b' => $b18, 'm' => $m18, 'ne' => $ne18);
+      $q_18 = array('e'=> $this->gRV($e18), 'b' => $this->gRV($b18), 'm' => $this->gRV($m18), 'ne' => $this->gRV($ne18));
 
       $count_Q_19_E  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_19')->where('participacion.Q_19','E')->count();
       $count_Q_19_B  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_19')->where('participacion.Q_19','B')->count();
@@ -756,7 +748,7 @@ class ConsultaRecoleccion extends Model
       $b19 = $count_Q_19_B * 100 / $total_questions19;
       $m19 = $count_Q_19_M * 100 / $total_questions19;
       $ne19 = $count_Q_19_NE * 100 / $total_questions19;
-      $q_19 = array('e'=> $e19, 'b' => $b19, 'm' => $m19, 'ne' => $ne19);
+      $q_19 = array('e'=> $this->gRV($e19), 'b' => $this->gRV($b19), 'm' => $this->gRV($m19), 'ne' => $this->gRV($ne19));
 
       $count_Q_20_E  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_20')->where('participacion.Q_20','E')->count();
       $count_Q_20_B  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_20')->where('participacion.Q_20','B')->count();
@@ -768,7 +760,7 @@ class ConsultaRecoleccion extends Model
       $b20 = $count_Q_20_B * 100 / $total_questions20;
       $m20 = $count_Q_20_M * 100 / $total_questions20;
       $ne20 = $count_Q_20_NE * 100 / $total_questions20;
-      $q_20 = array('e'=> $e20, 'b' => $b20, 'm' => $m20, 'ne' => $ne20);
+      $q_20 = array('e'=> $this->gRV($e20), 'b' => $this->gRV($b20), 'm' => $this->gRV($m20), 'ne' => $this->gRV($ne20));
 
       $count_Q_21_E  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_21')->where('participacion.Q_21','E')->count();
       $count_Q_21_B  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.Q_21')->where('participacion.Q_21','B')->count();
@@ -780,12 +772,32 @@ class ConsultaRecoleccion extends Model
       $b21 = $count_Q_21_B * 100 / $total_questions21;
       $m21 = $count_Q_21_M * 100 / $total_questions21;
       $ne21 = $count_Q_21_NE * 100 / $total_questions21;
-      $q_21 = array('e'=> $e21, 'b' => $b21, 'm' => $m21, 'ne' => $ne21);
+      $q_21 = array('e'=> $this->gRV($e21), 'b' => $this->gRV($b21), 'm' => $this->gRV($m21), 'ne' => $this->gRV($ne21));
 
 
 
-      $general = array('q_01' =>$q_01 , 'q_02'=>$q_02, 'q_03'=>$q_03, 'q_04'=>$q_04, 'q_05'=>$q_05, 'q_06'=>$q_06,'q_07'=>$q_07,'q_08'=>$q_08,'q_09'=>$q_09,'q_10'=>$q_10,
-      'q_11'=>$q_11,'q_12'=>$q_12,'q_13'=>$q_13,'q_14'=>$q_14,'q_15'=>$q_15,'q_16'=>$q_16,'q_17'=>$q_17,'q_18'=>$q_18,'q_19'=>$q_19,'q_20'=>$q_20,'q_21'=>$q_21);
+      $general = array(
+      'q_01'=>$q_01,
+      'q_02'=>$q_02,
+      'q_03'=>$q_03,
+      'q_04'=>$q_04,
+      'q_05'=>$q_05,
+      'q_06'=>$q_06,
+      'q_07'=>$q_07,
+      'q_08'=>$q_08,
+      'q_09'=>$q_09,
+      'q_10'=>$q_10,
+      'q_11'=>$q_11,
+      'q_12'=>$q_12,
+      'q_13'=>$q_13,
+      'q_14'=>$q_14,
+      'q_15'=>$q_15,
+      'q_16'=>$q_16,
+      'q_17'=>$q_17,
+      'q_18'=>$q_18,
+      'q_19'=>$q_19,
+      'q_20'=>$q_20,
+      'q_21'=>$q_21);
 
 
       return $general;
