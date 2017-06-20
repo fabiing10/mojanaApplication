@@ -6,7 +6,7 @@
 
   <div class="col-md-6 bg-ededed">
     <div class="row">
-      <h2>OBRAS PUBLICAS</h2>
+      <h2>ENTORNO NATURAL</h2>
     </div>
     <div class="row">
       <div class="col-md-7">
@@ -33,7 +33,7 @@
 </div>
 <div class="col-md-6 bg-dadada">
   <div class="row">
-    <h2>ENTORNO NATURAL</h2>
+    <h2>OBRAS PUBLICAS</h2>
   </div>
   <div class="row">
     <div class="col-md-7">
