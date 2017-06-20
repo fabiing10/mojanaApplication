@@ -180,6 +180,15 @@
       </div>
       <div class="row">
         <div class="col-xs-6">
+          <select class="form-control" name="estrato_socio_economico">
+            <option value="0">ESTRATO SOCIOECONOMICO</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
         </div>
         <div class="col-xs-6">
           <select class="form-control mbottom-5" name="nivel_educativo">
@@ -869,12 +878,12 @@
                     </div>
                     <div class="col-xs-4" >
                       <label class="checkbox-inline">
-                          <input type="radio" name="mas_suelo_para" id="vivienda" value="vivienda"> VIVIENDA
+                          <input type="checkbox" name="ms_vivienda" id="vivienda" value="1"> VIVIENDA
                       </label>
                     </div>
                     <div class="col-xs-5">
                       <label class="checkbox-inline">
-                          <input type="radio" name="mas_suelo_para" id="ganaderia" value="ganaderia"> GANADERÍA
+                          <input type="checkbox" name="ms_ganaderia" id="ganaderia" value="1"> GANADERÍA
                        </label>
                     </div>
                     <br>
@@ -882,12 +891,12 @@
                     </div>
                     <div class="col-xs-4" >
                       <label class="checkbox-inline">
-                          <input type="radio" name="mas_suelo_para" id="comercio" value="comercio"> COMERCIO
+                          <input type="checkbox" name="ms_comercio" id="comercio" value="1"> COMERCIO
                       </label>
                     </div>
                     <div class="col-xs-5">
                       <label class="checkbox-inline">
-                          <input type="radio" name="mas_suelo_para" id="mineria" value="mineria"> MINERÍA
+                          <input type="checkbox" name="ms_mineria" id="mineria" value="1"> MINERÍA
                        </label>
                     </div>
                     <br>
@@ -895,12 +904,12 @@
                     </div>
                     <div class="col-xs-4" >
                       <label class="checkbox-inline">
-                          <input type="radio" name="mas_suelo_para" id="conservacion" value="conservacion"> CONSERVACIÓN
+                          <input type="checkbox" name="ms_conservacion" id="conservacion" value="1"> CONSERVACIÓN
                       </label>
                     </div>
                     <div class="col-xs-5">
                       <label class="checkbox-inline">
-                          <input type="radio" name="mas_suelo_para" id="industria" value="industria"> INDUSTRIA
+                          <input type="checkbox" name="ms_industria" id="industria" value="1"> INDUSTRIA
                        </label>
                     </div>
                     <br>
@@ -908,12 +917,12 @@
                     </div>
                     <div class="col-xs-4" >
                       <label class="checkbox-inline">
-                          <input type="radio" name="mas_suelo_para" id="proteccion" value="proteccion"> PROTECCIÓN
+                          <input type="checkbox" name="ms_proteccion" id="proteccion" value="1"> PROTECCIÓN
                       </label>
                     </div>
                     <div class="col-xs-5">
                       <label class="checkbox-inline">
-                          <input type="radio" name="mas_suelo_para" id="vias" value="vias"> VÍAS
+                          <input type="checkbox" name="ms_vias" id="vias" value="1"> VÍAS
                        </label>
                     </div>
                     <br>
@@ -921,7 +930,7 @@
                     </div>
                     <div class="col-xs-4" >
                       <label class="checkbox-inline">
-                          <input type="radio" name="mas_suelo_para" id="agricultura" value="agricultura"> AGRICULTURA
+                          <input type="checkbox" name="ms_agricultura" id="agricultura" value="1"> AGRICULTURA
                       </label>
                     </div>
                     <div class="col-xs-5">

@@ -29,6 +29,8 @@ class ParticipacionMigrations extends Migration
             $table->string('nivel_educativo')->nullable();
             $table->boolean('situacion_dezplazamiento_conflicto')->nullable();
             $table->string('sector_pertenece')->nullable();
+            $table->integer('estrato_socio_economico')->nullable();
+
             /* disable */
                 /* transporte y vias */
                 $table->string('rutas_movilidad')->nullable();
@@ -93,7 +95,15 @@ class ParticipacionMigrations extends Migration
             $table->string('vivienda_cuenta_energia')->nullable();
             $table->string('vivienda_cuenta_gas')->nullable();
             $table->string('vivienda_cuenta_recoleccion_basura')->nullable();
-            $table->string('mas_suelo_para')->nullable();
+            $table->integer('ms_vivienda')->nullable();
+            $table->integer('ms_comercio')->nullable();
+            $table->integer('ms_conservacion')->nullable();
+            $table->integer('ms_proteccion')->nullable();
+            $table->integer('ms_agricultura')->nullable();
+            $table->integer('ms_ganaderia')->nullable();
+            $table->integer('ms_mineria')->nullable();
+            $table->integer('ms_industria')->nullable();
+            $table->integer('ms_vias')->nullable();
             /* 4. Problemas & Solucion*/
             $table->string('ubicacion_solucion_ambiental')->nullable();
             $table->string('ubicacion_latitud_ambiental')->nullable();

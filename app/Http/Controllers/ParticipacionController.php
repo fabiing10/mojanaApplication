@@ -145,6 +145,7 @@ class ParticipacionController extends Controller
         $participacion->nivel_educativo = $request->nivel_educativo;
         $participacion->situacion_dezplazamiento_conflicto = $request->situacion_dezplazamiento_conflicto;
         $participacion->sector_pertenece = $request->sector_pertenece;
+        $participacion->estrato_socio_economico = $request->estrato_socio_economico;
 
         $participacion->rutas_movilidad = $request->rutas_movilidad;
         $participacion->como_movilizan_personas = $request->como_movilizan_personas;
@@ -205,7 +206,17 @@ class ParticipacionController extends Controller
         $participacion->vivienda_cuenta_energia = $request->vivienda_cuenta_energia;
         $participacion->vivienda_cuenta_gas = $request->vivienda_cuenta_gas;
         $participacion->vivienda_cuenta_recoleccion_basura = $request->vivienda_cuenta_recoleccion_basura;
-        $participacion->mas_suelo_para = $request->mas_suelo_para;
+
+        $participacion->ms_vivienda = $request->ms_vivienda;
+        $participacion->ms_comercio = $request->ms_comercio;
+        $participacion->ms_conservacion = $request->ms_conservacion;
+        $participacion->ms_proteccion = $request->ms_proteccion;
+        $participacion->ms_agricultura = $request->ms_agricultura;
+        $participacion->ms_ganaderia = $request->ms_ganaderia;
+        $participacion->ms_mineria = $request->ms_mineria;
+        $participacion->ms_industria = $request->ms_industria;
+        $participacion->ms_vias = $request->ms_vias;
+
         $participacion->ubicacion_solucion_ambiental = $request->ubicacion_solucion_ambiental;
         $participacion->tema_problematica_ambiental = $request->tema_problematica_ambiental;
         $participacion->problematica_ambiental = $request->problematica_ambiental;
