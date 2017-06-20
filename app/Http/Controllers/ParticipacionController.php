@@ -8,6 +8,7 @@ use Validator;
 use \App\Http\Requests\Frontend\FrontendRequest;
 use Maatwebsite\Excel\Facades\Excel;
 use \App\Participacion;
+use \App\ParticipacionRecoleccion;
 use \App\Consulta;
 use DB;
 
@@ -240,8 +241,6 @@ class ParticipacionController extends Controller
 
      }
 
-
-
      /*Request Ajax Respuestas */
      public function dataResponse($option){
        $consulta = new Consulta();
@@ -293,5 +292,96 @@ class ParticipacionController extends Controller
        return $data;
      }
 
+     public function excelRecoleccion(){
+
+         Excel::load('data_recoleccion.xls', function($reader) {
+
+           // reader methods
+           //$results = $reader->first();
+           //$info = serialize($results['variables']);
+           //return var_dump($results['variables']);
+           //return $results->variables;
+            $this->i = 0;
+
+           $reader->each(function($sheet) {
+
+
+                    /*$sheet->each(function($row) {
+
+                    });*/
+
+                    $participacion = new ParticipacionRecoleccion;
+                    $participacion->tipo_identificacion = $sheet->tipo_identificacion;
+                    $participacion->identificacion = $sheet->identificacion;
+                    $participacion->nombres_apellidos =  $sheet->nombres_apellidos;
+                    $participacion->edad = $sheet->edad;
+                    $participacion->genero = $sheet->genero;
+                    $participacion->regimen_salud = $sheet->regimen_salud;
+                    $participacion->ocupacion = $sheet->ocupacion;
+                    $participacion->grupo_etnico = $sheet->grupo_etnico;
+
+                    $participacion->discapacidad = $sheet->discapacidad;
+                    $participacion->nivel_educativo = $sheet->nivel_educativo;
+                    $participacion->situacion_dezplazamiento_conflicto = $sheet->situacion_dezplazamiento_conflicto;
+                    $participacion->sector = $sheet->sector;
+                    $participacion->tiempo_residencia = $sheet->tiempo_residencia;
+                    $participacion->ha_salido_departamento = $sheet->ha_salido_departamento;
+                    $participacion->ha_salido_municipio = $sheet->ha_salido_municipio;
+                    $participacion->municipio_residencia = $sheet->municipio_residencia;
+
+                    $participacion->Q_01 = $sheet->qa;
+                    $participacion->Q_02 = $sheet->qb;
+                    $participacion->Q_03 = $sheet->qc;
+                    $participacion->Q_04 = $sheet->qd;
+                    $participacion->Q_05 = $sheet->qe;
+                    $participacion->Q_06 = $sheet->qf;
+                    $participacion->Q_07 = $sheet->qg;
+                    $participacion->Q_08 = $sheet->qh;
+                    $participacion->Q_09 = $sheet->qi;
+                    $participacion->Q_10 = $sheet->qj;
+                    $participacion->Q_11 = $sheet->qk;
+                    $participacion->Q_12 = $sheet->ql;
+                    $participacion->Q_13 = $sheet->qm;
+                    $participacion->Q_14 = $sheet->qn;
+                    $participacion->Q_15 = $sheet->qo;
+                    $participacion->Q_16 = $sheet->qp;
+                    $participacion->Q_17 = $sheet->qq;
+                    $participacion->Q_18 = $sheet->qr;
+                    $participacion->Q_19 = $sheet->qs;
+                    $participacion->Q_20 = $sheet->qt;
+                    $participacion->Q_21 = $sheet->qu;
+
+
+                    $participacion->condiciones_fisicas = strtolower($sheet->condiciones_fisicas);
+                    $participacion->vivienda_es = strtolower($sheet->vivienda_es);
+                    $participacion->vivienda_cuenta_agua_potable = strtolower($sheet->vivienda_cuenta_agua_potable);
+                    $participacion->vivienda_cuenta_alcantarillado = strtolower($sheet->vivienda_cuenta_alcantarillado);
+                    $participacion->vivienda_cuenta_energia = strtolower($sheet->vivienda_cuenta_energia);
+                    $participacion->vivienda_cuenta_gas = strtolower($sheet->vivienda_cuenta_gas);
+                    $participacion->vivienda_cuenta_recoleccion_basura = strtolower($sheet->vivienda_cuenta_recoleccion_basura);
+
+                    /*
+                    $participacion->mas_suelo_para = $request->mas_suelo_para;
+                    $participacion->ubicacion_solucion_ambiental = $request->ubicacion_solucion_ambiental;
+                    $participacion->tema_problematica_ambiental = $request->tema_problematica_ambiental;
+                    $participacion->problematica_ambiental = $request->problematica_ambiental;
+                    $participacion->solucion_ambiental = $request->solucion_ambiental;
+                    $participacion->ubicacion_solucion_social = $request->ubicacion_solucion_social;
+                    $participacion->tema_problematica_social = $request->tema_problematica_social;
+                    $participacion->problematica_social = $request->problematica_social;
+                    $participacion->solucion_social = $request->solucion_social;
+                    $participacion->ubicacion_solucion_economico = $request->ubicacion_solucion_economico;
+                    $participacion->tema_problematica_economico = $request->tema_problematica_economico;
+                    $participacion->problematica_economico = $request->problematica_economico;
+                    $participacion->solucion_economico = $request->solucion_economico;
+                    */
+                    $participacion->save();
+
+
+          });
+
+       });
+
+     }
 
 }

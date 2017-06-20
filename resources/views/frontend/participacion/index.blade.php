@@ -184,11 +184,11 @@
         <div class="col-xs-6">
           <select class="form-control mbottom-5" name="nivel_educativo">
             <option>NIVEL EDUCATIVO</option>
-            <option value="Primaria">Primaria</option>
+            <option value="primaria">Primaria</option>
             <option value="secundaria">Secundaria</option>
-            <option value="técnica">Técnica</option>
-            <option value="Universitaria">Universitaria</option>
-            <option value="Ninguno">Ninguno</option>
+            <option value="tecnica">Técnica</option>
+            <option value="universitaria">Universitaria</option>
+            <option value="ninguno">Ninguno</option>
           </select>
         </div>
       </div>
