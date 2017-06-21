@@ -1087,7 +1087,7 @@ function loadTematica(clasificacion){
 
   var jqxhr = $.ajax( "/participacion/tematicas/clasificacion/"+clasificacion )
   .done(function(data) {
-    var option = "<option>Seleccione una opcion</option>";
+    var option = "<option>Seleccione el tema de la problematica</option>";
     $.each(data,function(index, value){
       console.log('My array has at position ' + index + ', this value: ' + value.nombre);
       option += "<option value="+value.id+">"+value.nombre+"</option>";
@@ -1118,7 +1118,7 @@ function loadProblematica(select,clasificacion){
   var id = select.value;
   var jqxhr = $.ajax( "/participacion/tematicas/"+id )
   .done(function(data) {
-    var option = "<option>Seleccione una opcion</option>";
+    var option = "<option>Seleccione la problematica </option>";
     $.each(data,function(index, value){
       console.log('My array has at position ' + index + ', this value: ' + value.nombre);
       option += "<option value="+value.id+">"+value.nombre+"</option>";
@@ -1148,7 +1148,7 @@ function loadSolucion(select,clasificacion){
   var id = select.value;
   var jqxhr = $.ajax( "/participacion/problemas/"+id )
   .done(function(data) {
-    var option = "<option>Seleccione una opcion</option>";
+    var option = "<option>Seleccione la solucion</option>";
     $.each(data,function(index, value){
       console.log('My array has at position ' + index + ', this value: ' + value.nombre);
       option += "<option value="+value.id+">"+value.nombre+"</option>";
