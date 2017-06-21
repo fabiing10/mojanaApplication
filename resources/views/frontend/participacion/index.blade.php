@@ -181,7 +181,7 @@ label {
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-6">
+        <div class="col-xs-6" style="padding-right: 4px;">
           <select class="form-control" name="estrato_socio_economico">
             <option value="0">ESTRATO SOCIOECONOMICO</option>
             <option value="1">1</option>
@@ -192,7 +192,7 @@ label {
             <option value="6">6</option>
           </select>
         </div>
-        <div class="col-xs-6">
+        <div class="col-xs-6" style="padding-left: 4px;">
           <select class="form-control mbottom-5" name="nivel_educativo">
             <option>NIVEL EDUCATIVO</option>
             <option value="primaria">Primaria</option>
