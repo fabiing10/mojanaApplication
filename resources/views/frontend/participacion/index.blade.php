@@ -766,8 +766,8 @@
           </div>
           <div class="checkbox">
           <label>
-            <input type="radio" value="bareque" name="condiciones_fisicas">
-            BAREQUE
+            <input type="radio" value="bahareque" name="condiciones_fisicas">
+            BAHAREQUE
           </label>
           </div>
           <div class="checkbox">

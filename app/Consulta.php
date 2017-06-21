@@ -22,7 +22,7 @@ class Consulta extends Model
       $mujeres = $m_query * 100 / $genero_total;
       $otros = $o_query * 100 / $genero_total;
 
-      $datos_genero = array('hombres'=> $hombres, 'mujeres' => $mujeres,'otros' => $otros);
+      $datos_genero = array('hombres'=> $this->gRV($hombres), 'mujeres' => $this->gRV($mujeres),'otros' => $this->gRV($otros));
 
       return $datos_genero;
 

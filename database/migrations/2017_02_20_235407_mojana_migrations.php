@@ -17,6 +17,7 @@ class MojanaMigrations extends Migration
           $table->increments('id')->unsigned();
           $table->string('nombre');
           $table->boolean('mapa');
+          $table->boolean('documento');
           $table->timestamps();
       });
 
