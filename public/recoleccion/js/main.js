@@ -149,7 +149,8 @@ function cargarSector(){
 }
 
 function cargarRegimenSalud(){
-  $.get( "/datos/q/regimen-salud", function() {
+  var option_url = $('#option_url').val();
+  $.get( "/datos/q/regimen-salud/"+option_url, function() {
 
   }).done(function(data) {
 

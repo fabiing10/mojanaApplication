@@ -36,7 +36,7 @@ class RecoleccionController extends Controller
      $datos_nivel_educativo = $consulta->obtenerNivelEducativo('general');
      $datos_sector = $consulta->obtenerSector('general');
      $datos_servicios = $consulta->obtenerServicios('general');
-
+     $option_url = 'general';
 
 
 
@@ -46,6 +46,7 @@ class RecoleccionController extends Controller
             ->with('datos_discapacidad',$datos_discapacidad)
             ->with('datos_nivel_educativo',$datos_nivel_educativo)
             ->with('datos_sector',$datos_sector)
+            ->with('option_url',$option_url)
             ->with('datos_servicios',$datos_servicios);
 
    }
@@ -102,8 +103,69 @@ class RecoleccionController extends Controller
      return $data;
    }
 
+   public function dataResponseMunicipio($option,$data){
+     $consulta = new ConsultaRecoleccion();
+     if($option == "regimen-salud"){
+       $data = $consulta->obtenerRegimenSalud($data);
+     }else if($option == "han-salido"){
+       $data = $consulta->obtenerSalidoDepartamento();
+     }else if($option == "han-salido-m"){
+       $data = $consulta->obtenerSalidoMunicipio();
+     }else if($option == "actores"){
+       $data = $consulta->obtenerActores();
+     }else if($option == "condiciones-fisicas"){
+       $data = $consulta->obtenerCondicionesFisicas();
+     }else if($option == "vivienda-es"){
+       $data = $consulta->obtenerViviendaEs();
+     }else if($option == "municipios"){
+       $data = $consulta->obtenerMunicipios();
+     }else if($option == "estado-general"){
+       $data = $consulta->obtenerQuestions();
+     }else if($option == "sector-pertenece"){
+       $data = $consulta->obtenerSectorPertenece();
+     }else if($option == "edades"){
+       $data = $consulta->obtenerEdades();
+     }else if($option == "situacion-desplazamiento"){
+       $data = $consulta->obtenerSituacionDesplazamiento();
+     }else if($option == "tiempo-residencia"){
+       $data = $consulta->obtenerTiempoResidencia();
+     }
+     //Mapas
+     else if($option == "mapa-ambiental"){
+       $data = $consulta->obtenerMapaAmbiental();
+     }
+     else if($option == "mapa-economico"){
+       $data = $consulta->obtenerMapaEconomico();
+     }
+     else if($option == "mapa-social"){
+       $data = $consulta->obtenerMapaSocial();
+     }
+     else if($option == "mapa-general"){
+       $data = $consulta->obtenerMapaGeneral();
+     }
+
+
+
+     else{
+       $data = "none";
+     }
+
+     return $data;
+   }
+
    function getMunicipio(FrontendRequest $request){
      $municipio = $request->municipio;
+     if($municipio == "Todos"){
+       $option_url = "general";
+     }else if($municipio == "Achi"){
+       $option_url = $municipio;
+     }else if($municipio == "Todos"){
+       $option_url = "general";
+     }else if($municipio == "Todos"){
+       $option_url = "general";
+     }
+
+
      if($municipio == 'Todos'){
        return redirect('datos');
      }
@@ -116,12 +178,14 @@ class RecoleccionController extends Controller
      $datos_servicios = $consulta->obtenerServicios($municipio);
 
 
+
      return view('frontend.recoleccion.index')
             ->with('datos_genero',$datos_genero)
             ->with('datos_ocupacion',$datos_ocupacion)
             ->with('datos_discapacidad',$datos_discapacidad)
             ->with('datos_nivel_educativo',$datos_nivel_educativo)
             ->with('datos_sector',$datos_sector)
+            ->with('option_url',$option_url)
             ->with('datos_servicios',$datos_servicios);
 
     /* return view('frontend.recoleccion.municipio')
