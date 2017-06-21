@@ -580,7 +580,7 @@ label {
 </div>
 </div>
 <div class="row grey-full">
-<h2 style="padding-left:5px;"> ELEMENTOS AMBIENTALES DE SU ZONA POR TEMAS Estado de la infraestructura, equipamiento y<br> elementos ambientales de su zona por temas.</h2>
+<h2 style="padding-left:5px;">Estado de la infraestructura, equipamiento y<br> elementos ambientales de su zona por temas.</h2>
     <br>
     <div class="col-md-12">
     <table class="mleft-20 mbottom-10">
