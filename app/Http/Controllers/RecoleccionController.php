@@ -155,7 +155,7 @@ class RecoleccionController extends Controller
 
    function getMunicipio(FrontendRequest $request){
      $municipio = $request->municipio;
-     if($municipio == "Todos"){
+    /* if($municipio == "Todos"){
        $option_url = "general";
      }else if($municipio == "Achi"){
        $option_url = $municipio;
@@ -164,7 +164,7 @@ class RecoleccionController extends Controller
      }else if($municipio == "Todos"){
        $option_url = "general";
      }
-
+*/
 
      if($municipio == 'Todos'){
        return redirect('datos');
