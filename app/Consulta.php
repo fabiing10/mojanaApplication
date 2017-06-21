@@ -845,18 +845,30 @@ class Consulta extends Model
 
     public function obtenerMapaGeneral(){
 
-      $data  = \DB::table('participaciones as participacion')
+      $social  = \DB::table('participaciones as participacion')
                 ->select('participacion.ubicacion_latitud_social as latitud','participacion.ubicacion_longitud_social as longitud','participacion.municipio_residencia as municipio','participacion.nombres_apellidos as nombres')
                 ->get();
+      $economico  = \DB::table('participaciones as participacion')
+                ->select('participacion.ubicacion_latitud_economico as latitud','participacion.ubicacion_longitud_economico as longitud','participacion.municipio_residencia as municipio','participacion.nombres_apellidos as nombres')
+                ->get();
 
-    /*  $array = [];
-      $array_2 = [];
-      foreach($data as $d){
-        $dd = "latitud"=>$d->latitud,"longitud"=>$d->longitud,"municipio"=>$d->municipio,"nombres"=>$d->nombres;
-        array_push($array_2,$dd);
+      $ambiental  = \DB::table('participaciones as participacion')
+                ->select('participacion.ubicacion_latitud_ambiental as latitud','participacion.ubicacion_longitud_ambiental as longitud','participacion.municipio_residencia as municipio','participacion.nombres_apellidos as nombres')
+                ->get();
+
+      $array = [];
+      foreach($social as $s){
+        array_push($array,array("latitud"=>$s->latitud,"longitud"=>$s->longitud,"municipio"=>$s->municipio,"nombres"=>$s->nombres,"dimension"=>"social"));
       }
-      array_push($array,$array_2);*/
+      foreach($economico as $e){
+        array_push($array,array("latitud"=>$e->latitud,"longitud"=>$e->longitud,"municipio"=>$e->municipio,"nombres"=>$e->nombres,"dimension"=>"economico"));
+      }
+      foreach($ambiental as $a){
+        array_push($array,array("latitud"=>$a->latitud,"longitud"=>$a->longitud,"municipio"=>$a->municipio,"nombres"=>$a->nombres,"dimension"=>"ambiental"));
+      }
 
+      return $array;
+      /*
       /*$dataEconomico  = \DB::table('participaciones as participacion')
                 ->select('participacion.ubicacion_latitud_economico as latitud','participacion.ubicacion_latitud_economico as longitud')
                 ->get();
@@ -866,9 +878,7 @@ class Consulta extends Model
       $dataAmbiental  = \DB::table('participaciones as participacion')
                 ->select('participacion.ubicacion_latitud_ambiental as latitud','participacion.ubicacion_longitud_ambiental as longitud','participacion.ubicacion_solucion_ambiental as municipio')
                 ->get();
-      array_push($data, $dataAmbiental);*/
-
-      return $data;
+      array_push($data, $dataAmbiental)*/
 
     }
 

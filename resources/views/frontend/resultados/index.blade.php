@@ -531,13 +531,13 @@
     </div>
 </div>
 
-<div class="row" style="background:#08113c;">
+<div class="row" style="background:#08113c;margin-bottom:25px;">
   <div class="row">
     <h2 style="color:white;text-align:center;">Mapa General de Problematicas por Tema</h2>
   </div>
   <div class="col-xs-12" style="">
     <div class="row">
-        <div id="map_general" style="width:100%;height:400px;"></div>
+        <div id="map_general" style="width:100%;height:600px;"></div>
     </div>
   </div>
 </div>

@@ -595,7 +595,7 @@ function cargarMapaPrincipal(){
 
     var locations = [];
     for (i = 0; i < markers.length; i++) {
-        locations.push([markers[i].municipio, markers[i].latitud, markers[i].longitud,markers[i].nombres]);
+        locations.push([markers[i].municipio, markers[i].latitud, markers[i].longitud,markers[i].nombres,markers[i].dimension]);
     }
 
    var map = new google.maps.Map(document.getElementById('map_general'), {
@@ -606,13 +606,23 @@ function cargarMapaPrincipal(){
 
    var infowindow = new google.maps.InfoWindow();
 
-   var marker, i;
+   var marker, i,icon_map;
 
    for (i = 0; i < locations.length; i++) {
+     if(locations[i][4] == "ambiental"){
+       icon_map =  '/participacion/images/marker-social-icon.png';
+     }else if(locations[i][4] == "economico"){
+       icon_map =  '/participacion/images/marker-economico-icon.png';
+     }else if(locations[i][4] == "ambiental"){
+       icon_map =  '/participacion/images/marker-ambiental-icon.png';
+     }else{
+       icon_map =  '/participacion/images/marker-ambiental-icon.png';
+     }
+
      marker = new google.maps.Marker({
        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
        map: map,
-       icon: '/participacion/images/marker-social-icon.png'
+       icon:icon_map
      });
 
      google.maps.event.addListener(marker, 'click', (function(marker, i) {
