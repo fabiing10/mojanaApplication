@@ -72,9 +72,9 @@
 </div>
 <!-- formulario -->
 
-<div class="container">
+<div class="container" style="padding-top:0px;">
 {!! Form::open(['url' => 'participacion/nuevo' , 'method' => 'post']) !!}
-<div class="form-group">
+<div class="form-group" style="margin-bottom: 0px;">
   <div class="col-md-1 numbers">
     <h3>1</h3>
   </div>
