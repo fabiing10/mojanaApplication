@@ -1,5 +1,12 @@
 @extends('frontend.layouts.participacion')
-
+@section('style')
+<style>
+label {
+    font-weight: 500;
+    padding-left: 20px;
+}
+</style>
+@endsection
 @section('container')
 <div class="container">
   <div class="col-md-2">
@@ -53,11 +60,8 @@
   <div class="col-md-1">
     <p>
       <a id="menu-layout" class="overlay-menu-toggle" href="#">
-        <span class="menu-text">Menu</span>
-        <i class="open icon-menu-fine">
-        </i>
-        <i class="close icon-cancel-fine">
-        </i>
+        <span class="menu-text" style="color:#001923 !important;">Menu</span>
+        <img src="../participacion/images/menu.png" alt="#" ></img>
       </a>
     </p>
   </div>
@@ -67,9 +71,9 @@
     </div>
     <div class="col-md-11">
     <ul>
-      <a href="">Inicio</a>
+      <a href="http://regionmojana.com/">Inicio</a>
       <o>/</o>
-      <a href="">Participación</a>
+      <a href="http://regionmojana.com/participacion/">Participación</a>
       <o>/ Completar formulario</o>
     </ul>
     </div>
@@ -1034,7 +1038,7 @@
       <input type="hidden" name="ubicacion_longitud_economico" id="ubicacion_longitud_economico" />
   </div>
   </div>
-  <button type="submit" class="btn btn-default"><img src="icon.png" alt="#" class="icono"></img>Enviar</button>
+  <button type="submit" class="btn btn-default"><img src="../participacion/images/avion_de_enviar.png" alt="#" class="icono"></img>Enviar</button>
 {!! Form::close() !!}
 </div>
 @stop

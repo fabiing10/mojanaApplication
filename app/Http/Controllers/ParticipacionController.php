@@ -45,7 +45,7 @@ class ParticipacionController extends Controller
        $datos_suelo = $consulta->obtenerSuelo();
 
 
-       $d_v_ambientales = $consulta->obtenerVariablesAmbientales();
+      $d_v_ambientales = $consulta->obtenerVariablesAmbientales();
       $d_v_sociales = $consulta->obtenerVariablesSocial();
       $d_v_economicas = $consulta->obtenerVariablesEconomicas();
 
@@ -303,9 +303,9 @@ class ParticipacionController extends Controller
        return $data;
      }
 
-     public function excelRecoleccion(){
+     public function excelRecoleccion($archivo){
 
-         Excel::load('data_recoleccion.xls', function($reader) {
+         Excel::load($archivo.'.xlsx', function($reader) {
 
            // reader methods
            //$results = $reader->first();
@@ -335,32 +335,54 @@ class ParticipacionController extends Controller
                     $participacion->nivel_educativo = $sheet->nivel_educativo;
                     $participacion->situacion_dezplazamiento_conflicto = $sheet->situacion_dezplazamiento_conflicto;
                     $participacion->sector = $sheet->sector;
+                    $participacion->estrato_socio_economico = $sheet->estrato_socio_economico;
                     $participacion->tiempo_residencia = $sheet->tiempo_residencia;
                     $participacion->ha_salido_departamento = $sheet->ha_salido_departamento;
                     $participacion->ha_salido_municipio = $sheet->ha_salido_municipio;
                     $participacion->municipio_residencia = $sheet->municipio_residencia;
 
-                    $participacion->Q_01 = $sheet->qa;
-                    $participacion->Q_02 = $sheet->qb;
-                    $participacion->Q_03 = $sheet->qc;
-                    $participacion->Q_04 = $sheet->qd;
-                    $participacion->Q_05 = $sheet->qe;
-                    $participacion->Q_06 = $sheet->qf;
-                    $participacion->Q_07 = $sheet->qg;
-                    $participacion->Q_08 = $sheet->qh;
-                    $participacion->Q_09 = $sheet->qi;
-                    $participacion->Q_10 = $sheet->qj;
-                    $participacion->Q_11 = $sheet->qk;
-                    $participacion->Q_12 = $sheet->ql;
-                    $participacion->Q_13 = $sheet->qm;
-                    $participacion->Q_14 = $sheet->qn;
-                    $participacion->Q_15 = $sheet->qo;
-                    $participacion->Q_16 = $sheet->qp;
-                    $participacion->Q_17 = $sheet->qq;
-                    $participacion->Q_18 = $sheet->qr;
-                    $participacion->Q_19 = $sheet->qs;
-                    $participacion->Q_20 = $sheet->qt;
-                    $participacion->Q_21 = $sheet->qu;
+
+                      $participacion->Q_01 = $sheet->qa;
+
+                      $participacion->Q_02 = $sheet->qb;
+
+                      $participacion->Q_03 = $sheet->qc;
+
+                      $participacion->Q_04 = $sheet->qd;
+
+                      $participacion->Q_05 = $sheet->qe;
+
+                      $participacion->Q_06 = $sheet->qf;
+
+                      $participacion->Q_07 = $sheet->qg;
+
+                      $participacion->Q_08 = $sheet->qh;
+
+                      $participacion->Q_09 = $sheet->qi;
+
+                      $participacion->Q_10 = $sheet->qj;
+
+                      $participacion->Q_11 = $sheet->qk;
+
+                      $participacion->Q_12 = $sheet->ql;
+
+                      $participacion->Q_13 = $sheet->qm;
+
+                      $participacion->Q_14 = $sheet->qn;
+
+                      $participacion->Q_15 = $sheet->qo;
+
+                      $participacion->Q_16 = $sheet->qp;
+
+                      $participacion->Q_17 = $sheet->qq;
+
+                      $participacion->Q_18 = $sheet->qr;
+
+                      $participacion->Q_19 = $sheet->qs;
+
+                      $participacion->Q_20 = $sheet->qt;
+
+                      $participacion->Q_21 = $sheet->qu;
 
 
                     $participacion->condiciones_fisicas = strtolower($sheet->condiciones_fisicas);
@@ -370,6 +392,17 @@ class ParticipacionController extends Controller
                     $participacion->vivienda_cuenta_energia = strtolower($sheet->vivienda_cuenta_energia);
                     $participacion->vivienda_cuenta_gas = strtolower($sheet->vivienda_cuenta_gas);
                     $participacion->vivienda_cuenta_recoleccion_basura = strtolower($sheet->vivienda_cuenta_recoleccion_basura);
+
+                    $participacion->ms_vivienda = $sheet->ms_vivienda;
+                    $participacion->ms_comercio = $sheet->ms_comercio;
+                    $participacion->ms_conservacion = $sheet->ms_conservacion;
+                    $participacion->ms_proteccion = $sheet->ms_proteccion;
+                    $participacion->ms_agricultura = $sheet->ms_agricultura;
+                    $participacion->ms_ganaderia = $sheet->ms_ganaderia;
+                    $participacion->ms_mineria = $sheet->ms_mineria;
+                    $participacion->ms_industria = $sheet->ms_industria;
+                    $participacion->ms_vias = $sheet->ms_vias;
+
 
                     /*
                     $participacion->mas_suelo_para = $request->mas_suelo_para;

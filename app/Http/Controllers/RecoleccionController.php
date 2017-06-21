@@ -30,12 +30,12 @@ class RecoleccionController extends Controller
    public function answers(){
 
      $consulta = new ConsultaRecoleccion();
-     $datos_genero = $consulta->obtenerGenero();
-     $datos_ocupacion = $consulta->obtenerOcupacion();
-     $datos_discapacidad = $consulta->obtenerDiscapacidad();
-     $datos_nivel_educativo = $consulta->obtenerNivelEducativo();
-     $datos_sector = $consulta->obtenerSector();
-     $datos_servicios = $consulta->obtenerServicios();
+     $datos_genero = $consulta->obtenerGenero('general');
+     $datos_ocupacion = $consulta->obtenerOcupacion('general');
+     $datos_discapacidad = $consulta->obtenerDiscapacidad('general');
+     $datos_nivel_educativo = $consulta->obtenerNivelEducativo('general');
+     $datos_sector = $consulta->obtenerSector('general');
+     $datos_servicios = $consulta->obtenerServicios('general');
 
 
 
@@ -100,6 +100,40 @@ class RecoleccionController extends Controller
      }
 
      return $data;
+   }
+
+   function getMunicipio(FrontendRequest $request){
+     $municipio = $request->municipio;
+     if($municipio == 'Todos'){
+       return redirect('datos');
+     }
+     $consulta = new ConsultaRecoleccion();
+     $datos_genero = $consulta->obtenerGenero($municipio);
+     $datos_ocupacion = $consulta->obtenerOcupacion($municipio);
+     $datos_discapacidad = $consulta->obtenerDiscapacidad($municipio);
+     $datos_nivel_educativo = $consulta->obtenerNivelEducativo($municipio);
+     $datos_sector = $consulta->obtenerSector($municipio);
+     $datos_servicios = $consulta->obtenerServicios($municipio);
+
+
+     return view('frontend.recoleccion.index')
+            ->with('datos_genero',$datos_genero)
+            ->with('datos_ocupacion',$datos_ocupacion)
+            ->with('datos_discapacidad',$datos_discapacidad)
+            ->with('datos_nivel_educativo',$datos_nivel_educativo)
+            ->with('datos_sector',$datos_sector)
+            ->with('datos_servicios',$datos_servicios);
+
+    /* return view('frontend.recoleccion.municipio')
+            ->with('datos_genero',$datos_genero)
+            ->with('datos_ocupacion',$datos_ocupacion)
+            ->with('datos_discapacidad',$datos_discapacidad)
+            ->with('datos_nivel_educativo',$datos_nivel_educativo)
+            ->with('datos_sector',$datos_sector)
+            ->with('datos_servicios',$datos_servicios);
+*/
+
+
    }
 
 

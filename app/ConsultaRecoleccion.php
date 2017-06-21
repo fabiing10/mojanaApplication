@@ -11,11 +11,20 @@ class ConsultaRecoleccion extends Model
       $data = round($value);
       return $data;
     }
-    public function obtenerGenero(){
+    public function obtenerGenero($option){
       //Query Genero
-      $h_query  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.genero')->where('participacion.genero',1)->count();
-      $m_query  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.genero')->where('participacion.genero',2)->count();
-      $o_query  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.genero')->where('participacion.genero',3)->count();
+      if($option == 'general'){
+        $h_query  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.genero')->where('participacion.genero',1)->count();
+        $m_query  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.genero')->where('participacion.genero',2)->count();
+        $o_query  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.genero')->where('participacion.genero',3)->count();
+
+      }else{
+        $h_query  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.genero')->where('participacion.genero',1)->where('municipio_residencia',$option)->count();
+        $m_query  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.genero')->where('participacion.genero',2)->where('municipio_residencia',$option)->count();
+        $o_query  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.genero')->where('participacion.genero',3)->where('municipio_residencia',$option)->count();
+
+      }
+
       $genero_total = $h_query + $m_query+ $o_query;
 
       $hombres = $h_query * 100 / $genero_total;
@@ -28,13 +37,25 @@ class ConsultaRecoleccion extends Model
 
     }
 
-    public function obtenerOcupacion(){
-      //Query Ocupacion
-      $o_estudiante = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ocupacion')->where('participacion.ocupacion','estudiante')->count();
-      $o_empleado = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ocupacion')->where('participacion.ocupacion','empleado')->count();
-      $o_independiente = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ocupacion')->where('participacion.ocupacion','independiente')->count();
-      $o_desempleado= \DB::table('participaciones_recoleccion as participacion')->select('participacion.ocupacion')->where('participacion.ocupacion','desempleado')->count();
-      $o_hogar = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ocupacion')->where('participacion.ocupacion','hogar')->count();
+    public function obtenerOcupacion($option){
+
+      //Query Genero
+      if($option == 'general'){
+        $o_estudiante = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ocupacion')->where('participacion.ocupacion','estudiante')->count();
+        $o_empleado = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ocupacion')->where('participacion.ocupacion','empleado')->count();
+        $o_independiente = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ocupacion')->where('participacion.ocupacion','independiente')->count();
+        $o_desempleado= \DB::table('participaciones_recoleccion as participacion')->select('participacion.ocupacion')->where('participacion.ocupacion','desempleado')->count();
+        $o_hogar = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ocupacion')->where('participacion.ocupacion','hogar')->count();
+
+      }else{
+
+        $o_estudiante = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ocupacion')->where('participacion.ocupacion','estudiante')->where('municipio_residencia',$option)->count();
+        $o_empleado = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ocupacion')->where('participacion.ocupacion','empleado')->where('municipio_residencia',$option)->count();
+        $o_independiente = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ocupacion')->where('participacion.ocupacion','independiente')->where('municipio_residencia',$option)->count();
+        $o_desempleado= \DB::table('participaciones_recoleccion as participacion')->select('participacion.ocupacion')->where('participacion.ocupacion','desempleado')->where('municipio_residencia',$option)->count();
+        $o_hogar = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ocupacion')->where('participacion.ocupacion','hogar')->where('municipio_residencia',$option)->count();
+
+      }
 
       $ocupacion_total = $o_estudiante+$o_empleado+$o_independiente+$o_desempleado+$o_hogar;
       $estudiante = $o_estudiante * 100 / $ocupacion_total;
@@ -43,29 +64,45 @@ class ConsultaRecoleccion extends Model
       $desempleado = $o_desempleado * 100 / $ocupacion_total;
       $hogar = $o_hogar * 100 / $ocupacion_total;
 
-      $datos_ocupacion = array('estudiante'=> $estudiante, 'empleado' => $empleado,'independiente'=> $independiente, 'desempleado' => $desempleado,'hogar'=> $hogar);
+      $datos_ocupacion = array('estudiante'=> $this->gRV($estudiante), 'empleado' => $this->gRV($empleado),'independiente'=> $this->gRV($independiente), 'desempleado' => $this->gRV($desempleado),'hogar'=> $this->gRV($hogar));
 
       return $datos_ocupacion;
     }
 
-    public function obtenerDiscapacidad(){
+    public function obtenerDiscapacidad($option){
       //Query discapacidad
-      $d_si = \DB::table('participaciones_recoleccion as participacion')->select('participacion.discapacidad')->where('participacion.discapacidad',1)->count();
-      $d_no = \DB::table('participaciones_recoleccion as participacion')->select('participacion.discapacidad')->where('participacion.discapacidad',0)->count();
+
+      if($option == 'general'){
+        $d_si = \DB::table('participaciones_recoleccion as participacion')->select('participacion.discapacidad')->where('participacion.discapacidad',1)->count();
+        $d_no = \DB::table('participaciones_recoleccion as participacion')->select('participacion.discapacidad')->where('participacion.discapacidad',0)->count();
+      }else{
+        $d_si = \DB::table('participaciones_recoleccion as participacion')->select('participacion.discapacidad')->where('participacion.discapacidad',1)->where('municipio_residencia',$option)->count();
+        $d_no = \DB::table('participaciones_recoleccion as participacion')->select('participacion.discapacidad')->where('participacion.discapacidad',0)->where('municipio_residencia',$option)->count();
+      }
+
       $discapacidad_total = $d_si + $d_no;
       $discapacidad_si = $d_si * 100 / $discapacidad_total;
       $discapacidad_no = $d_no * 100 / $discapacidad_total;
-      $datos_discapacidad = array('si'=> $discapacidad_si, 'no' => $discapacidad_no);
+      $datos_discapacidad = array('si'=> $this->gRV($discapacidad_si), 'no' => $this->gRV($discapacidad_no));
       return $datos_discapacidad;
     }
 
-    public function obtenerNivelEducativo(){
+    public function obtenerNivelEducativo($option){
       //Query Nivel Educativo
-      $n_e_primaria = \DB::table('participaciones_recoleccion as participacion')->select('participacion.nivel_educativo')->where('participacion.nivel_educativo','primaria')->count();
-      $n_e_secundaria = \DB::table('participaciones_recoleccion as participacion')->select('participacion.nivel_educativo')->where('participacion.nivel_educativo','secundaria')->count();
-      $n_e_tecnica = \DB::table('participaciones_recoleccion as participacion')->select('participacion.nivel_educativo')->where('participacion.nivel_educativo','tecnica')->count();
-      $n_e_universitaria = \DB::table('participaciones_recoleccion as participacion')->select('participacion.nivel_educativo')->where('participacion.nivel_educativo','universitaria')->count();
-      $n_e_ninguna = \DB::table('participaciones_recoleccion as participacion')->select('participacion.nivel_educativo')->where('participacion.nivel_educativo','ninguna')->count();
+
+      if($option == 'general'){
+        $n_e_primaria = \DB::table('participaciones_recoleccion as participacion')->select('participacion.nivel_educativo')->where('participacion.nivel_educativo','primaria')->count();
+        $n_e_secundaria = \DB::table('participaciones_recoleccion as participacion')->select('participacion.nivel_educativo')->where('participacion.nivel_educativo','secundaria')->count();
+        $n_e_tecnica = \DB::table('participaciones_recoleccion as participacion')->select('participacion.nivel_educativo')->where('participacion.nivel_educativo','tecnica')->count();
+        $n_e_universitaria = \DB::table('participaciones_recoleccion as participacion')->select('participacion.nivel_educativo')->where('participacion.nivel_educativo','universitaria')->count();
+        $n_e_ninguna = \DB::table('participaciones_recoleccion as participacion')->select('participacion.nivel_educativo')->where('participacion.nivel_educativo','ninguna')->count();
+      }else{
+        $n_e_primaria = \DB::table('participaciones_recoleccion as participacion')->select('participacion.nivel_educativo')->where('participacion.nivel_educativo','primaria')->where('municipio_residencia',$option)->count();
+        $n_e_secundaria = \DB::table('participaciones_recoleccion as participacion')->select('participacion.nivel_educativo')->where('participacion.nivel_educativo','secundaria')->where('municipio_residencia',$option)->count();
+        $n_e_tecnica = \DB::table('participaciones_recoleccion as participacion')->select('participacion.nivel_educativo')->where('participacion.nivel_educativo','tecnica')->where('municipio_residencia',$option)->count();
+        $n_e_universitaria = \DB::table('participaciones_recoleccion as participacion')->select('participacion.nivel_educativo')->where('participacion.nivel_educativo','universitaria')->where('municipio_residencia',$option)->count();
+        $n_e_ninguna = \DB::table('participaciones_recoleccion as participacion')->select('participacion.nivel_educativo')->where('participacion.nivel_educativo','ninguna')->where('municipio_residencia',$option)->count();
+      }
 
       $nivel_educativo_total = $n_e_primaria + $n_e_secundaria + $n_e_tecnica + $n_e_universitaria + $n_e_ninguna;
       $primaria = $n_e_primaria * 100 / $nivel_educativo_total;
@@ -73,14 +110,21 @@ class ConsultaRecoleccion extends Model
       $tecnica = $n_e_tecnica * 100 / $nivel_educativo_total;
       $universitaria = $n_e_universitaria * 100 / $nivel_educativo_total;
       $ninguna = $n_e_ninguna * 100 / $nivel_educativo_total;
-      $datos_nivel_educativo = array('primaria'=> $primaria, 'secundaria' => $secundaria,'tecnica' => $tecnica,'universitaria' => $universitaria,'ninguna' => $ninguna);
+      $datos_nivel_educativo = array('primaria'=> $this->gRV($primaria), 'secundaria' => $this->gRV($secundaria),'tecnica' => $this->gRV($tecnica),'universitaria' => $this->gRV($universitaria),'ninguna' => $this->gRV($ninguna));
 
       return $datos_nivel_educativo;
     }
 
-    public function obtenerRegimenSalud(){
-      $count_subsidiado  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.regimen_salud')->where('participacion.regimen_salud','subsidiado')->count();
-      $count_contributivo  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.regimen_salud')->where('participacion.regimen_salud','contributivo')->count();
+    public function obtenerRegimenSalud($option){
+      if($option == 'general'){
+        $count_subsidiado  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.regimen_salud')->where('participacion.regimen_salud','subsidiado')->count();
+        $count_contributivo  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.regimen_salud')->where('participacion.regimen_salud','contributivo')->count();
+      }else{
+        $count_subsidiado  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.regimen_salud')->where('participacion.regimen_salud','subsidiado')->where('municipio_residencia',$option)->count();
+        $count_contributivo  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.regimen_salud')->where('participacion.regimen_salud','contributivo')->where('municipio_residencia',$option)->count();
+      }
+
+
       $regimen_salud_total = $count_subsidiado + $count_contributivo;
       $subsidiado = $count_subsidiado * 100 / $regimen_salud_total;
       $contributivo = $count_contributivo * 100 / $regimen_salud_total;
@@ -89,13 +133,19 @@ class ConsultaRecoleccion extends Model
       return $data;
     }
 
-    public function obtenerSector(){
-      $count_rural  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.sector')->where('participacion.sector',1)->count();
-      $count_urbano  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.sector')->where('participacion.sector',2)->count();
+    public function obtenerSector($option){
+
+      if($option == 'general'){
+        $count_rural  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.sector')->where('participacion.sector',1)->count();
+        $count_urbano  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.sector')->where('participacion.sector',2)->count();
+      }else{
+        $count_rural  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.sector')->where('participacion.sector',1)->count();
+        $count_urbano  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.sector')->where('participacion.sector',2)->count();
+      }
       $Sector_total = $count_rural + $count_urbano;
       $rural = $count_rural * 100 / $Sector_total;
       $urbano = $count_urbano * 100 / $Sector_total;
-      $datos_sector = array('urbano'=> $urbano, 'rural' => $rural);
+      $datos_sector = array('urbano'=> $this->gRV($urbano), 'rural' => $this->gRV($rural));
 
       return $datos_sector;
     }
@@ -167,17 +217,32 @@ class ConsultaRecoleccion extends Model
       return $datos_viviendas;
     }
 
-    public function obtenerServicios(){
-      $count_agua_si  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_agua_potable')->where('participacion.vivienda_cuenta_agua_potable','si')->count();
-      $count_agua_no  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_agua_potable')->where('participacion.vivienda_cuenta_agua_potable','no')->count();
-      $count_alcantarillado_si  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_alcantarillado')->where('participacion.vivienda_cuenta_alcantarillado','si')->count();
-      $count_alcantarillado_no  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_alcantarillado')->where('participacion.vivienda_cuenta_alcantarillado','no')->count();
-      $count_energia_si  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_energia')->where('participacion.vivienda_cuenta_energia','si')->count();
-      $count_energia_no  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_energia')->where('participacion.vivienda_cuenta_energia','no')->count();
-      $count_gas_si  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_gas')->where('participacion.vivienda_cuenta_gas','si')->count();
-      $count_gas_no  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_gas')->where('participacion.vivienda_cuenta_gas','no')->count();
-      $count_recoleccion_si  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_recoleccion_basura')->where('participacion.vivienda_cuenta_recoleccion_basura','si')->count();
-      $count_recoleccion_no  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_recoleccion_basura')->where('participacion.vivienda_cuenta_recoleccion_basura','no')->count();
+    public function obtenerServicios($option){
+      if($option == 'general'){
+        $count_agua_si  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_agua_potable')->where('participacion.vivienda_cuenta_agua_potable','si')->count();
+        $count_agua_no  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_agua_potable')->where('participacion.vivienda_cuenta_agua_potable','no')->count();
+        $count_alcantarillado_si  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_alcantarillado')->where('participacion.vivienda_cuenta_alcantarillado','si')->count();
+        $count_alcantarillado_no  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_alcantarillado')->where('participacion.vivienda_cuenta_alcantarillado','no')->count();
+        $count_energia_si  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_energia')->where('participacion.vivienda_cuenta_energia','si')->count();
+        $count_energia_no  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_energia')->where('participacion.vivienda_cuenta_energia','no')->count();
+        $count_gas_si  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_gas')->where('participacion.vivienda_cuenta_gas','si')->count();
+        $count_gas_no  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_gas')->where('participacion.vivienda_cuenta_gas','no')->count();
+        $count_recoleccion_si  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_recoleccion_basura')->count();
+        $count_recoleccion_no  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_recoleccion_basura')->count();
+
+      }else{
+        $count_agua_si  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_agua_potable')->where('participacion.vivienda_cuenta_agua_potable','si')->where('municipio_residencia',$option)->count();
+        $count_agua_no  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_agua_potable')->where('participacion.vivienda_cuenta_agua_potable','no')->where('municipio_residencia',$option)->count();
+        $count_alcantarillado_si  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_alcantarillado')->where('participacion.vivienda_cuenta_alcantarillado','si')->where('municipio_residencia',$option)->count();
+        $count_alcantarillado_no  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_alcantarillado')->where('participacion.vivienda_cuenta_alcantarillado','no')->where('municipio_residencia',$option)->count();
+        $count_energia_si  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_energia')->where('participacion.vivienda_cuenta_energia','si')->where('municipio_residencia',$option)->count();
+        $count_energia_no  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_energia')->where('participacion.vivienda_cuenta_energia','no')->where('municipio_residencia',$option)->count();
+        $count_gas_si  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_gas')->where('participacion.vivienda_cuenta_gas','si')->where('municipio_residencia',$option)->count();
+        $count_gas_no  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_gas')->where('participacion.vivienda_cuenta_gas','no')->where('municipio_residencia',$option)->count();
+        $count_recoleccion_si  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_recoleccion_basura')->where('participacion.vivienda_cuenta_recoleccion_basura','si')->where('municipio_residencia',$option)->count();
+        $count_recoleccion_no  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.vivienda_cuenta_recoleccion_basura')->where('participacion.vivienda_cuenta_recoleccion_basura','no')->where('municipio_residencia',$option)->count();
+
+      }
 
       $total_agua = $count_agua_si + $count_agua_no;
       $agua_si = $count_agua_si * 100 / $total_agua;
@@ -774,9 +839,28 @@ class ConsultaRecoleccion extends Model
       $ne21 = $count_Q_21_NE * 100 / $total_questions21;
       $q_21 = array('e'=> $this->gRV($e21), 'b' => $this->gRV($b21), 'm' => $this->gRV($m21), 'ne' => $this->gRV($ne21));
 
+      //Consulta General Por calificacion
+      $c_excelent = $e01 + $e02 + $e04 + $e05 + $e06 + $e07 + $e08 + $e09 + $e10 + $e11 + $e12 + $e13 + $e14 + $e15 + $e16 + $e17 + $e18 + $e19 + $e20
+      + $e21;
+
+      $c_bueno = $b01 + $b02 + $b04 + $b05 + $b06 + $b07 + $b08 + $b09 + $b10 + $b11 + $b12 + $b13 + $b14 + $b15 + $b16 + $b17 + $b18 + $b19 + $b20
+      + $b21;
+
+      $c_malo = $m01 + $m02 + $m04 + $m05 + $m06 + $m07 + $m08 + $m09 + $m10 + $m11 + $m12 + $m13 + $m14 + $m15 + $m16 + $m17 + $m18 + $m19 + $m20
+      + $m21;
+
+      $c_nexiste = $ne01 + $ne02 + $ne04 + $ne05 + $ne06 + $ne07 + $ne08 + $ne09 + $ne10 + $ne11 + $ne12 + $ne13 + $ne14 + $ne15 + $ne16 + $ne17 + $ne18 + $ne19 + $ne20
+      + $ne21;
+
+      $excelente = round($c_excelent * 1 / 21);
+      $bueno = round($c_bueno * 1 / 21);
+      $malo = round($c_malo * 1 / 21);
+      $no_existe = round($c_nexiste * 1 / 21);
+      $data = array('e'=> $excelente, 'b' => $bueno, 'm' => $malo, 'ne' => $no_existe);
 
 
       $general = array(
+      'data' =>$data,
       'q_01'=>$q_01,
       'q_02'=>$q_02,
       'q_03'=>$q_03,

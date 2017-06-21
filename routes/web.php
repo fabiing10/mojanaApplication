@@ -56,10 +56,11 @@ Route::post('/participacion/nuevo', 'ParticipacionController@save');
 
 
 Route::get('/resultados/q/{option}', 'ParticipacionController@dataResponse');
-Route::get('/participacion/load', 'ParticipacionController@excelRecoleccion');
+Route::get('/participacion/load/{name}', 'ParticipacionController@excelRecoleccion');
 
 
 
 /*Recoleccion*/
 Route::get('/datos/q/{option}', 'RecoleccionController@dataResponse');
 Route::get('/datos', 'RecoleccionController@answers');
+Route::post('/datos/municipio', 'RecoleccionController@getMunicipio');

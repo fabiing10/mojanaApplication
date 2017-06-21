@@ -17,14 +17,55 @@ $( document ).ready(function() {
     cargarTiempoResidencia();
 
 });
-
+function submitForm(){
+  $('#FormSearch').submit();
+}
 //add Juanpita
 function cargarQuestions(){
 
   $.get( "/datos/q/estado-general", function() {
 
   }).done(function(data) {
-    var i = 1;
+    var i = 0;
+    var background,background_b,background_m,background_ne;
+
+
+
+    var ctx = $("#chartEstadoInfraestructura");
+    var myPieChart = new Chart(ctx,{
+      type: 'bar',
+      data: {
+           labels: ["Excelente", "Bueno", "Malo", "No Existe"],
+           datasets: [{
+               data: [data.data.e, data.data.b,data.data.m,data.data.ne,100],
+               backgroundColor: [
+                   '#3b92ad',
+                   '#63dbf7',
+                   '#0c455b',
+                   '#002131'
+               ]
+           }]
+      },
+      options: {
+          legend: {
+            display: false
+          },
+          tooltips: {
+            callbacks: {
+               label: function(tooltipItem) {
+                      return tooltipItem.yLabel;
+               }
+            }
+          },
+          responsive: true,
+          scales: {
+              xAxes: [{ stacked: true }],
+              yAxes: [{ stacked: true }]
+          },
+          title: { display: false }
+      }
+    });
+
     $.each(data,function(index, value){
           if(value.e < 25){
             background = "#5ecdfd";
@@ -613,17 +654,19 @@ function cargarEdades(){
 
 function cargarTiempoResidencia(){
 
-  $.get( "/datos/q/tiempo-residencia", function() {
+  $.get( "/resultados/q/tiempo-residencia", function() {
 
   }).done(function(value) {
-
+      $('.t_r_01').html(value.opt01+'%');
+      $('.t_r_02').html(value.opt02+'%');
+      $('.t_r_03').html(value.opt03+'%');
+      $('.t_r_04').html(value.opt04+'%');
       var data = {
         labels: ["1 - 10 Años", "11 - 20 Años", "21 - 30 Años", "30 o mas Años"],
-        datasets: [
-          {
+        datasets: [{
             data: [value.opt01, value.opt02,value.opt03,value.opt04],
-            backgroundColor: [ "#006633", "#2fac66", "#00a19a", "#00e0cf"],
-            hoverBackgroundColor: [ "#006633", "#2fac66", "#00a19a","#00e0cf"]
+            backgroundColor: [ "#575756", "#B2B2B2", "#9D9D9C", "#EDEDED"],
+            hoverBackgroundColor: [ "#575756", "#B2B2B2", "#9D9D9C","#EDEDED"]
           }]
       };
 

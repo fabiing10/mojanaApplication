@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" style="margin-bottom:10px;">
   <div class="col-xs-4">
     <div class="row t-right bar-20">
       Agua Potable
@@ -12,7 +12,7 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row" style="margin-bottom:10px;">
   <div class="col-xs-4">
     <div class="row t-right bar-20">
       Alcantarillado
@@ -26,7 +26,7 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row" style="margin-bottom:10px;">
   <div class="col-xs-4">
     <div class="row t-right bar-20">
       Energia
@@ -40,7 +40,7 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row" style="margin-bottom:10px;">
   <div class="col-xs-4">
     <div class="row t-right bar-20">
       Gas
@@ -54,7 +54,7 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row" style="margin-bottom:10px;">
   <div class="col-xs-4">
     <div class="row t-right bar-20">
       Recoleccion de basuras

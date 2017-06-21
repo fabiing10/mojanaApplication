@@ -91,6 +91,7 @@ class ParticipacionMigrations extends Migration
             $table->string('vivienda_cuenta_energia')->nullable();
             $table->string('vivienda_cuenta_gas')->nullable();
             $table->string('vivienda_cuenta_recoleccion_basura')->nullable();
+            $table->string('mas_suelo_para')->nullable();
             $table->integer('ms_vivienda')->nullable();
             $table->integer('ms_comercio')->nullable();
             $table->integer('ms_conservacion')->nullable();

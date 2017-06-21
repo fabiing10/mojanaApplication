@@ -18,9 +18,16 @@ class Consulta extends Model
       $o_query  = \DB::table('participaciones as participacion')->select('participacion.genero')->where('participacion.genero',3)->count();
       $genero_total = $h_query + $m_query+ $o_query;
 
-      $hombres = $h_query * 100 / $genero_total;
-      $mujeres = $m_query * 100 / $genero_total;
-      $otros = $o_query * 100 / $genero_total;
+      if($genero_total == 0){
+        $hombres = 0;
+        $mujeres = 0;
+        $otros = 0;
+      }else{
+        $hombres = $h_query * 100 / $genero_total;
+        $mujeres = $m_query * 100 / $genero_total;
+        $otros = $o_query * 100 / $genero_total;
+      }
+
 
       $datos_genero = array('hombres'=> $this->gRV($hombres), 'mujeres' => $this->gRV($mujeres),'otros' => $this->gRV($otros));
 
