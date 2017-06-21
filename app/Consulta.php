@@ -849,6 +849,13 @@ class Consulta extends Model
                 ->select('participacion.ubicacion_latitud_social as latitud','participacion.ubicacion_longitud_social as longitud','participacion.municipio_residencia as municipio','participacion.nombres_apellidos as nombres')
                 ->get();
 
+    /*  $array = [];
+      $array_2 = [];
+      foreach($data as $d){
+        $dd = "latitud"=>$d->latitud,"longitud"=>$d->longitud,"municipio"=>$d->municipio,"nombres"=>$d->nombres;
+        array_push($array_2,$dd);
+      }
+      array_push($array,$array_2);*/
 
       /*$dataEconomico  = \DB::table('participaciones as participacion')
                 ->select('participacion.ubicacion_latitud_economico as latitud','participacion.ubicacion_latitud_economico as longitud')
