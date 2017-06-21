@@ -73,10 +73,10 @@
 
 <!-- formulario -->
 
-<div class="container">
+<div class="container" style="padding-top:0px;">
 {!! Form::open(['url' => 'datos/municipio' , 'method' => 'post' , 'id' => 'FormSearch']) !!}
-<label>Seleccione un Municipio </label><br>
-<select name="municipio" id="municipio" onchange="submitForm()">
+
+<select name="municipio" id="municipio" onchange="submitForm()" class="general_select">
   <option value="general">Seleccione Una Opcion</option>
   <option value="Todos">Todos</option>
   <option value="Achi">Achi</option>

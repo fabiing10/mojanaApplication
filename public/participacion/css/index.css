@@ -12,6 +12,16 @@
     line-height: 1.1;
     color: inherit;
 }
+select#municipio {
+    width: 100%;
+    text-align: center !important;
+    padding: 2px !important;
+    height: 36px;
+    background: #e8e8e8;
+}
+.col-md-11 h3,.numbers h3{
+  margin: 0px;
+}
 *{
   font-family: "Exo2-Regular", Arial, Tahoma, sans-serif !important;
 }
