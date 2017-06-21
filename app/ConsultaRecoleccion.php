@@ -950,26 +950,55 @@ class ConsultaRecoleccion extends Model
       return $data;
     }
 
-    public function obtenerEdades(){
+    public function obtenerEdades($option){
 
-      $c_01 = \DB::table('participaciones_recoleccion as participacion')->select('participacion.edad')
-                    ->whereBetween('participacion.edad', [18, 25])
-                    ->count();
-      $c_02 = \DB::table('participaciones_recoleccion as participacion')->select('participacion.edad')
-                    ->whereBetween('participacion.edad', [25, 35])
-                    ->count();
-      $c_03 = \DB::table('participaciones_recoleccion as participacion')->select('participacion.edad')
-                    ->whereBetween('participacion.edad', [35, 45])
-                    ->count();
-      $c_04 = \DB::table('participaciones_recoleccion as participacion')->select('participacion.edad')
-                    ->whereBetween('participacion.edad', [45, 55])
-                    ->count();
-      $c_05 = \DB::table('participaciones_recoleccion as participacion')->select('participacion.edad')
-                    ->whereBetween('participacion.edad', [55, 68])
-                    ->count();
-      $c_06 = \DB::table('participaciones_recoleccion as participacion')->select('participacion.edad')
-                    ->whereBetween('participacion.edad', [68, 77])
-                    ->count();
+      if($option == 'general'){
+        $c_01 = \DB::table('participaciones_recoleccion as participacion')->select('participacion.edad')
+                      ->whereBetween('participacion.edad', [18, 25])
+                      ->count();
+        $c_02 = \DB::table('participaciones_recoleccion as participacion')->select('participacion.edad')
+                      ->whereBetween('participacion.edad', [25, 35])
+                      ->count();
+        $c_03 = \DB::table('participaciones_recoleccion as participacion')->select('participacion.edad')
+                      ->whereBetween('participacion.edad', [35, 45])
+                      ->count();
+        $c_04 = \DB::table('participaciones_recoleccion as participacion')->select('participacion.edad')
+                      ->whereBetween('participacion.edad', [45, 55])
+                      ->count();
+        $c_05 = \DB::table('participaciones_recoleccion as participacion')->select('participacion.edad')
+                      ->whereBetween('participacion.edad', [55, 68])
+                      ->count();
+        $c_06 = \DB::table('participaciones_recoleccion as participacion')->select('participacion.edad')
+                      ->whereBetween('participacion.edad', [68, 77])
+                      ->count();
+      }else{
+        $c_01 = \DB::table('participaciones_recoleccion as participacion')->select('participacion.edad')
+                      ->whereBetween('participacion.edad', [18, 25])
+                      ->where('municipio_residencia',$option)
+                      ->count();
+        $c_02 = \DB::table('participaciones_recoleccion as participacion')->select('participacion.edad')
+                      ->whereBetween('participacion.edad', [25, 35])
+                      ->where('municipio_residencia',$option)
+                      ->count();
+        $c_03 = \DB::table('participaciones_recoleccion as participacion')->select('participacion.edad')
+                      ->whereBetween('participacion.edad', [35, 45])
+                      ->where('municipio_residencia',$option)
+                      ->count();
+        $c_04 = \DB::table('participaciones_recoleccion as participacion')->select('participacion.edad')
+                      ->whereBetween('participacion.edad', [45, 55])
+                      ->where('municipio_residencia',$option)
+                      ->count();
+        $c_05 = \DB::table('participaciones_recoleccion as participacion')->select('participacion.edad')
+                      ->whereBetween('participacion.edad', [55, 68])
+                      ->where('municipio_residencia',$option)
+                      ->count();
+        $c_06 = \DB::table('participaciones_recoleccion as participacion')->select('participacion.edad')
+                      ->whereBetween('participacion.edad', [68, 77])
+                      ->where('municipio_residencia',$option)
+                      ->count();
+      }
+
+
 
       $total_edades = $c_01 + $c_02 + $c_03 + $c_04 + $c_05 + $c_06;
       $option_01 = $c_01 * 100 / $total_edades;
@@ -985,11 +1014,16 @@ class ConsultaRecoleccion extends Model
       return $data;
     }
 
-    public function obtenerSituacionDesplazamiento(){
+    public function obtenerSituacionDesplazamiento($option){
       //Query Genero
+      if($option == 'general'){
       $c_desplazado = \DB::table('participaciones_recoleccion as participacion')->select('participacion.id')->where('participacion.situacion_dezplazamiento_conflicto',1)->count();
       $c_nodesplazado  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.id')->where('participacion.situacion_dezplazamiento_conflicto',0)->count();
+    }else{
+      $c_desplazado = \DB::table('participaciones_recoleccion as participacion')->select('participacion.id')->where('participacion.situacion_dezplazamiento_conflicto',1)->where('municipio_residencia',$option)->count();
+      $c_nodesplazado  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.id')->where('participacion.situacion_dezplazamiento_conflicto',0)->where('municipio_residencia',$option)->count();
 
+    }
       $situacion_desplazado = $c_desplazado + $c_nodesplazado;
 
       $desplazado = $c_desplazado * 100 / $situacion_desplazado;

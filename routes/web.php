@@ -61,6 +61,7 @@ Route::get('/participacion/load/{name}', 'ParticipacionController@excelRecolecci
 
 
 /*Recoleccion*/
-Route::get('/datos/q/{option}', 'RecoleccionController@dataResponse');
+Route::get('/datos/q/{option}/', 'RecoleccionController@dataResponse');
+Route::get('/datos/q/{option}/{other}', 'RecoleccionController@dataResponseMunicipio');
 Route::get('/datos', 'RecoleccionController@answers');
 Route::post('/datos/municipio', 'RecoleccionController@getMunicipio');

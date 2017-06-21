@@ -124,9 +124,9 @@ class RecoleccionController extends Controller
      }else if($option == "sector-pertenece"){
        $data = $consulta->obtenerSectorPertenece();
      }else if($option == "edades"){
-       $data = $consulta->obtenerEdades();
+       $data = $consulta->obtenerEdades($data);
      }else if($option == "situacion-desplazamiento"){
-       $data = $consulta->obtenerSituacionDesplazamiento();
+       $data = $consulta->obtenerSituacionDesplazamiento($data);
      }else if($option == "tiempo-residencia"){
        $data = $consulta->obtenerTiempoResidencia();
      }
@@ -143,9 +143,6 @@ class RecoleccionController extends Controller
      else if($option == "mapa-general"){
        $data = $consulta->obtenerMapaGeneral();
      }
-
-
-
      else{
        $data = "none";
      }
@@ -155,16 +152,24 @@ class RecoleccionController extends Controller
 
    function getMunicipio(FrontendRequest $request){
      $municipio = $request->municipio;
-    /* if($municipio == "Todos"){
+    if($municipio == "Todos"){
        $option_url = "general";
      }else if($municipio == "Achi"){
        $option_url = $municipio;
-     }else if($municipio == "Todos"){
-       $option_url = "general";
-     }else if($municipio == "Todos"){
-       $option_url = "general";
+     }else if($municipio == "Caimito"){
+       $option_url = $municipio;
+     }else if($municipio == "Guaranda"){
+       $option_url = $municipio;
+     }else if($municipio == "Magangue"){
+       $option_url = $municipio;
+     }else if($municipio == "Nechi"){
+       $option_url = $municipio;
+     }else if($municipio == "San Jacinto del Cauca"){
+       $option_url = "San Jacinto del Cauca";
+     }else if($municipio == "San Marcos"){
+       $option_url = "San Marcos";
      }
-*/
+
 
      if($municipio == 'Todos'){
        return redirect('datos');
@@ -185,7 +190,7 @@ class RecoleccionController extends Controller
             ->with('datos_discapacidad',$datos_discapacidad)
             ->with('datos_nivel_educativo',$datos_nivel_educativo)
             ->with('datos_sector',$datos_sector)
-            //->with('option_url',$option_url)
+            ->with('option_url',$option_url)
             ->with('datos_servicios',$datos_servicios);
 
     /* return view('frontend.recoleccion.municipio')

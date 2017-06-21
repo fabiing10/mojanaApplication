@@ -149,8 +149,8 @@ function cargarSector(){
 }
 
 function cargarRegimenSalud(){
-  //var option_url = $('#option_url').val();
-  $.get( "/datos/q/regimen-salud/", function() {
+  var option_url = $('#option_url').val();
+  $.get( "/datos/q/regimen-salud/"+option_url, function() {
 
   }).done(function(data) {
 
@@ -623,7 +623,9 @@ function cargarMapaPrincipal(){
 
 function cargarEdades(){
 
-  $.get( "/datos/q/edades", function() {
+
+    var option_url = $('#option_url').val();
+    $.get( "/datos/q/edades/"+option_url, function() {
 
   }).done(function(value) {
 
@@ -689,8 +691,9 @@ function cargarTiempoResidencia(){
 
 function cargarDesplazamiento(){
 
-  $.get( "/datos/q/situacion-desplazamiento", function() {
 
+    var option_url = $('#option_url').val();
+    $.get( "/datos/q/situacion-desplazamiento/"+option_url, function() {
   }).done(function(value) {
 
       var data = {
