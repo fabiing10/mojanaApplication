@@ -185,7 +185,7 @@ class RecoleccionController extends Controller
             ->with('datos_discapacidad',$datos_discapacidad)
             ->with('datos_nivel_educativo',$datos_nivel_educativo)
             ->with('datos_sector',$datos_sector)
-            ->with('option_url',$option_url)
+            //->with('option_url',$option_url)
             ->with('datos_servicios',$datos_servicios);
 
     /* return view('frontend.recoleccion.municipio')
