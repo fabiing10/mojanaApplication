@@ -220,10 +220,18 @@
 </div>
 <br>
 <div class="row" style="background:#f5f5f5; padding-left:35px;">
-    <h2>ESTADO DE LA INFRAESRUCTURA, EQUIPAMIENTO Y <br/> ELEMENTOS AMBIENTALES DE SU ZONA POR TEMAS</h2>
+    <h2 style="padding-left:5px;">Estado de la infraestructura, equipamiento y<br> elementos ambientales de su zona por temas.</h2>
       <br>
       <div class="col-md-12">
       <table class="mleft-20 mbottom-10">
+        <tr>
+         <td></td>
+         <td></td>
+         <td style="text-align:center; width:80px;"><img style="width:20%; padding:0px;"src="../participacion/images/excelente.png" alt=""></td>
+         <td style="text-align:center; width:80px;"><img style="width:20%; padding:0px;"src="../participacion/images/bueno.png" alt=""></td>
+         <td style="text-align:center; width:80px;"><img style="width:20%; padding:0px;"src="../participacion/images/malo.png" alt=""></td>
+         <td style="text-align:center; width:80px;"><img style="width:20%; padding:0px;"src="../participacion/images/no_existe.png" alt=""></td>
+       </tr>
       <tr>
         <th rowspan="2" class="ambiental text-center white">AMBIENTAL</th>
         <td class="inner_table1">Ríos, quebradas y ciénagas del municipio</td>

@@ -51,6 +51,9 @@ Route::get('/consulta/indicadores/graficos/{code}', 'ApplicationController@Grafi
 Route::get('/leer', 'ApplicationController@leerExcel');
 
 Route::get('/resultados', 'ParticipacionController@answers');
+Route::get('/resultados/pdf', 'ParticipacionController@answersPDF');
+
+
 Route::get('/participacion/nuevo', 'ParticipacionController@index');
 Route::post('/participacion/nuevo', 'ParticipacionController@save');
 

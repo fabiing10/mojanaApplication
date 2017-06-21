@@ -11,6 +11,7 @@ use \App\Participacion;
 use \App\ParticipacionRecoleccion;
 use \App\Consulta;
 use DB;
+use PDF;
 
 
 /**
@@ -71,6 +72,62 @@ class ParticipacionController extends Controller
               ->with('m_economicas',$m_economicas);
 
      }
+
+     public function answersPDF(){
+
+       $consulta = new Consulta();
+       $datos_genero = $consulta->obtenerGenero();
+       $datos_ocupacion = $consulta->obtenerOcupacion();
+       $datos_discapacidad = $consulta->obtenerDiscapacidad();
+       $datos_nivel_educativo = $consulta->obtenerNivelEducativo();
+       $datos_sector = $consulta->obtenerSector();
+       $datos_servicios = $consulta->obtenerServicios();
+       $datos_suelo = $consulta->obtenerSuelo();
+
+
+      $d_v_ambientales = $consulta->obtenerVariablesAmbientales();
+      $d_v_sociales = $consulta->obtenerVariablesSocial();
+      $d_v_economicas = $consulta->obtenerVariablesEconomicas();
+
+
+      /*Mapas*/
+      $m_ambientales = $consulta->obtenerCountMunicipiosAmbientales();
+      $m_sociales = $consulta->obtenerCountMunicipiosSociales();
+      $m_economicas = $consulta->obtenerCountMunicipiosEconomicos();
+
+
+              view()->share('datos_genero',$datos_genero);
+              view()->share('datos_ocupacion',$datos_ocupacion);
+              view()->share('datos_discapacidad',$datos_discapacidad);
+              view()->share('datos_nivel_educativo',$datos_nivel_educativo);
+              view()->share('datos_sector',$datos_sector);
+              view()->share('datos_servicios',$datos_servicios);
+              view()->share('datos_suelo',$datos_suelo);
+              view()->share('d_v_ambientales',$d_v_ambientales);
+              view()->share('d_v_sociales',$d_v_sociales);
+              view()->share('d_v_economicas',$d_v_economicas);
+              view()->share('m_ambientales',$m_ambientales);
+              view()->share('m_sociales',$m_sociales);
+              view()->share('m_economicas',$m_economicas);
+
+
+
+             $pdf = PDF::loadView('frontend.resultados.index');
+             $pdf->setOptions(['dpi' => 150,
+              'defaultFont' => 'sans-serif',
+              'fontHeightRatio' => 1.5,
+              'debugLayoutPaddingBox' => false,
+              'defaultPaperSize'=>'a4',
+              'isPhpEnabled'=>'true',
+              'isJavascriptEnabled'=>'true',
+              'isHtml5ParserEnabled'=>'true',
+              'isPhpEnabled'=>'true']);
+             return $pdf->stream('download.pdf');
+
+
+     }
+
+
 
      public function save(FrontendRequest $request){
        /*
@@ -247,7 +304,7 @@ class ParticipacionController extends Controller
         $participacion->save();
 
 
-        return $participacion;
+        return redirect('resultados');
 
 
      }

@@ -52,6 +52,7 @@ class RecoleccionController extends Controller
    }
 
 
+
    /*Request Ajax Respuestas */
    public function dataResponse($option){
      $consulta = new ConsultaRecoleccion();

@@ -590,6 +590,7 @@ function cargarMapaPrincipal(){
 
   }).done(function(markers) {
 
+
     var locations = [];
     for (i = 0; i < markers.length; i++) {
         locations.push([markers[i].municipio, markers[i].latitud, markers[i].longitud]);
@@ -608,7 +609,8 @@ function cargarMapaPrincipal(){
    for (i = 0; i < locations.length; i++) {
      marker = new google.maps.Marker({
        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-       map: map
+       map: map,
+       icon: '/participacion/images/marker-social-icon.png'
      });
 
      google.maps.event.addListener(marker, 'click', (function(marker, i) {
