@@ -470,7 +470,7 @@ function mapaAmbiental(){
 
     var locations = [];
     for (i = 0; i < markers.length; i++) {
-        locations.push([markers[i].municipio, markers[i].latitud, markers[i].longitud]);
+        locations.push([markers[i].municipio, markers[i].latitud, markers[i].longitud,markers[i].nombres]);
     }
 
    var map = new google.maps.Map(document.getElementById('map_ambiental'), {
@@ -512,7 +512,7 @@ function mapaEconomico(){
 
     var locations = [];
     for (i = 0; i < markers.length; i++) {
-        locations.push([markers[i].municipio, markers[i].latitud, markers[i].longitud]);
+        locations.push([markers[i].municipio, markers[i].latitud, markers[i].longitud,markers[i].nombres]);
     }
 
    var map = new google.maps.Map(document.getElementById('map_economico'), {
@@ -534,7 +534,8 @@ function mapaEconomico(){
 
      google.maps.event.addListener(marker, 'click', (function(marker, i) {
        return function() {
-         infowindow.setContent(locations[i][0]);
+         var data = "Nombre Usuario: "+locations[i][3]+"<br>Municipio: "+locations[i][0];
+         infowindow.setContent(data);
          infowindow.open(map, marker);
        }
      })(marker, i));
@@ -552,7 +553,7 @@ function mapaSocial(){
 
     var locations = [];
     for (i = 0; i < markers.length; i++) {
-        locations.push([markers[i].municipio, markers[i].latitud, markers[i].longitud]);
+        locations.push([markers[i].municipio, markers[i].latitud, markers[i].longitud,markers[i].nombres]);
     }
 
    var map = new google.maps.Map(document.getElementById('map_social'), {
@@ -574,7 +575,8 @@ function mapaSocial(){
 
      google.maps.event.addListener(marker, 'click', (function(marker, i) {
        return function() {
-         infowindow.setContent(locations[i][0]);
+         var data = "Nombre Usuario: "+locations[i][3]+"<br>Municipio: "+locations[i][0];
+         infowindow.setContent(data);
          infowindow.open(map, marker);
        }
      })(marker, i));
@@ -593,7 +595,7 @@ function cargarMapaPrincipal(){
 
     var locations = [];
     for (i = 0; i < markers.length; i++) {
-        locations.push([markers[i].municipio, markers[i].latitud, markers[i].longitud]);
+        locations.push([markers[i].municipio, markers[i].latitud, markers[i].longitud,markers[i].nombres]);
     }
 
    var map = new google.maps.Map(document.getElementById('map_general'), {
@@ -615,7 +617,8 @@ function cargarMapaPrincipal(){
 
      google.maps.event.addListener(marker, 'click', (function(marker, i) {
        return function() {
-         infowindow.setContent(locations[i][0]);
+         var data = "Nombre Usuario: "+locations[i][3]+"<br>Municipio: "+locations[i][0];
+         infowindow.setContent(data);
          infowindow.open(map, marker);
        }
      })(marker, i));

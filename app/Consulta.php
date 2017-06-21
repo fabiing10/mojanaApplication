@@ -824,21 +824,21 @@ class Consulta extends Model
 
     public function obtenerMapaAmbiental(){
       $data  = \DB::table('participaciones as participacion')
-                ->select('participacion.ubicacion_latitud_ambiental as latitud','participacion.ubicacion_longitud_ambiental as longitud','participacion.ubicacion_solucion_ambiental as municipio')
+                ->select('participacion.ubicacion_latitud_ambiental as latitud','participacion.ubicacion_longitud_ambiental as longitud','participacion.municipio_residencia as municipio','participacion.nombres_apellidos as nombres')
                 ->get();
       return response()->json($data);
     }
 
     public function obtenerMapaEconomico(){
       $data  = \DB::table('participaciones as participacion')
-                ->select('participacion.ubicacion_latitud_economico as latitud','participacion.ubicacion_longitud_economico as longitud')
+                ->select('participacion.ubicacion_latitud_economico as latitud','participacion.ubicacion_longitud_economico as longitud','participacion.municipio_residencia as municipio','participacion.nombres_apellidos as nombres')
                 ->get();
       return $data;
     }
 
     public function obtenerMapaSocial(){
       $data  = \DB::table('participaciones as participacion')
-                ->select('participacion.ubicacion_latitud_social as latitud','participacion.ubicacion_longitud_social as longitud')
+                ->select('participacion.ubicacion_latitud_social as latitud','participacion.ubicacion_longitud_social as longitud','participacion.municipio_residencia as municipio','participacion.nombres_apellidos as nombres')
                 ->get();
       return $data;
     }
@@ -846,8 +846,9 @@ class Consulta extends Model
     public function obtenerMapaGeneral(){
 
       $data  = \DB::table('participaciones as participacion')
-                ->select('participacion.ubicacion_latitud_social as latitud','participacion.ubicacion_longitud_social as longitud')
+                ->select('participacion.ubicacion_latitud_social as latitud','participacion.ubicacion_longitud_social as longitud','participacion.municipio_residencia as municipio','participacion.nombres_apellidos as nombres')
                 ->get();
+
 
       /*$dataEconomico  = \DB::table('participaciones as participacion')
                 ->select('participacion.ubicacion_latitud_economico as latitud','participacion.ubicacion_latitud_economico as longitud')
