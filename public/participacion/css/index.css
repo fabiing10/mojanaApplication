@@ -6,6 +6,9 @@
     font-family: "Exo2-Medium";
     src: url('../fonts/Exo2-Medium.otf');
 }
+.container {
+    margin: 0 auto;
+}
 .m-b-10{
   margin-bottom: 10px;
 }
