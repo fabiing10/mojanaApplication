@@ -453,7 +453,7 @@
 <div class="row row_panel" style="background:#018b38;">
   <div class="col-xs-12" style="padding-left: 35px; padding-left:35px;">
     <div class="row">
-      <div class="col-xs-4"><h1 style="color:white;">AMBIENTAL</h1></div><div class="col-xs-8"><h2 style="color:white;">variables</h2></div>
+      <div class="col-xs-4"><h1 style="color:white;">AMBIENTAL</h1></div><div class="col-xs-8"><h2 style="color:white;">Temas por Problematicas</h2></div>
     </div>
 
     @include('frontend.resultados.blocks.variables_ambientales')
