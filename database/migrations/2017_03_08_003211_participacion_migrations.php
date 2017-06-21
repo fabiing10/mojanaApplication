@@ -1,9 +1,7 @@
 <?php
-
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
 class ParticipacionMigrations extends Migration
 {
     /**
@@ -14,7 +12,6 @@ class ParticipacionMigrations extends Migration
     public function up()
     {
         Schema::create('participaciones', function (Blueprint $table) {
-
             $table->increments('id')->unsigned();
             /* 1 Identificacion */
             $table->string('tipo_identificacion')->nullable();
@@ -30,7 +27,6 @@ class ParticipacionMigrations extends Migration
             $table->boolean('situacion_dezplazamiento_conflicto')->nullable();
             $table->string('sector_pertenece')->nullable();
             $table->integer('estrato_socio_economico')->nullable();
-
             /* disable */
                 /* transporte y vias */
                 $table->string('rutas_movilidad')->nullable();
@@ -111,14 +107,12 @@ class ParticipacionMigrations extends Migration
             $table->string('tema_problematica_ambiental')->nullable();
             $table->string('problematica_ambiental')->nullable();
             $table->string('solucion_ambiental')->nullable();
-
             $table->string('ubicacion_solucion_social')->nullable();
             $table->string('ubicacion_latitud_social')->nullable();
             $table->string('ubicacion_longitud_social')->nullable();
             $table->string('tema_problematica_social')->nullable();
             $table->string('problematica_social')->nullable();
             $table->string('solucion_social')->nullable();
-
             $table->string('ubicacion_solucion_economico')->nullable();
             $table->string('ubicacion_latitud_economico')->nullable();
             $table->string('ubicacion_longitud_economico')->nullable();
@@ -128,7 +122,6 @@ class ParticipacionMigrations extends Migration
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *
