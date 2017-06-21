@@ -168,10 +168,10 @@
       <div class="col-xs-12"style="padding-left: 35px; background-color:#eaeaea;">
       <div class="row">
         <h2 style="text-align:center;">Participación por municipio</h2>
-        <div class="col-md-3">
-
+        <div class="col-md-4">
+          <img src="/participacion/images/mapa_select.png" class="img_mapa"/>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-8">
           <canvas id="chartMunicipios" width="400" height="200"></canvas>
         </div>
       </div>
@@ -190,10 +190,37 @@
       <h2>Sector</h2>
       @include('frontend.resultados.blocks.sector')
     </div>
-    <div class="row">
-      <h2 class="header-padding">Tiempo de Residencia</h2>
-        <canvas id="chartTiempoResidencia" width="300" height="200"></canvas>
-      </div>
+    <div class="row m-t-20">
+      <h2 class="header-padding" style="text-align: center;">Tiempo de Residencia</h2>
+        <canvas id="chartTiempoResidencia" width="200" height="100"></canvas>
+        <div class="row block-tiempo_residencia">
+          <div class="row m-b-10">
+            <div class="col-xs-6">
+              <div class="t_r_01" ></div>
+            </div>
+            <div class="col-xs-6 label-g-c"> 1 a 10 Años</div>
+          </div>
+          <div class="row m-b-10">
+            <div class="col-xs-6">
+              <div class="t_r_02" ></div>
+            </div>
+            <div class="col-xs-6 label-g-c"> 11 a 20 Años</div>
+          </div>
+          <div class="row m-b-10">
+            <div class="col-xs-6">
+              <div class="t_r_03" ></div>
+            </div>
+            <div class="col-xs-6 label-g-c"> 21 a 30 Años</div>
+          </div>
+          <div class="row m-b-10">
+            <div class="col-xs-6">
+              <div class="t_r_04" ></div>
+            </div>
+            <div class="col-xs-6 label-g-c">Mas de 30 Años</div>
+          </div>
+
+        </div>
+    </div>
   </div>
 </div>
 <br>
@@ -280,11 +307,47 @@
   <div class="col-xs-6">
     <div class="row">
       <h2>Estado de la infraestructura, equipamiento y elemento ambientales de su zona.</h2>
+      <canvas id="chartEstadoInfraestructura" width="400" height="160"></canvas>
       </div>
   </div>
   <div class="col-xs-6">
     <div class="row">
       <h2>Estado de la infraestructura, Equipamiento y elementos ambientales de su zona por Dimensiones</h2>
+      <table id="resultado" style="width:80%; margin:0 auto; text-align:center;">
+
+
+        <tr>
+          <th></th>
+          <th class="">E</th>
+          <th class="">B</th>
+          <th class="">M</th>
+          <th class="">NE</th>
+
+        </tr>
+        <tr class="">
+          <th class="" style="text-align:center;">Ambiental</th>
+          <th class="ver" style="background:#006b2b;">30%</th>
+          <th class="ver" style="background:#009640;">40%</th>
+          <th class="ver" style="background:#00b248;">20%</th>
+          <th class="ver" style="background:#00fc66;">10%</th>
+
+        </tr>
+        <tr class="">
+          <th class="" style="text-align:center;">Social</th>
+          <th class="ver" style="background:#333333;">24%</th>
+          <th class="ver" style="background:#575756;">36%</th>
+          <th class="ver" style="background:#919191;">35%</th>
+          <th class="ver" style="background:#d6d6d6;">5%</th>
+
+        </tr>
+        <tr class="">
+          <th class="" style="text-align:center;">Economico</th>
+          <th class="ver" style="background:#005877;">43%</th>
+          <th class="ver" style="background:#047faa;">16%</th>
+          <th class="ver" style="background:#009fe3;">29%</th>
+          <th class="ver" style="background:#40ceff;">12%</th>
+        </tr>
+      </table>
     </div>
   </div>
 </div>
@@ -321,7 +384,7 @@
   <div class="col-xs-6" style="padding-left: 35px;">
     <div class="row">
       <div class="col-xs-5">
-        <h2>Le gustaria que<br>permitieran<br>mas suelo para</h2>
+        <h2>Le gustaria que permitieran<br>mas suelo para</h2>
       </div>
       <div class="col-xs-7" style="margin-top: 40px;">
         @include('frontend.resultados.blocks.suelo')

@@ -27,7 +27,46 @@ function cargarQuestions(){
   $.get( "/resultados/q/estado-general", function() {
 
   }).done(function(data) {
-    var i = 1;
+    var i = 0;
+    var background,background_b,background_m,background_ne;
+
+
+
+    var ctx = $("#chartEstadoInfraestructura");
+    var myPieChart = new Chart(ctx,{
+      type: 'bar',
+      data: {
+           labels: ["Excelente", "Bueno", "Malo", "No Existe"],
+           datasets: [{
+               data: [data.data.e, data.data.b,data.data.m,data.data.ne,100],
+               backgroundColor: [
+                   '#3b92ad',
+                   '#63dbf7',
+                   '#0c455b',
+                   '#002131'
+               ]
+           }]
+      },
+      options: {
+          legend: {
+            display: false
+          },
+          tooltips: {
+            callbacks: {
+               label: function(tooltipItem) {
+                      return tooltipItem.yLabel;
+               }
+            }
+          },
+          responsive: true,
+          scales: {
+              xAxes: [{ stacked: true }],
+              yAxes: [{ stacked: true }]
+          },
+          title: { display: false }
+      }
+    });
+
     $.each(data,function(index, value){
           if(value.e < 25){
             background = "#5ecdfd";
@@ -70,8 +109,7 @@ function cargarQuestions(){
           }
           table = "<td><div class='q__e' style='background-color:"+background+";'>"+value.e+"%</div></td><td><div class='q__e' style='background-color:"+background_b+";'>"+value.b+"%</div></td><td><div class='q__e' style='background-color:"+background_m+";'>"+value.m+"%</div></td><td><div class='q__e' style='background-color:"+background_ne+";'>"+value.ne+"%</div></td>";
           $(table).insertAfter(".inner_table"+i);
-
-        i++;
+          i++;
     });
 
   }).fail(function() {
@@ -623,14 +661,17 @@ function cargarTiempoResidencia(){
   $.get( "/resultados/q/tiempo-residencia", function() {
 
   }).done(function(value) {
-
+      $('.t_r_01').html(value.opt01+'%');
+      $('.t_r_02').html(value.opt02+'%');
+      $('.t_r_03').html(value.opt03+'%');
+      $('.t_r_04').html(value.opt04+'%');
       var data = {
         labels: ["1 - 10 Años", "11 - 20 Años", "21 - 30 Años", "30 o mas Años"],
         datasets: [
           {
             data: [value.opt01, value.opt02,value.opt03,value.opt04],
-            backgroundColor: [ "#006633", "#2fac66", "#00a19a", "#00e0cf"],
-            hoverBackgroundColor: [ "#006633", "#2fac66", "#00a19a","#00e0cf"]
+            backgroundColor: [ "#575756", "#B2B2B2", "#9D9D9C", "#EDEDED"],
+            hoverBackgroundColor: [ "#575756", "#B2B2B2", "#9D9D9C","#EDEDED"]
           }]
       };
 

@@ -7,7 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Consulta extends Model
 {
     //
-
+    public function gRV($value){
+      $data = round($value);
+      return $data;
+    }
     public function obtenerGenero(){
       //Query Genero
       $h_query  = \DB::table('participaciones as participacion')->select('participacion.genero')->where('participacion.genero',1)->count();
@@ -784,7 +787,28 @@ class Consulta extends Model
 
 
 
-      $general = array('q_01' =>$q_01 , 'q_02'=>$q_02, 'q_03'=>$q_03, 'q_04'=>$q_04, 'q_05'=>$q_05, 'q_06'=>$q_06,'q_07'=>$q_07,'q_08'=>$q_08,'q_09'=>$q_09,'q_10'=>$q_10,
+
+      //Consulta General Por calificacion
+      $c_excelent = $e01 + $e02 + $e04 + $e05 + $e06 + $e07 + $e08 + $e09 + $e10 + $e11 + $e12 + $e13 + $e14 + $e15 + $e16 + $e17 + $e18 + $e19 + $e20
+      + $e21;
+
+      $c_bueno = $b01 + $b02 + $b04 + $b05 + $b06 + $b07 + $b08 + $b09 + $b10 + $b11 + $b12 + $b13 + $b14 + $b15 + $b16 + $b17 + $b18 + $b19 + $b20
+      + $b21;
+
+      $c_malo = $m01 + $m02 + $m04 + $m05 + $m06 + $m07 + $m08 + $m09 + $m10 + $m11 + $m12 + $m13 + $m14 + $m15 + $m16 + $m17 + $m18 + $m19 + $m20
+      + $m21;
+
+      $c_nexiste = $ne01 + $ne02 + $ne04 + $ne05 + $ne06 + $ne07 + $ne08 + $ne09 + $ne10 + $ne11 + $ne12 + $ne13 + $ne14 + $ne15 + $ne16 + $ne17 + $ne18 + $ne19 + $ne20
+      + $ne21;
+
+      $excelente = round($c_excelent * 1 / 21);
+      $bueno = round($c_bueno * 1 / 21);
+      $malo = round($c_malo * 1 / 21);
+      $no_existe = round($c_nexiste * 1 / 21);
+      $data = array('e'=> $excelente, 'b' => $bueno, 'm' => $malo, 'ne' => $no_existe);
+
+
+      $general = array('data' =>$data ,'q_01' =>$q_01 , 'q_02'=>$q_02, 'q_03'=>$q_03, 'q_04'=>$q_04, 'q_05'=>$q_05, 'q_06'=>$q_06,'q_07'=>$q_07,'q_08'=>$q_08,'q_09'=>$q_09,'q_10'=>$q_10,
       'q_11'=>$q_11,'q_12'=>$q_12,'q_13'=>$q_13,'q_14'=>$q_14,'q_15'=>$q_15,'q_16'=>$q_16,'q_17'=>$q_17,'q_18'=>$q_18,'q_19'=>$q_19,'q_20'=>$q_20,'q_21'=>$q_21);
 
 
@@ -925,7 +949,7 @@ class Consulta extends Model
       $option_04 = $c_04 * 100 / $total_edades;
 
 
-      $data = array('opt01'=> $option_01, 'opt02' => $option_02,'opt03'=> $option_03, 'opt04' => $option_04);
+      $data = array('opt01'=> $this->gRV($option_01), 'opt02' => $this->gRV($option_02),'opt03'=> $this->gRV($option_03), 'opt04' => $this->gRV($option_04));
 
 
       return $data;
