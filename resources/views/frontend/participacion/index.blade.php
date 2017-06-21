@@ -1148,7 +1148,7 @@ function loadSolucion(select,clasificacion){
   var id = select.value;
   var jqxhr = $.ajax( "/participacion/problemas/"+id )
   .done(function(data) {
-    var option = "<option>Seleccione la solucion</option>";
+    var option = "<option>Seleccione la solución</option>";
     $.each(data,function(index, value){
       console.log('My array has at position ' + index + ', this value: ' + value.nombre);
       option += "<option value="+value.id+">"+value.nombre+"</option>";
