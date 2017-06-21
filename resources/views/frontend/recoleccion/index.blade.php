@@ -53,24 +53,19 @@
   <div class="col-md-1">
     <p>
       <a id="menu-layout" class="overlay-menu-toggle" href="#">
-        <span class="menu-text">Menu</span>
-        <i class="open icon-menu-fine">
-        </i>
-        <i class="close icon-cancel-fine">
-        </i>
+        <span class="menu-text" style="color:#001923 !important;">Menu</span>
+        <img src="../participacion/images/menu.png" alt="#" ></img>
       </a>
     </p>
   </div>
   <div class="col-md-12 pt-10 background-dark">
-    <div class="col-md-1">
 
-    </div>
     <div class="col-md-11">
     <ul>
-      <a href="">Inicio</a>
+      <a href="http://regionmojana.com/">Inicio</a>
       <o>/</o>
-      <a href="">Participación</a>
-      <o>/ Resultados formulario</o>
+      <a href="http://regionmojana.com/participacion/">Resultados Recolección</a>
+      <o>/ Completar formulario</o>
     </ul>
     </div>
   </div>

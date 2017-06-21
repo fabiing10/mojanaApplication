@@ -66,9 +66,7 @@ label {
     </p>
   </div>
   <div class="col-md-12 pt-10 background-dark">
-    <div class="col-md-1">
 
-    </div>
     <div class="col-md-11">
     <ul>
       <a href="http://regionmojana.com/">Inicio</a>
