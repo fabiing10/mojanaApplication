@@ -78,7 +78,7 @@
 
 <!-- formulario -->
 
-<div class="row contenido">
+<div class="container">
 {!! Form::open(['url' => 'participacion/nuevo' , 'method' => 'post']) !!}
 <div class="form-group">
   <div class="col-md-1 numbers">

@@ -957,7 +957,7 @@
   </div>
   <div class="col-xs-5 mleft-50">
     <select class="form-control my-10" name="ubicacion_solucion_ambiental" onchange="loadPositionAmbiental(this)">
-      <option value="otro">UBICACION DE LA SOLUCION</option>
+      <option value="otro">UBICACIÓN DE LA SOLUCIÓN</option>
       <option value="nechi">Nechí</option>
       <option value="achi">Achí</option>
       <option value="magangue">Magangué</option>
@@ -987,7 +987,7 @@
   </div>
   <div class="col-xs-5 mleft-50">
     <select class="form-control my-10" name="ubicacion_solucion_social" onchange="loadPositionSocial(this)">
-      <option value="otro">UBICACION DE LA SOLUCION</option>
+      <option value="otro">UBICACIÓN DE LA SOLUCIÓN</option>
       <option value="nechi">Nechí</option>
       <option value="achi">Achí</option>
       <option value="magangue">Magangué</option>
@@ -1016,7 +1016,7 @@
   </div>
   <div class="col-xs-5 mleft-50">
     <select class="form-control my-10" name="ubicacion_solucion_economico" onchange="loadPositionEconomico(this)">
-      <option value="otro">UBICACION DE LA SOLUCION</option>
+      <option value="otro">UBICACIÓN DE LA SOLUCIÓN</option>
       <option value="nechi">Nechí</option>
       <option value="achi">Achí</option>
       <option value="magangue">Magangué</option>
