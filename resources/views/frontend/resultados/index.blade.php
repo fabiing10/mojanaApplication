@@ -73,7 +73,22 @@
 <!-- formulario -->
 
 <div class="container" style="padding-top:0px;">
-{!! Form::open(['url' => 'participacion/nuevo' , 'method' => 'post']) !!}
+  {!! Form::open(['url' => 'resultados/redirect' , 'method' => 'post' , 'id' => 'FormSearch']) !!}
+  <input type="hidden" name="option_url" id="option_url" value="{{$option_url}}" />
+  <select name="municipio" id="municipio" onchange="submitForm()" class="general_select">
+    <option value="general">Seleccione Una Opcion</option>
+    <option value="general">General</option>
+    <option value="achi">Achi</option>
+    <option value="caimito">Caimito</option>
+    <option value="guaranda">Guaranda</option>
+    <option value="magangue">Magangue</option>
+    <option value="nechi">Nechi</option>
+    <option value="san_jacinto_cauca">San Jacinto</option>
+    <option value="san_marcos">San Marcos</option>
+    <option value="san_marcos">San Marcos</option>
+    <option value="san_benito_abad">San Benito Abad</option>
+
+  </select>
 <div class="form-group" style="margin-bottom: 0px;">
   <div class="col-md-1 numbers">
     <h3>1</h3>
@@ -381,6 +396,10 @@
     <div class="row">
       <h2>La vivienda cuenta con</h2>
       @include('frontend.resultados.blocks.vivienda-cuenta')
+      <div class="row">
+      <div class="col-xs-6"></div>
+      <div class="col-xs-6"></div>
+      </div>
     </div>
   </div>
   <div class="col-xs-6" style="padding-left: 35px;">

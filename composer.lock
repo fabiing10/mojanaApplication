@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2cbe1f4bf672a39102bd368053246c97",
-    "content-hash": "cfa2ac9fc4611dca1acf7e33b3c2039d",
+    "hash": "f7a037ccdb4fb82e2b2e8256be1f1239",
+    "content-hash": "cc154658b525bbdbb2284e1a45058985",
     "packages": [
         {
             "name": "arcanedev/log-viewer",
@@ -1369,16 +1369,16 @@
         },
         {
             "name": "maatwebsite/excel",
-            "version": "2.1.17",
+            "version": "2.1.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Maatwebsite/Laravel-Excel.git",
-                "reference": "14d5abf8e20563c80dd074fd7c8cf1c05bf51f1d"
+                "reference": "a43db59e621e8e8d72321e885d1610509cc7b096"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/14d5abf8e20563c80dd074fd7c8cf1c05bf51f1d",
-                "reference": "14d5abf8e20563c80dd074fd7c8cf1c05bf51f1d",
+                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/a43db59e621e8e8d72321e885d1610509cc7b096",
+                "reference": "a43db59e621e8e8d72321e885d1610509cc7b096",
                 "shasum": ""
             },
             "require": {
@@ -1405,6 +1405,16 @@
                 "illuminate/view": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Maatwebsite\\Excel\\ExcelServiceProvider"
+                    ],
+                    "aliases": {
+                        "Excel": "Maatwebsite\\Excel\\Facades\\Excel"
+                    }
+                }
+            },
             "autoload": {
                 "classmap": [
                     "src/Maatwebsite/Excel"
@@ -1433,7 +1443,7 @@
                 "import",
                 "laravel"
             ],
-            "time": "2017-04-04 18:28:12"
+            "time": "2017-06-21 20:39:34"
         },
         {
             "name": "monolog/monolog",
@@ -1939,16 +1949,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.8.6",
+            "version": "v0.8.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "7028d6d525fb183d50b249b7c07598e3d386b27d"
+                "reference": "be969b9dc89dcaefdb9a3117fa91fa38bca19f50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/7028d6d525fb183d50b249b7c07598e3d386b27d",
-                "reference": "7028d6d525fb183d50b249b7c07598e3d386b27d",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/be969b9dc89dcaefdb9a3117fa91fa38bca19f50",
+                "reference": "be969b9dc89dcaefdb9a3117fa91fa38bca19f50",
                 "shasum": ""
             },
             "require": {
@@ -2008,7 +2018,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2017-06-04 10:34:20"
+            "time": "2017-06-20 12:51:31"
         },
         {
             "name": "ramsey/uuid",
@@ -3349,6 +3359,74 @@
                 "fixtures"
             ],
             "time": "2016-04-29 12:21:54"
+        },
+        {
+            "name": "grabzit/grabzit",
+            "version": "3.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GrabzIt/grabzit-php.git",
+                "reference": "cf7a5581e9a8a343bc2cc373ba0571bad974e8a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GrabzIt/grabzit-php/zipball/cf7a5581e9a8a343bc2cc373ba0571bad974e8a5",
+                "reference": "cf7a5581e9a8a343bc2cc373ba0571bad974e8a5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "lib/GrabzItAnimationOptions.class.php",
+                    "lib/GrabzItBaseOptions.class.php",
+                    "lib/GrabzItClient.class.php",
+                    "lib/GrabzItCookie.class.php",
+                    "lib/GrabzItException.class.php",
+                    "lib/GrabzItImageOptions.class.php",
+                    "lib/GrabzItDOCXOptions.class.php",
+                    "lib/GrabzItPDFOptions.class.php",
+                    "lib/GrabzItRequest.class.php",
+                    "lib/GrabzItStatus.class.php",
+                    "lib/GrabzItTableOptions.class.php",
+                    "lib/GrabzItWaterMark.class.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Use our API to allow your app to create images, DOCX documents and PDF's from URL's or raw HTML. Additionally GrabzIt allows you to convert online videos into animated GIF's or HTML tables into CSV's.",
+            "homepage": "https://grabz.it/",
+            "keywords": [
+                "BMP",
+                "HTML to DOCX",
+                "URL to DOCX",
+                "URL to Image",
+                "URL to PDF",
+                "animated gif",
+                "api",
+                "capture",
+                "csv",
+                "docx",
+                "html",
+                "html to image",
+                "html to pdf",
+                "images",
+                "jpg",
+                "pdf",
+                "png",
+                "screenshots",
+                "table",
+                "tiff",
+                "video conversion",
+                "videos",
+                "web",
+                "xlsx"
+            ],
+            "time": "2017-06-09 21:43:16"
         },
         {
             "name": "hamcrest/hamcrest-php",

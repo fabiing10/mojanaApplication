@@ -50,15 +50,17 @@ Route::get('/consulta/{code}', 'ApplicationController@ListIndicadoresByCode');
 Route::get('/consulta/indicadores/graficos/{code}', 'ApplicationController@GraficosIndicadoresId');
 Route::get('/leer', 'ApplicationController@leerExcel');
 
-Route::get('/resultados', 'ParticipacionController@answers');
-Route::get('/resultados/pdf', 'ParticipacionController@answersPDF');
 
 
 Route::get('/participacion/nuevo', 'ParticipacionController@index');
 Route::post('/participacion/nuevo', 'ParticipacionController@save');
 
+Route::post('/resultados/redirect', 'ParticipacionController@dataRedirect');
+Route::get('/resultados/{options}', 'ParticipacionController@answers')->name('resultados');
 
-Route::get('/resultados/q/{option}', 'ParticipacionController@dataResponse');
+
+
+Route::get('/resultados/q/{option}/{data}', 'ParticipacionController@dataResponse');
 Route::get('/participacion/load/{name}', 'ParticipacionController@excelRecoleccion');
 
 
@@ -68,3 +70,10 @@ Route::get('/datos/q/{option}/', 'RecoleccionController@dataResponse');
 Route::get('/datos/q/{option}/{other}', 'RecoleccionController@dataResponseMunicipio');
 Route::get('/datos', 'RecoleccionController@answers');
 Route::post('/datos/municipio', 'RecoleccionController@getMunicipio');
+
+
+
+/* Consulta */
+Route::get('/resultados/{option}', 'ParticipacionController@answers');
+Route::get('/resultados/download/pdf', 'ParticipacionController@answersPDF');
+Route::get('/handler/pdf', 'ParticipacionController@handlerPDF');

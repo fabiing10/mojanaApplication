@@ -12,6 +12,7 @@ use \App\ParticipacionRecoleccion;
 use \App\Consulta;
 use DB;
 use PDF;
+use GrabzItClient,GrabzItPDFOptions;
 
 
 /**
@@ -34,21 +35,27 @@ class ParticipacionController extends Controller
      public function index(){
        return view('frontend.participacion.index');
      }
-     public function answers(){
+
+     public function dataRedirect(FrontendRequest $request){
+       $option = $request->municipio;
+       return redirect()->route('resultados', ['options' => $option]);
+
+     }
+     public function answers($option){
 
        $consulta = new Consulta();
-       $datos_genero = $consulta->obtenerGenero();
-       $datos_ocupacion = $consulta->obtenerOcupacion();
-       $datos_discapacidad = $consulta->obtenerDiscapacidad();
-       $datos_nivel_educativo = $consulta->obtenerNivelEducativo();
-       $datos_sector = $consulta->obtenerSector();
-       $datos_servicios = $consulta->obtenerServicios();
-       $datos_suelo = $consulta->obtenerSuelo();
+       $datos_genero = $consulta->obtenerGenero($option);
+       $datos_ocupacion = $consulta->obtenerOcupacion($option);
+       $datos_discapacidad = $consulta->obtenerDiscapacidad($option);
+       $datos_nivel_educativo = $consulta->obtenerNivelEducativo($option);
+       $datos_sector = $consulta->obtenerSector($option);
+       $datos_servicios = $consulta->obtenerServicios($option);
+       $datos_suelo = $consulta->obtenerSuelo($option);
 
 
-      $d_v_ambientales = $consulta->obtenerVariablesAmbientales();
-      $d_v_sociales = $consulta->obtenerVariablesSocial();
-      $d_v_economicas = $consulta->obtenerVariablesEconomicas();
+      $d_v_ambientales = $consulta->obtenerVariablesAmbientales($option);
+      $d_v_sociales = $consulta->obtenerVariablesSocial($option);
+      $d_v_economicas = $consulta->obtenerVariablesEconomicas($option);
 
 
       /*Mapas*/
@@ -69,65 +76,62 @@ class ParticipacionController extends Controller
               ->with('d_v_economicas',$d_v_economicas)
               ->with('m_ambientales',$m_ambientales)
               ->with('m_sociales',$m_sociales)
-              ->with('m_economicas',$m_economicas);
+              ->with('m_economicas',$m_economicas)
+              ->with('option_url',$option);
+
 
      }
 
      public function answersPDF(){
 
-       $consulta = new Consulta();
-       $datos_genero = $consulta->obtenerGenero();
-       $datos_ocupacion = $consulta->obtenerOcupacion();
-       $datos_discapacidad = $consulta->obtenerDiscapacidad();
-       $datos_nivel_educativo = $consulta->obtenerNivelEducativo();
-       $datos_sector = $consulta->obtenerSector();
-       $datos_servicios = $consulta->obtenerServicios();
-       $datos_suelo = $consulta->obtenerSuelo();
+
+       include( public_path().'/../vendor/grabzit/grabzit/lib/GrabzItClient.class.php');
+
+        try{
 
 
-      $d_v_ambientales = $consulta->obtenerVariablesAmbientales();
-      $d_v_sociales = $consulta->obtenerVariablesSocial();
-      $d_v_economicas = $consulta->obtenerVariablesEconomicas();
+            $grabzIt = new GrabzItClient("MjFhOGI4M2JjMzdkNGI4MDk2ZGNhMWMzYjg2NmIzM2U=", "PwARJ2N/Pz9mPw8/Pz8/TT81Pz90Qj93BRo/QD86fz8=");
+            $options = new GrabzItPDFOptions();
+            $options->setDelay(6000);
+            $grabzIt->URLToPDF("http://app.regionmojana.com/resultados",$options);
 
+            $filepath = "data-pdf.pdf";
+            $grabzIt->SaveTo(public_path().'/img/uploads/data/'.$filepath);
+            //return $grabzIt;
+        }catch(GrabzItException $e){
 
-      /*Mapas*/
-      $m_ambientales = $consulta->obtenerCountMunicipiosAmbientales();
-      $m_sociales = $consulta->obtenerCountMunicipiosSociales();
-      $m_economicas = $consulta->obtenerCountMunicipiosEconomicos();
-
-
-              view()->share('datos_genero',$datos_genero);
-              view()->share('datos_ocupacion',$datos_ocupacion);
-              view()->share('datos_discapacidad',$datos_discapacidad);
-              view()->share('datos_nivel_educativo',$datos_nivel_educativo);
-              view()->share('datos_sector',$datos_sector);
-              view()->share('datos_servicios',$datos_servicios);
-              view()->share('datos_suelo',$datos_suelo);
-              view()->share('d_v_ambientales',$d_v_ambientales);
-              view()->share('d_v_sociales',$d_v_sociales);
-              view()->share('d_v_economicas',$d_v_economicas);
-              view()->share('m_ambientales',$m_ambientales);
-              view()->share('m_sociales',$m_sociales);
-              view()->share('m_economicas',$m_economicas);
-
-
-
-             $pdf = PDF::loadView('frontend.resultados.index');
-             $pdf->setOptions(['dpi' => 150,
-              'defaultFont' => 'sans-serif',
-              'fontHeightRatio' => 1.5,
-              'debugLayoutPaddingBox' => false,
-              'defaultPaperSize'=>'a4',
-              'isPhpEnabled'=>'true',
-              'isJavascriptEnabled'=>'true',
-              'isHtml5ParserEnabled'=>'true',
-              'isPhpEnabled'=>'true']);
-             return $pdf->stream('download.pdf');
+          if ($e->getCode() == GrabzItException::PARAMETER_NO_URL)
+          {
+              //Please enter a URL
+          }
+        }
 
 
      }
 
+     public function handlerPDF(FrontendRequest $request){
+       include( public_path().'/../vendor/grabzit/grabzit/lib/GrabzItClient.class.php');
 
+
+       //This PHP file handles the GrabzIt callback
+
+       $message = $request->message;
+       $customId = $request->customid;
+       $id = $request->id;
+       $filename = $request->filename;
+       $format = $request->format;
+
+       //Custom id can be used to store user ids or whatever is needed for the later processing of the
+       //resulting screenshot
+
+       $grabzIt = new GrabzItClient("MjFhOGI4M2JjMzdkNGI4MDk2ZGNhMWMzYjg2NmIzM2U=", "PwARJ2N/Pz9mPw8/Pz8/TT81Pz90Qj93BRo/QD86fz8=");
+       $result = $grabzIt->GetResult($id);
+       //Ensure that the application has the correct rights for this directory.
+       file_put_contents("results" . public_path().'img/uploads/data/' . $filename, $result);
+      return $result;
+
+
+     }
 
      public function save(FrontendRequest $request){
        /*
@@ -310,32 +314,32 @@ class ParticipacionController extends Controller
      }
 
      /*Request Ajax Respuestas */
-     public function dataResponse($option){
+     public function dataResponse($option,$data){
        $consulta = new Consulta();
        if($option == "regimen-salud"){
-         $data = $consulta->obtenerRegimenSalud();
+         $data = $consulta->obtenerRegimenSalud($data);
        }else if($option == "han-salido"){
-         $data = $consulta->obtenerSalidoDepartamento();
+         $data = $consulta->obtenerSalidoDepartamento($data);
        }else if($option == "han-salido-m"){
-         $data = $consulta->obtenerSalidoMunicipio();
+         $data = $consulta->obtenerSalidoMunicipio($data);
        }else if($option == "actores"){
-         $data = $consulta->obtenerActores();
+         $data = $consulta->obtenerActores($data);
        }else if($option == "condiciones-fisicas"){
-         $data = $consulta->obtenerCondicionesFisicas();
+         $data = $consulta->obtenerCondicionesFisicas($data);
        }else if($option == "vivienda-es"){
-         $data = $consulta->obtenerViviendaEs();
+         $data = $consulta->obtenerViviendaEs($data);
        }else if($option == "municipios"){
          $data = $consulta->obtenerMunicipios();
        }else if($option == "estado-general"){
-         $data = $consulta->obtenerQuestions();
+         $data = $consulta->obtenerQuestions($data);
        }else if($option == "sector-pertenece"){
-         $data = $consulta->obtenerSectorPertenece();
+         $data = $consulta->obtenerSectorPertenece($data);
        }else if($option == "edades"){
-         $data = $consulta->obtenerEdades();
+         $data = $consulta->obtenerEdades($data);
        }else if($option == "situacion-desplazamiento"){
-         $data = $consulta->obtenerSituacionDesplazamiento();
+         $data = $consulta->obtenerSituacionDesplazamiento($data);
        }else if($option == "tiempo-residencia"){
-         $data = $consulta->obtenerTiempoResidencia();
+         $data = $consulta->obtenerTiempoResidencia($data);
        }
        //Mapas
        else if($option == "mapa-ambiental"){

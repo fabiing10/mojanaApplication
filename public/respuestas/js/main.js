@@ -20,11 +20,14 @@ $( document ).ready(function() {
     cargarTiempoResidencia();
 
 });
+function submitForm(){
+  $('#FormSearch').submit();
+}
 
 //add Juanpita
 function cargarQuestions(){
-
-  $.get( "/resultados/q/estado-general", function() {
+  var option_url = $('#option_url').val();
+  $.get( "/resultados/q/estado-general/"+option_url, function() {
 
   }).done(function(data) {
     var i = 0;
@@ -118,7 +121,8 @@ function cargarQuestions(){
 }
 
 function cargarSector(){
-  $.get( "/resultados/q/sector-pertenece", function() {
+  var option_url = $('#option_url').val();
+  $.get( "/resultados/q/sector-pertenece/"+option_url, function() {
 
   }).done(function(value) {
 
@@ -149,7 +153,8 @@ function cargarSector(){
 }
 
 function cargarRegimenSalud(){
-  $.get( "/resultados/q/regimen-salud", function() {
+  var option_url = $('#option_url').val();
+  $.get( "/resultados/q/regimen-salud/"+option_url, function() {
 
   }).done(function(data) {
 
@@ -192,7 +197,8 @@ function cargarRegimenSalud(){
 }
 
 function cargarHanSalido(){
-  $.get( "/resultados/q/han-salido", function() {
+  var option_url = $('#option_url').val();
+  $.get( "/resultados/q/han-salido/"+option_url, function() {
 
   }).done(function(data) {
 
@@ -235,7 +241,8 @@ function cargarHanSalido(){
 }
 
 function cargarHanSalidoM(){
-  $.get( "/resultados/q/han-salido-m", function() {
+  var option_url = $('#option_url').val();
+  $.get( "/resultados/q/han-salido-m/"+option_url, function() {
 
   }).done(function(data) {
 
@@ -278,7 +285,8 @@ function cargarHanSalidoM(){
 }
 
 function cargarActores(){
-  $.get( "/resultados/q/actores", function() {
+  var option_url = $('#option_url').val();
+  $.get( "/resultados/q/actores/"+option_url, function() {
 
   }).done(function(data) {
 
@@ -324,7 +332,8 @@ function cargarActores(){
 }
 
 function cargarCondiciones(){
-  $.get( "/resultados/q/condiciones-fisicas", function() {
+  var option_url = $('#option_url').val();
+  $.get( "/resultados/q/condiciones-fisicas/"+option_url, function() {
 
   }).done(function(data) {
 
@@ -368,7 +377,8 @@ function cargarCondiciones(){
 }
 
 function cargarViviendas(){
-  $.get( "/resultados/q/vivienda-es", function() {
+  var option_url = $('#option_url').val();
+  $.get( "/resultados/q/vivienda-es/"+option_url, function() {
 
   }).done(function(data) {
 
@@ -412,7 +422,8 @@ function cargarViviendas(){
 }
 
 function cargarMunicipios(){
-  $.get( "/resultados/q/municipios", function() {
+  var option_url = $('#option_url').val();
+  $.get( "/resultados/q/municipios/"+option_url, function() {
 
   }).done(function(data) {
 
@@ -464,7 +475,8 @@ function cargarMunicipios(){
 }
 
 function mapaAmbiental(){
-  $.get( "/resultados/q/mapa-ambiental", function() {
+  var option_url = $('#option_url').val();
+  $.get( "/resultados/q/mapa-ambiental/"+option_url, function() {
 
   }).done(function(markers) {
 
@@ -506,7 +518,8 @@ function mapaAmbiental(){
 }
 
 function mapaEconomico(){
-  $.get( "/resultados/q/mapa-economico", function() {
+  var option_url = $('#option_url').val();
+  $.get( "/resultados/q/mapa-economico/"+option_url, function() {
 
   }).done(function(markers) {
 
@@ -547,7 +560,8 @@ function mapaEconomico(){
 }
 
 function mapaSocial(){
-  $.get( "/resultados/q/mapa-social", function() {
+  var option_url = $('#option_url').val();
+  $.get( "/resultados/q/mapa-social/"+option_url, function() {
 
   }).done(function(markers) {
 
@@ -588,7 +602,9 @@ function mapaSocial(){
 }
 
 function cargarMapaPrincipal(){
-  $.get( "/resultados/q/mapa-general", function() {
+
+  var option_url = $('#option_url').val();
+  $.get( "/resultados/q/mapa-general/"+option_url, function() {
 
   }).done(function(markers) {
 
@@ -640,8 +656,8 @@ function cargarMapaPrincipal(){
 }
 
 function cargarEdades(){
-
-  $.get( "/resultados/q/edades", function() {
+  var option_url = $('#option_url').val();
+  $.get( "/resultados/q/edades/"+option_url, function() {
 
   }).done(function(value) {
 
@@ -672,8 +688,8 @@ function cargarEdades(){
 }
 
 function cargarTiempoResidencia(){
-
-  $.get( "/resultados/q/tiempo-residencia", function() {
+  var option_url = $('#option_url').val();
+  $.get( "/resultados/q/tiempo-residencia/"+option_url, function() {
 
   }).done(function(value) {
       $('.t_r_01').html(value.opt01+'%');
@@ -707,8 +723,8 @@ function cargarTiempoResidencia(){
 }
 
 function cargarDesplazamiento(){
-
-  $.get( "/resultados/q/situacion-desplazamiento", function() {
+  var option_url = $('#option_url').val();
+  $.get( "/resultados/q/situacion-desplazamiento/"+option_url, function() {
 
   }).done(function(value) {
 
