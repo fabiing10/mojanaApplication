@@ -97,7 +97,7 @@ class ParticipacionController extends Controller
             $options->setMarginLeft(0);
             $options->setMarginBottom(0);
             $options->setMarginRight(0);
-            $options->setPageSize("A3");
+
 
 
             $grabzIt->URLToPDF("http://app.regionmojana.com/resultados/general",$options);
