@@ -76,9 +76,18 @@
 
 @media only screen and (max-width: 767px){
 	.col-xs-6 {
-    width: 100%;
+    width: 50%;
 	}
+	.t-right {
 
+	    font-size: 14px;
+
+	}
+	.t-left {
+
+    font-size: 15px;
+
+}
 	.contenido{
 	padding-right: 0px;
 	padding-left: 0px;
