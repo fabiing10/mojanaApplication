@@ -98,8 +98,6 @@ class ParticipacionController extends Controller
             $options->setMarginBottom(0);
             $options->setMarginRight(0);
 
-
-
             $grabzIt->URLToPDF("http://app.regionmojana.com/resultados/general",$options);
 
             $filepath = "data-pdf.pdf";
