@@ -93,6 +93,7 @@ class ParticipacionController extends Controller
             $grabzIt = new GrabzItClient("MjFhOGI4M2JjMzdkNGI4MDk2ZGNhMWMzYjg2NmIzM2U=", "PwARJ2N/Pz9mPw8/Pz8/TT81Pz90Qj93BRo/QD86fz8=");
             $options = new GrabzItPDFOptions();
             $options->setDelay(6000);
+            $options->setOrientation("Landscape");
             /*$options->setMarginTop(0);
             $options->setMarginLeft(0);
             $options->setMarginBottom(0);
