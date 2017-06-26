@@ -333,7 +333,7 @@
   </div>
 </div>
 <br>
-<div class="row" style="background:#f5f5f5;margin-top:300px;">
+<div class="row" style="background:#f5f5f5;margin-top:10;">
   <div class="col-xs-12" style="">
     <div class="row row-gral-bg">
       <center><h2>La vivienda cuenta con</h2></center>
