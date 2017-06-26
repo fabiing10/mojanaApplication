@@ -6,6 +6,16 @@
     font-family: "Exo2-Medium";
     src: url('../fonts/Exo2-Medium.otf');
 }
+
+.pdf_row_a{
+  margin-top:90px;
+  margin-bottom:260px;
+}
+.m-t15{
+  margin-top: 15px;
+}
+
+
 .bar_data{
   font-size: 16px;
     line-height: 31px;
