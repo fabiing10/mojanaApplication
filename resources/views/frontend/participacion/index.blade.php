@@ -1041,7 +1041,7 @@ label {
       <input type="hidden" name="ubicacion_longitud_economico" id="ubicacion_longitud_economico" />
   </div>
   </div>
-  <button type="submit" class="btn btn-default"><img src="../participacion/images/avion_de_enviar.png" alt="#" class="icono"></img>Enviar</button>
+  <button type="submit" class="btn btn-default"><img src="../participacion/images/avion_de_enviar.png" alt="#" class="icono" style="margin-bottom:30px;"></img>Enviar</button>
 {!! Form::close() !!}
 </div>
 @stop
