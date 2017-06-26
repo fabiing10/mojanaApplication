@@ -1,5 +1,11 @@
 @extends('frontend.layouts.respuestas')
-
+@section('style')
+<style>
+.row-gral {
+    margin: 75px;
+}
+</style>
+@endsection
 @section('container')
 <div class="container" style="padding-top:0px;">
   {!! Form::open(['url' => 'resultados/redirect' , 'method' => 'post' , 'id' => 'FormSearch']) !!}
@@ -23,7 +29,7 @@
 
         <div class="row row-gral" style="margin-top: 15px;">
           <h2>Edad</h2>
-          <canvas id="chartEdades" width="400" height="300"></canvas>
+          <canvas id="chartEdades" width="300" height="300"></canvas>
         </div>
       </div>
     <div class="col-xs-6" style="background-color:#f5f5f5; ">

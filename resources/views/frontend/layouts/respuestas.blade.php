@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/participacion/css/index.css">
     <link rel="stylesheet" href="/participacion/css/map.css">
     <link rel="stylesheet" href="/participacion/css/responsive.css">
-
+    @yield('style')
   </head>
   <body>
 <!-- header -->
