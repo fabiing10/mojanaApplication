@@ -44,7 +44,7 @@
     </div>
 
   </div>
-  <div class="row" style="margin-bottom: 150px;">
+  <div class="row" style="margin-bottom: 170px;">
     <div class="col-xs-6" style="">
       <div class="row row-gral">
         <h2>Ocupación</h2>
@@ -112,7 +112,7 @@
   </div>
 </div>
 </div>
-<div class="row">
+<div class="row" style="margin-top:80px;margin-bottom:250px;">
 
 
     <div class="col-xs-6" style="">
