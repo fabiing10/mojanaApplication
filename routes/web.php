@@ -54,6 +54,7 @@ Route::get('/leer', 'ApplicationController@leerExcel');
 
 Route::get('/participacion/nuevo', 'ParticipacionController@index');
 Route::post('/participacion/nuevo', 'ParticipacionController@save');
+Route::get('/participacion/reporte', 'ParticipacionController@participacion');
 
 Route::post('/resultados/redirect', 'ParticipacionController@dataRedirect');
 Route::get('/resultados/{options}', 'ParticipacionController@answers')->name('resultados');

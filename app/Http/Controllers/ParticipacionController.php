@@ -357,9 +357,13 @@ class ParticipacionController extends Controller
         $participacion->save();
 
 
-        return redirect('resultados');
+        return redirect('participacion/reporte');
 
 
+     }
+
+     public function participacion(){
+       return view('frontend.participacion.success');
      }
 
      /*Request Ajax Respuestas */

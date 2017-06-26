@@ -562,3 +562,89 @@ td{
     border-bottom: 5px solid;
 }
 */
+
+
+
+
+
+
+
+
+/* tabla indicadores */
+.button-query {
+    color: #112b44;
+    cursor: pointer;
+}
+.tr-ambiental{
+  background: #575755;
+}
+.tr-social{
+  background: #00963f;
+}
+.tr-economico{
+  background: #009fe3;
+}
+.ambiental-tabla{
+  background: #575755;
+  color: white;
+}
+.social-tabla{
+  background: #00963f;
+  color: white;
+}
+.economico-tabla{
+  background: #009fe3;
+  color: white;
+}
+.title-objetivos{
+    writing-mode: vertical-lr;
+    transform: rotate(270deg);
+    color: white;
+    background: #063040;
+}
+.titlefooter-tabla{
+  background: #063040;
+  color: #62d8f6;
+}
+
+.ver-tabla {
+    color: #798c90;
+    background: rgba(160, 245, 252, 0.82);
+    border-right: 1px solid #798c90;
+}
+.arrows-tabla{
+  text-align: center;
+  background: #a0f5fc;
+  color: #112b44;
+  border-right: 1px solid #798c90;
+  padding: 5px !important;
+}
+.title-tabla {
+    text-align: center;
+    background: #a0f5fc;
+    color: #112b44;
+    border-right: 1px solid #202b3a;
+}
+table#indicadores{
+  text-align: center;
+    border-collapse: separate;
+    border-spacing: 0px 3px;
+}
+table#indicadores th, td {
+    padding: 14px !important;
+    text-align: center;
+}
+div#indicadores-dashboard {
+    padding: 12px 0px;
+    background-color: #a0f5fc;
+    font-size: 17px;
+}
+h3.info-text {
+    background: none;
+    color: #001923;
+}
+#indicadores-dashboard .title {
+    text-align: center;
+    background: #a0f5fc;
+    color: #112b44;
+}
