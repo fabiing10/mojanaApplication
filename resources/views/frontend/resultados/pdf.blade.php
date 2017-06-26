@@ -339,7 +339,7 @@
     </div>
   </div>
 </div>
-<br>
+<br><br>
 <div class="row" >
   <div class="col-xs-12" style="">
     <div class="row row-gral-bg">
