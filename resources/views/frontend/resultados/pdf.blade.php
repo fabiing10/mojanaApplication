@@ -19,13 +19,28 @@
     <h3>IDENTIFICACIÓN</h3>
   </div>
 </div>
+<table border="0">
+  <tr>
+    <td width="50%">
+      <div class="row row-gral" style="padding-bottom: 70px;">
+        <h2>Género</h2>
+        @include('frontend.resultados.blocks.genero')
+      </div>
+    </td>
+    <td width="50%">
+      <div class="row row-gral">
+        <h2>Régimen de salud</h2>
+          <canvas id="chartRegimenSalud" width="400" height="200"></canvas>
+        </div>
+    </td>
+  </tr>
+
+</table>
+
 <div class="row">
   <div class="row">
     <div class="col-xs-6" style="">
-        <div class="row row-gral" style="padding-bottom: 70px;">
-          <h2>Género</h2>
-          @include('frontend.resultados.blocks.genero')
-        </div>
+
 
         <div class="row row-gral" style="margin-top: 15px;">
           <h2>Edad</h2>
@@ -33,10 +48,7 @@
         </div>
       </div>
     <div class="col-xs-6" style="background-color:#f5f5f5; ">
-      <div class="row row-gral">
-        <h2>Régimen de salud</h2>
-          <canvas id="chartRegimenSalud" width="400" height="200"></canvas>
-        </div>
+
       <div class="row row-gral">
         <h2>Estrato Socio Económico</h2>
           <canvas id="chartSector" width="400" height="200"></canvas>
