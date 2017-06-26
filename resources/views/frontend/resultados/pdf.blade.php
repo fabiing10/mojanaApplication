@@ -2,7 +2,7 @@
 @section('style')
 <style>
 .row-gral {
-    margin: 75px;
+    margin: 15px;
 }
 </style>
 @endsection
