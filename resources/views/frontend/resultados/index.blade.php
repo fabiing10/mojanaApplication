@@ -135,13 +135,13 @@
   </div>
   <div class="row row-gral">
       <div class="col-xs-5" style="">
-        <div class="row row-gral">
+        <div class="row">
           <h2>Nivel Educativo</h2>
             @include('frontend.resultados.blocks.nivel_educativo')
           </div>
     </div>
     <div class="col-xs-7">
-      <div class="row row-gral" style="padding-top: 55px;">
+      <div class="row" style="padding-top: 55px;">
         <div class="col-xs-6">
           <div class="row" style="padding-right:20px;">
         <h2 style="text-align: right; line-height: 35px !important;">Ha estado en<br>situación de<br>desplazamiento o<br>ha sido víctima del<br>conflicto armado</h2>
