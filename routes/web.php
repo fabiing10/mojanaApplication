@@ -76,5 +76,5 @@ Route::post('/datos/municipio', 'RecoleccionController@getMunicipio');
 /* Consulta */
 Route::get('/resultados/pdf/{option}', 'ParticipacionController@answersPDFTemplate');
 Route::get('/resultados/{option}', 'ParticipacionController@answers');
-Route::get('/resultados/generate/download/pdf/{option}', 'ParticipacionController@answersPDF');
+Route::get('/resultados/download/pdf/{option}', 'ParticipacionController@answersPDF');
 Route::get('/handler/pdf', 'ParticipacionController@handlerPDF');
