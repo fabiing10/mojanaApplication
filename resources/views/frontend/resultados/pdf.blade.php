@@ -31,7 +31,7 @@
     <div class="col-xs-6" style="background-color:#f5f5f5; ">
       <div class="row row-gral">
         <h2>Régimen de salud</h2>
-          <canvas id="chartRegimenSalud" width="300" height="100"></canvas>
+          <canvas id="chartRegimenSalud" width="300" height="150"></canvas>
         </div>
 
     </div>
