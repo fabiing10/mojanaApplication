@@ -29,7 +29,7 @@
 
         <div class="row row-gral" style="margin-top: 15px;">
           <h2>Edad</h2>
-          <canvas id="chartEdades" width="300" height="200"></canvas>
+          <canvas id="chartEdades" width="300" height="150"></canvas>
         </div>
       </div>
     <div class="col-xs-6" style="background-color:#f5f5f5; ">
