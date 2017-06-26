@@ -134,17 +134,14 @@ class ParticipacionController extends Controller
             $grabzIt = new GrabzItClient("MjFhOGI4M2JjMzdkNGI4MDk2ZGNhMWMzYjg2NmIzM2U=", "PwARJ2N/Pz9mPw8/Pz8/TT81Pz90Qj93BRo/QD86fz8=");
             $options = new GrabzItPDFOptions();
             $options->setDelay(25000);
-            $options->setMarginTop(0);
-            $options->setMarginLeft(0);
+            $options->setMarginTop();
+            $options->setMarginLeft(5);
             $options->setMarginBottom(0);
-            $options->setMarginRight(0);
-            $options->setPageSize("A4");
-            $options->setQuality(40);
-            $options->setIncludeOutline(true);
-
+            $options->setMarginRight(5);
+            $options->setPageSize("A5");
+            $options->setIncludeOutline(false);
+            $options->setRequestAs(3);
             $grabzIt->URLToPDF($url,$options);
-
-
             $grabzIt->SaveTo(public_path().'/img/uploads/data/'.$filepath);
             //return $grabzIt;
         }catch(GrabzItException $e){
