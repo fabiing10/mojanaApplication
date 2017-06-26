@@ -19,6 +19,7 @@
     <h3>IDENTIFICACIÓN</h3>
   </div>
 </div>
+<div class="row">
   <div class="row">
     <div class="col-xs-6" style="">
         <div class="row row-gral" style="padding-bottom: 70px;">
@@ -26,39 +27,33 @@
           @include('frontend.resultados.blocks.genero')
         </div>
 
-
+        <div class="row row-gral" style="margin-top: 15px;">
+          <h2>Edad</h2>
+          <canvas id="chartEdades" width="300" height="150"></canvas>
+        </div>
       </div>
     <div class="col-xs-6" style="background-color:#f5f5f5; ">
       <div class="row row-gral">
         <h2>Régimen de salud</h2>
-          <canvas id="chartRegimenSalud" width="300" height="100"></canvas>
+          <canvas id="chartRegimenSalud" width="400" height="200"></canvas>
         </div>
-
+      <div class="row row-gral">
+        <h2>Estrato Socio Económico</h2>
+          <canvas id="chartSector" width="400" height="200"></canvas>
+        </div>
     </div>
 
   </div>
-<div class="row">
-  <div class="col-xs-6">
-      <div class="row row-gral">
-        <h2>Estrato Socio Económico</h2>
-          <canvas id="chartSector" width="300" height="100"></canvas>
-      </div>
-  </div>
-  <div class="col-xs-6">
-      <div class="row row-gral" style="margin-top: 15px;">
-        <h2>Edad</h2>
-        <canvas id="chartEdades" width="300" height="100"></canvas>
-      </div>
-  </div>
-</div>
   <div class="row" style="margin-bottom: 170px;">
     <div class="col-xs-6" style="">
       <div class="row row-gral">
         <h2>Ocupación</h2>
             @include('frontend.resultados.blocks.ocupacion')
         </div>
+
     </div>
     <div class="col-xs-6" style="">
+
       <div class="row row-gral">
         <h2>Discapacidad</h2>
           @include('frontend.resultados.blocks.discapacidad')
@@ -78,7 +73,7 @@
           <div class="row" style="padding-right:20px;">
             <h4 style="text-align: center; line-height: 25px !important;color:gray;">Ha estado en situación de desplazamiento o ha sido víctima del conflicto armado</h4>
             <div class="row ">
-              <canvas id="chartSituacionDesplazamiento" width="300" height="100"></canvas>
+              <canvas id="chartSituacionDesplazamiento" width="300" height="200"></canvas>
             </div>
         </div>
       </div>
@@ -93,7 +88,7 @@
       </div>
     </div>
   </div>
-
+</div>
 <div class="data-line">
   <div class="col-md-1 numbers">
     <h3>2</h3>
@@ -107,7 +102,7 @@
 <div class="row">
   <div class="col-xs-12"style=" background-color:#eaeaea;">
   <div class="row">
-    <h2 style="text-align:center;margin-bottom:25px;">Participación por municipio</h2>
+    <h2 style="text-align:center;">Participación por municipio</h2>
     <div class="col-md-4">
       <img src="/participacion/images/mapa_select.png" class="img_mapa"/>
     </div>
@@ -117,7 +112,7 @@
   </div>
 </div>
 </div>
-<div class="row pdf_row_a">
+<div class="row" style="margin-top:80px;margin-bottom:50px;">
 
 
     <div class="col-xs-6" style="">
@@ -143,7 +138,7 @@
     <canvas id="chartHanSalidoM" width="400" height="400"></canvas>
     </div>
   </div>
-<div class="col-xs-6 m-t15">
+<div class="col-xs-6" style="margin-top: 20px;">
   <div class="row m-t-20">
     <h2 class="header-padding" style="text-align: center;">Tiempo de Residencia</h2>
       <canvas id="chartTiempoResidencia" width="200" height="100"></canvas>
