@@ -112,7 +112,7 @@
   </div>
 </div>
 </div>
-<div class="row" style="margin-top:80px;margin-bottom:20px;">
+<div class="row" style="margin-top:60px;margin-bottom:20px;">
 
 
     <div class="col-xs-6" style="">
