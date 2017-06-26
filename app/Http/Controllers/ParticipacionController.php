@@ -134,7 +134,7 @@ class ParticipacionController extends Controller
             $grabzIt = new GrabzItClient("MjFhOGI4M2JjMzdkNGI4MDk2ZGNhMWMzYjg2NmIzM2U=", "PwARJ2N/Pz9mPw8/Pz8/TT81Pz90Qj93BRo/QD86fz8=");
             $options = new GrabzItPDFOptions();
             $options->setDelay(25000);
-            $options->setMarginTop();
+            $options->setMarginTop(0);
             $options->setMarginLeft(5);
             $options->setMarginBottom(0);
             $options->setMarginRight(5);
