@@ -8,8 +8,6 @@
 @endsection
 @section('container')
 <div class="container" style="padding-top:0px;">
-  {!! Form::open(['url' => 'resultados/redirect' , 'method' => 'post' , 'id' => 'FormSearch']) !!}
-  <input type="hidden" name="option_url" id="option_url" value="{{$option_url}}" />
 
 <div class="form-group" style="margin-bottom: 0px;">
   <div class="col-md-1 numbers">
@@ -97,20 +95,18 @@
     <h3>UBICACIÓN</h3>
   </div>
 </div>
-
-
 <div class="row">
   <div class="col-xs-12"style=" background-color:#eaeaea;">
-  <div class="row">
-    <h2 style="text-align:center;">Participación por municipio</h2>
-    <div class="col-md-4">
-      <img src="/participacion/images/mapa_select.png" class="img_mapa" style="top:-10px;"/>
-    </div>
-    <div class="col-md-8">
-      <canvas id="chartMunicipios" width="400" height="200"></canvas>
+    <div class="row">
+      <h2 style="text-align:center;">Participación por municipio</h2>
+      <div class="col-md-4">
+        <img src="/participacion/images/mapa_select.png" class="img_mapa" style="top:-10px;"/>
+      </div>
+      <div class="col-md-8">
+        <canvas id="chartMunicipios" width="400" height="200"></canvas>
+      </div>
     </div>
   </div>
-</div>
 </div>
 <div class="row" style="margin-top:50px;margin-bottom:10px;">
 
@@ -138,43 +134,40 @@
     <canvas id="chartHanSalidoM" width="400" height="400"></canvas>
     </div>
   </div>
-<div class="col-xs-6" style="margin-top: 20px;">
-  <div class="row m-t-20">
-    <h2 class="header-padding" style="text-align: center;">Tiempo de Residencia</h2>
-      <canvas id="chartTiempoResidencia" width="200" height="100"></canvas>
-      <div class="row block-tiempo_residencia">
-        <div class="row m-b-10">
-          <div class="col-xs-6">
-            <div class="t_r_01" ></div>
+  <div class="col-xs-6" style="margin-top: 20px;">
+    <div class="row m-t-20">
+      <h2 class="header-padding" style="text-align: center;">Tiempo de Residencia</h2>
+        <canvas id="chartTiempoResidencia" width="200" height="100"></canvas>
+        <div class="row block-tiempo_residencia">
+          <div class="row m-b-10">
+            <div class="col-xs-6">
+              <div class="t_r_01" ></div>
+            </div>
+            <div class="col-xs-6 label-g-c"> 1 a 10 Años</div>
           </div>
-          <div class="col-xs-6 label-g-c"> 1 a 10 Años</div>
-        </div>
-        <div class="row m-b-10">
-          <div class="col-xs-6">
-            <div class="t_r_02" ></div>
+          <div class="row m-b-10">
+            <div class="col-xs-6">
+              <div class="t_r_02" ></div>
+            </div>
+            <div class="col-xs-6 label-g-c"> 11 a 20 Años</div>
           </div>
-          <div class="col-xs-6 label-g-c"> 11 a 20 Años</div>
-        </div>
-        <div class="row m-b-10">
-          <div class="col-xs-6">
-            <div class="t_r_03" ></div>
+          <div class="row m-b-10">
+            <div class="col-xs-6">
+              <div class="t_r_03" ></div>
+            </div>
+            <div class="col-xs-6 label-g-c"> 21 a 30 Años</div>
           </div>
-          <div class="col-xs-6 label-g-c"> 21 a 30 Años</div>
-        </div>
-        <div class="row m-b-10">
-          <div class="col-xs-6">
-            <div class="t_r_04" ></div>
+          <div class="row m-b-10">
+            <div class="col-xs-6">
+              <div class="t_r_04" ></div>
+            </div>
+            <div class="col-xs-6 label-g-c">Mas de 30 Años</div>
           </div>
-          <div class="col-xs-6 label-g-c">Mas de 30 Años</div>
-        </div>
 
-      </div>
+        </div>
+    </div>
   </div>
-  </div>
-
-
 </div>
-
 <div class="row" style="background:#f5f5f5; padding-left:35px;">
     <h2 style="padding-left:5px;">Estado de la infraestructura, equipamiento y<br> elementos ambientales de su zona por temas.</h2>
       <br>
@@ -261,7 +254,6 @@
     </table>
   </div>
 </div>
-<br>
 <div class="row">
   <div class="col-xs-12">
     <div class="row row-gral">
@@ -344,24 +336,18 @@
       </div>
     </div>
   </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br>
+<div class="row" >
   <div class="col-xs-12" style="">
     <div class="row row-gral-bg">
       <center><h2>Le gustaría que permitieran<br>mas suelo para</h2></center>
         @include('frontend.resultados.blocks.suelo')
     </div>
   </div>
+
 </div>
 
-<div class="row">
-  <div class="col-xs-10" style="">
-    <div class="row">
-      <h2>Problemas por temas</h2>
-      <div class="row">
-        @include('frontend.resultados.blocks.problemas-tema')
-      </div>
-    </div>
-  </div>
-<br>
 <div class="row" style="padding-bottom:20px;">
   <div class="col-md-12">
     <h2>Problemas dimension vs tema</h2>
@@ -499,6 +485,5 @@
   </div>
 </div>
 
-{!! Form::close() !!}
 </div>
 @stop
