@@ -22,7 +22,7 @@
 <div class="row">
   <div class="row">
     <div class="col-xs-6" style="">
-        <div class="row row-gral" style="padding-bottom: 70px;">
+        <div class="row row-gral" style="padding-bottom: 30px;">
           <h2>Género</h2>
           @include('frontend.resultados.blocks.genero')
         </div>
@@ -112,7 +112,7 @@
   </div>
 </div>
 </div>
-<div class="row" style="margin-top:60px;margin-bottom:20px;">
+<div class="row" style="margin-top:50px;margin-bottom:10px;">
 
 
     <div class="col-xs-6" style="">
