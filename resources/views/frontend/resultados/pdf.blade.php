@@ -104,7 +104,7 @@
   <div class="row">
     <h2 style="text-align:center;">Participación por municipio</h2>
     <div class="col-md-4">
-      <img src="/participacion/images/mapa_select.png" class="img_mapa"/>
+      <img src="/participacion/images/mapa_select.png" class="img_mapa" style="top:-10px;"/>
     </div>
     <div class="col-md-8">
       <canvas id="chartMunicipios" width="400" height="200"></canvas>
@@ -333,7 +333,7 @@
   </div>
 </div>
 <br>
-<div class="row" style="background:#f5f5f5;">
+<div class="row" style="background:#f5f5f5;margin-top:300px;">
   <div class="col-xs-12" style="">
     <div class="row row-gral-bg">
       <center><h2>La vivienda cuenta con</h2></center>
