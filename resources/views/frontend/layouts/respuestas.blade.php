@@ -22,6 +22,7 @@
   <script type="text/javascript" src="/js/loader.js"></script>
   <script src="/respuestas/js/Chart.bundle.min.js"></script>
   <script src="/respuestas/js/Chart.min.js"></script>
+  <script src="/js/Chart.PieceLabel.js"></script>
   <script src="/respuestas/js/main.js"></script>
   @yield('script')
 

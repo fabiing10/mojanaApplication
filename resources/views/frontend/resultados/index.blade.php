@@ -103,8 +103,6 @@
         <div class="row row-gral" style="padding-bottom: 70px;">
           <h2>Género</h2>
           @include('frontend.resultados.blocks.genero')
-
-
         </div>
 
         <div class="row row-gral" style="margin-top: 15px;">
@@ -362,7 +360,7 @@
 
         </tr>
         <tr class="">
-          <th class="" style="text-align:center;">Economico</th>
+          <th class="" style="text-align:center;">Económico</th>
           <th class="ver" style="background:#005877;">43%</th>
           <th class="ver" style="background:#047faa;">16%</th>
           <th class="ver" style="background:#009fe3;">29%</th>
@@ -377,7 +375,7 @@
     <h3>3</h3>
   </div>
   <div class="col-md-11">
-    <h3>VIVIENDAS Y SERVICIOS</h3>
+    <h3>VIVIENDA Y SERVICIOS</h3>
   </div>
 </div>
 <div class="row">
@@ -400,16 +398,16 @@
     <div class="row row-gral-bg">
       <h2>La vivienda cuenta con</h2>
       @include('frontend.resultados.blocks.vivienda-cuenta')
-      <div class="row">
-      <div class="col-xs-6"></div>
-      <div class="col-xs-6"></div>
+      <div class="row cuenta_con_bar">
+      <div class="col-xs-3"><div class="bar bg-1d1d1b h-20 w-c">Si</div></div>
+      <div class="col-xs-3"><div class="bar bg-e30613 h-20 w-c">No</div></div>
       </div>
     </div>
   </div>
   <div class="col-xs-6" style="">
     <div class="row row-gral-bg">
       <div class="col-xs-5">
-        <h2>Le gustaria que permitieran<br>mas suelo para</h2>
+        <h2>Le gustaría que permitieran<br>mas suelo para</h2>
       </div>
       <div class="col-xs-7" style="margin-top: 40px;">
         @include('frontend.resultados.blocks.suelo')
@@ -468,7 +466,7 @@
           <th class="ver" style="background:#ededed;"></th>
         </tr>
         <tr class="tr-economico">
-          <th class="economico" style="text-align:center;">Economico</th>
+          <th class="economico" style="text-align:center;">Económico</th>
           <th class="ver" style="background:#b2b2b2;"></th>
           <th class="ver" style="background:#dadada;"></th>
           <th class="ver" style="background:#575756;"></th>
@@ -533,7 +531,7 @@
 <div class="row row_panel" style="background:#0095df;">
   <div class="col-xs-12" style=" padding-left:35px;">
     <div class="row">
-      <div class="col-xs-4"><h1 style="color:white;">ECONOMICO</h1></div><div class="col-xs-8"><h2 style="color:white;">Temas por Problematicas</h2></div>
+      <div class="col-xs-4"><h1 style="color:white;">ECONÓMICO</h1></div><div class="col-xs-8"><h2 style="color:white;">Temas por Problematicas</h2></div>
     </div>
       @include('frontend.resultados.blocks.variables_economicas')
   </div>
@@ -564,100 +562,7 @@
     </div>
   </div>
 </div>
-<!--<table id="indicadores" style="width: 100%; border: none;" class="indicadores">
-  <tbody>
-    <tr>
-    <th colspan="3"></th>
-    <th style="padding-bottom: 0px;" colspan="5"><img style="height: 80%; vertical-align: bottom;" src="http://regionmojana.com/wp-content/uploads/2017/03/infraestructura.png" alt="" /></th>
-    <th></th>
-    </tr>
-    <tr>
-    <th></th>
-    <th style="padding-bottom: 0px !important; padding-top: 0px !important;" colspan="2"><img style="height: 80%;" src="http://regionmojana.com/wp-content/uploads/2017/03/entorno-natural.png" alt="" /></th>
-    <th style="padding-bottom: 0px !important; padding-top: 0px !important;" colspan="3"><img style="height: 80%;" src="http://regionmojana.com/wp-content/uploads/2017/03/publica.png" alt="" /></th>
-    <th style="padding-bottom: 0px !important; padding-top: 0px !important; text-align: left;">PRIVADA</th>
-    <th colspan="2"></th>
-    </tr>
-    <tr>
-    <th></th>
-    <th class="title-tabla">Suelo</th>
-    <th class="title-tabla">Estructura
-    Ecologica</th>
-    <th class="title-tabla">Transporte
-    y Movilidad</th>
-    <th class="title-tabla">Servicios
-    Publicos</th>
-    <th class="title-tabla">Espacio
-    Publico</th>
-    <th class="title-tabla">Edificaciones</th>
-    <th colspan="2"></th>
-    </tr>
-    <tr class="tr-ambiental">
-    <th class="ambiental-tabla">Ambiental</th>
-    <th class="ver-tabla">
-    <div class="button-query" data-query="A-1">Ver +</div></th>
-    <th class="ver-tabla">
-    <div class="button-query" data-query="A-2">Ver +</div></th>
-    <th class="ver-tabla">
-    <div class="button-query" data-query="A-3">Ver +</div></th>
-    <th class="ver-tabla">
-    <div class="button-query" data-query="A-4">Ver +</div></th>
-    <th class="ver-tabla">
-    <div class="button-query" data-query="A-5">Ver +</div></th>
-    <th class="ver-tabla">
-    <div class="button-query" data-query="A-6">Ver +</div></th>
-    <th class="ambiental-tabla"><img style="height: 3%;" src="http://regionmojana.com/wp-content/uploads/2017/03/002-next.png" alt="" /></th>
-    <th class="title-objetivos" rowspan="3">objetivos</th>
-    </tr>
-    <tr class="tr-social">
-    <th class="social-tabla">Social</th>
-    <th class="ver-tabla">
-    <div class="button-query" data-query="S-1">Ver +</div></th>
-    <th class="ver-tabla">
-    <div class="button-query" data-query="S-2">Ver +</div></th>
-    <th class="ver-tabla">
-    <div class="button-query" data-query="S-3">Ver +</div></th>
-    <th class="ver-tabla">
-    <div class="button-query" data-query="S-4">Ver +</div></th>
-    <th class="ver-tabla">
-    <div class="button-query" data-query="S-5">Ver +</div></th>
-    <th class="ver-tabla">
-    <div class="button-query" data-query="S-6">Ver +</div></th>
-    <th class="social-tabla"><img style="height: 3%;" src="http://regionmojana.com/wp-content/uploads/2017/03/002-next.png" alt="" /></th>
-    </tr>
-    <tr class="tr-economico">
-    <th class="economico-tabla">Economico</th>
-    <th class="ver-tabla">
-    <div class="button-query" data-query="E-1">Ver +</div></th>
-    <th class="ver-tabla">
-    <div class="button-query" data-query="E-2">Ver +</div></th>
-    <th class="ver-tabla">
-    <div class="button-query" data-query="E-3">Ver +</div></th>
-    <th class="ver-tabla">
-    <div class="button-query" data-query="E-4">Ver +</div></th>
-    <th class="ver-tabla">
-    <div class="button-query" data-query="E-5">Ver +</div></th>
-    <th class="ver-tabla">
-    <div class="button-query" data-query="E-6">Ver +</div></th>
-    <th class="economico-tabla"><img style="height: 3%;" src="http://regionmojana.com/wp-content/uploads/2017/03/002-next.png" alt="" /></th>
-    </tr>
-    <tr>
-    <th></th>
-    <th class="arrows-tabla"><img style="height: 3%;" src="http://regionmojana.com/wp-content/uploads/2017/03/001-down-arrow.png" alt="" /></th>
-    <th class="arrows-tabla"><img style="height: 3%;" src="http://regionmojana.com/wp-content/uploads/2017/03/001-down-arrow.png" alt="" /></th>
-    <th class="arrows-tabla"><img style="height: 3%;" src="http://regionmojana.com/wp-content/uploads/2017/03/001-down-arrow.png" alt="" /></th>
-    <th class="arrows-tabla"><img style="height: 3%;" src="http://regionmojana.com/wp-content/uploads/2017/03/001-down-arrow.png" alt="" /></th>
-    <th class="arrows-tabla"><img style="height: 3%;" src="http://regionmojana.com/wp-content/uploads/2017/03/001-down-arrow.png" alt="" /></th>
-    <th class="arrows-tabla"><img style="height: 3%;" src="http://regionmojana.com/wp-content/uploads/2017/03/001-down-arrow.png" alt="" /></th>
-    <th colspan="2"></th>
-    </tr>
-    <tr>
-    <th></th>
-    <th class="titlefooter-tabla" colspan="6">Desarrollo y Equilibrio Territorial</th>
-    <th colspan="2"></th>
-    </tr>
-  </tbody>
-</table>-->
+
 {!! Form::close() !!}
 </div>
 @stop

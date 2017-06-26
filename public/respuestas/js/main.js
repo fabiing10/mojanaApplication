@@ -143,6 +143,10 @@ function cargarSector(){
         	responsive: true,
           legend: {
             display: false
+          },pieceLabel: {
+          mode: 'percentage',
+          fontSize: 15,
+          precision: 2
           }
         }
        });
@@ -218,7 +222,11 @@ function cargarHanSalido(){
         options: {
             legend: {
               display: false
-            },
+            },pieceLabel: {
+            mode: 'percentage',
+            fontSize: 15,
+            precision: 1
+          },
             tooltips: {
               callbacks: {
                  label: function(tooltipItem) {
@@ -262,7 +270,11 @@ function cargarHanSalidoM(){
         options: {
             legend: {
               display: false
-            },
+            },pieceLabel: {
+            mode: 'percentage',
+            fontSize: 15,
+            precision: 2
+          },
             tooltips: {
               callbacks: {
                  label: function(tooltipItem) {
@@ -309,8 +321,11 @@ function cargarActores(){
         options: {
             legend: {
               display: false
-            },
-            tooltips: {
+            },pieceLabel: {
+            mode: 'percentage',
+            fontSize: 15,
+            precision: 2
+            },tooltips: {
               callbacks: {
                  label: function(tooltipItem) {
                         return tooltipItem.yLabel;
@@ -665,6 +680,7 @@ function cargarEdades(){
         labels: ["18 - 25 Años", "25 - 35 Años", "35 - 45 Años", "45 - 55 Años","55 - 68 Años","68 - 80 Años"],
         datasets: [
           {
+            labels: [value.opt01, value.opt02,value.opt03,value.opt04,value.opt05,value.opt06],
             data: [value.opt01, value.opt02,value.opt03,value.opt04,value.opt05,value.opt06],
             backgroundColor: [ "#006633", "#2fac66", "#00a19a", "#00e0cf","#2bca6d","#1eaeff"],
             hoverBackgroundColor: [ "#006633", "#2fac66", "#00a19a","#00e0cf","#2bca6d","#1eaeff"]
@@ -678,6 +694,10 @@ function cargarEdades(){
         	responsive: true,
           legend: {
             display: false
+          },pieceLabel: {
+          mode: 'percentage',
+          fontSize: 15,
+          precision: 2
           }
         }
        });
@@ -713,7 +733,11 @@ function cargarTiempoResidencia(){
         	responsive: true,
           legend: {
             display: false
-          }
+          },pieceLabel: {
+          mode: 'percentage',
+          fontSize: 15,
+          precision: 1
+        },
         }
        });
 
@@ -745,6 +769,10 @@ function cargarDesplazamiento(){
         	responsive: true,
           legend: {
             display: false
+          },pieceLabel: {
+          mode: 'percentage',
+          fontSize: 15,
+          precision: 2
           }
         }
        });

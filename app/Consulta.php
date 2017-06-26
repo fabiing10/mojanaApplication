@@ -442,17 +442,17 @@ class Consulta extends Model
     //Revisar Municipios que estan cargando desee el select
     public function obtenerMunicipios(){
       //$count_otro  = \DB::table('participaciones as participacion')->select('participacion.id')->where('participacion.ubicacion_solucion_ambiental','otro')->where('participacion.ubicacion_solucion_social','otro')->where('participacion.ubicacion_solucion_economico','otro')->count();
-      $count_nechi  = \DB::table('participaciones as participacion')->select('participacion.id')->where('participacion.municipio_residencia','nechi')->orWhere('participacion.ubicacion_solucion_social','nechi')->orWhere('participacion.ubicacion_solucion_economico','nechi')->count();
-      $count_achi  = \DB::table('participaciones as participacion')->select('participacion.id')->where('participacion.municipio_residencia','achi')->orWhere('participacion.ubicacion_solucion_social','achi')->orWhere('participacion.ubicacion_solucion_economico','achi')->count();
-      $count_magangue  = \DB::table('participaciones as participacion')->select('participacion.id')->where('participacion.municipio_residencia','magangue')->orWhere('participacion.ubicacion_solucion_social','magangue')->orWhere('participacion.ubicacion_solucion_economico','magangue')->count();
-      $count_san_jacinto_cauca  = \DB::table('participaciones as participacion')->select('participacion.id')->where('participacion.municipio_residencia','san-jacinto-cauca')->orWhere('participacion.ubicacion_solucion_social','san-jacinto-cauca')->orWhere('participacion.ubicacion_solucion_economico','san-jacinto-cauca')->count();
-      $count_ayapel  = \DB::table('participaciones as participacion')->select('participacion.id')->where('participacion.municipio_residencia','ayapel')->orWhere('participacion.ubicacion_solucion_social','ayapel')->orWhere('participacion.ubicacion_solucion_economico','ayapel')->count();
-      $count_caimito  = \DB::table('participaciones as participacion')->select('participacion.id')->where('participacion.municipio_residencia','caimito')->orWhere('participacion.ubicacion_solucion_social','caimito')->orWhere('participacion.ubicacion_solucion_economico','caimito')->count();
-      $count_guaranda  = \DB::table('participaciones as participacion')->select('participacion.id')->where('participacion.municipio_residencia','guaranda')->orWhere('participacion.ubicacion_solucion_social','guaranda')->orWhere('participacion.ubicacion_solucion_economico','guaranda')->count();
-      $count_majagual  = \DB::table('participaciones as participacion')->select('participacion.id')->where('participacion.municipio_residencia','majagual')->orWhere('participacion.ubicacion_solucion_social','majagual')->orWhere('participacion.ubicacion_solucion_economico','majagual')->count();
-      $count_san_benito_abad  = \DB::table('participaciones as participacion')->select('participacion.id')->where('participacion.municipio_residencia','san-benito-abad')->orWhere('participacion.ubicacion_solucion_social','san-benito-abad')->orWhere('participacion.ubicacion_solucion_economico','san-benito-abad')->count();
-      $count_san_marcos  = \DB::table('participaciones as participacion')->select('participacion.id')->where('participacion.municipio_residencia','san-marcos')->orWhere('participacion.ubicacion_solucion_social','san-marcos')->orWhere('participacion.ubicacion_solucion_economico','san-marcos')->count();
-      $count_sucre  = \DB::table('participaciones as participacion')->select('participacion.id')->where('participacion.municipio_residencia','sucre')->orWhere('participacion.ubicacion_solucion_social','sucre')->orWhere('participacion.ubicacion_solucion_economico','sucre')->count();
+      $count_nechi  = \DB::table('participaciones as participacion')->select('participacion.id')->where('participacion.municipio_residencia','nechi')->count();
+      $count_achi  = \DB::table('participaciones as participacion')->select('participacion.id')->where('participacion.municipio_residencia','achi')->count();
+      $count_magangue  = \DB::table('participaciones as participacion')->select('participacion.id')->where('participacion.municipio_residencia','magangue')->count();
+      $count_san_jacinto_cauca  = \DB::table('participaciones as participacion')->select('participacion.id')->where('participacion.municipio_residencia','san-jacinto-cauca')->count();
+      $count_ayapel  = \DB::table('participaciones as participacion')->select('participacion.id')->where('participacion.municipio_residencia','ayapel')->count();
+      $count_caimito  = \DB::table('participaciones as participacion')->select('participacion.id')->where('participacion.municipio_residencia','caimito')->count();
+      $count_guaranda  = \DB::table('participaciones as participacion')->select('participacion.id')->where('participacion.municipio_residencia','guaranda')->count();
+      $count_majagual  = \DB::table('participaciones as participacion')->select('participacion.id')->where('participacion.municipio_residencia','majagual')->count();
+      $count_san_benito_abad  = \DB::table('participaciones as participacion')->select('participacion.id')->where('participacion.municipio_residencia','san-benito-abad')->count();
+      $count_san_marcos  = \DB::table('participaciones as participacion')->select('participacion.id')->where('participacion.municipio_residencia','san-marcos')->count();
+      $count_sucre  = \DB::table('participaciones as participacion')->select('participacion.id')->where('participacion.municipio_residencia','sucre')->count();
 
 
       $total_municipios =  $count_nechi + $count_achi + $count_magangue + $count_san_jacinto_cauca + $count_ayapel + $count_caimito + $count_guaranda + $count_majagual + $count_san_benito_abad + $count_san_marcos + $count_sucre;
