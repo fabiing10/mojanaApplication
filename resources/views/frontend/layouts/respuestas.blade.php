@@ -15,11 +15,11 @@
   @yield('container')
 
   </body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="/js/jquery.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbacMzUDelfCnpoBbKS4hSZOSH-vMAJDk"
   async defer></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/js/loader.js"></script>
   <script src="/respuestas/js/Chart.bundle.min.js"></script>
   <script src="/respuestas/js/Chart.min.js"></script>
   <script src="/respuestas/js/main.js"></script>

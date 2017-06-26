@@ -82,25 +82,69 @@ class ParticipacionController extends Controller
 
      }
 
-     public function answersPDF(){
+     public function answersPDFTemplate($option){
+
+       $consulta = new Consulta();
+       $datos_genero = $consulta->obtenerGenero($option);
+       $datos_ocupacion = $consulta->obtenerOcupacion($option);
+       $datos_discapacidad = $consulta->obtenerDiscapacidad($option);
+       $datos_nivel_educativo = $consulta->obtenerNivelEducativo($option);
+       $datos_sector = $consulta->obtenerSector($option);
+       $datos_servicios = $consulta->obtenerServicios($option);
+       $datos_suelo = $consulta->obtenerSuelo($option);
 
 
+      $d_v_ambientales = $consulta->obtenerVariablesAmbientales($option);
+      $d_v_sociales = $consulta->obtenerVariablesSocial($option);
+      $d_v_economicas = $consulta->obtenerVariablesEconomicas($option);
+
+
+      /*Mapas*/
+      $m_ambientales = $consulta->obtenerCountMunicipiosAmbientales();
+      $m_sociales = $consulta->obtenerCountMunicipiosSociales();
+      $m_economicas = $consulta->obtenerCountMunicipiosEconomicos();
+
+       return view('frontend.resultados.pdf')
+              ->with('datos_genero',$datos_genero)
+              ->with('datos_ocupacion',$datos_ocupacion)
+              ->with('datos_discapacidad',$datos_discapacidad)
+              ->with('datos_nivel_educativo',$datos_nivel_educativo)
+              ->with('datos_sector',$datos_sector)
+              ->with('datos_servicios',$datos_servicios)
+              ->with('datos_suelo',$datos_suelo)
+              ->with('d_v_ambientales',$d_v_ambientales)
+              ->with('d_v_sociales',$d_v_sociales)
+              ->with('d_v_economicas',$d_v_economicas)
+              ->with('m_ambientales',$m_ambientales)
+              ->with('m_sociales',$m_sociales)
+              ->with('m_economicas',$m_economicas)
+              ->with('option_url',$option);
+
+
+     }
+
+     public function answersPDF($data){
+
+       $url = "http://app.regionmojana.com/resultados/pdf/".$data;
+       $filepath = "data-".$data.".pdf";
        include( public_path().'/../vendor/grabzit/grabzit/lib/GrabzItClient.class.php');
 
         try{
 
-
             $grabzIt = new GrabzItClient("MjFhOGI4M2JjMzdkNGI4MDk2ZGNhMWMzYjg2NmIzM2U=", "PwARJ2N/Pz9mPw8/Pz8/TT81Pz90Qj93BRo/QD86fz8=");
             $options = new GrabzItPDFOptions();
-            $options->setDelay(15000);
+            $options->setDelay(25000);
             $options->setMarginTop(0);
             $options->setMarginLeft(0);
             $options->setMarginBottom(0);
             $options->setMarginRight(0);
+            $options->setPageSize("A4");
+            $options->setQuality(40);
+            $options->setIncludeOutline(true);
 
-            $grabzIt->URLToPDF("http://app.regionmojana.com/resultados/general",$options);
+            $grabzIt->URLToPDF($url,$options);
 
-            $filepath = "data-pdf2.pdf";
+
             $grabzIt->SaveTo(public_path().'/img/uploads/data/'.$filepath);
             //return $grabzIt;
         }catch(GrabzItException $e){
@@ -111,7 +155,7 @@ class ParticipacionController extends Controller
           }
         }
 
-
+        return redirect('/img/uploads/data/'.$filepath);
      }
 
      public function handlerPDF(FrontendRequest $request){
