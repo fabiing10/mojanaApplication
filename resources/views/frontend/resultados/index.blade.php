@@ -76,7 +76,7 @@
   {!! Form::open(['url' => 'resultados/redirect' , 'method' => 'post' , 'id' => 'FormSearch']) !!}
   <input type="hidden" name="option_url" id="option_url" value="{{$option_url}}" />
   <select name="municipio" id="municipio" onchange="submitForm()" class="general_select">
-    <option value="general">Seleccione Una Opcion</option>
+    <option value="general">Seleccione una opción</option>
     <option value="general">General</option>
     <option value="achi">Achi</option>
     <option value="caimito">Caimito</option>
@@ -101,7 +101,7 @@
   <div class="row">
     <div class="col-xs-4" style="">
         <div class="row row-gral" style="padding-bottom: 70px;">
-          <h2>Genero</h2>
+          <h2>Género</h2>
           @include('frontend.resultados.blocks.genero')
 
 
@@ -144,7 +144,7 @@
       <div class="row row-gral" style="padding-top: 55px;">
         <div class="col-xs-6">
           <div class="row" style="padding-right:20px;">
-        <h2 style="text-align: right; line-height: 35px !important;">Ha estado en<br>situacion de<br>desplazamiento o<br>ha sido victima del<br>conflicto armado</h2>
+        <h2 style="text-align: right; line-height: 35px !important;">Ha estado en<br>situación de<br>desplazamiento o<br>ha sido víctima del<br>conflicto armado</h2>
         </div>
       </div>
       <div class="col-xs-6">
