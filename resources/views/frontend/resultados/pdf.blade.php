@@ -8,6 +8,8 @@
 @endsection
 @section('container')
 <div class="container" style="padding-top:0px;">
+  {!! Form::open(['url' => 'resultados/redirect' , 'method' => 'post' , 'id' => 'FormSearch']) !!}
+  <input type="hidden" name="option_url" id="option_url" value="{{$option_url}}" />
 
 <div class="form-group" style="margin-bottom: 0px;">
   <div class="col-md-1 numbers">
@@ -484,6 +486,7 @@
     </div>
   </div>
 </div>
-
 </div>
+{!! Form::close() !!}
+
 @stop
