@@ -102,7 +102,7 @@
 <div class="row">
   <div class="col-xs-12"style=" background-color:#eaeaea;">
   <div class="row">
-    <h2 style="text-align:center;">Participación por municipio</h2>
+    <h2 style="text-align:center;margin-bottom:25px;">Participación por municipio</h2>
     <div class="col-md-4">
       <img src="/participacion/images/mapa_select.png" class="img_mapa"/>
     </div>
@@ -112,7 +112,7 @@
   </div>
 </div>
 </div>
-<div class="row" style="margin-top:80px;margin-bottom:260px;">
+<div class="row" style="margin-top:100px;margin-bottom:260px;">
 
 
     <div class="col-xs-6" style="">
