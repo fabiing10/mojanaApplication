@@ -45,7 +45,10 @@ select#municipio {
     padding: 0px 0px 20px 15px;
     margin: 15px;
 }
-iframe { overflow:hidden !important; }
+iframe {
+    overflow: hidden !important;
+    display: none !important;
+}
 .row-gral-bg {
     padding-bottom: 20px;
     padding: 0px 0px 20px 15px;
