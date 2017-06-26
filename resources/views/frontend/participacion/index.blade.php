@@ -107,11 +107,11 @@ label {
 <div class="row mbottom-5">
 <div class="col-xs-6">
   <select class="form-control" name="edad">
-    <option value="">EDAD</option>
+    <option value="0">EDAD</option>
     @for ($i = 18; $i < 81 ; $i++)
           <option value="{{$i}}">{{ $i }}</option>
     @endfor
-</select>
+  </select>
 </div>
 <div class="col-xs-6">
   <input type="text" class="form-control mleft-10" name="identificacion" placeholder="NUMERO DE DOCUMENTO DE IDENTIFICACIÓN">
@@ -548,7 +548,12 @@ label {
   </div>
 </div>
 <div class="col-xs-6">
-  <input type="text" class="form-control grey-full" name="tiempo_residencia" placeholder="TIEMPO DE RESIDENCIA">
+  <select class="form-control" name="tiempo_residencia">
+    <option value="0">TIEMPO DE RESIDENCIA</option>
+    @for ($i = 1; $i < 8 ; $i++)
+          <option value="{{$i}}">{{ $i }}</option>
+    @endfor
+  </select>
 </div>
 </div>
 <div class="row">
