@@ -19,6 +19,10 @@ $( document ).ready(function() {
     cargarDesplazamiento();
     cargarTiempoResidencia();
 
+      var option_url = $('#option_url').val();
+      var url_data = "http://app.regionmojana.com/resultados/download/pdf/"+option_url;
+      $('#download_url').attr('href',url_data);
+
 });
 function submitForm(){
   $('#FormSearch').submit();

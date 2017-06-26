@@ -552,7 +552,7 @@
     </div>
 </div>
 
-<div class="row" style="background:#08113c;margin-bottom:25px;">
+<div class="row" style="background:#08113c;margin-bottom:15px;">
   <div class="row">
     <h2 style="color:white;text-align:center;">Mapa General de Problematicas por Tema</h2>
   </div>
@@ -562,7 +562,14 @@
     </div>
   </div>
 </div>
-
+<div class="row border-download" style="margin-bottom:100px;">
+  <div class="col-xs-9" ></div>
+  <div class="col-xs-3">
+    <a href="" id="download_url" target="_blank">
+      <img src="http://regionmojana.com/wp-content/uploads/2017/06/download_bg.png" width="200" style="float:right;"/>
+    </a>
+  </div>
+</div>
 {!! Form::close() !!}
 </div>
 @stop

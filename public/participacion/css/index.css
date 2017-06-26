@@ -15,7 +15,9 @@
   margin-top: 15px;
 }
 
-
+.row.border-download {
+    border-top: 6px solid #51ddf4;
+}
 .bar_data{
   font-size: 16px;
     line-height: 31px;
