@@ -104,7 +104,7 @@
 </div>
 <div class="row">
     <div class="col-xs-8" >
-      <div class="col-xs-12"style=" background-color:#eaeaea;">
+      <div class="col-xs-12"style=" background-color:#eaeaea;margin-bottom: 150px;">
       <div class="row">
         <h2 style="text-align:center;">Participación por municipio</h2>
         <div class="col-md-4">
