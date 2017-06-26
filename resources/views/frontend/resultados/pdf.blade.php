@@ -2,7 +2,6 @@
 
 @section('container')
 
-
 <div class="container" style="padding-top:0px;">
   {!! Form::open(['url' => 'resultados/redirect' , 'method' => 'post' , 'id' => 'FormSearch']) !!}
   <input type="hidden" name="option_url" id="option_url" value="{{$option_url}}" />
@@ -30,56 +29,56 @@
 </div>
 <div class="row">
   <div class="row">
-    <div class="col-xs-4" style="padding-left: 35px;">
-        <div class="row">
+    <div class="col-xs-4" style="">
+        <div class="row row-gral" style="padding-bottom: 70px;">
           <h2>Genero</h2>
           @include('frontend.resultados.blocks.genero')
 
 
         </div>
 
-        <div class="row" style="    margin-top: 55px;">
+        <div class="row row-gral" style="margin-top: 15px;">
           <h2>Edad</h2>
           <canvas id="chartEdades" width="400" height="300"></canvas>
         </div>
       </div>
-    <div class="col-xs-4" style="background-color:#f5f5f5; padding-left: 35px;">
-      <div class="row">
+    <div class="col-xs-4" style="background-color:#f5f5f5; ">
+      <div class="row row-gral">
         <h2>Régimen de salud</h2>
           <canvas id="chartRegimenSalud" width="400" height="200"></canvas>
         </div>
-      <div class="row">
+      <div class="row row-gral">
         <h2>Estrato Socio Económico</h2>
           <canvas id="chartSector" width="400" height="300"></canvas>
         </div>
     </div>
-    <div class="col-xs-4" style="padding-left: 35px;">
-      <div class="row">
+    <div class="col-xs-4" style="">
+      <div class="row row-gral">
         <h2>Ocupación</h2>
             @include('frontend.resultados.blocks.ocupacion')
         </div>
-      <div class="row">
+      <div class="row row-gral">
         <h2>Discapacidad</h2>
           @include('frontend.resultados.blocks.discapacidad')
         </div>
     </div>
   </div>
-  <div class="row">
-      <div class="col-xs-5" style="padding-left: 35px;">
-        <div class="row">
+  <div class="row row-gral">
+      <div class="col-xs-5" style="">
+        <div class="row row-gral">
           <h2>Nivel Educativo</h2>
             @include('frontend.resultados.blocks.nivel_educativo')
           </div>
     </div>
     <div class="col-xs-7">
-      <div class="row" style="padding-top: 55px;">
+      <div class="row row-gral" style="padding-top: 55px;">
         <div class="col-xs-6">
           <div class="row" style="padding-right:20px;">
         <h2 style="text-align: right; line-height: 35px !important;">Ha estado en<br>situacion de<br>desplazamiento o<br>ha sido victima del<br>conflicto armado</h2>
         </div>
       </div>
       <div class="col-xs-6">
-        <div class="row">
+        <div class="row ">
           <canvas id="chartSituacionDesplazamiento" width="300" height="200"></canvas>
         </div>
       </div>
@@ -87,7 +86,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12" style="padding-left: 35px;">
+    <div class="col-xs-12" style="">
       <div class="row">
         <h2>Actores</h2>
         <canvas id="chartActores" width="400" height="50"></canvas>
@@ -95,7 +94,7 @@
     </div>
   </div>
 </div>
-<div class="form-group">
+<div class="data-line">
   <div class="col-md-1 numbers">
     <h3>2</h3>
   </div>
@@ -105,7 +104,7 @@
 </div>
 <div class="row">
     <div class="col-xs-8" >
-      <div class="col-xs-12"style="padding-left: 35px; background-color:#eaeaea;">
+      <div class="col-xs-12"style=" background-color:#eaeaea;">
       <div class="row">
         <h2 style="text-align:center;">Participación por municipio</h2>
         <div class="col-md-4">
@@ -116,17 +115,21 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-6" style="padding-left: 35px;">
+    <div class="col-xs-6" style="">
+      <div class="row row-gral">
       <h2>Quiénes han salido<br> de su departamento</h2>
       <canvas id="chartHanSalido" width="400" height="200"></canvas>
     </div>
-    <div class="col-xs-6" style="padding-left: 35px;">
+    </div>
+    <div class="col-xs-6" style="">
+      <div class="row row-gral">
       <h2>Quiénes han salido<br> de su Municipio</h2>
       <canvas id="chartHanSalidoM" width="400" height="200"></canvas>
+      </div>
     </div>
   </div>
-  <div class="col-xs-4" style="padding-left: 35px;">
-    <div class="row">
+  <div class="col-xs-4" style="">
+    <div class="row row-gral">
       <h2>Sector</h2>
       @include('frontend.resultados.blocks.sector')
     </div>
@@ -299,7 +302,7 @@
     </div>
   </div>
 </div>
-<div class="form-group">
+<div class="data-line">
   <div class="col-md-1 numbers">
     <h3>3</h3>
   </div>
@@ -308,14 +311,14 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-6" style="padding-left: 35px;">
-    <div class="row">
+  <div class="col-xs-6" style="">
+    <div class="row row-gral-bg">
       <h2>Condiciones físicas de las viviendas</h2>
       <canvas id="chartCondiciones" width="400" height="200"></canvas>
     </div>
   </div>
-  <div class="col-xs-6" style="padding-left: 35px;">
-    <div class="row">
+  <div class="col-xs-6" style="">
+    <div class="row row-gral-bg">
       <h2>La vivienda es</h2>
       <canvas id="chartViviendaEs" width="400" height="200"></canvas>
     </div>
@@ -323,8 +326,8 @@
 </div>
 <br>
 <div class="row" style="background:#f5f5f5;">
-  <div class="col-xs-6" style="padding-left: 35px;">
-    <div class="row">
+  <div class="col-xs-6" style="">
+    <div class="row row-gral-bg">
       <h2>La vivienda cuenta con</h2>
       @include('frontend.resultados.blocks.vivienda-cuenta')
       <div class="row">
@@ -333,8 +336,8 @@
       </div>
     </div>
   </div>
-  <div class="col-xs-6" style="padding-left: 35px;">
-    <div class="row">
+  <div class="col-xs-6" style="">
+    <div class="row row-gral-bg">
       <div class="col-xs-5">
         <h2>Le gustaria que permitieran<br>mas suelo para</h2>
       </div>
@@ -346,7 +349,7 @@
 </div>
 
 <div class="row">
-  <div class="col-xs-10" style="padding-left: 35px;">
+  <div class="col-xs-10" style="">
     <div class="row">
       <h2>Problemas por temas</h2>
       <div class="row">
@@ -409,7 +412,7 @@
 </div>
 
 <div class="row row_panel" style="background:#018b38;">
-  <div class="col-xs-12" style="padding-left: 35px; padding-left:35px;">
+  <div class="col-xs-12" style=" padding-left:35px;">
     <div class="row">
       <div class="col-xs-4"><h1 style="color:white;">AMBIENTAL</h1></div><div class="col-xs-8"><h2 style="color:white;">Temas por Problematicas</h2></div>
     </div>
@@ -419,13 +422,13 @@
 </div>
 
 <div class="row row_panel" style="padding-left:35px;">
-    <div class="col-xs-6" style="padding-left: 35px;">
+    <div class="col-xs-6" style="">
       <div class="row">
         <h2>Temas Ambientales por municipio</h2>
             @include('frontend.resultados.blocks.temas_ambientales')
       </div>
     </div>
-    <div class="col-xs-6" style="padding-left: 35px;">
+    <div class="col-xs-6" style="">
       <div class="row">
         <h2>Ubicación</h2>
         <div id="map_ambiental" style="height:400px;"></div>
@@ -434,7 +437,7 @@
 </div>
 
 <div class="row row_panel" style="background:#4d4d4c;">
-  <div class="col-xs-12" style="padding-left: 35px; padding-left:35px;">
+  <div class="col-xs-12" style=" padding-left:35px;">
     <div class="row">
       <div class="col-xs-4"><h1 style="color:white;">SOCIAL</h1></div><div class="col-xs-8"><h2 style="color:white;">Temas por Problematicas</h2></div>
     </div>
@@ -443,13 +446,13 @@
 </div>
 
 <div class="row row_panel" style="padding-left:35px;">
-    <div class="col-xs-6" style="padding-left: 35px;">
+    <div class="col-xs-6" style="">
       <div class="row">
         <h2>Temas Sociales por municipio</h2>
         @include('frontend.resultados.blocks.temas_sociales')
       </div>
     </div>
-    <div class="col-xs-6" style="padding-left: 35px;">
+    <div class="col-xs-6" style="">
       <div class="row">
         <h2>Ubicación</h2>
         <div id="map_social" style="height:400px;"></div>
@@ -458,7 +461,7 @@
 </div>
 
 <div class="row row_panel" style="background:#0095df;">
-  <div class="col-xs-12" style="padding-left: 35px; padding-left:35px;">
+  <div class="col-xs-12" style=" padding-left:35px;">
     <div class="row">
       <div class="col-xs-4"><h1 style="color:white;">ECONOMICO</h1></div><div class="col-xs-8"><h2 style="color:white;">Temas por Problematicas</h2></div>
     </div>
@@ -467,13 +470,13 @@
 </div>
 
 <div class="row row_panel" style="padding-left:35px;">
-    <div class="col-xs-6" style="padding-left: 35px;">
+    <div class="col-xs-6" style="">
       <div class="row">
         <h2>Temas Economicos por municipio</h2>
         @include('frontend.resultados.blocks.temas_economicos')
       </div>
     </div>
-    <div class="col-xs-6" style="padding-left: 35px;">
+    <div class="col-xs-6" style="">
       <div class="row">
         <h2>Ubicación</h2>
         <div id="map_economico" style="height:400px;"></div>
@@ -491,6 +494,7 @@
     </div>
   </div>
 </div>
+
 {!! Form::close() !!}
 </div>
 @stop

@@ -22,6 +22,22 @@ select#municipio {
 .col-md-11 h3,.numbers h3{
   margin: 0px;
 }
+
+.row-gral {
+    border-bottom: 1px solid gainsboro;
+    padding-bottom: 20px;
+    padding: 0px 0px 20px 15px;
+    margin: 15px;
+}
+
+.row-gral-bg {
+    padding-bottom: 20px;
+    padding: 0px 0px 20px 15px;
+    margin: 15px;
+}
+.data-line {
+    margin-top: 10%;
+}
 *{
   font-family: "Exo2-Regular", Arial, Tahoma, sans-serif !important;
 }
