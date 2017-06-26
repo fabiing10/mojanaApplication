@@ -630,7 +630,7 @@ table#indicadores{
     border-collapse: separate;
     border-spacing: 0px 3px;
 }
-table#indicadores th, td {
+table#indicadores th,table#indicadores td {
     padding: 14px !important;
     text-align: center;
 }
