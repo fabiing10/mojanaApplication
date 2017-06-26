@@ -41,13 +41,13 @@
   <div class="col-xs-6">
       <div class="row row-gral">
         <h2>Estrato Socio Económico</h2>
-          <canvas id="chartSector" width="300" height="100"></canvas>
+          <canvas id="chartSector" width="300" height="150"></canvas>
       </div>
   </div>
   <div class="col-xs-6">
       <div class="row row-gral" style="margin-top: 15px;">
         <h2>Edad</h2>
-        <canvas id="chartEdades" width="300" height="100"></canvas>
+        <canvas id="chartEdades" width="300" height="150"></canvas>
       </div>
   </div>
 </div>
@@ -78,7 +78,7 @@
           <div class="row" style="padding-right:20px;">
             <h4 style="text-align: center; line-height: 25px !important;color:gray;">Ha estado en situación de desplazamiento o ha sido víctima del conflicto armado</h4>
             <div class="row ">
-              <canvas id="chartSituacionDesplazamiento" width="300" height="100"></canvas>
+              <canvas id="chartSituacionDesplazamiento" width="300" height="200"></canvas>
             </div>
         </div>
       </div>
