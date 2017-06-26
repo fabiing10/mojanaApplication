@@ -550,7 +550,7 @@ label {
 <div class="col-xs-6">
   <select class="form-control" name="tiempo_residencia">
     <option value="0">TIEMPO DE RESIDENCIA</option>
-    @for ($i = 1; $i < 8 ; $i++)
+    @for ($i = 1; $i < 80 ; $i++)
           <option value="{{$i}}">{{ $i }}</option>
     @endfor
   </select>
