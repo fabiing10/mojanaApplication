@@ -112,9 +112,7 @@
   </div>
 </div>
 </div>
-<div class="row" style="margin-top:80px;margin-bottom:50px;">
-
-
+<div class="row" style="margin-top:80px;margin-bottom:5px;">
     <div class="col-xs-6" style="">
     <div class="row row-gral">
       <h2>Quiénes han salido<br> de su departamento</h2>
@@ -128,8 +126,6 @@
       @include('frontend.resultados.blocks.sector')
       </div>
     </div>
-
-
 </div>
 <div class="row">
   <div class="col-xs-6" style="">

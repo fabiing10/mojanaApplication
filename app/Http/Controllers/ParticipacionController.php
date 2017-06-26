@@ -140,7 +140,6 @@ class ParticipacionController extends Controller
             $options->setMarginRight(5);
             $options->setPageSize("A5");
             $options->setIncludeOutline(false);
-            $options->setRequestAs(3);
             $grabzIt->URLToPDF($url,$options);
             $grabzIt->SaveTo(public_path().'/img/uploads/data/'.$filepath);
             //return $grabzIt;
