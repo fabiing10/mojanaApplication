@@ -29,7 +29,7 @@
 
         <div class="row row-gral" style="margin-top: 15px;">
           <h2>Edad</h2>
-          <canvas id="chartEdades" width="300" height="300"></canvas>
+          <canvas id="chartEdades" width="300" height="200"></canvas>
         </div>
       </div>
     <div class="col-xs-6" style="background-color:#f5f5f5; ">
@@ -39,7 +39,7 @@
         </div>
       <div class="row row-gral">
         <h2>Estrato Socio Económico</h2>
-          <canvas id="chartSector" width="400" height="300"></canvas>
+          <canvas id="chartSector" width="400" height="200"></canvas>
         </div>
     </div>
 
