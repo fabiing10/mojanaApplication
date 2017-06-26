@@ -51,7 +51,7 @@
   </div>
   <div class="col-xs-3">
     <div class="row t-left">
-      <span>Tecnica</span>
+      <span>Técnica</span>
     </div>
   </div>
 </div>
