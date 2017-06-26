@@ -112,7 +112,7 @@
   </div>
 </div>
 </div>
-<div class="row" style="margin-top:80px;margin-bottom:250px;">
+<div class="row" style="margin-top:80px;margin-bottom:270px;">
 
 
     <div class="col-xs-6" style="">
@@ -138,7 +138,7 @@
     <canvas id="chartHanSalidoM" width="400" height="400"></canvas>
     </div>
   </div>
-<div class="col-xs-6">
+<div class="col-xs-6" style="    margin-top: 50px;">
   <div class="row m-t-20">
     <h2 class="header-padding" style="text-align: center;">Tiempo de Residencia</h2>
       <canvas id="chartTiempoResidencia" width="200" height="100"></canvas>
