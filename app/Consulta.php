@@ -79,7 +79,8 @@ class Consulta extends Model
 
 
 
-      $datos_ocupacion = array('estudiante'=> $estudiante, 'empleado' => $empleado,'independiente'=> $independiente, 'desempleado' => $desempleado,'hogar'=> $hogar);
+      $datos_ocupacion = array('estudiante'=> $this->gRV($estudiante), 'empleado' => $this->gRV($empleado),'independiente'=> $this->gRV($independiente),
+       'desempleado' => $this->gRV($desempleado),'hogar'=> $this->gRV($hogar));
 
       return $datos_ocupacion;
     }
@@ -101,7 +102,7 @@ class Consulta extends Model
         $discapacidad_si = $d_si * 100 / $discapacidad_total;
         $discapacidad_no = $d_no * 100 / $discapacidad_total;
       }
-      $datos_discapacidad = array('si'=> $discapacidad_si, 'no' => $discapacidad_no);
+      $datos_discapacidad = array('si'=> $this->gRV($discapacidad_si), 'no' => $this->gRV($discapacidad_no));
       return $datos_discapacidad;
     }
 
@@ -140,7 +141,8 @@ class Consulta extends Model
 
 
 
-      $datos_nivel_educativo = array('primaria'=> $primaria, 'secundaria' => $secundaria,'tecnica' => $tecnica,'universitaria' => $universitaria,'ninguna' => $ninguna);
+      $datos_nivel_educativo = array('primaria'=> $this->gRV($primaria), 'secundaria' => $this->gRV($secundaria),
+      'tecnica' => $this->gRV($tecnica),'universitaria' => $this->gRV($universitaria),'ninguna' => $this->gRV($ninguna));
 
       return $datos_nivel_educativo;
     }
@@ -164,7 +166,7 @@ class Consulta extends Model
         $contributivo = $count_contributivo * 100 / $regimen_salud_total;
       }
 
-      $data = array('subsidiado'=> $subsidiado, 'contributivo' => $contributivo);
+      $data = array('subsidiado'=> $this->gRV($subsidiado), 'contributivo' => $this->gRV($contributivo));
 
       return $data;
     }
@@ -187,7 +189,7 @@ class Consulta extends Model
         $urbano = $count_urbano * 100 / $Sector_total;
       }
 
-      $datos_sector = array('urbano'=> $urbano, 'rural' => $rural);
+      $datos_sector = array('urbano'=> $this->gRV($urbano), 'rural' => $this->gRV($rural));
 
       return $datos_sector;
     }
@@ -209,7 +211,7 @@ class Consulta extends Model
         $sisalido = $count_si * 100 / $total_salido;
         $nosalido = $count_no * 100 / $total_salido;
       }
-      $datos_salidos = array('sisalido'=> $sisalido, 'nosalido' => $nosalido);
+      $datos_salidos = array('sisalido'=> $this->gRV($sisalido), 'nosalido' => $this->gRV($nosalido));
 
       return $datos_salidos;
     }
@@ -231,7 +233,7 @@ class Consulta extends Model
         $nosalidom = $count_no_m * 100 / $total_salido;
       }
 
-      $datos_salidos_m = array('sisalidom'=> $sisalidom, 'nosalidom' => $nosalidom);
+      $datos_salidos_m = array('sisalidom'=> $this->gRV($sisalidom), 'nosalidom' => $this->gRV($nosalidom));
 
       return $datos_salidos_m;
     }
@@ -269,7 +271,8 @@ class Consulta extends Model
       }
 
 
-      $datos_actores = array('ninguno'=> $ninguno, 'transporte' => $transporte, 'infraestructura' => $infraestructura, 'gremios' => $gremios, 'ambiente' => $ambiente);
+      $datos_actores = array('ninguno'=> $this->gRV($ninguno), 'transporte' => $this->gRV($transporte), 'infraestructura' => $this->gRV($infraestructura),
+       'gremios' => $this->gRV($gremios), 'ambiente' => $this->gRV($ambiente));
 
       return $datos_actores;
     }
@@ -296,7 +299,7 @@ class Consulta extends Model
         $palafitica = $count_palafitica * 100 / $total_condiciones;
         $bareque = $count_bareque * 100 / $total_condiciones;
       }
-      $datos_condiciones = array('material'=> $material, 'palafitica' => $palafitica, 'bareque' => $bareque);
+      $datos_condiciones = array('material'=> $this->gRV($material), 'palafitica' => $this->gRV($palafitica), 'bareque' => $this->gRV($bareque));
 
       return $datos_condiciones;
     }
@@ -324,7 +327,7 @@ class Consulta extends Model
         $arrendada = $count_arrendada * 100 / $total_vivienda;
         $propia = $count_propia * 100 / $total_vivienda;
       }
-      $datos_viviendas = array('familiar'=> $familiar, 'arrendada' => $arrendada, 'propia' => $propia);
+      $datos_viviendas = array('familiar'=> $this->gRV($familiar), 'arrendada' => $this->gRV($arrendada), 'propia' => $this->gRV($propia));
 
       return $datos_viviendas;
     }
@@ -406,7 +409,9 @@ class Consulta extends Model
       }
 
 
-      $datos_servicios = array('agua_si'=> $agua_si, 'agua_no' => $agua_no, 'alcantarillado_si' => $alcantarillado_si, 'alcantarillado_no' => $alcantarillado_no, 'energia_si' => $energia_si, 'energia_no' => $energia_no, 'gas_si' =>$gas_si, 'gas_no' =>$gas_no, 'recoleccion_si' =>$recoleccion_si, 'recoleccion_no' =>$recoleccion_no);
+      $datos_servicios = array('agua_si'=> $this->gRV($agua_si), 'agua_no' => $this->gRV($agua_no), 'alcantarillado_si' => $this->gRV($alcantarillado_si),
+       'alcantarillado_no' => $this->gRV($alcantarillado_no), 'energia_si' => $this->gRV($energia_si), 'energia_no' => $this->gRV($energia_no),
+        'gas_si' =>$this->gRV($gas_si), 'gas_no' =>$this->gRV($gas_no), 'recoleccion_si' =>$this->gRV($recoleccion_si), 'recoleccion_no' =>$this->gRV($recoleccion_no));
 
       return $datos_servicios;
     }
@@ -468,17 +473,17 @@ class Consulta extends Model
       $san_marcos = $count_san_marcos * 100 / $total_municipios;
       $sucre = $count_sucre * 100 / $total_municipios;
       $datos_municipios = array(
-        'nechi'=> $nechi,
-        'achi' => $achi,
-        'magangue' => $magangue,
-        'san_jacinto_cauca' => $san_jacinto_cauca,
-        'ayapel' => $ayapel,
-        'caimito' => $caimito,
-        'guaranda' => $guaranda,
-        'majagual' => $majagual,
-        'san_benito_abad' => $san_benito_abad,
-        'san_marcos' => $san_marcos,
-        'sucre' => $sucre
+        'nechi'=> $this->gRV($nechi),
+        'achi' => $this->gRV($achi),
+        'magangue' => $this->gRV($magangue),
+        'san_jacinto_cauca' => $this->gRV($san_jacinto_cauca),
+        'ayapel' => $this->gRV($ayapel),
+        'caimito' => $this->gRV($caimito),
+        'guaranda' => $this->gRV($guaranda),
+        'majagual' => $this->gRV($majagual),
+        'san_benito_abad' => $this->gRV($san_benito_abad),
+        'san_marcos' => $this->gRV($san_marcos),
+        'sucre' => $this->gRV($sucre)
       );
 
       return $datos_municipios;
@@ -1076,7 +1081,7 @@ class Consulta extends Model
         $m01 = $count_Q_01_M * 100 / $total_questions1;
         $ne01 = $count_Q_01_NE * 100 / $total_questions1;
       }
-      $q_01 = array('e'=> $e01, 'b' => $b01, 'm' => $m01, 'ne' => $ne01);
+      $q_01 = array('e'=> $this->gRV($e01), 'b' => $this->gRV($b01), 'm' => $this->gRV($m01), 'ne' => $this->gRV($ne01));
 
       //Process Question 2
       $total_questions2 = $count_Q_02_E + $count_Q_02_B + $count_Q_02_M + $count_Q_02_NE;
@@ -1091,7 +1096,7 @@ class Consulta extends Model
         $m02 = $count_Q_02_M * 100 / $total_questions2;
         $ne02 = $count_Q_02_NE * 100 / $total_questions2;
       }
-      $q_02 = array('e'=> $e02, 'b' => $b02, 'm' => $m02, 'ne' => $ne02);
+      $q_02 = array('e'=> $this->gRV($e02), 'b' => $this->gRV($b02), 'm' => $this->gRV($m02), 'ne' => $this->gRV($ne02));
 
       //Process Question 3
       $total_questions3 = $count_Q_03_E + $count_Q_03_B + $count_Q_03_M + $count_Q_03_NE;

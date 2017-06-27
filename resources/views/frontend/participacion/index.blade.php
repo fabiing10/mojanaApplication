@@ -92,10 +92,10 @@ label {
 </div>
 <div class="row">
 <div class="col-xs-6">
-  <input type="text" class="form-control mbottom-5" name="nombres_apellidos" placeholder="NOMBRE Y APELLIDOS">
+  <input type="text" class="form-control mbottom-5" name="nombres_apellidos" placeholder="NOMBRE Y APELLIDOS" required>
 </div>
 <div class="col-xs-6">
-  <select class="form-control mleft-10" name="tipo_identificacion">
+  <select class="form-control mleft-10" name="tipo_identificacion" required>
     <option value="">TIPO DE DOCUMENTO DE IDENTIFICACIÓN</option>
     <option value="cedula ciudadania">Cédula de Ciudadanía</option>
     <option value="cedula extranjeria">Cédula de Extranjería</option>
@@ -106,7 +106,7 @@ label {
 </div>
 <div class="row mbottom-5">
 <div class="col-xs-6">
-  <select class="form-control" name="edad">
+  <select class="form-control" name="edad" required>
     <option value="0">EDAD</option>
     @for ($i = 18; $i < 81 ; $i++)
           <option value="{{$i}}">{{ $i }}</option>
@@ -114,7 +114,7 @@ label {
   </select>
 </div>
 <div class="col-xs-6">
-  <input type="text" class="form-control mleft-10" name="identificacion" placeholder="NUMERO DE DOCUMENTO DE IDENTIFICACIÓN">
+  <input type="text" class="form-control mleft-10" name="identificacion" placeholder="NUMERO DE DOCUMENTO DE IDENTIFICACIÓN" required>
 </div>
 </div>
 <div class="row">
@@ -125,19 +125,19 @@ label {
       <div class="col-xs-6">
         <div class="checkbox">
         <label>
-          <input type="radio" value="1" name="genero">
+          <input type="radio" value="1" name="genero" required>
           MASCULINO
         </label>
         </div>
         <div class="checkbox">
         <label>
-          <input type="radio" value="2" name="genero">
+          <input type="radio" value="2" name="genero" required>
           FEMENINO
         </label>
         </div>
         <div class="checkbox">
         <label>
-          <input type="radio" value="3" name="genero">
+          <input type="radio" value="3" name="genero" required>
           OTRO
         </label>
         </div>
@@ -147,19 +147,19 @@ label {
           <label class="pt-10">RÉGIMEN DE SALUD</label>
             <div class="checkbox">
             <label>
-              <input type="radio" value="subsidiado" name="regimen_salud">
+              <input type="radio" value="subsidiado" name="regimen_salud" required>
               SUBSIDIADO
             </label>
             </div>
             <div class="checkbox">
             <label>
-              <input type="radio" value="contributivo" name="regimen_salud">
+              <input type="radio" value="contributivo" name="regimen_salud" required>
               CONTRIBUTIVO
             </label>
             </div>
           </div>
   <div class="col-xs-6">
-    <select class="form-control mbottom-5" name="ocupacion">
+    <select class="form-control mbottom-5" name="ocupacion" required>
       <option>OCUPACIÓN</option>
       <option value="estudiante">Estudiante</option>
       <option value="empleado">Empleado</option>
@@ -172,17 +172,17 @@ label {
     <div class="row grey-full p-3">
     <label>DISCAPACIDAD</label>
     <label class="checkbox-inline">
-        <input type="radio" name="discapacidad" id="checkboxdiscapacidad" value="1"> SI
+        <input type="radio" name="discapacidad" id="checkboxdiscapacidad" value="1" required> SI
       </label>
       <label class="checkbox-inline">
-        <input type="radio" name="discapacidad" id="checkboxdiscapacidad" value="0"> NO
+        <input type="radio" name="discapacidad" id="checkboxdiscapacidad" value="0" required> NO
       </label>
       </div>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-6" style="padding-right: 4px;">
-          <select class="form-control" name="estrato_socio_economico">
+          <select class="form-control" name="estrato_socio_economico" required>
             <option value="0">ESTRATO SOCIOECONOMICO</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -193,7 +193,7 @@ label {
           </select>
         </div>
         <div class="col-xs-6" style="padding-left: 4px;">
-          <select class="form-control mbottom-5" name="nivel_educativo">
+          <select class="form-control mbottom-5" name="nivel_educativo" required>
             <option>NIVEL EDUCATIVO</option>
             <option value="primaria">Primaria</option>
             <option value="secundaria">Secundaria</option>
@@ -209,10 +209,10 @@ label {
         </div>
         <div class="col-xs-4">
           <label class="checkbox-inline mtop-10">
-              <input type="radio" name="situacion_dezplazamiento_conflicto" id="checkbox-conflicto" value="1"> SI
+              <input type="radio" name="situacion_dezplazamiento_conflicto" id="checkbox-conflicto" value="1" required> SI
             </label>
             <label class="checkbox-inline mtop-10">
-              <input type="radio" name="situacion_dezplazamiento_conflicto" id="checkbox-conflicto" value="0"> NO
+              <input type="radio" name="situacion_dezplazamiento_conflicto" id="checkbox-conflicto" value="0" required> NO
             </label>
         </div>
       </div>

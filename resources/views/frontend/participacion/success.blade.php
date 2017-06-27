@@ -81,7 +81,7 @@
   </div>
   <div class="col-xs-8" style="">
 
-    <h3 class="info-text">La información se ha enviado. A continuación encontrará datos oﬁciales relacionados a las sus respuestas </h3>
+    <h3 class="info-text">A continuación encontrará los indicadores relacionados a las problemáticas selecionadas por usted y el lugar donde las localizó </h3>
   </div>
 </div>
 
