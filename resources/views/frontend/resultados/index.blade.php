@@ -76,7 +76,7 @@
   {!! Form::open(['url' => 'resultados/redirect' , 'method' => 'post' , 'id' => 'FormSearch']) !!}
   <input type="hidden" name="option_url" id="option_url" value="{{$option_url}}" />
   <select name="municipio" id="municipio" onchange="submitForm()" class="general_select">
-    <option value="general">Seleccione una opción</option>
+    <option value="general">Seleccione una municipio</option>
     <option value="general">General</option>
     <option value="achi">Achi</option>
     <option value="caimito">Caimito</option>
