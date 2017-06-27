@@ -6,7 +6,22 @@
     font-family: "Exo2-Medium";
     src: url('../fonts/Exo2-Medium.otf');
 }
-
+a.btn-indicadores {
+    background-color: #063040;
+    padding: 6px 0px;
+    margin-right: 5px;
+    width: 31%;
+    display: block;
+    float: left;
+    color: white;
+    font-size: 12px;
+}
+.indicadores-dashboard-result .row {
+    text-align: center;
+    border-bottom: 1px solid #cccccc;
+    background-color: white;
+    padding: 10px 0px;
+}
 .pdf_row_a{
   margin-top:90px;
   margin-bottom:260px;

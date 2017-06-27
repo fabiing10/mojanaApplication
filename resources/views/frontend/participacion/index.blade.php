@@ -593,10 +593,10 @@ label {
 
         <td></td>
         <td></td>
-        <td><label class="checkbox-inline">E</td>
-        <td><label class="checkbox-inline">B</td>
-        <td><label class="checkbox-inline">M</td>
-        <td><label class="checkbox-inline">NE</td>
+        <td style="text-align:right; width:80px;"><img style="width:20%; padding:0px;"src="../participacion/images/excelente.png" alt=""></td>
+        <td style="text-align:right; width:80px;"><img style="width:20%; padding:0px;"src="../participacion/images/bueno.png" alt=""></td>
+        <td style="text-align:right; width:80px;"><img style="width:20%; padding:0px;"src="../participacion/images/malo.png" alt=""></td>
+        <td style="text-align:right; width:80px;"><img style="width:20%; padding:0px;"src="../participacion/images/no_existe.png" alt=""></td>
       </tr>
     <tr>
       <th rowspan="2" class="ambiental text-center white">AMBIENTAL</th>
@@ -963,21 +963,21 @@ label {
     <select class="form-control my-10" name="solucion_ambiental" id="solucion_ambiental"></select>
   </div>
   <div class="col-xs-5 mleft-50">
-    <select class="form-control my-10" name="ubicacion_solucion_ambiental" onchange="loadPositionAmbiental(this)">
+    <select class="form-control my-10" name="ubicacion_solucion_ambiental" onchange="loadPositionAmbiental(this)" required>
       <option value="otro">UBICACIÓN DE LA SOLUCIÓN</option>
       <option value="nechi">Nechí</option>
       <option value="achi">Achí</option>
       <option value="magangue">Magangué</option>
-      <option value="san-jacinto-cauca">San Jacinto del Cauca</option>
+      <option value="san_jacinto_cauca">San Jacinto del Cauca</option>
       <option value="ayapel">Ayapel</option>
       <option value="caimito">Caimito</option>
       <option value="guaranda">Guaranda</option>
       <option value="majagual">Majagual</option>
-      <option value="san-benito-abad">San Benito Abad</option>
-      <option value="san-marcos">San Marcos</option>
-      <option value="sucre ">Sucre</option>
+      <option value="san_benito_abad">San Benito Abad</option>
+      <option value="san_marcos">San Marcos</option>
+      <option value="sucre">Sucre</option>
     </select>
-      <div id="map_ambiental"></div>
+      <div id="map_ambiental" style="display:none;"></div>
       <input type="hidden" name="ubicacion_latitud_ambiental" id="ubicacion_latitud_ambiental" />
       <input type="hidden" name="ubicacion_longitud_ambiental" id="ubicacion_longitud_ambiental" />
 
@@ -993,21 +993,21 @@ label {
     <select class="form-control my-10" name="solucion_social" id="solucion_social"></select>
   </div>
   <div class="col-xs-5 mleft-50">
-    <select class="form-control my-10" name="ubicacion_solucion_social" onchange="loadPositionSocial(this)">
+    <select class="form-control my-10" name="ubicacion_solucion_social" onchange="loadPositionSocial(this)" required>
       <option value="otro">UBICACIÓN DE LA SOLUCIÓN</option>
       <option value="nechi">Nechí</option>
       <option value="achi">Achí</option>
       <option value="magangue">Magangué</option>
-      <option value="san-jacinto-cauca">San Jacinto del Cauca</option>
+      <option value="san_jacinto_cauca">San Jacinto del Cauca</option>
       <option value="ayapel">Ayapel</option>
       <option value="caimito">Caimito</option>
       <option value="guaranda">Guaranda</option>
       <option value="majagual">Majagual</option>
-      <option value="san-benito-abad">San Benito Abad</option>
-      <option value="san-marcos">San Marcos</option>
-      <option value="sucre ">Sucre</option>
+      <option value="san_benito_abad">San Benito Abad</option>
+      <option value="san_marcos">San Marcos</option>
+      <option value="sucre">Sucre</option>
     </select>
-      <div id="map_social"></div>
+      <div id="map_social" style="display:none;"></div>
       <input type="hidden" name="ubicacion_latitud_social" id="ubicacion_latitud_social" />
       <input type="hidden" name="ubicacion_longitud_social" id="ubicacion_longitud_social" />
   </div>
@@ -1022,26 +1022,26 @@ label {
     <select class="form-control my-10" name="solucion_economico" id="solucion_economico"></select>
   </div>
   <div class="col-xs-5 mleft-50">
-    <select class="form-control my-10" name="ubicacion_solucion_economico" onchange="loadPositionEconomico(this)">
+    <select class="form-control my-10" name="ubicacion_solucion_economico" onchange="loadPositionEconomico(this)" required>
       <option value="otro">UBICACIÓN DE LA SOLUCIÓN</option>
       <option value="nechi">Nechí</option>
       <option value="achi">Achí</option>
       <option value="magangue">Magangué</option>
-      <option value="san-jacinto-cauca">San Jacinto del Cauca</option>
+      <option value="san_jacinto_cauca">San Jacinto del Cauca</option>
       <option value="ayapel">Ayapel</option>
       <option value="caimito">Caimito</option>
       <option value="guaranda">Guaranda</option>
       <option value="majagual">Majagual</option>
-      <option value="san-benito-abad">San Benito Abad</option>
-      <option value="san-marcos">San Marcos</option>
-      <option value="sucre ">Sucre</option>
+      <option value="san_benito_abad">San Benito Abad</option>
+      <option value="san_marcos">San Marcos</option>
+      <option value="sucre">Sucre</option>
     </select>
-      <div id="map_economico"></div>
+      <div id="map_economico" style="display:none;"></div>
       <input type="hidden" name="ubicacion_latitud_economico" id="ubicacion_latitud_economico" />
       <input type="hidden" name="ubicacion_longitud_economico" id="ubicacion_longitud_economico" />
   </div>
   </div>
-  <button type="submit" class="btn btn-default"><img src="../participacion/images/avion_de_enviar.png" alt="#" class="icono" style="margin-bottom:30px;"></img>Enviar</button>
+  <button type="submit" class="btn btn-default" style="margin-bottom: 100px;"><img src="../participacion/images/avion_de_enviar.png" alt="#" class="icono" style="margin-bottom:30px;"></img>Enviar</button>
 {!! Form::close() !!}
 </div>
 @stop
@@ -1184,6 +1184,7 @@ function loadSolucion(select,clasificacion){
 
 function loadPositionAmbiental(select){
 
+  $('#map_ambiental').fadeIn();
   var ambiental = 'images/marker-ambiental.png';
 
   if(select.value == "nechi"){
@@ -1239,6 +1240,8 @@ function loadPositionAmbiental(select){
 
 function loadPositionSocial(select){
 
+
+  $('#map_social').fadeIn();
   var ambiental = 'images/marker-social.png';
 
   if(select.value == "nechi"){
@@ -1294,6 +1297,8 @@ function loadPositionSocial(select){
 
 function loadPositionEconomico(select){
 
+
+  $('#map_economico').fadeIn();
   var ambiental = 'images/marker-economico.png';
 
   if(select.value == "nechi"){

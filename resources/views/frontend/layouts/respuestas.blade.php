@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/participacion/css/index.css">
     <link rel="stylesheet" href="/participacion/css/map.css">
     <link rel="stylesheet" href="/participacion/css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="http://regionmojana.com/wp-content/themes/mojana/jquery.fancybox.min.css">
     @yield('style')
   </head>
   <body>
@@ -23,6 +24,7 @@
   <script src="/respuestas/js/Chart.bundle.min.js"></script>
   <script src="/respuestas/js/Chart.min.js"></script>
   <script src="/js/Chart.PieceLabel.js"></script>
+  <script src="http://regionmojana.com/wp-content/themes/mojana/jquery.fancybox.min.js"></script>
   <script src="/respuestas/js/main.js"></script>
   @yield('script')
 
