@@ -646,6 +646,10 @@ function cargarEdades(){
         	responsive: true,
           legend: {
             display: false
+          },pieceLabel: {
+          mode: 'percentage',
+          fontSize: 15,
+          precision: 2
           }
         }
        });
@@ -713,6 +717,10 @@ function cargarDesplazamiento(){
         	responsive: true,
           legend: {
             display: false
+          },pieceLabel: {
+          mode: 'percentage',
+          fontSize: 15,
+          precision: 2
           }
         }
        });

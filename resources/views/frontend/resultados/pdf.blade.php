@@ -178,10 +178,10 @@
         <tr>
          <td></td>
          <td></td>
-         <td style="text-align:center; width:80px;">Excelente</td>
-         <td style="text-align:center; width:80px;">Bueno</td>
-         <td style="text-align:center; width:80px;">Malo</td>
-         <td style="text-align:center; width:80px;">No existe</td>
+         <td style="text-align:center; width:80px;"><img style="width:20%; padding:0px;"src="../../participacion/images/excelente.png" alt=""></td>
+         <td style="text-align:center; width:80px;"><img style="width:20%; padding:0px;"src="../../participacion/images/bueno.png" alt=""></td>
+         <td style="text-align:center; width:80px;"><img style="width:20%; padding:0px;"src="../../participacion/images/malo.png" alt=""></td>
+         <td style="text-align:center; width:80px;"><img style="width:20%; padding:0px;"src="../../participacion/images/no_existe.png" alt=""></td>
        </tr>
       <tr>
         <th rowspan="2" class="ambiental text-center white">AMBIENTAL</th>
