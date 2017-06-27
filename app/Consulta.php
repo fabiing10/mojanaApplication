@@ -1111,7 +1111,7 @@ class Consulta extends Model
         $m03 = $count_Q_03_M * 100 / $total_questions3;
         $ne03 = $count_Q_03_NE * 100 / $total_questions3;
       }
-      $q_03 = array('e'=> $e03, 'b' => $b03, 'm' => $m03, 'ne' => $ne03);
+      $q_03 = array('e'=> $this->gRV($e03), 'b' => $this->gRV($b03), 'm' => $this->gRV($m03), 'ne' => $this->gRV($ne03));
 
       //Process Question 4
       $total_questions4 = $count_Q_04_E + $count_Q_04_B + $count_Q_04_M + $count_Q_04_NE;
@@ -1126,7 +1126,7 @@ class Consulta extends Model
         $m04 = $count_Q_04_M * 100 / $total_questions4;
         $ne04 = $count_Q_04_NE * 100 / $total_questions4;
       }
-      $q_04 = array('e'=> $e04, 'b' => $b04, 'm' => $m04, 'ne' => $ne04);
+      $q_04 = array('e'=> $this->gRV($e04), 'b' => $this->gRV($b04), 'm' => $this->gRV($m04), 'ne' => $this->gRV($ne04));
 
       //Process Question 5
       $total_questions5 = $count_Q_05_E + $count_Q_05_B + $count_Q_05_M + $count_Q_05_NE;
@@ -1141,7 +1141,7 @@ class Consulta extends Model
         $m05 = $count_Q_05_M * 100 / $total_questions5;
         $ne05 = $count_Q_05_NE * 100 / $total_questions5;
       }
-      $q_05 = array('e'=> $e05, 'b' => $b05, 'm' => $m05, 'ne' => $ne05);
+      $q_05 = array('e'=> $this->gRV($e05), 'b' => $this->gRV($b05), 'm' => $this->gRV($m05), 'ne' => $this->gRV($ne05));
 
       //Process Question 6
       $total_questions6 = $count_Q_06_E + $count_Q_06_B + $count_Q_06_M + $count_Q_06_NE;
@@ -1156,7 +1156,7 @@ class Consulta extends Model
         $m06 = $count_Q_06_M * 100 / $total_questions6;
         $ne06 = $count_Q_06_NE * 100 / $total_questions6;
       }
-      $q_06 = array('e'=> $e06, 'b' => $b06, 'm' => $m06, 'ne' => $ne06);
+      $q_06 = array('e'=> $this->gRV($e06), 'b' => $this->gRV($b06), 'm' => $this->gRV($m06), 'ne' => $this->gRV($ne06));
 
       //Process Question 7
       $total_questions7 = $count_Q_07_E + $count_Q_07_B + $count_Q_07_M + $count_Q_07_NE;
@@ -1171,7 +1171,7 @@ class Consulta extends Model
         $m07 = $count_Q_07_M * 100 / $total_questions7;
         $ne07 = $count_Q_07_NE * 100 / $total_questions7;
       }
-      $q_07 = array('e'=> $e07, 'b' => $b07, 'm' => $m07, 'ne' => $ne07);
+      $q_07 = array('e'=> $this->gRV($e07), 'b' => $this->gRV($b07), 'm' => $this->gRV($m07), 'ne' => $this->gRV($ne07));
 
 
       $total_questions8 = $count_Q_08_E + $count_Q_08_B + $count_Q_08_M + $count_Q_08_NE;
@@ -1186,7 +1186,7 @@ class Consulta extends Model
         $m08 = $count_Q_08_M * 100 / $total_questions8;
         $ne08 = $count_Q_08_NE * 100 / $total_questions8;
       }
-      $q_08 = array('e'=> $e08, 'b' => $b08, 'm' => $m08, 'ne' => $ne08);
+      $q_08 = array('e'=> $this->gRV($e08), 'b' => $this->gRV($b08), 'm' => $this->gRV($m08), 'ne' => $this->gRV($ne08));
 
 
       $total_questions9 = $count_Q_09_E + $count_Q_09_B + $count_Q_09_M + $count_Q_09_NE;
@@ -1201,7 +1201,7 @@ class Consulta extends Model
         $m09 = $count_Q_09_M * 100 / $total_questions9;
         $ne09 = $count_Q_09_NE * 100 / $total_questions9;
       }
-      $q_09 = array('e'=> $e09, 'b' => $b09, 'm' => $m09, 'ne' => $ne09);
+      $q_09 = array('e'=> $this->gRV($e09), 'b' => $this->gRV($b09), 'm' => $this->gRV($m09), 'ne' => $this->gRV($ne09));
 
       $total_questions10 = $count_Q_10_E + $count_Q_10_B + $count_Q_10_M + $count_Q_10_NE;
       if($total_questions10 == 0){
@@ -1215,7 +1215,7 @@ class Consulta extends Model
         $m10 = $count_Q_10_M * 100 / $total_questions10;
         $ne10 = $count_Q_10_NE * 100 / $total_questions10;
       }
-      $q_10 = array('e'=> $e10, 'b' => $b10, 'm' => $m10, 'ne' => $ne10);
+      $q_10 = array('e'=> $this->gRV($e10), 'b' => $this->gRV($b10), 'm' => $this->gRV($m10), 'ne' => $this->gRV($ne10));
 
 
       $total_questions11 = $count_Q_11_E + $count_Q_11_B + $count_Q_11_M + $count_Q_11_NE;
@@ -1230,7 +1230,7 @@ class Consulta extends Model
         $m11 = $count_Q_11_M * 100 / $total_questions11;
         $ne11 = $count_Q_11_NE * 100 / $total_questions11;
       }
-      $q_11 = array('e'=> $e11, 'b' => $b11, 'm' => $m11, 'ne' => $ne11);
+      $q_11 = array('e'=> $this->gRV($e11), 'b' => $this->gRV($b11), 'm' => $this->gRV($m11), 'ne' => $this->gRV($ne11));
 
 
       $total_questions12 = $count_Q_12_E + $count_Q_12_B + $count_Q_12_M + $count_Q_12_NE;
@@ -1245,7 +1245,7 @@ class Consulta extends Model
         $m12 = $count_Q_12_M * 100 / $total_questions12;
         $ne12 = $count_Q_12_NE * 100 / $total_questions12;
       }
-      $q_12 = array('e'=> $e12, 'b' => $b12, 'm' => $m12, 'ne' => $ne12);
+      $q_12 = array('e'=> $this->gRV($e12), 'b' => $this->gRV($b12), 'm' => $this->gRV($m12), 'ne' => $this->gRV($ne12));
 
 
       $total_questions13 = $count_Q_13_E + $count_Q_13_B + $count_Q_13_M + $count_Q_13_NE;
@@ -1260,7 +1260,7 @@ class Consulta extends Model
         $m13 = $count_Q_13_M * 100 / $total_questions13;
         $ne13 = $count_Q_13_NE * 100 / $total_questions13;
       }
-      $q_13 = array('e'=> $e13, 'b' => $b13, 'm' => $m13, 'ne' => $ne13);
+      $q_13 = array('e'=> $this->gRV($e13), 'b' => $this->gRV($b13), 'm' => $this->gRV($m13), 'ne' => $this->gRV($ne13));
 
 
       $total_questions14 = $count_Q_14_E + $count_Q_14_B + $count_Q_14_M + $count_Q_14_NE;
@@ -1275,7 +1275,7 @@ class Consulta extends Model
         $m14 = $count_Q_14_M * 100 / $total_questions14;
         $ne14 = $count_Q_14_NE * 100 / $total_questions14;
       }
-      $q_14 = array('e'=> $e14, 'b' => $b14, 'm' => $m14, 'ne' => $ne14);
+      $q_14 = array('e'=> $this->gRV($e14), 'b' => $this->gRV($b14), 'm' => $this->gRV($m14), 'ne' => $this->gRV($ne14));
 
 
       $total_questions15 = $count_Q_15_E + $count_Q_15_B + $count_Q_15_M + $count_Q_15_NE;
@@ -1290,7 +1290,7 @@ class Consulta extends Model
         $m15 = $count_Q_15_M * 100 / $total_questions15;
         $ne15 = $count_Q_15_NE * 100 / $total_questions15;
       }
-      $q_15 = array('e'=> $e15, 'b' => $b15, 'm' => $m15, 'ne' => $ne15);
+      $q_15 = array('e'=> $this->gRV($e15), 'b' => $this->gRV($b15), 'm' => $this->gRV($m15), 'ne' => $this->gRV($ne15));
 
 
       $total_questions16 = $count_Q_16_E + $count_Q_16_B + $count_Q_16_M + $count_Q_16_NE;
@@ -1305,7 +1305,7 @@ class Consulta extends Model
         $m16 = $count_Q_16_M * 100 / $total_questions16;
         $ne16 = $count_Q_16_NE * 100 / $total_questions16;
       }
-      $q_16 = array('e'=> $e16, 'b' => $b16, 'm' => $m16, 'ne' => $ne16);
+      $q_16 = array('e'=> $this->gRV($e16), 'b' => $this->gRV($b16), 'm' => $this->gRV($m16), 'ne' => $this->gRV($ne16));
 
 
       $total_questions17 = $count_Q_17_E + $count_Q_17_B + $count_Q_17_M + $count_Q_17_NE;
@@ -1320,7 +1320,7 @@ class Consulta extends Model
         $m17 = $count_Q_17_M * 100 / $total_questions17;
         $ne17 = $count_Q_17_NE * 100 / $total_questions17;
       }
-      $q_17 = array('e'=> $e17, 'b' => $b17, 'm' => $m17, 'ne' => $ne17);
+      $q_17 = array('e'=> $this->gRV($e17), 'b' => $this->gRV($b17), 'm' => $this->gRV($m17), 'ne' => $this->gRV($ne17));
 
 
       $total_questions18 = $count_Q_18_E + $count_Q_18_B + $count_Q_18_M + $count_Q_18_NE;
@@ -1335,7 +1335,7 @@ class Consulta extends Model
         $m18 = $count_Q_18_M * 100 / $total_questions18;
         $ne18 = $count_Q_18_NE * 100 / $total_questions18;
       }
-      $q_18 = array('e'=> $e18, 'b' => $b18, 'm' => $m18, 'ne' => $ne18);
+      $q_18 = array('e'=> $this->gRV($e18), 'b' => $this->gRV($b18), 'm' => $this->gRV($m18), 'ne' => $this->gRV($ne18));
 
       $total_questions19 = $count_Q_19_E + $count_Q_19_B + $count_Q_19_M + $count_Q_19_NE;
       if($total_questions19 == 0){
@@ -1349,7 +1349,7 @@ class Consulta extends Model
         $m19 = $count_Q_19_M * 100 / $total_questions19;
         $ne19 = $count_Q_19_NE * 100 / $total_questions19;
       }
-      $q_19 = array('e'=> $e19, 'b' => $b19, 'm' => $m19, 'ne' => $ne19);
+      $q_19 = array('e'=> $this->gRV($e19), 'b' => $this->gRV($b19), 'm' => $this->gRV($m19), 'ne' => $this->gRV($ne19));
 
       $total_questions20 = $count_Q_20_E + $count_Q_20_B + $count_Q_20_M + $count_Q_20_NE;
       if($total_questions20 == 0){
@@ -1363,7 +1363,7 @@ class Consulta extends Model
         $m20 = $count_Q_20_M * 100 / $total_questions20;
         $ne20 = $count_Q_20_NE * 100 / $total_questions20;
       }
-      $q_20 = array('e'=> $e20, 'b' => $b20, 'm' => $m20, 'ne' => $ne20);
+      $q_20 = array('e'=> $this->gRV($e20), 'b' => $this->gRV($b20), 'm' => $this->gRV($m20), 'ne' => $this->gRV($ne20));
 
 
       $total_questions21 = $count_Q_21_E + $count_Q_21_B + $count_Q_21_M + $count_Q_21_NE;
@@ -1378,7 +1378,7 @@ class Consulta extends Model
         $m21 = $count_Q_21_M * 100 / $total_questions21;
         $ne21 = $count_Q_21_NE * 100 / $total_questions21;
       }
-      $q_21 = array('e'=> $e21, 'b' => $b21, 'm' => $m21, 'ne' => $ne21);
+      $q_21 = array('e'=> $this->gRV($e21), 'b' => $this->gRV($b21), 'm' => $this->gRV($m21), 'ne' => $this->gRV($ne21));
 
       //Consulta General Por calificacion
       $c_excelent = $e01 + $e02 + $e04 + $e05 + $e06 + $e07 + $e08 + $e09 + $e10 + $e11 + $e12 + $e13 + $e14 + $e15 + $e16 + $e17 + $e18 + $e19 + $e20
@@ -1509,7 +1509,8 @@ class Consulta extends Model
         $infraestructura = $c_infraestructura * 100 / $sector_total;
       }
 
-      $data = array('ninguno'=> $ninguno, 'transporte_vias' => $transporte_vias,'gremios'=> $gremios, 'medio_ambiente' => $c_medio_ambiente,'infraestructura'=> $c_infraestructura);
+      $data = array('ninguno'=> $this->gRV($ninguno), 'transporte_vias' => $this->gRV($transporte_vias),'gremios'=> $this->gRV($gremios),
+       'medio_ambiente' => $this->gRV($c_medio_ambiente),'infraestructura'=> $this->gRV($c_infraestructura));
 
       return $data;
     }
@@ -1581,7 +1582,8 @@ class Consulta extends Model
         $option_06 = $c_06 * 100 / $total_edades;
       }
 
-      $data = array('opt01'=> $option_01, 'opt02' => $option_02,'opt03'=> $option_03, 'opt04' => $option_04,'opt05'=> $option_05,'opt06'=> $option_06);
+      $data = array('opt01'=> $this->gRV($option_01), 'opt02' => $this->gRV($option_02),'opt03'=> $this->gRV($option_03), 'opt04' => $this->gRV($option_04),
+      'opt05'=> $this->gRV($option_05),'opt06'=> $this->gRV($option_06));
 
       return $data;
     }
@@ -1606,7 +1608,7 @@ class Consulta extends Model
         $nodesplazado = 100 - $desplazado;
       }
 
-      $data = array('desplazado'=> $desplazado, 'no_desplazado' => $nodesplazado);
+      $data = array('desplazado'=> $this->gRV($desplazado), 'no_desplazado' => $this->gRV($nodesplazado));
 
       return $data;
     }
