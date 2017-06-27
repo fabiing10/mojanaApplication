@@ -131,7 +131,7 @@ function cargarSector(){
   }).done(function(value) {
 
       var data = {
-        labels: ["Ninguno", "Transporte y vias", "Gremios", "Medio ambiente y desarrollo","Infraestructura y servicios públicos"],
+        labels: ["1", "2", "3", "4","5"],
         datasets: [
           {
             data: [value.ninguno, value.transporte_vias,value.gremios,value.medio_ambiente,value.infraestructura],

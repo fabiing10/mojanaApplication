@@ -110,6 +110,15 @@
         <div class="row row-gral" style="margin-top: 15px;">
           <h2>Edad</h2>
           <canvas id="chartEdades" width="400" height="300"></canvas>
+          <br>
+          <div class="row">
+            <div class="col-xs-6" style="background-color:#006633;text-align:center;color:white;">18 - 25 Años</div>
+            <div class="col-xs-6" style="background-color:#2fac66;text-align:center;color:white;">25 - 35 Años</div>
+            <div class="col-xs-6" style="background-color:#00a19a;text-align:center;color:white;">35 - 45 Años</div>
+            <div class="col-xs-6" style="background-color:#00e0cf;text-align:center;color:white;">45 - 55 Años</div>
+            <div class="col-xs-6" style="background-color:#2bca6d;text-align:center;color:white;">55 - 68 Años</div>
+            <div class="col-xs-6" style="background-color:#1eaeff;text-align:center;color:white;">68 - 80 Años</div>
+          </div>
         </div>
       </div>
     <div class="col-xs-4" style="background-color:#f5f5f5; ">
@@ -120,6 +129,15 @@
       <div class="row row-gral">
         <h2>Estrato Socio Económico</h2>
           <canvas id="chartSector" width="400" height="300"></canvas>
+          <br>
+          <div class="row">
+            <div class="col-xs-6" style="background-color:#3764B5;text-align:center;color:white;">Estrato 1</div>
+            <div class="col-xs-6" style="background-color:#5A6CBA;text-align:center;color:white;">Estrato 2</div>
+            <div class="col-xs-6" style="background-color:#394F7A;text-align:center;color:white;">Estrato 3</div>
+            <div class="col-xs-6" style="background-color:#72C4F2;text-align:center;color:white;">Estrato 4</div>
+            <div class="col-xs-6" style="background-color:#1eaeff;text-align:center;color:white;">Estrato 5</div>
+
+          </div>
         </div>
     </div>
     <div class="col-xs-4" style="">
@@ -150,6 +168,12 @@
       <div class="col-xs-6">
         <div class="row ">
           <canvas id="chartSituacionDesplazamiento" width="300" height="200"></canvas>
+          <br>
+          <div class="row">
+            <div class="col-xs-6" style="background-color:#484847;text-align:center;color:white;">Si</div>
+            <div class="col-xs-6" style="background-color:#878787;text-align:center;color:white;">No</div>
+
+          </div>
         </div>
       </div>
       </div>
