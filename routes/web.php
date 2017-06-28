@@ -61,7 +61,7 @@ Route::get('/resultados/{options}', 'ParticipacionController@answers')->name('re
 
 
 
-Route::get('/resultados/q/{option}/{data}', 'ParticipacionController@dataResponse');
+
 Route::get('/participacion/load/{name}', 'ParticipacionController@excelRecoleccion');
 
 
@@ -75,6 +75,10 @@ Route::post('/datos/municipio', 'RecoleccionController@getMunicipio');
 
 
 /* Consulta */
+
+//Consultas JS
+Route::get('/resultados/q/{option}/{data}', 'ParticipacionController@dataResponse');
+
 Route::get('/resultados/pdf/{option}', 'ParticipacionController@answersPDFTemplate');
 Route::get('/resultados/{option}', 'ParticipacionController@answers');
 Route::get('/resultados/download/pdf/{option}', 'ParticipacionController@answersPDF');

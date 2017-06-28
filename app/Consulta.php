@@ -171,11 +171,11 @@ class Consulta extends Model
       return $data;
     }
 
-    public function obtenerSector($option){
+    public function obtenerEstrato($option){
 
       if($option == "general"){
-        $count_rural  = \DB::table('participaciones as participacion')->select('participacion.sector')->where('participacion.sector',1)->count();
-        $count_urbano  = \DB::table('participaciones as participacion')->select('participacion.sector')->where('participacion.sector',2)->count();
+        $count_1  = \DB::table('participaciones as participacion')->select('participacion.estrato_socio_economico')->where('participacion.estrato_socio_economico',1)->count();
+        $count_2 = \DB::table('participaciones as participacion')->select('participacion.estrato_socio_economico')->where('participacion.estrato_socio_economico',2)->count();
       }else{
         $count_rural  = \DB::table('participaciones as participacion')->select('participacion.sector')->where('participacion.municipio_residencia',$option)->where('participacion.sector',1)->count();
         $count_urbano  = \DB::table('participaciones as participacion')->select('participacion.sector')->where('participacion.municipio_residencia',$option)->where('participacion.sector',2)->count();

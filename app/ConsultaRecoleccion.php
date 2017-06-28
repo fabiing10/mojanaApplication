@@ -11,6 +11,7 @@ class ConsultaRecoleccion extends Model
       $data = round($value);
       return $data;
     }
+
     public function obtenerGenero($option){
       //Query Genero
       if($option == 'general'){
@@ -27,11 +28,17 @@ class ConsultaRecoleccion extends Model
 
       $genero_total = $h_query + $m_query+ $o_query;
 
-      $hombres = $h_query * 100 / $genero_total;
-      $mujeres = $m_query * 100 / $genero_total;
-      $otros = $o_query * 100 / $genero_total;
+      if($genero_total == 0){
+        $hombres = 0;
+        $mujeres = 0;
+        $otros = 0;
+      }else{
+        $hombres = $h_query * 100 / $genero_total;
+        $mujeres = $m_query * 100 / $genero_total;
+        $otros = $o_query * 100 / $genero_total;
+      }
 
-      $datos_genero = array('hombres'=>  $this->gRV($hombres), 'mujeres' => $this->gRV($mujeres),'otros' => $this->gRV($otros));
+      $datos_genero = array('hombres'=> $this->gRV($hombres), 'mujeres' => $this->gRV($mujeres),'otros' => $this->gRV($otros));
 
       return $datos_genero;
 
