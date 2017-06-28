@@ -1,7 +1,7 @@
 $( document ).ready(function() {
     console.log( "ready!" );
-
     cargarRegimenSalud();
+
     cargarHanSalido();
     cargarHanSalidoM();
     cargarActores();
@@ -15,7 +15,7 @@ $( document ).ready(function() {
     //add Juanpita
     cargarQuestions();
     cargarEdades();
-    cargarEstratoSocioEconomico();
+    cargarSector();
     cargarDesplazamiento();
     cargarTiempoResidencia();
 
@@ -124,11 +124,9 @@ function cargarQuestions(){
     });
 }
 
-function cargarEstratoSocioEconomico(){
-
+function cargarSector(){
   var option_url = $('#option_url').val();
-
-  $.get( "/resultados/q/estrato/"+option_url, function() {
+  $.get( "/resultados/q/sector-pertenece/"+option_url, function() {
 
   }).done(function(value) {
 

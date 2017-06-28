@@ -41,11 +41,9 @@ class ParticipacionController extends Controller
        return redirect()->route('resultados', ['options' => $option]);
 
      }
-
      public function answers($option){
 
        $consulta = new Consulta();
-
        $datos_genero = $consulta->obtenerGenero($option);
        $datos_ocupacion = $consulta->obtenerOcupacion($option);
        $datos_discapacidad = $consulta->obtenerDiscapacidad($option);
@@ -58,6 +56,7 @@ class ParticipacionController extends Controller
       $d_v_ambientales = $consulta->obtenerVariablesAmbientales($option);
       $d_v_sociales = $consulta->obtenerVariablesSocial($option);
       $d_v_economicas = $consulta->obtenerVariablesEconomicas($option);
+
 
       /*Mapas*/
       $m_ambientales = $consulta->obtenerCountMunicipiosAmbientales();
@@ -382,8 +381,8 @@ class ParticipacionController extends Controller
          $data = $consulta->obtenerMunicipios();
        }else if($option == "estado-general"){
          $data = $consulta->obtenerQuestions($data);
-       }else if($option == "estrato"){
-         $data = $consulta->obtenerEstrato($data);
+       }else if($option == "sector-pertenece"){
+         $data = $consulta->obtenerSectorPertenece($data);
        }else if($option == "edades"){
          $data = $consulta->obtenerEdades($data);
        }else if($option == "situacion-desplazamiento"){

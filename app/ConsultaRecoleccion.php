@@ -163,7 +163,7 @@ class ConsultaRecoleccion extends Model
       $total_salido = $count_si + $count_no;
       $sisalido = $count_si * 100 / $total_salido;
       $nosalido = $count_no * 100 / $total_salido;
-      $datos_salidos = array('sisalido'=> $sisalido, 'nosalido' => $nosalido);
+      $datos_salidos = array('sisalido'=> $this->gRV($sisalido), 'nosalido' => $nosalido);
 
       return $datos_salidos;
     }
