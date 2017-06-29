@@ -194,6 +194,46 @@ class Consulta extends Model
       return $datos_sector;
     }
 
+    public function obtenerEstrato($option){
+
+      if($option == "general"){
+        $count_1  = \DB::table('participaciones as participacion')->select('participacion.estrato_socio_economico')->where('participacion.estrato_socio_economico',1)->count();
+        $count_2  = \DB::table('participaciones as participacion')->select('participacion.estrato_socio_economico')->where('participacion.estrato_socio_economico',2)->count();
+        $count_3  = \DB::table('participaciones as participacion')->select('participacion.estrato_socio_economico')->where('participacion.estrato_socio_economico',3)->count();
+        $count_4  = \DB::table('participaciones as participacion')->select('participacion.estrato_socio_economico')->where('participacion.estrato_socio_economico',4)->count();
+        $count_5  = \DB::table('participaciones as participacion')->select('participacion.estrato_socio_economico')->where('participacion.estrato_socio_economico',5)->count();
+        $count_6  = \DB::table('participaciones as participacion')->select('participacion.estrato_socio_economico')->where('participacion.estrato_socio_economico',6)->count();
+      }else{
+        $count_1  = \DB::table('participaciones as participacion')->select('participacion.estrato_socio_economico')->where('participacion.municipio_residencia',$option)->where('participacion.estrato_socio_economico',1)->count();
+        $count_2  = \DB::table('participaciones as participacion')->select('participacion.estrato_socio_economico')->where('participacion.municipio_residencia',$option)->where('participacion.estrato_socio_economico',2)->count();
+        $count_3  = \DB::table('participaciones as participacion')->select('participacion.estrato_socio_economico')->where('participacion.municipio_residencia',$option)->where('participacion.estrato_socio_economico',3)->count();
+        $count_4  = \DB::table('participaciones as participacion')->select('participacion.estrato_socio_economico')->where('participacion.municipio_residencia',$option)->where('participacion.estrato_socio_economico',4)->count();
+        $count_5  = \DB::table('participaciones as participacion')->select('participacion.estrato_socio_economico')->where('participacion.municipio_residencia',$option)->where('participacion.estrato_socio_economico',5)->count();
+        $count_6  = \DB::table('participaciones as participacion')->select('participacion.estrato_socio_economico')->where('participacion.municipio_residencia',$option)->where('participacion.estrato_socio_economico',6)->count();
+      }
+      $Estrato_total = $count_1 + $count_2 + $count_3 + $count_4 + $count_5 + $count_6;
+      if($Estrato_total == 0){
+        $estrato1 = 0;
+        $estrato2 = 0;
+        $estrato3 = 0;
+        $estrato4 = 0;
+        $estrato5 = 0;
+        $estrato6 = 0;
+      }else{
+        $estrato1 = $count_1 * 100 / $Estrato_total;
+        $estrato2 = $count_2 * 100 / $Estrato_total;
+        $estrato3 = $count_3 * 100 / $Estrato_total;
+        $estrato4 = $count_4 * 100 / $Estrato_total;
+        $estrato5 = $count_5 * 100 / $Estrato_total;
+        $estrato6 = $count_6 * 100 / $Estrato_total;
+      }
+
+      $datos_estrato = array('estrato1'=> $this->gRV($estrato1), 'estrato2' => $this->gRV($estrato2), 'estrato3' => $this->gRV($estrato3),
+      'estrato4' => $this->gRV($estrato4), 'estrato5' => $this->gRV($estrato5), 'estrato6' => $this->gRV($estrato6));
+
+      return $datos_estrato;
+    }
+
     public function obtenerSalidoDepartamento($option){
 
       if($option == "general"){
@@ -415,9 +455,109 @@ class Consulta extends Model
 
       return $datos_servicios;
     }
-
-    //Falta Revisar Detalladamente
     public function obtenerSuelo($option){
+
+      if($option == "general"){
+        $count_vivienda1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_vivienda')->where('participacion.ms_vivienda',1)->count();
+        $count_vivienda0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_vivienda')->where('participacion.ms_vivienda',0)->count();
+        $count_comercio1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_comercio')->where('participacion.ms_comercio',1)->count();
+        $count_comercio0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.mas_suelo_para')->where('participacion.ms_comercio',0)->count();
+        $count_conservacion1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_conservacion')->where('participacion.ms_conservacion',1)->count();
+        $count_conservacion0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_conservacion')->where('participacion.ms_conservacion',0)->count();
+        $count_proteccion1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_proteccion')->where('participacion.ms_proteccion',1)->count();
+        $count_proteccion0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_proteccion')->where('participacion.ms_proteccion',0)->count();
+        $count_agricultura1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_agricultura')->where('participacion.ms_agricultura',1)->count();
+        $count_agricultura0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_agricultura')->where('participacion.ms_agricultura',0)->count();
+        $count_ganaderia1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_ganaderia')->where('participacion.ms_ganaderia',1)->count();
+        $count_ganaderia0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_ganaderia')->where('participacion.ms_ganaderia',0)->count();
+        $count_mineria1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_mineria')->where('participacion.ms_mineria',1)->count();
+        $count_mineria0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_mineria')->where('participacion.ms_mineria',0)->count();
+        $count_industria1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_industria')->where('participacion.ms_industria',1)->count();
+        $count_industria0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_industria')->where('participacion.ms_industria',0)->count();
+        $count_vias1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_vias')->where('participacion.ms_vias',1)->count();
+        $count_vias0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_vias')->where('participacion.ms_vias',0)->count();
+      }else{
+        $count_vivienda1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_vivienda')->where('participacion.municipio_residencia',$option)->where('participacion.ms_vivienda',1)->count();
+        $count_vivienda0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_vivienda')->where('participacion.municipio_residencia',$option)->where('participacion.ms_vivienda',0)->count();
+        $count_comercio1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_comercio')->where('participacion.municipio_residencia',$option)->where('participacion.ms_comercio',1)->count();
+        $count_comercio0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.mas_suelo_para')->where('participacion.municipio_residencia',$option)->where('participacion.ms_comercio',0)->count();
+        $count_conservacion1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_conservacion')->where('participacion.municipio_residencia',$option)->where('participacion.ms_conservacion',1)->count();
+        $count_conservacion0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_conservacion')->where('participacion.municipio_residencia',$option)->where('participacion.ms_conservacion',0)->count();
+        $count_proteccion1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_proteccion')->where('participacion.municipio_residencia',$option)->where('participacion.ms_proteccion',1)->count();
+        $count_proteccion0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_proteccion')->where('participacion.municipio_residencia',$option)->where('participacion.ms_proteccion',0)->count();
+        $count_agricultura1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_agricultura')->where('participacion.municipio_residencia',$option)->where('participacion.ms_agricultura',1)->count();
+        $count_agricultura0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_agricultura')->where('participacion.municipio_residencia',$option)->where('participacion.ms_agricultura',0)->count();
+        $count_ganaderia1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_ganaderia')->where('participacion.municipio_residencia',$option)->where('participacion.ms_ganaderia',1)->count();
+        $count_ganaderia0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_ganaderia')->where('participacion.municipio_residencia',$option)->where('participacion.ms_ganaderia',0)->count();
+        $count_mineria1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_mineria')->where('participacion.municipio_residencia',$option)->where('participacion.ms_mineria',1)->count();
+        $count_mineria0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_mineria')->where('participacion.municipio_residencia',$option)->where('participacion.ms_mineria',0)->count();
+        $count_industria1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_industria')->where('participacion.municipio_residencia',$option)->where('participacion.ms_industria',1)->count();
+        $count_industria0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_industria')->where('participacion.municipio_residencia',$option)->where('participacion.ms_industria',0)->count();
+        $count_vias1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_vias')->where('participacion.municipio_residencia',$option)->where('participacion.ms_vias',1)->count();
+        $count_vias0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_vias')->where('participacion.municipio_residencia',$option)->where('participacion.ms_vias',0)->count();
+      }
+
+      $total_vivienda = $count_vivienda1 + $count_vivienda0;
+      if($total_vivienda == 0){
+        $vivienda = 0;
+      }else{
+        $vivienda = $count_vivienda1 * 100 / $total_vivienda;
+      }
+      $total_comercio = $count_comercio1 + $count_comercio0;
+      if($total_comercio == 0){
+        $comercio = 0;
+      }else{
+        $comercio = $count_vivienda1 * 100 / $total_comercio;
+      }
+      $total_conservacion = $count_conservacion1 + $count_conservacion0;
+      if($total_conservacion == 0){
+        $conservacion = 0;
+      }else{
+        $conservacion = $count_conservacion1 * 100 / $total_conservacion;
+      }
+      $total_proteccion = $count_proteccion1 + $count_proteccion0;
+      if($total_proteccion == 0){
+        $proteccion = 0;
+      }else{
+        $proteccion = $count_proteccion1 * 100 / $total_proteccion;
+      }
+      $total_agricultura = $count_agricultura1 + $count_agricultura0;
+      if($total_agricultura == 0){
+        $agricultura = 0;
+      }else{
+        $agricultura = $count_agricultura1 * 100 / $total_agricultura;
+      }
+      $total_ganaderia = $count_ganaderia1 + $count_ganaderia0;
+      if($total_ganaderia == 0){
+        $ganaderia = 0;
+      }else{
+        $ganaderia = $count_ganaderia1 * 100 / $total_ganaderia;
+      }
+      $total_mineria = $count_mineria1 + $count_mineria0;
+      if($total_mineria == 0){
+        $mineria = 0;
+      }else{
+        $mineria = $count_mineria1 * 100 / $total_mineria;
+      }
+      $total_industria = $count_industria1 + $count_industria0;
+      if($total_industria == 0){
+        $industria = 0;
+      }else{
+        $industria = $count_industria1 * 100 / $total_industria;
+      }
+
+      $total_vias = $count_vias1 + $count_vias0;
+      if($total_vias == 0){
+        $vias = 0;
+      }else{
+        $vias = $count_vias1 * 100 / $total_vias;
+      }
+      $datos_suelo = array('ganaderia'=> $this->gRV($ganaderia), 'vivienda' => $this->gRV($vivienda), 'comercio' => $this->gRV($comercio), 'mineria' => $this->gRV($mineria), 'conservacion' => $this->gRV($conservacion), 'industria' => $this->gRV($industria), 'proteccion' => $this->gRV($proteccion), 'vias' => $this->gRV($vias), 'agricultura' => $this->gRV($agricultura));
+
+      return $datos_suelo;
+    }
+    //Falta Revisar Detalladamente
+    /*public function obtenerSuelo($option){
       $count_ganaderia  = \DB::table('participaciones as participacion')->select('participacion.mas_suelo_para')->where('participacion.mas_suelo_para','ganaderia')->count();
       $count_vivienda  = \DB::table('participaciones as participacion')->select('participacion.mas_suelo_para')->where('participacion.mas_suelo_para','vivienda')->count();
       $count_comercio  = \DB::table('participaciones as participacion')->select('participacion.mas_suelo_para')->where('participacion.mas_suelo_para','comercio')->count();
@@ -442,7 +582,7 @@ class Consulta extends Model
       $datos_suelo = array('ganaderia'=> $ganaderia, 'vivienda' => $vivienda, 'comercio' => $comercio, 'mineria' => $mineria, 'conservacion' => $conservacion, 'industria' => $industria, 'proteccion' => $proteccion, 'vias' => $vias, 'agricultura' => $agricultura);
 
       return $datos_suelo;
-    }
+    }*/
 
     //Revisar Municipios que estan cargando desee el select
     public function obtenerMunicipios(){
@@ -1420,9 +1560,90 @@ class Consulta extends Model
       $data = array('e'=> $excelente, 'b' => $bueno, 'm' => $malo, 'ne' => $no_existe);
 
 
-      $general = array('data' =>$data ,'q_01' =>$q_01 , 'q_02'=>$q_02, 'q_03'=>$q_03, 'q_04'=>$q_04, 'q_05'=>$q_05, 'q_06'=>$q_06,'q_07'=>$q_07,'q_08'=>$q_08,'q_09'=>$q_09,'q_10'=>$q_10,
-      'q_11'=>$q_11,'q_12'=>$q_12,'q_13'=>$q_13,'q_14'=>$q_14,'q_15'=>$q_15,'q_16'=>$q_16,'q_17'=>$q_17,'q_18'=>$q_18,'q_19'=>$q_19,'q_20'=>$q_20,'q_21'=>$q_21);
+      $total_ambiental_EA = $e01 + $e02;
+      if($total_ambiental_EA == 0){
+        $ea = 0;
+      }else{
+        $ea = $total_ambiental_EA / 2;
+      }
 
+      $total_ambiental_BA = $b01 + $b02;
+      if($total_ambiental_BA == 0){
+        $ba = 0;
+      }else{
+        $ba = $total_ambiental_BA / 2;
+      }
+
+      $total_ambiental_MA = $m01 + $m02;
+      if($total_ambiental_MA == 0){
+        $ma = 0;
+      }else{
+        $ma = $total_ambiental_MA / 2;
+      }
+
+      $total_ambiental_NEA = $ne01 + $ne02;
+      if($total_ambiental_NEA == 0){
+        $nea = 0;
+      }else{
+        $nea = $total_ambiental_NEA / 2;
+      }
+
+      $total_ambiental_ES = $e03 + $e04 + $e05 + $e06 + $e07 + $e08 + $e09 + $e10 + $e11 + $e12 + $e13 + $e14 + $e15 + $e16 + $e17 + $e18;
+      if($total_ambiental_ES == 0){
+        $es = 0;
+      }else{
+        $es = $total_ambiental_ES / 16;
+      }
+
+      $total_ambiental_BS = $b03 + $b04 + $b05 + $b06 + $b07 + $b08 + $b09 + $b10 + $b11 + $b12 + $b13 + $b14 + $b15 + $b16 + $b17 + $b18;
+      if($total_ambiental_BS == 0){
+        $bs = 0;
+      }else{
+        $bs = $total_ambiental_BS / 16;
+      }
+
+      $total_ambiental_MS = $m03 + $m04 + $m05 + $m06 + $m07 + $m08 + $m09 + $m10 + $m11 + $m12 + $m13 + $m14 + $m15 + $m16 + $m17 + $m18;
+      if($total_ambiental_MS == 0){
+        $ms = 0;
+      }else{
+        $ms = $total_ambiental_MS / 16;
+      }
+
+      $total_ambiental_NES = $ne03 + $ne04 + $ne05 + $ne06 + $ne07 + $ne08 + $ne09 + $ne10 + $ne11 + $ne12 + $ne13 + $ne14 + $ne15 + $ne16 + $ne17 + $ne18;
+      if($total_ambiental_NES == 0){
+        $nes = 0;
+      }else{
+        $nes = $total_ambiental_NES / 16;
+      }
+      $total_ambiental_EE = $e19 + $e20 + $e21;
+      if($total_ambiental_EE == 0){
+        $ee = 0;
+      }else{
+        $ee = $total_ambiental_EE / 3;
+      }
+      $total_ambiental_EB = $b19 + $b20 + $b21;
+      if($total_ambiental_EB == 0){
+        $be = 0;
+      }else{
+        $be = $total_ambiental_EB / 3;
+      }
+      $total_ambiental_EM = $m19 + $m20 + $m21;
+      if($total_ambiental_EM == 0){
+        $me = 0;
+      }else{
+        $me = $total_ambiental_EM / 3;
+      }
+      $total_ambiental_ENE = $ne19 + $ne20 + $ne21;
+      if($total_ambiental_ENE == 0){
+        $nee = 0;
+      }else{
+        $nee = $total_ambiental_ENE / 3;
+      }
+      $table = array('ea'=> $this->gRV($ea), 'ba' => $this->gRV($ba), 'ma' => $this->gRV($ma), 'nea' => $this->gRV($nea), 'es' => $this->gRV($es),
+      'bs' => $this->gRV($bs), 'ms' => $this->gRV($ms), 'nes' => $this->gRV($nes), 'ee' => $this->gRV($ee), 'be' => $this->gRV($be), 'me' => $this->gRV($me), 'nee' => $this->gRV($nee));
+
+      $general = array('table' =>$table,'data' =>$data ,'q_01' =>$q_01 , 'q_02'=>$q_02, 'q_03'=>$q_03, 'q_04'=>$q_04, 'q_05'=>$q_05, 'q_06'=>$q_06,'q_07'=>$q_07,'q_08'=>$q_08,'q_09'=>$q_09,'q_10'=>$q_10,
+      'q_11'=>$q_11,'q_12'=>$q_12,'q_13'=>$q_13,'q_14'=>$q_14,'q_15'=>$q_15,'q_16'=>$q_16,'q_17'=>$q_17,'q_18'=>$q_18,'q_19'=>$q_19,'q_20'=>$q_20,'q_21'=>$q_21);
 
       return $general;
     }

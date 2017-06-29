@@ -157,13 +157,37 @@ class ConsultaRecoleccion extends Model
       return $datos_sector;
     }
 
+    public function obtenerEstrato($option){
+
+
+      $count_1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.estrato_socio_economico')->where('participacion.estrato_socio_economico',1)->count();
+      $count_2  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.estrato_socio_economico')->where('participacion.estrato_socio_economico',2)->count();
+      $count_3  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.estrato_socio_economico')->where('participacion.estrato_socio_economico',3)->count();
+      $count_4  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.estrato_socio_economico')->where('participacion.estrato_socio_economico',4)->count();
+      $count_5  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.estrato_socio_economico')->where('participacion.estrato_socio_economico',5)->count();
+      $count_6  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.estrato_socio_economico')->where('participacion.estrato_socio_economico',6)->count();
+
+      $Estrato_total = $count_1 + $count_2 + $count_3 + $count_4 + $count_5 + $count_6;
+      $estrato1 = $count_1 * 100 / $Estrato_total;
+      $estrato2 = $count_2 * 100 / $Estrato_total;
+      $estrato3 = $count_3 * 100 / $Estrato_total;
+      $estrato4 = $count_4 * 100 / $Estrato_total;
+      $estrato5 = $count_5 * 100 / $Estrato_total;
+      $estrato6 = $count_6 * 100 / $Estrato_total;
+      $datos_estrato = array('estrato1'=> $this->gRV($estrato1), 'estrato2' => $this->gRV($estrato2),
+      'estrato3' => $this->gRV($estrato3), 'estrato4' => $this->gRV($estrato4),
+      'estrato5' => $this->gRV($estrato5), 'estrato6' => $this->gRV($estrato6));
+
+      return $datos_estrato;
+    }
+
     public function obtenerSalidoDepartamento(){
       $count_si  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ha_salido_departamento')->where('participacion.ha_salido_departamento',1)->count();
       $count_no  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ha_salido_departamento')->where('participacion.ha_salido_departamento',0)->count();
       $total_salido = $count_si + $count_no;
       $sisalido = $count_si * 100 / $total_salido;
       $nosalido = $count_no * 100 / $total_salido;
-      $datos_salidos = array('sisalido'=> $this->gRV($sisalido), 'nosalido' => $nosalido);
+      $datos_salidos = array('sisalido'=> $this->gRV($sisalido), 'nosalido' => $this->gRV($nosalido));
 
       return $datos_salidos;
     }
@@ -174,7 +198,7 @@ class ConsultaRecoleccion extends Model
       $total_salido = $count_si_m + $count_no_m;
       $sisalidom = $count_si_m * 100 / $total_salido;
       $nosalidom = $count_no_m * 100 / $total_salido;
-      $datos_salidos_m = array('sisalidom'=> $sisalidom, 'nosalidom' => $nosalidom);
+      $datos_salidos_m = array('sisalidom'=> $this->gRV($sisalidom), 'nosalidom' => $this->gRV($nosalidom));
 
       return $datos_salidos_m;
     }
@@ -193,7 +217,7 @@ class ConsultaRecoleccion extends Model
       $gremios = $count_gremios * 100 / $total_actores;
       $ambiente = $count_ambiente * 100 / $total_actores;
 
-      $datos_actores = array('ninguno'=> $ninguno, 'transporte' => $transporte, 'infraestructura' => $infraestructura, 'gremios' => $gremios, 'ambiente' => $ambiente);
+      $datos_actores = array('ninguno'=> $this->gRV($ninguno), 'transporte' => $this->gRV($transporte), 'infraestructura' => $this->gRV($infraestructura), 'gremios' => $this->gRV($gremios), 'ambiente' => $this->gRV($ambiente));
 
       return $datos_actores;
     }
@@ -206,7 +230,7 @@ class ConsultaRecoleccion extends Model
       $material = $count_material * 100 / $total_condiciones;
       $palafitica = $count_palafitica * 100 / $total_condiciones;
       $bareque = $count_bareque * 100 / $total_condiciones;
-      $datos_condiciones = array('material'=> $material, 'palafitica' => $palafitica, 'bareque' => $bareque);
+      $datos_condiciones = array('material'=> $this->gRV($material), 'palafitica' => $this->gRV($palafitica), 'bareque' => $this->gRV($bareque));
 
       return $datos_condiciones;
     }
@@ -219,7 +243,7 @@ class ConsultaRecoleccion extends Model
       $familiar = $count_familiar * 100 / $total_vivienda;
       $arrendada = $count_arrendada * 100 / $total_vivienda;
       $propia = $count_propia * 100 / $total_vivienda;
-      $datos_viviendas = array('familiar'=> $familiar, 'arrendada' => $arrendada, 'propia' => $propia);
+      $datos_viviendas = array('familiar'=> $this->gRV($familiar), 'arrendada' => $this->gRV($arrendada), 'propia' => $this->gRV($propia));
 
       return $datos_viviendas;
     }
@@ -272,36 +296,72 @@ class ConsultaRecoleccion extends Model
       $recoleccion_si = $count_recoleccion_si * 100 / $total_recoleccion;
       $recoleccion_no = $count_recoleccion_no * 100 / $total_recoleccion;
 
-      $datos_servicios = array('agua_si'=> $agua_si, 'agua_no' => $agua_no, 'alcantarillado_si' => $alcantarillado_si, 'alcantarillado_no' => $alcantarillado_no, 'energia_si' => $energia_si, 'energia_no' => $energia_no, 'gas_si' =>$gas_si, 'gas_no' =>$gas_no, 'recoleccion_si' =>$recoleccion_si, 'recoleccion_no' =>$recoleccion_no);
+      $datos_servicios = array('agua_si'=> $this->gRV($agua_si), 'agua_no' => $this->gRV($agua_no), 'alcantarillado_si' => $this->gRV($alcantarillado_si), 'alcantarillado_no' => $this->gRV($alcantarillado_no), 'energia_si' => $this->gRV($energia_si), 'energia_no' => $this->gRV($energia_no), 'gas_si' => $this->gRV($gas_si), 'gas_no' => $this->gRV($gas_no), 'recoleccion_si' => $this->gRV($recoleccion_si), 'recoleccion_no' => $this->gRV($recoleccion_no));
 
       return $datos_servicios;
     }
 
-    public function obtenerSuelo(){
-      $count_ganaderia  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.mas_suelo_para')->where('participacion.mas_suelo_para','ganaderia')->count();
-      $count_vivienda  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.mas_suelo_para')->where('participacion.mas_suelo_para','vivienda')->count();
-      $count_comercio  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.mas_suelo_para')->where('participacion.mas_suelo_para','comercio')->count();
-      $count_mineria  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.mas_suelo_para')->where('participacion.mas_suelo_para','mineria')->count();
-      $count_conservacion  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.mas_suelo_para')->where('participacion.mas_suelo_para','conservacion')->count();
-      $count_industria  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.mas_suelo_para')->where('participacion.mas_suelo_para','industria')->count();
-      $count_proteccion  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.mas_suelo_para')->where('participacion.mas_suelo_para','proteccion')->count();
-      $count_vias  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.mas_suelo_para')->where('participacion.mas_suelo_para','vias')->count();
-      $count_agricultura  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.mas_suelo_para')->where('participacion.mas_suelo_para','agricultura')->count();
+    public function obtenerSuelo(){/*
+      $count_vivienda1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_vivienda')->where('participacion.ms_vivienda',1)->count();
+      $count_vivienda0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_vivienda')->where('participacion.ms_vivienda',0)->count();
 
-      $total_suelo = $count_ganaderia + $count_vivienda + $count_comercio + $count_mineria + $count_conservacion + $count_industria + $count_proteccion + $count_vias + $count_agricultura;
-      $ganaderia = $count_ganaderia * 100 / $total_suelo;
-      $vivienda = $count_vivienda * 100 / $total_suelo;
-      $comercio = $count_comercio * 100 / $total_suelo;
-      $mineria = $count_mineria * 100 / $total_suelo;
-      $conservacion = $count_conservacion * 100 / $total_suelo;
-      $industria = $count_industria * 100 / $total_suelo;
-      $proteccion = $count_proteccion * 100 / $total_suelo;
-      $vias = $count_vias * 100 / $total_suelo;
-      $agricultura = $count_agricultura * 100 / $total_suelo;
+      $count_comercio1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_comercio')->where('participacion.ms_comercio',1)->count();
+      $count_comercio0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.mas_suelo_para')->where('participacion.ms_comercio',0)->count();
 
-      $datos_suelo = array('ganaderia'=> $ganaderia, 'vivienda' => $vivienda, 'comercio' => $comercio, 'mineria' => $mineria, 'conservacion' => $conservacion, 'industria' => $industria, 'proteccion' => $proteccion, 'vias' => $vias, 'agricultura' => $agricultura);
+      $count_conservacion1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_conservacion')->where('participacion.ms_conservacion',1)->count();
+      $count_conservacion0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_conservacion')->where('participacion.ms_conservacion',0)->count();
 
-      return $datos_suelo;
+      $count_proteccion1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_proteccion')->where('participacion.ms_proteccion',1)->count();
+      $count_proteccion0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_proteccion')->where('participacion.ms_proteccion',0)->count();
+
+      $count_agricultura1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_agricultura')->where('participacion.ms_agricultura',1)->count();
+      $count_agricultura0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_agricultura')->where('participacion.ms_agricultura',0)->count();
+
+      $count_ganaderia1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_ganaderia')->where('participacion.ms_ganaderia',1)->count();
+      $count_ganaderia0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_ganaderia')->where('participacion.ms_ganaderia',0)->count();
+
+      $count_mineria1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_mineria')->where('participacion.ms_mineria',1)->count();
+      $count_mineria0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_mineria')->where('participacion.ms_mineria',0)->count();
+
+      $count_industria1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_industria')->where('participacion.ms_industria',1)->count();
+      $count_industria0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_industria')->where('participacion.ms_industria',0)->count();
+
+      $count_vias1  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_vias')->where('participacion.ms_vias',1)->count();
+      $count_vias0  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.ms_vias')->where('participacion.ms_vias',0)->count();
+
+      $total_vivienda = $count_vivienda1 + $count_vivienda0;
+      $vivienda = $count_vivienda1 * 100 / $total_vivienda;
+
+      $total_comercio = $count_comercio1 + $count_comercio0;
+      $comercio = $count_vivienda1 * 100 / $total_comercio;
+
+      $total_conservacion = $count_conservacion1 + $count_conservacion0;
+      $conservacion = $count_conservacion1 * 100 / $total_conservacion;
+
+      $total_proteccion = $count_proteccion1 + $count_proteccion0;
+      $proteccion = $count_proteccion1 * 100 / $total_proteccion;
+
+      $total_proteccion = $count_proteccion1 + $count_proteccion0;
+      $proteccion = $count_proteccion1 * 100 / $total_proteccion;
+
+      $total_agricultura = $count_agricultura1 + $count_agricultura0;
+      $agricultura = $count_agricultura1 * 100 / $total_agricultura;
+
+      $total_ganaderia = $count_ganaderia1 + $count_ganaderia0;
+      $ganaderia = $count_ganaderia1 * 100 / $total_ganaderia;
+
+      $total_mineria = $count_mineria1 + $count_mineria0;
+      $mineria = $count_mineria1 * 100 / $total_mineria;
+
+      $total_industria = $count_industria1 + $count_industria0;
+      $industria = $count_industria1 * 100 / $total_industria;
+
+      $total_vias = $count_vias1 + $count_vias0;
+      $vias = $count_vias1 * 100 / $total_vias;
+
+      $datos_suelo = array('ganaderia'=> $this->gRV($ganaderia), 'vivienda' => $this->gRV($vivienda), 'comercio' => $this->gRV($comercio), 'mineria' => $this->gRV($mineria), 'conservacion' => $this->gRV($conservacion), 'industria' => $this->gRV($industria), 'proteccion' => $this->gRV($proteccion), 'vias' => $this->gRV($vias), 'agricultura' => $this->gRV($agricultura));
+
+      return $datos_suelo;*/
     }
 
     public function obtenerMunicipios(){
@@ -332,17 +392,17 @@ class ConsultaRecoleccion extends Model
       $san_marcos = $count_san_marcos * 100 / $total_municipios;
       $sucre = $count_sucre * 100 / $total_municipios;
       $datos_municipios = array(
-        'nechi'=> $nechi,
-        'achi' => $achi,
-        'magangue' => $magangue,
-        'san_jacinto_cauca' => $san_jacinto_cauca,
-        'ayapel' => $ayapel,
-        'caimito' => $caimito,
-        'guaranda' => $guaranda,
-        'majagual' => $majagual,
-        'san_benito_abad' => $san_benito_abad,
-        'san_marcos' => $san_marcos,
-        'sucre' => $sucre
+        'nechi'=> $this->gRV($nechi),
+        'achi' => $this->gRV($achi),
+        'magangue' => $this->gRV($magangue),
+        'san_jacinto_cauca' => $this->gRV($san_jacinto_cauca),
+        'ayapel' => $this->gRV($ayapel),
+        'caimito' => $this->gRV($caimito),
+        'guaranda' => $this->gRV($guaranda),
+        'majagual' => $this->gRV($majagual),
+        'san_benito_abad' => $this->gRV($san_benito_abad),
+        'san_marcos' => $this->gRV($san_marcos),
+        'sucre' => $this->gRV($sucre)
       );
 
       return $datos_municipios;
@@ -378,8 +438,9 @@ class ConsultaRecoleccion extends Model
       $v_11 = $c_count11 * 100 / $variables_ambiental_total;
       $v_12 = $c_count12 * 100 / $variables_ambiental_total;
 
-      $data = array('01'=> $v_01, '02' => $v_02, '03' => $v_03, '04' => $v_04, '05' => $v_05, '06' => $v_06, '07' => $v_07, '08' => $v_08, '09' => $v_09, '10' => $v_10
-                  , '11' => $v_11, '12' => $v_12);
+      $data = array('01'=> $this->gRV($v_01), '02' => $this->gRV($v_02), '03' => $this->gRV($v_03), '04' => $this->gRV($v_04), '05' => $this->gRV($v_05), '06' => $this->gRV($v_06),
+      '07' => $this->gRV($v_07), '08' => $this->gRV($v_08), '09' => $this->gRV($v_09), '10' => $this->gRV($v_10),
+      '11' => $this->gRV($v_11), '12' => $this->gRV($v_12));
 
       return $data;
 
@@ -438,10 +499,10 @@ class ConsultaRecoleccion extends Model
       $v_33 = $c_count33 * 100 / $variables_social_total;
       $v_34 = $c_count34 * 100 / $variables_social_total;
 
-      $data = array('13'=> $v_13,'14'=> $v_14, '15' => $v_15, '16' => $v_16, '17' => $v_17, '18' => $v_18,
-                    '19'=> $v_19, '20' => $v_20, '21' => $v_21, '22' => $v_22, '23' => $v_23,
-                    '24' => $v_24, '25' => $v_25, '26' => $v_26, '27' => $v_27,'28' => $v_28,
-                    '29' => $v_29, '30' => $v_30, '31' => $v_31, '32' => $v_32,'33'=> $v_33, '34' => $v_34);
+      $data = array('13'=> $this->gRV($v_13),'14'=> $this->gRV($v_14), '15' => $this->gRV($v_15), '16' => $this->gRV($v_16), '17' => $this->gRV($v_17), '18' => $this->gRV($v_18),
+                    '19'=> $this->gRV($v_19), '20' => $this->gRV($v_20), '21' => $this->gRV($v_21), '22' => $this->gRV($v_22), '23' => $this->gRV($v_23),
+                    '24' => $this->gRV($v_24), '25' => $this->gRV($v_25), '26' => $this->gRV($v_26), '27' => $this->gRV($v_27),'28' => $this->gRV($v_28),
+                    '29' => $this->gRV($v_29), '30' => $this->gRV($v_30), '31' => $this->gRV($v_31), '32' => $this->gRV($v_32),'33'=> $this->gRV($v_33), '34' => $this->gRV($v_34));
 
       return $data;
 
@@ -474,7 +535,8 @@ class ConsultaRecoleccion extends Model
       $v_43 = $c_count43 * 100 / $variables_economico_total;
 
 
-      $data = array('35'=> $v_35, '36' => $v_36, '37' => $v_37, '38' => $v_38, '39' => $v_39, '40' => $v_40, '41' => $v_41, '42' => $v_42, '43' => $v_43);
+      $data = array('35'=> $this->gRV($v_35), '36' => $this->gRV($v_36), '37' => $this->gRV($v_37), '38' => $this->gRV($v_38),
+      '39' => $this->gRV($v_39), '40' => $this->gRV($v_40), '41' => $this->gRV($v_41), '42' => $this->gRV($v_42), '43' => $this->gRV($v_43));
 
       return $data;
 
@@ -510,8 +572,10 @@ class ConsultaRecoleccion extends Model
       $sucre = $c_sucre * 100 / $total_count_municipios;
 
 
-      $data = array('achi'=> $achi, 'ayapel' => $ayapel, 'caimito' => $caimito, 'guaranda' => $guaranda, 'magangue' => $magangue, 'majagual' => $majagual, 'nechi' => $nechi,
-      'san_benito_abad' => $san_benito_abad,'san_jacinto_cauca' => $san_jacinto_cauca,'san_marcos' => $san_marcos,'sucre' => $sucre);
+      $data = array('achi'=> $this->gRV($achi), 'ayapel' => $this->gRV($ayapel), 'caimito' => $this->gRV($caimito), 'guaranda' => $this->gRV($guaranda),
+      'magangue' => $this->gRV($magangue), 'majagual' => $this->gRV($majagual), 'nechi' => $this->gRV($nechi),
+      'san_benito_abad' => $this->gRV($san_benito_abad),'san_jacinto_cauca' => $this->gRV($san_jacinto_cauca),
+      'san_marcos' => $this->gRV($san_marcos),'sucre' => $this->gRV($sucre));
 
       return $data;
 
@@ -548,8 +612,10 @@ class ConsultaRecoleccion extends Model
       $sucre = $c_sucre * 100 / $total_count_municipios;
 
 
-      $data = array('achi'=> $achi, 'ayapel' => $ayapel, 'caimito' => $caimito, 'guaranda' => $guaranda, 'magangue' => $magangue, 'majagual' => $majagual, 'nechi' => $nechi,
-      'san_benito_abad' => $san_benito_abad,'san_jacinto_cauca' => $san_jacinto_cauca,'san_marcos' => $san_marcos,'sucre' => $sucre);
+      $data = array('achi'=> $this->gRV($achi), 'ayapel' => $this->gRV($ayapel), 'caimito' => $this->gRV($caimito),
+      'guaranda' => $this->gRV($guaranda), 'magangue' => $this->gRV($magangue), 'majagual' => $this->gRV($majagual),
+      'nechi' => $this->gRV($nechi),'san_benito_abad' => $this->gRV($san_benito_abad),'san_jacinto_cauca' => $this->gRV($san_jacinto_cauca),
+      'san_marcos' => $this->gRV($san_marcos),'sucre' => $this->gRV($sucre));
 
       return $data;
 
@@ -585,8 +651,10 @@ class ConsultaRecoleccion extends Model
       $sucre = $c_sucre * 100 / $total_count_municipios;
 
 
-      $data = array('achi'=> $achi, 'ayapel' => $ayapel, 'caimito' => $caimito, 'guaranda' => $guaranda, 'magangue' => $magangue, 'majagual' => $majagual, 'nechi' => $nechi,
-      'san_benito_abad' => $san_benito_abad,'san_jacinto_cauca' => $san_jacinto_cauca,'san_marcos' => $san_marcos,'sucre' => $sucre);
+      $data = array('achi'=> $this->gRV($achi), 'ayapel' => $this->gRV($ayapel), 'caimito' => $this->gRV($caimito), 'guaranda' => $this->gRV($guaranda),
+      'magangue' => $this->gRV($magangue), 'majagual' => $this->gRV($majagual), 'nechi' => $this->gRV($nechi),
+      'san_benito_abad' => $this->gRV($san_benito_abad),'san_jacinto_cauca' => $this->gRV($san_jacinto_cauca),
+      'san_marcos' => $this->gRV($san_marcos),'sucre' => $this->gRV($sucre));
 
       return $data;
     }
@@ -865,9 +933,91 @@ class ConsultaRecoleccion extends Model
       $no_existe = round($c_nexiste * 1 / 21);
       $data = array('e'=> $excelente, 'b' => $bueno, 'm' => $malo, 'ne' => $no_existe);
 
+      $total_ambiental_EA = $e01 + $e02;
+      if($total_ambiental_EA == 0){
+        $ea = 0;
+      }else{
+        $ea = $total_ambiental_EA / 2;
+      }
+
+      $total_ambiental_BA = $b01 + $b02;
+      if($total_ambiental_BA == 0){
+        $ba = 0;
+      }else{
+        $ba = $total_ambiental_BA / 2;
+      }
+
+      $total_ambiental_MA = $m01 + $m02;
+      if($total_ambiental_MA == 0){
+        $ma = 0;
+      }else{
+        $ma = $total_ambiental_MA / 2;
+      }
+
+      $total_ambiental_NEA = $ne01 + $ne02;
+      if($total_ambiental_NEA == 0){
+        $nea = 0;
+      }else{
+        $nea = $total_ambiental_NEA / 2;
+      }
+
+      $total_ambiental_ES = $e03 + $e04 + $e05 + $e06 + $e07 + $e08 + $e09 + $e10 + $e11 + $e12 + $e13 + $e14 + $e15 + $e16 + $e17 + $e18;
+      if($total_ambiental_ES == 0){
+        $es = 0;
+      }else{
+        $es = $total_ambiental_ES / 16;
+      }
+
+      $total_ambiental_BS = $b03 + $b04 + $b05 + $b06 + $b07 + $b08 + $b09 + $b10 + $b11 + $b12 + $b13 + $b14 + $b15 + $b16 + $b17 + $b18;
+      if($total_ambiental_BS == 0){
+        $bs = 0;
+      }else{
+        $bs = $total_ambiental_BS / 16;
+      }
+
+      $total_ambiental_MS = $m03 + $m04 + $m05 + $m06 + $m07 + $m08 + $m09 + $m10 + $m11 + $m12 + $m13 + $m14 + $m15 + $m16 + $m17 + $m18;
+      if($total_ambiental_MS == 0){
+        $ms = 0;
+      }else{
+        $ms = $total_ambiental_MS / 16;
+      }
+
+      $total_ambiental_NES = $ne03 + $ne04 + $ne05 + $ne06 + $ne07 + $ne08 + $ne09 + $ne10 + $ne11 + $ne12 + $ne13 + $ne14 + $ne15 + $ne16 + $ne17 + $ne18;
+      if($total_ambiental_NES == 0){
+        $nes = 0;
+      }else{
+        $nes = $total_ambiental_NES / 16;
+      }
+      $total_ambiental_EE = $e19 + $e20 + $e21;
+      if($total_ambiental_EE == 0){
+        $ee = 0;
+      }else{
+        $ee = $total_ambiental_EE / 3;
+      }
+      $total_ambiental_EB = $b19 + $b20 + $b21;
+      if($total_ambiental_EB == 0){
+        $be = 0;
+      }else{
+        $be = $total_ambiental_EB / 3;
+      }
+      $total_ambiental_EM = $m19 + $m20 + $m21;
+      if($total_ambiental_EM == 0){
+        $me = 0;
+      }else{
+        $me = $total_ambiental_EM / 3;
+      }
+      $total_ambiental_ENE = $ne19 + $ne20 + $ne21;
+      if($total_ambiental_ENE == 0){
+        $nee = 0;
+      }else{
+        $nee = $total_ambiental_ENE / 3;
+      }
+      $table = array('ea'=> $this->gRV($ea), 'ba' => $this->gRV($ba), 'ma' => $this->gRV($ma), 'nea' => $this->gRV($nea), 'es' => $this->gRV($es),
+      'bs' => $this->gRV($bs), 'ms' => $this->gRV($ms), 'nes' => $this->gRV($nes), 'ee' => $this->gRV($ee), 'be' => $this->gRV($be), 'me' => $this->gRV($me), 'nee' => $this->gRV($nee));
 
       $general = array(
       'data' =>$data,
+      'table' =>$table,
       'q_01'=>$q_01,
       'q_02'=>$q_02,
       'q_03'=>$q_03,
@@ -889,7 +1039,6 @@ class ConsultaRecoleccion extends Model
       'q_19'=>$q_19,
       'q_20'=>$q_20,
       'q_21'=>$q_21);
-
 
       return $general;
     }
@@ -952,7 +1101,8 @@ class ConsultaRecoleccion extends Model
       $medio_ambiente = $c_medio_ambiente * 100 / $sector_total;
       $infraestructura = $c_infraestructura * 100 / $sector_total;
 
-      $data = array('ninguno'=> $ninguno, 'transporte_vias' => $transporte_vias,'gremios'=> $gremios, 'medio_ambiente' => $c_medio_ambiente,'infraestructura'=> $c_infraestructura);
+      $data = array('ninguno'=> $this->gRV($ninguno), 'transporte_vias' => $this->gRV($transporte_vias),'gremios'=> $this->gRV($gremios),
+       'medio_ambiente' => $this->gRV($c_medio_ambiente),'infraestructura'=> $this->gRV($c_infraestructura));
 
       return $data;
     }
@@ -1015,7 +1165,8 @@ class ConsultaRecoleccion extends Model
       $option_05 = $c_05 * 100 / $total_edades;
       $option_06 = $c_06 * 100 / $total_edades;
 
-      $data = array('opt01'=> $option_01, 'opt02' => $option_02,'opt03'=> $option_03, 'opt04' => $option_04,'opt05'=> $option_05,'opt06'=> $option_06);
+      $data = array('opt01'=> $this->gRV($option_01), 'opt02' => $this->gRV($option_02),'opt03'=> $this->gRV($option_03),
+      'opt04' => $this->gRV($option_04),'opt05'=> $this->gRV($option_05),'opt06'=> $this->gRV($option_06));
 
 
       return $data;
@@ -1036,7 +1187,7 @@ class ConsultaRecoleccion extends Model
       $desplazado = $c_desplazado * 100 / $situacion_desplazado;
       $nodesplazado = 100 - $desplazado;
 
-      $data = array('desplazado'=> $desplazado, 'no_desplazado' => $nodesplazado);
+      $data = array('desplazado'=> $this->gRV($desplazado), 'no_desplazado' => $this->gRV($nodesplazado));
 
       return $data;
     }
@@ -1062,7 +1213,7 @@ class ConsultaRecoleccion extends Model
       $option_04 = $c_04 * 100 / $total_edades;
 
 
-      $data = array('opt01'=> $option_01, 'opt02' => $option_02,'opt03'=> $option_03, 'opt04' => $option_04);
+      $data = array('opt01'=> $this->gRV($option_01), 'opt02' => $this->gRV($option_02),'opt03'=> $this->gRV($option_03), 'opt04' => $this->gRV($option_04));
 
 
       return $data;

@@ -128,7 +128,7 @@
         </div>
       <div class="row row-gral">
         <h2>Estrato Socio Económico</h2>
-          <canvas id="chartSector" width="400" height="300"></canvas>
+          <canvas id="chartEstrato" width="400" height="300"></canvas>
           <br>
           <div class="row">
             <div class="col-xs-6" style="background-color:#3764B5;text-align:center;color:white;">Estrato 1</div>
@@ -136,6 +136,7 @@
             <div class="col-xs-6" style="background-color:#394F7A;text-align:center;color:white;">Estrato 3</div>
             <div class="col-xs-6" style="background-color:#72C4F2;text-align:center;color:white;">Estrato 4</div>
             <div class="col-xs-6" style="background-color:#1eaeff;text-align:center;color:white;">Estrato 5</div>
+            <div class="col-xs-6" style="background-color:#1eaeff;text-align:center;color:white;">Estrato 6</div>
 
           </div>
         </div>
@@ -371,26 +372,26 @@
         </tr>
         <tr class="">
           <th class="" style="text-align:center;">Ambiental</th>
-          <th class="ver" style="background:#006b2b;">30%</th>
-          <th class="ver" style="background:#009640;">40%</th>
-          <th class="ver" style="background:#00b248;">20%</th>
-          <th class="ver" style="background:#00fc66;">10%</th>
+          <th class="ver" style="background:#006b2b;">{{$datos_dimensiones['table']['ea']}}%</th>
+          <th class="ver" style="background:#009640;">{{$datos_dimensiones['table']['ba']}}%</th>
+          <th class="ver" style="background:#00b248;">{{$datos_dimensiones['table']['ma']}}%</th>
+          <th class="ver" style="background:#00fc66;">{{$datos_dimensiones['table']['nea']}}%</th>
 
         </tr>
         <tr class="">
           <th class="" style="text-align:center;">Social</th>
-          <th class="ver" style="background:#333333;">24%</th>
-          <th class="ver" style="background:#575756;">36%</th>
-          <th class="ver" style="background:#919191;">35%</th>
-          <th class="ver" style="background:#d6d6d6;">5%</th>
+          <th class="ver" style="background:#333333;">{{$datos_dimensiones['table']['es']}}%</th>
+          <th class="ver" style="background:#575756;">{{$datos_dimensiones['table']['bs']}}%</th>
+          <th class="ver" style="background:#919191;">{{$datos_dimensiones['table']['ms']}}%</th>
+          <th class="ver" style="background:#d6d6d6;">{{$datos_dimensiones['table']['nes']}}%</th>
 
         </tr>
         <tr class="">
           <th class="" style="text-align:center;">Económico</th>
-          <th class="ver" style="background:#005877;">43%</th>
-          <th class="ver" style="background:#047faa;">16%</th>
-          <th class="ver" style="background:#009fe3;">29%</th>
-          <th class="ver" style="background:#40ceff;">12%</th>
+          <th class="ver" style="background:#005877;">{{$datos_dimensiones['table']['ee']}}%</th>
+          <th class="ver" style="background:#047faa;">{{$datos_dimensiones['table']['be']}}%</th>
+          <th class="ver" style="background:#009fe3;">{{$datos_dimensiones['table']['me']}}%</th>
+          <th class="ver" style="background:#40ceff;">{{$datos_dimensiones['table']['nee']}}%</th>
         </tr>
       </table>
     </div>

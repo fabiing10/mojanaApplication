@@ -51,6 +51,7 @@ class ParticipacionController extends Controller
        $datos_sector = $consulta->obtenerSector($option);
        $datos_servicios = $consulta->obtenerServicios($option);
        $datos_suelo = $consulta->obtenerSuelo($option);
+       $datos_dimensiones = $consulta->obtenerQuestions($option);
 
 
       $d_v_ambientales = $consulta->obtenerVariablesAmbientales($option);
@@ -71,6 +72,7 @@ class ParticipacionController extends Controller
               ->with('datos_sector',$datos_sector)
               ->with('datos_servicios',$datos_servicios)
               ->with('datos_suelo',$datos_suelo)
+              ->with('datos_dimensiones',$datos_dimensiones)
               ->with('d_v_ambientales',$d_v_ambientales)
               ->with('d_v_sociales',$d_v_sociales)
               ->with('d_v_economicas',$d_v_economicas)
@@ -383,6 +385,8 @@ class ParticipacionController extends Controller
          $data = $consulta->obtenerQuestions($data);
        }else if($option == "sector-pertenece"){
          $data = $consulta->obtenerSectorPertenece($data);
+       }else if($option == "estrato"){
+         $data = $consulta->obtenerEstrato($data);
        }else if($option == "edades"){
          $data = $consulta->obtenerEdades($data);
        }else if($option == "situacion-desplazamiento"){

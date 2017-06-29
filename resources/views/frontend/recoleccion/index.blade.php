@@ -98,34 +98,43 @@
 <div class="row">
   <div class="row">
     <div class="col-xs-4" style="padding-left: 35px;">
-        <div class="row">
+        <div class="row row-gral">
           <h2>Genero</h2>
           @include('frontend.resultados.blocks.genero')
 
 
         </div>
 
-        <div class="row" style="    margin-top: 55px;">
+        <div class="row row-gral" style="    margin-top: 55px;">
           <h2>Edad</h2>
           <canvas id="chartEdades" width="400" height="300"></canvas>
+          <br>
+          <div class="row">
+            <div class="col-xs-6" style="background-color:#006633;text-align:center;color:white;">18 - 25 Años</div>
+            <div class="col-xs-6" style="background-color:#2fac66;text-align:center;color:white;">25 - 35 Años</div>
+            <div class="col-xs-6" style="background-color:#00a19a;text-align:center;color:white;">35 - 45 Años</div>
+            <div class="col-xs-6" style="background-color:#00e0cf;text-align:center;color:white;">45 - 55 Años</div>
+            <div class="col-xs-6" style="background-color:#2bca6d;text-align:center;color:white;">55 - 68 Años</div>
+            <div class="col-xs-6" style="background-color:#1eaeff;text-align:center;color:white;">68 - 80 Años</div>
+          </div>
         </div>
       </div>
     <div class="col-xs-4" style="background-color:#f5f5f5; padding-left: 35px;">
-      <div class="row">
+      <div class="row row-gral">
         <h2>Régimen de salud</h2>
           <canvas id="chartRegimenSalud" width="400" height="200"></canvas>
         </div>
-        <div class="row">
+        <div class="row row-gral">
           <h2>Nivel Educativo</h2>
             @include('frontend.resultados.blocks.nivel_educativo')
           </div>
     </div>
     <div class="col-xs-4" style="padding-left: 35px;">
-      <div class="row">
+      <div class="row row-gral">
         <h2>Ocupación</h2>
             @include('frontend.resultados.blocks.ocupacion')
         </div>
-      <div class="row">
+      <div class="row row-gral">
         <h2>Discapacidad</h2>
           @include('frontend.resultados.blocks.discapacidad')
         </div>
@@ -181,11 +190,11 @@
     </div>
   </div>
   <div class="col-xs-4" style="padding-left: 35px;">
-    <div class="row">
+    <div class="row row-gral">
       <h2>Sector</h2>
       @include('frontend.resultados.blocks.sector')
     </div>
-    <div class="row">
+    <div class="row row-gral">
       <h2 class="header-padding">Tiempo de Residencia</h2>
       <canvas id="chartTiempoResidencia" width="200" height="100"></canvas>
       <div class="row block-tiempo_residencia">
@@ -329,26 +338,26 @@
         </tr>
         <tr class="">
           <th class="" style="text-align:center;">Ambiental</th>
-          <th class="ver" style="background:#006b2b;">30%</th>
-          <th class="ver" style="background:#009640;">40%</th>
-          <th class="ver" style="background:#00b248;">20%</th>
-          <th class="ver" style="background:#00fc66;">10%</th>
+          <th class="ver" style="background:#006b2b;">{{$datos_dimensiones['table']['ea']}}%</th>
+          <th class="ver" style="background:#009640;">{{$datos_dimensiones['table']['ba']}}%</th>
+          <th class="ver" style="background:#00b248;">{{$datos_dimensiones['table']['ma']}}%</th>
+          <th class="ver" style="background:#00fc66;">{{$datos_dimensiones['table']['nea']}}%</th>
 
         </tr>
         <tr class="">
           <th class="" style="text-align:center;">Social</th>
-          <th class="ver" style="background:#333333;">24%</th>
-          <th class="ver" style="background:#575756;">36%</th>
-          <th class="ver" style="background:#919191;">35%</th>
-          <th class="ver" style="background:#d6d6d6;">5%</th>
+          <th class="ver" style="background:#333333;">{{$datos_dimensiones['table']['es']}}%</th>
+          <th class="ver" style="background:#575756;">{{$datos_dimensiones['table']['bs']}}%</th>
+          <th class="ver" style="background:#919191;">{{$datos_dimensiones['table']['ms']}}%</th>
+          <th class="ver" style="background:#d6d6d6;">{{$datos_dimensiones['table']['nes']}}%</th>
 
         </tr>
         <tr class="">
-          <th class="" style="text-align:center;">Economico</th>
-          <th class="ver" style="background:#005877;">43%</th>
-          <th class="ver" style="background:#047faa;">16%</th>
-          <th class="ver" style="background:#009fe3;">29%</th>
-          <th class="ver" style="background:#40ceff;">12%</th>
+          <th class="" style="text-align:center;">Económico</th>
+          <th class="ver" style="background:#005877;">{{$datos_dimensiones['table']['ee']}}%</th>
+          <th class="ver" style="background:#047faa;">{{$datos_dimensiones['table']['be']}}%</th>
+          <th class="ver" style="background:#009fe3;">{{$datos_dimensiones['table']['me']}}%</th>
+          <th class="ver" style="background:#40ceff;">{{$datos_dimensiones['table']['nee']}}%</th>
         </tr>
       </table>
     </div>

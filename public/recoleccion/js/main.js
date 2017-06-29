@@ -13,6 +13,7 @@ $( document ).ready(function() {
     cargarQuestions();
     cargarEdades();
     cargarSector();
+    cargarEstrato();
     cargarDesplazamiento();
     cargarTiempoResidencia();
 
@@ -133,6 +134,37 @@ function cargarSector(){
       };
 
       var promisedDeliveryChart = new Chart(document.getElementById('chartSector'), {
+        type: 'doughnut',
+        data: data,
+        options: {
+        	responsive: true,
+          legend: {
+            display: false
+          }
+        }
+       });
+
+  }).fail(function() {
+      console.log( "error" );
+    });
+}
+
+function cargarEstrato(){
+  $.get( "/datos/q/estrato", function() {
+
+  }).done(function(value) {
+
+      var data = {
+        labels: ["1", "2", "3", "4","5","6"],
+        datasets: [
+          {
+            data: [value.estrato1, value.estrato2,value.estrato3,value.estrato4,value.estrato5,value.estrato6],
+            backgroundColor: [ "#3764B5", "#5A6CBA", "#394F7A", "#72C4F2","#1eaeff"],
+            hoverBackgroundColor: [ "#3764B5", "#5A6CBA", "#394F7A","#72C4F2","#1eaeff"]
+          }]
+      };
+
+      var promisedDeliveryChart = new Chart(document.getElementById('chartEstrato'), {
         type: 'doughnut',
         data: data,
         options: {

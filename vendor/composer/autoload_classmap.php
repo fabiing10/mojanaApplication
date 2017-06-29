@@ -2871,7 +2871,6 @@ return array(
     'Psy\\CodeCleaner\\NamespacePass' => $vendorDir . '/psy/psysh/src/Psy/CodeCleaner/NamespacePass.php',
     'Psy\\CodeCleaner\\NoReturnValue' => $vendorDir . '/psy/psysh/src/Psy/CodeCleaner/NoReturnValue.php',
     'Psy\\CodeCleaner\\PassableByReferencePass' => $vendorDir . '/psy/psysh/src/Psy/CodeCleaner/PassableByReferencePass.php',
-    'Psy\\CodeCleaner\\RequirePass' => $vendorDir . '/psy/psysh/src/Psy/CodeCleaner/RequirePass.php',
     'Psy\\CodeCleaner\\StaticConstructorPass' => $vendorDir . '/psy/psysh/src/Psy/CodeCleaner/StaticConstructorPass.php',
     'Psy\\CodeCleaner\\StrictTypesPass' => $vendorDir . '/psy/psysh/src/Psy/CodeCleaner/StrictTypesPass.php',
     'Psy\\CodeCleaner\\UseStatementPass' => $vendorDir . '/psy/psysh/src/Psy/CodeCleaner/UseStatementPass.php',

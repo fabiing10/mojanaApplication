@@ -35,6 +35,7 @@ class RecoleccionController extends Controller
      $datos_discapacidad = $consulta->obtenerDiscapacidad('general');
      $datos_nivel_educativo = $consulta->obtenerNivelEducativo('general');
      $datos_sector = $consulta->obtenerSector('general');
+     $datos_dimensiones = $consulta->obtenerQuestions('general');
      $datos_servicios = $consulta->obtenerServicios('general');
      $option_url = 'general';
 
@@ -46,6 +47,7 @@ class RecoleccionController extends Controller
             ->with('datos_discapacidad',$datos_discapacidad)
             ->with('datos_nivel_educativo',$datos_nivel_educativo)
             ->with('datos_sector',$datos_sector)
+            ->with('datos_dimensiones',$datos_dimensiones)
             ->with('option_url',$option_url)
             ->with('datos_servicios',$datos_servicios);
 
