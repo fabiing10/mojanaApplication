@@ -56,32 +56,32 @@ class RecoleccionController extends Controller
 
 
    /*Request Ajax Respuestas */
-   public function dataResponse($option){
+   public function dataResponse($option,$data){
      $consulta = new ConsultaRecoleccion();
      if($option == "regimen-salud"){
-       $data = $consulta->obtenerRegimenSalud();
+       $data = $consulta->obtenerRegimenSalud($data);
      }else if($option == "han-salido"){
-       $data = $consulta->obtenerSalidoDepartamento();
+       $data = $consulta->obtenerSalidoDepartamento($data);
      }else if($option == "han-salido-m"){
-       $data = $consulta->obtenerSalidoMunicipio();
+       $data = $consulta->obtenerSalidoMunicipio($data);
      }else if($option == "actores"){
-       $data = $consulta->obtenerActores();
+       $data = $consulta->obtenerActores($data);
      }else if($option == "condiciones-fisicas"){
-       $data = $consulta->obtenerCondicionesFisicas();
+       $data = $consulta->obtenerCondicionesFisicas($data);
      }else if($option == "vivienda-es"){
-       $data = $consulta->obtenerViviendaEs();
+       $data = $consulta->obtenerViviendaEs($data);
      }else if($option == "municipios"){
-       $data = $consulta->obtenerMunicipios();
+       $data = $consulta->obtenerMunicipios($data);
      }else if($option == "estado-general"){
-       $data = $consulta->obtenerQuestions();
+       $data = $consulta->obtenerQuestions($data);
      }else if($option == "sector-pertenece"){
-       $data = $consulta->obtenerSectorPertenece();
+       $data = $consulta->obtenerSectorPertenece($data);
      }else if($option == "edades"){
-       $data = $consulta->obtenerEdades();
+       $data = $consulta->obtenerEdades($data);
      }else if($option == "situacion-desplazamiento"){
-       $data = $consulta->obtenerSituacionDesplazamiento();
+       $data = $consulta->obtenerSituacionDesplazamiento($data);
      }else if($option == "tiempo-residencia"){
-       $data = $consulta->obtenerTiempoResidencia();
+       $data = $consulta->obtenerTiempoResidencia($data);
      }
      //Mapas
      else if($option == "mapa-ambiental"){
@@ -111,27 +111,27 @@ class RecoleccionController extends Controller
      if($option == "regimen-salud"){
        $data = $consulta->obtenerRegimenSalud($data);
      }else if($option == "han-salido"){
-       $data = $consulta->obtenerSalidoDepartamento();
+       $data = $consulta->obtenerSalidoDepartamento($data);
      }else if($option == "han-salido-m"){
-       $data = $consulta->obtenerSalidoMunicipio();
+       $data = $consulta->obtenerSalidoMunicipio($data);
      }else if($option == "actores"){
-       $data = $consulta->obtenerActores();
+       $data = $consulta->obtenerActores($data);
      }else if($option == "condiciones-fisicas"){
-       $data = $consulta->obtenerCondicionesFisicas();
+       $data = $consulta->obtenerCondicionesFisicas($data);
      }else if($option == "vivienda-es"){
-       $data = $consulta->obtenerViviendaEs();
+       $data = $consulta->obtenerViviendaEs($data);
      }else if($option == "municipios"){
-       $data = $consulta->obtenerMunicipios();
+       $data = $consulta->obtenerMunicipios($data);
      }else if($option == "estado-general"){
-       $data = $consulta->obtenerQuestions();
+       $data = $consulta->obtenerQuestions($data);
      }else if($option == "sector-pertenece"){
-       $data = $consulta->obtenerSectorPertenece();
+       $data = $consulta->obtenerSectorPertenece($data);
      }else if($option == "edades"){
        $data = $consulta->obtenerEdades($data);
      }else if($option == "situacion-desplazamiento"){
        $data = $consulta->obtenerSituacionDesplazamiento($data);
      }else if($option == "tiempo-residencia"){
-       $data = $consulta->obtenerTiempoResidencia();
+       $data = $consulta->obtenerTiempoResidencia($data);
      }
      //Mapas
      else if($option == "mapa-ambiental"){
@@ -184,8 +184,7 @@ class RecoleccionController extends Controller
      $datos_nivel_educativo = $consulta->obtenerNivelEducativo($municipio);
      $datos_sector = $consulta->obtenerSector($municipio);
      $datos_servicios = $consulta->obtenerServicios($municipio);
-
-
+     $datos_dimensiones = $consulta->obtenerQuestions($municipio);
 
      return view('frontend.recoleccion.index')
             ->with('datos_genero',$datos_genero)
@@ -193,17 +192,9 @@ class RecoleccionController extends Controller
             ->with('datos_discapacidad',$datos_discapacidad)
             ->with('datos_nivel_educativo',$datos_nivel_educativo)
             ->with('datos_sector',$datos_sector)
+            ->with('datos_dimensiones',$datos_dimensiones)
             ->with('option_url',$option_url)
             ->with('datos_servicios',$datos_servicios);
-
-    /* return view('frontend.recoleccion.municipio')
-            ->with('datos_genero',$datos_genero)
-            ->with('datos_ocupacion',$datos_ocupacion)
-            ->with('datos_discapacidad',$datos_discapacidad)
-            ->with('datos_nivel_educativo',$datos_nivel_educativo)
-            ->with('datos_sector',$datos_sector)
-            ->with('datos_servicios',$datos_servicios);
-*/
 
 
    }
