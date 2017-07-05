@@ -173,7 +173,6 @@
           <div class="row">
             <div class="col-xs-6" style="background-color:#484847;text-align:center;color:white;">Si</div>
             <div class="col-xs-6" style="background-color:#878787;text-align:center;color:white;">No</div>
-
           </div>
         </div>
       </div>

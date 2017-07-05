@@ -77,7 +77,7 @@
 {!! Form::open(['url' => 'datos/municipio' , 'method' => 'post' , 'id' => 'FormSearch']) !!}
 <input type="hidden" name="option_url" id="option_url" value="{{$option_url}}" />
 <select name="municipio" id="municipio" onchange="submitForm()" class="general_select">
-  <option value="general">Seleccione Una Opcion</option>
+  <option value="general">Seleccione un municipio</option>
   <option value="Todos">Todos</option>
   <option value="Achi">Achi</option>
   <option value="Caimito">Caimito</option>
@@ -152,6 +152,11 @@
       <div class="col-xs-3">
         <div class="row">
           <canvas id="chartSituacionDesplazamiento" width="300" height="200"></canvas>
+          <br>
+          <div class="row">
+            <div class="col-xs-6" style="background-color:#484847;text-align:center;color:white;">Si</div>
+            <div class="col-xs-6" style="background-color:#878787;text-align:center;color:white;">No</div>
+          </div>
         </div>
       </div>
       </div>
@@ -182,11 +187,11 @@
       </div>
     </div>
     <div class="col-xs-6" style="padding-left: 35px;">
-      <h2>Quiénes han salido<br> de su departamento</h2>
+      <h2>Porcentaje de personas que han <br>salido del departamento </h2>
       <canvas id="chartHanSalido" width="400" height="200"></canvas>
     </div>
     <div class="col-xs-6" style="padding-left: 35px;">
-      <h2>Quiénes han salido<br> de su Municipio</h2>
+      <h2>Porcentaje de personas que han <br>salido del municipio </h2>
       <canvas id="chartHanSalidoM" width="400" height="200"></canvas>
     </div>
   </div>
