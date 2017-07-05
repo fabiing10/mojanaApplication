@@ -53,9 +53,15 @@ function cargarQuestions(){
           },
           tooltips: {
             callbacks: {
-               label: function(tooltipItem) {
-                      return tooltipItem.yLabel;
-               }
+               label: function(tooltipItem, data) {
+                  var dataset = data.datasets[tooltipItem.datasetIndex];
+                  var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                    return previousValue + currentValue;
+                  });
+                  var currentValue = dataset.data[tooltipItem.index];
+                  var precentage = Math.floor(((currentValue/total) * 100)*2);
+                  return precentage + "%";
+                }
             }
           },
           responsive: true,
@@ -204,9 +210,15 @@ function cargarRegimenSalud(){
             },
             tooltips: {
               callbacks: {
-                 label: function(tooltipItem) {
-                        return tooltipItem.yLabel;
-                 }
+                 label: function(tooltipItem, data) {
+                  	var dataset = data.datasets[tooltipItem.datasetIndex];
+                    var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                      return previousValue + currentValue;
+                    });
+                    var currentValue = dataset.data[tooltipItem.index];
+                    var precentage = Math.floor(((currentValue/total) * 100)*2);
+                    return precentage + "%";
+                  }
               }
             },
             responsive: true,
@@ -248,9 +260,15 @@ function cargarHanSalido(){
             },
             tooltips: {
               callbacks: {
-                 label: function(tooltipItem) {
-                        return tooltipItem.yLabel;
-                 }
+                 label: function(tooltipItem, data) {
+                  	var dataset = data.datasets[tooltipItem.datasetIndex];
+                    var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                      return previousValue + currentValue;
+                    });
+                    var currentValue = dataset.data[tooltipItem.index];
+                    var precentage = Math.floor(((currentValue/total) * 100)*2);
+                    return precentage + "%";
+                  }
               }
             },
             responsive: true,
@@ -292,9 +310,15 @@ function cargarHanSalidoM(){
             },
             tooltips: {
               callbacks: {
-                 label: function(tooltipItem) {
-                        return tooltipItem.yLabel;
-                 }
+                 label: function(tooltipItem, data) {
+                  	var dataset = data.datasets[tooltipItem.datasetIndex];
+                    var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                      return previousValue + currentValue;
+                    });
+                    var currentValue = dataset.data[tooltipItem.index];
+                    var precentage = Math.floor(((currentValue/total) * 100)*2);
+                    return precentage + "%";
+                  }
               }
             },
             responsive: true,
@@ -383,9 +407,15 @@ function cargarCondiciones(){
             },
             tooltips: {
               callbacks: {
-                 label: function(tooltipItem) {
-                        return tooltipItem.yLabel;
-                 }
+                 label: function(tooltipItem, data) {
+                  	var dataset = data.datasets[tooltipItem.datasetIndex];
+                    var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                      return previousValue + currentValue;
+                    });
+                    var currentValue = dataset.data[tooltipItem.index];
+                    var precentage = Math.floor(((currentValue/total) * 100)*2);
+                    return precentage + "%";
+                  }
               }
             },
             responsive: true,
@@ -477,9 +507,15 @@ function cargarMunicipios(){
             },
             tooltips: {
               callbacks: {
-                 label: function(tooltipItem) {
-                        return tooltipItem.yLabel;
-                 }
+                 label: function(tooltipItem, data) {
+                  	var dataset = data.datasets[tooltipItem.datasetIndex];
+                    var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                      return previousValue + currentValue;
+                    });
+                    var currentValue = dataset.data[tooltipItem.index];
+                    var precentage = Math.floor(((currentValue/total) * 100)*2);
+                    return precentage + "%";
+                  }
               }
             },
             responsive: true,
@@ -718,6 +754,10 @@ function cargarTiempoResidencia(){
         	responsive: true,
           legend: {
             display: false
+          },pieceLabel: {
+          mode: 'percentage',
+          fontSize: 15,
+          precision: 2
           }
         }
        });
