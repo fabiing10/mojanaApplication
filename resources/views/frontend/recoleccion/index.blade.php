@@ -79,13 +79,18 @@
 <select name="municipio" id="municipio" onchange="submitForm()" class="general_select">
   <option value="general">Seleccione un municipio</option>
   <option value="Todos">Todos</option>
+
   <option value="Achi">Achi</option>
+  <option value="ayapel">Ayapel</option>
   <option value="Caimito">Caimito</option>
   <option value="Guaranda">Guaranda</option>
   <option value="Magangue">Magangue</option>
+  <option value="Majagual">Majagual</option>
   <option value="Nechi">Nechi</option>
   <option value="San Jacinto del Cauca">San Jacinto</option>
   <option value="San Marcos">San Marcos</option>
+  <option value="San Benito Abad">San Benito Abad</option>
+  <option value="sucre">Sucre</option>
 </select>
 <div class="form-group">
   <div class="col-md-1 numbers">

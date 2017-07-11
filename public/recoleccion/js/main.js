@@ -477,55 +477,60 @@ function cargarViviendas(){
 }
 
 function cargarMunicipios(){
+  var option_url = $('#municipio').val();
+  $.get( "/datos/q/municipios/"+option_url, function() {
 
+  }).done(function(data) {
+    console.log(data)
+    var Ac = $("#chartMunicipios");
+    var myPieChart = new Chart(Ac,{
+      type: 'bar',
+      data: {
+           labels: ["Nechi", "Achi", "Magangue","S.J.Cauca","Ayapel","Caimito","Guaranda","Majagual","S.B.Abad","San Marcos","Sucre"],
+           datasets: [{
+               data: [data.nechi, data.achi,data.magangue, data.san_jacinto_cauca, data.ayapel, data.caimito, data.guaranda,data.majagual,data.san_benito_abad,data.san_marcos,data.sucre,100],
+               backgroundColor: [
+                   '#417cb7',
+                   '#5fd9ff',
+                   '#102c6b',
+                   '#006eb2',
+                   '#009fe3',
+                   '#1d71b8',
+                   '#008cb2',
+                   '#83b3c6',
+                   '#83b3c6',
+                   '#00b5b5',
+                   '#00e0cf'
+               ]
+           }]
+      },
+      options: {
+          legend: {
+            display: false
+          },
+          tooltips: {
+            callbacks: {
+               label: function(tooltipItem, data) {
+                  var dataset = data.datasets[tooltipItem.datasetIndex];
+                  var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                    return previousValue + currentValue;
+                  });
+                  var currentValue = dataset.data[tooltipItem.index];
+                  var precentage = Math.floor(((currentValue/total) * 100)*2);
+                  return precentage + "%";
+                }
+            }
+          },
+          responsive: true,
+          scales: {
+              xAxes: [{ stacked: true }],
+              yAxes: [{ stacked: true }]
+          },
+          title: { display: false }
+      }
+    });
+  });
 
-      var Ac = $("#chartMunicipios");
-      var myPieChart = new Chart(Ac,{
-        type: 'bar',
-        data: {
-             labels: ["Nechi", "Achi", "Magangue","S.J.Cauca","Ayapel","Caimito","Guaranda","Majagual","S.B.Abad","San Marcos","Sucre"],
-             datasets: [{
-                 data: [15, 15, 15, 13, 0, 14, 15,0,0,15,0],
-                 backgroundColor: [
-                     '#417cb7',
-                     '#5fd9ff',
-                     '#102c6b',
-                     '#006eb2',
-                     '#009fe3',
-                     '#1d71b8',
-                     '#008cb2',
-                     '#83b3c6',
-                     '#83b3c6',
-                     '#00b5b5',
-                     '#00e0cf'
-                 ]
-             }]
-        },
-        options: {
-            legend: {
-              display: false
-            },
-            tooltips: {
-              callbacks: {
-                 label: function(tooltipItem, data) {
-                  	var dataset = data.datasets[tooltipItem.datasetIndex];
-                    var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
-                      return previousValue + currentValue;
-                    });
-                    var currentValue = dataset.data[tooltipItem.index];
-                    var precentage = Math.floor(((currentValue/total) * 100)*2);
-                    return precentage + "%";
-                  }
-              }
-            },
-            responsive: true,
-            scales: {
-                xAxes: [{ stacked: true }],
-                yAxes: [{ stacked: true }]
-            },
-            title: { display: false }
-        }
-      });
 
 
 }

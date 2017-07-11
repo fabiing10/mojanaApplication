@@ -591,13 +591,13 @@ class ConsultaRecoleccion extends Model
     $count_nechi  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.id')->where('participacion.municipio_residencia','nechi')->count();
     $count_achi  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.id')->where('participacion.municipio_residencia','achi')->count();
     $count_magangue  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.id')->where('participacion.municipio_residencia','magangue')->count();
-    $count_san_jacinto_cauca  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.id')->where('participacion.municipio_residencia','san-jacinto-cauca')->count();
+    $count_san_jacinto_cauca  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.id')->where('participacion.municipio_residencia','San Jacinto del Cauca')->count();
     $count_ayapel  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.id')->where('participacion.municipio_residencia','ayapel')->count();
     $count_caimito  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.id')->where('participacion.municipio_residencia','caimito')->count();
     $count_guaranda  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.id')->where('participacion.municipio_residencia','guaranda')->count();
     $count_majagual  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.id')->where('participacion.municipio_residencia','majagual')->count();
     $count_san_benito_abad  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.id')->where('participacion.municipio_residencia','san-benito-abad')->count();
-    $count_san_marcos  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.id')->where('participacion.municipio_residencia','san-marcos')->count();
+    $count_san_marcos  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.id')->where('participacion.municipio_residencia','san marcos')->count();
     $count_sucre  = \DB::table('participaciones_recoleccion as participacion')->select('participacion.id')->where('participacion.municipio_residencia','sucre')->count();
 
 

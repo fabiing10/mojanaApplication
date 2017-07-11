@@ -71,7 +71,7 @@ class RecoleccionController extends Controller
      }else if($option == "vivienda-es"){
        $data = $consulta->obtenerViviendaEs($data);
      }else if($option == "municipios"){
-       $data = $consulta->obtenerMunicipios($data);
+       $data = $consulta->obtenerMunicipios();
      }else if($option == "estado-general"){
        $data = $consulta->obtenerQuestions($data);
      }else if($option == "sector-pertenece"){
@@ -171,7 +171,16 @@ class RecoleccionController extends Controller
        $option_url = "San Jacinto del Cauca";
      }else if($municipio == "San Marcos"){
        $option_url = "San Marcos";
+     }else if($municipio == "ayapel"){
+       $option_url = "Ayapel";
+     }else if($municipio == "sucre"){
+       $option_url = "Sucre";
+     }else if($municipio == "San Benito Abad"){
+       $option_url = "San Benito Abad";
+     }else if($municipio == "Majagual"){
+       $option_url = "Majagual";
      }
+
 
 
      if($municipio == 'Todos'){
