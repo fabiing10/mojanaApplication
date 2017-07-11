@@ -363,10 +363,10 @@
 
         <tr>
           <th></th>
-          <th class="">E</th>
-          <th class="">B</th>
-          <th class="">M</th>
-          <th class="">NE</th>
+          <th class=""><img style="width:20%; padding:0px;"src="../participacion/images/excelente.png" alt=""></th>
+          <th class=""><img style="width:20%; padding:0px;"src="../participacion/images/bueno.png" alt=""></th>
+          <th class=""><img style="width:20%; padding:0px;"src="../participacion/images/malo.png" alt=""></th>
+          <th class=""><img style="width:20%; padding:0px;"src="../participacion/images/no_existe.png" alt=""></th>
 
         </tr>
         <tr class="">
