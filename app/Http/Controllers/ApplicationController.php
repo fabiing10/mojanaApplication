@@ -32,7 +32,12 @@ class ApplicationController extends Controller
        return $indicadores;
 
      }
-
+     public function showFilePdf($pdf){
+       $fileName = public_path().'/img/documents/'.$pdf;
+       return response()->file($fileName, [
+          'Content-Disposition' => 'inline; filename="'. $pdf .'"'
+        ]);
+     }
      public function leerExcel(){
        Excel::load('data_filter_map.xls', function($reader) {
 

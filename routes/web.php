@@ -38,6 +38,8 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'as' => 'admin.', '
 });
 
 
+Route::get('/img/documents/{id}', 'ApplicationController@showFilePdf');
+
 Route::get('/participacion/tematicas/{id}', 'ApplicationController@problematicaByTema');
 Route::get('/participacion/problemas/{id}', 'ApplicationController@solucionByProblema');
 Route::get('/participacion/tematicas/clasificacion/{option}', 'ApplicationController@loadTemasByClasificacion');
