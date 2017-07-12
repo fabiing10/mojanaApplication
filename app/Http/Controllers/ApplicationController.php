@@ -33,10 +33,18 @@ class ApplicationController extends Controller
 
      }
      public function showFilePdf($pdf){
+
        $fileName = public_path().'/img/documents/'.$pdf;
-       return response()->file($fileName, [
+       $response = Response::make($fileName, 200);
+        $response->header('Content-Type','application/pdf');
+        $response->header('Content-Disposition','inline');
+        $response->header('Content-Transfer-Encoding','binary');
+
+        return $response;
+
+       /*return response()->file($fileName, [
           'Content-Disposition' => 'inline; filename="'. $pdf .'"'
-        ]);
+        ]);*/
      }
      public function leerExcel(){
        Excel::load('data_filter_map.xls', function($reader) {
